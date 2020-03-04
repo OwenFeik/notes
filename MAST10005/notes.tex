@@ -1,6 +1,7 @@
 \documentclass[12pt]{report}
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{bbold}
+\usepackage{amssymb}
 \begin{document}
 \title{MAST10005 Notes}
 \chapter*{Sets}
@@ -16,7 +17,7 @@
 \end{itemize}
 
 
-\[\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}\]
+\[\mathbb{N} \subseteq \mathbb{Z} \subseteq \mathbb{Q} \subseteq \mathbb{R} \subseteq \mathbb{C}\]
 Some numbers cannot be written as fractions, and these we describe as irrational. 
 These include \(\pi\), \(e\), \(\sqrt{2}\), etc. These numbers are not in \textbb{Q}, but they are real numbers, i.e. in \textbb{R}. 
 It can be difficult to prove numbers are irrational. An even larger set of numbers exists, that of the complex numbers \textbb{C}. ``Most'' real numbers are inrrational.
@@ -80,30 +81,35 @@ could be seen to excise a set from a larger set through a condition.
 
 \section*{Intervals}
 \((a, b)\) means the set of real numbers between \(a\) and \(b\) (exclusive). Therefore:
-\[(a, b) = \{ x \in \mathbb{R} | a < x and x < b\} = \{ x \in \mathbb{R} | a < x < b\} \]
+\[(a, b) = \{ x \in \mathbb{R} | a < x \:\mathrm{and}\: x < b\} = \{ x \in \mathbb{R} | a < x < b\} \]
 This can be illustrated on a number line with an open circle at \(a\) and \(b\). This is an open interval.
-To denote a close interval (inclusive of \(a\) and \(b\).
+To denote a closed interval (inclusive of \(a\) and \(b\)), we use a square brackets (\([a, b]\)) and a filled circle.
 
 \subsubsection*{Examples}
-Give definitions of \([A, b)\) and \((a, b]\) with diagrams: 
+Give definitions of \([a, b)\) and \((a, b]\) with diagrams:
+\begin{itemize}
+\item \([a, b)\) represents all numbers from \(a\) (inclusive) to \(a\) (exclusive). On a number line, it would be drawn as a filled dot at \(a\) and an open dot at \(b\).
+\item \((a, b]\) represents all numbers greater than \(a\) and less than or equal to \(b\). It could be illustrated with a number line with an empty dot at \(a\) and a filled dot at \(b\).
+\end{itemize}
+
 
 \section*{Unbounded Intervals}
 For any \(a \in \mathbb{R}\), 
-\[(-\inf, a) = \{x \in \mathbb{R} | x < a\}\]
-Note that \(-\inf and \inf\) are not elements of \textbb{R}.
+\[(-\infty, a) = \{x \in \mathbb{R} | x < a\}\]
+Note that \(-\infty \:\mathrm{and}\: \infty\) are not elements of \textbb{R}.
 
 \section*{Small Sets}
 Sets with finitely many elements can be described with a list of elements.
-\[\{x \in R | x^2 - 1 = 0\} = \{-1, 1\}\]
-\[\{x \in Z | x^2 - 1 < 0\} = \{0\}\]
-\[\{x \in Z | x^3 - x = 0\} = \{-1, 0, 1\}\]
+\[\{x \in \mathbb{R} | x^2 - 1 = 0\} = \{-1, 1\}\]
+\[\{x \in \mathbb{Z} | x^2 - 1 < 0\} = \{0\}\]
+\[\{x \in \mathbb{Z} | x^3 - x = 0\} = \{-1, 0, 1\}\]
 
+\subsubsection*{Example}
 Write the set of prime numbers less than 20 in descriptive and list of elements form:
 \[\{2, 3, 5, 7, 11, 13, 17, 19\}\]
 
 We can use a kind of "list of elements" notation to denote some infinite sets with ellipses.
-For example: \[(2k + 1)\pi | k \in \mathbb{Z} = \{..., -3\pi, -\pi, \pi, 3\pi, ...\}\]
-Express the set \(\{k\pi | k \in \mathbb{Z\}\)
+e.g.: \[(2k + 1)\pi | k \in \mathbb{Z} = \{..., -3\pi, -\pi, \pi, 3\pi, ...\}\]
 
 The smallest set is taken to be the empty set, written as \(\emptyset\). It can also be written as 
 \(\{\}\) in list of elements form.
@@ -113,63 +119,72 @@ The smallest set is taken to be the empty set, written as \(\emptyset\). It can 
 \[\{x \in \mathbb{R} | cos(x) > 1\} = \emptyset\]
 
 \section*{Subsets}
-If \(A\) and \(B\) are sets then \(A \subset B\) means that every element of \(A\) is also an element
+If \(A\) and \(B\) are sets then \(A \subseteq B\) means that every element of \(A\) is also an element
 of \(B\). It is read as \(A\) is a subset of \(B\).
-\[x \in A \rightarrow x \in B\]
+\[x \in A \Rightarrow x \in B\]
 
 The empty set is taken to be a subset of every set.
 
 \section*{Proofs}
 A proof begins with a set of true assumptions, from which mathematical reasoning is used
 to prove a conclusion.
-To prove \(A \subset B\), we need to show that if something meets the criteria of \(A\),
+To prove \(A \subseteq B\), we need to show that if something meets the criteria of \(A\),
 it must also meet those of \(B\).
 
-\subsubsection*{Examples}
-Prove \(A \subset B\) where:
+\subsubsection*{Example}
+Prove \(A \subseteq B\) where:
 \[A = \{n \in \mathbb{N} | sin(n) > 0\}\]
+\[B = \{n \in \mathbb{N} | sin^2(n) \leq sin(n)\}\]
 \par
-\[B = \{n \in \mathbb{N} | sin^2(n) <= sin(n)\}\]
+Let \(n \in A\), thus \(sin(n) > 0\).
 \par
-Let \(n \in A\), thus \(sin(n) > 0\). Since \(sin(n) <= 1\) and if \(x <= y\) and 
-\(a > 0\) then \(ax <= ay\), we have \(sin(n)sin(n)<=sin(n)\).
-Therefore \(n \in B\) so \(A \subset B\).
-\par
+Since \(sin(n) \leq 1\) and if \(x \leq y\) and \(a > 0\) then \(ax \leq ay\), we have \(sin(n)sin(n) \leq sin(n)\).
+Therefore \(n \in B\) so \(A \subseteq B\).
+
+\bigskip
+
 To prove a statement is false, we must find a counterexample - an example for which a
 statement does not hold. Thus, to prove \(A\) is not a subset of \(B\), we must find any
 \(x\) in \(A\) but not in \(B\).
 
-Prove that \(A notsubset B\) where \(A = \{3n + 1 | n \in \mathbb{Z}\}\) and \(B = \{6m + 1 | m \in \mathbb{Z}\}\).
+\subsubsection*{Example}
+Prove that \(A \nsubseteq B\) where \(A = \{3n + 1 | n \in \mathbb{Z}\}\) and \(B = \{6m + 1 | m \in \mathbb{Z}\}\).
 \par
 \[A = \{..., -2, 1, 4, 7, ...\}\]
 \[B = \{..., 1, 7, ...\}\]
 \par
 We guess \(4 \notin B\), \(4 \in A\).
-Proof: Claim \(4 \in A\) this is true since \(4 = 3*1 + 1\). Claim \(4 \notin B\). Suppose for a
-contradiction that \(4 \in B\) this would mean \(4 = 6m + 1\) for some \(m \in \mathbb{Z}\).
-But then, 
-\[3 = 6m\]
-\[threedots m = \frac{3}{6} = \frac{1}{2}\]
+To prove this:
+\begin{itemize}
+\item Claim \(4 \in A\); this is true since \(4 = 3*1 + 1\). 
+\item Claim \(4 \notin B\). 
+\item Suppose for a contradiction that \(4 \in B\).
+\item This would mean \(4 = 6m + 1\) for some \(m \in \mathbb{Z}\).
+\item But then, \(3 = 6m\)
+\end{itemize}
+\[\therefore m = \frac{3}{6} = \frac{1}{2}\]
 This is a contradiction! Thus we conclude \(4 \notin B\).
 
 
 \section*{Proof by Contradiction}
 
-How do we prove that 
-\[x^2 + x + 1 = 0\]
-has not real solutions?
+How do we prove that \(x^2 + x + 1 = 0\) has no real solutions?
 Proof by contradiction. Assume that there is a solution, \(x \in \mathbb{R}\) and show
-that this leads to an absurb conclusion.
-\[x^2 + x + 1 = 0 \rightarrow (x + frac{1}{2})^2 + \frac{3}{4} = 0 \rightarrow (x + \frac{1}{2})^2 = \frac{-3}{4}\]
+that this leads to an absurd conclusion.
+\[x^2 + x + 1 = 0 \Rightarrow (x + \frac{1}{2})^2 + \frac{3}{4} = 0 \Rightarrow (x + \frac{1}{2})^2 = \frac{-3}{4}\]
 
-\section*{Union}
-The elements of \(A union B\) are all the elements that are in either \(A\) or \(B\). 
-\(p \rightarrow q\) means if p is true, so is q. \(p twowayarrow q\) means that if either
+Note that \(p \Rightarrow q\) means if p is true, so is q. \(p \Leftrightarrow q\) means that if either
 is true, both are true.
+\section*{Union}
+The elements of \(A \cup B\) are all the elements that are in either \(A\) or \(B\). 
 
 \subsubsection*{Examples}
-1. \(\{x \in \mathbb{R}: x^2 > 1\}\) -> \((-\inf, -1) union (1, \inf)\)
-2. \(\{x \in (-2\pi, 2\pi]: sin(x) <= 0\}\) -> \(\{x \in (-2\pi, 2\pi] | sin(x) <= 0\}\) = \(\{x \in (-2\pi, 0] | sin(x) <= 0\}\) union \(\{x \in (0, 2\pi] | sin(x) <= 0\}\) = \([-\pi, 0] union [\pi, 2\pi]\)
+Express the following sets using a union of intervals.
+\begin{itemize}
+\item \(\{x \in \mathbb{R} | x^2 > 1\}\): \((-\infty, -1) \cup (1, \infty)\)
+\item \(\{x \in (-2\pi, 2\pi] | sin(x) \leq 0\}\): 
+\[\{x \in (-2\pi, 0] | sin(x) \leq 0\} \cup \{x \in (0, 2\pi] | sin(x) \leq 0\} = [-\pi, 0] \cup [\pi, 2\pi]\]
+\end{itemize}
 
 \end{flushleft}
 \end{document}
