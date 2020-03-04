@@ -1,0 +1,17 @@
+\documentclass[12pt]{report}
+\renewcommand{\familydefault}{\sfdefault}
+\begin{document}
+\title{COMP10002 Notes}
+\chapter*{Substring Problem}
+Consider the problem of finding repeated substrings of length m in a string of length n e.g.:
+\begin{quotation}
+\begin{center}
+fat.rat.eat.bat.cat.eat.fat.rat
+\end{center}
+\end{quotation}
+To undertake this problem iteratively, we could take the first substring of m characters from
+the input string, compare this to each set of characters in the string and note when we get a match.
+This program has a running time of \(mn^2\), because each character forms one substring, which is 
+compared to each other substring. Thus, it is a quadratic time algorithm; if its input size is 
+doubled, it will take four times as long.
+\end{document}
