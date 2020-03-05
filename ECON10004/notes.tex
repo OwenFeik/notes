@@ -10,11 +10,109 @@ Humans have virtually unlimited resources, but lack the meaning to satisfy these
 Thus, economics is the study of why people/``economic agents'' choose what they do.
 A firm, for instance, must decide:
 \begin{itemize}
-\item What to produce?
-\item How to produce it?
-\item Who to produce it for?
+    \item What to produce?
+    \item How to produce it?
+    \item Who to produce it for?
 \end{itemize}
 As a social science, economics aims to understand the choices of individuals and how these inform the behaviour of larger groups.
+Economics is, fundamentally, about human wellbeing. Wellbeing, from the perspective of an economist is the consumption
+of goods and services. These goods and services are produced using a variety of resources, including:
+\begin{itemize}
+    \item Natural reosurces 
+    \item Physical capital; machines, infrastructure
+    \item Human capital; labour, intellectual labour, etc
+    \item Time
+\end{itemize}
+Because these resources are finite, humanity needs to make decisions on the allocation of these resources to optimise wellbeing.
+
+\section*{Decision Theory}
+An economic agent is always making choices; it is trying to select the best option based on a 
+cost-benefit analysis. 
+\[\mathrm{Net\:benefit}\:NB = \mathrm{Total\:benefit}\:TB - \mathrm{Total\:costs}\:TC\]
+For example, a firm's goal is to maximise profits; they will minimise costs and maximise revenue to achieve this goal.
+
+\subsection*{How do we measure costs?}
+While people are generally quite good at evaluating benefits, they sometimes struggle when
+trying to evaluate costs. Often, people will, when considering a purchase, simply consider the 
+explicit cost; the price on the price tag. However, this ignores the opportunity cost; any
+purchase is to the exclusion of other purchases.
+
+\subsubsection*{Example}
+Consider 2 individuals sharing a home, with two tasks that need to be completed, say 
+cooking and laundry. If person \(A\) is good at laundry but poor at cooking, person \(B\)
+with the opposite skill set, it is obviously advantageous for them to trade; to each
+attend to their favoured task. However, consider the scenario when person \(A\) is better
+at both.
+\par
+We can model this as a "production possibilities frontier"; modelling the amount of each
+good they can produce if they perform a mixture of the two tasks for a certain time. This will
+form a linear relationship tracking from the \(100:0\) time spent state through the \(50:50\) to the \(0:100\) state. Depending on the 
+exact relationship between their capabilities, trade may nonetheless be advantageous for both 
+parties; the yield for \(A\) may be substantially greater when say, cooking, per unit time,
+compared to laundry, and thus, having \(B\) perform some of the laundry, even if less efficient,
+may increase the total consumption of both \(A\) and \(B\), thus increasing both parties overall
+wellbeing. 
+\par
+To find this solution, \(A\) needed to consider the opportunity cost of performing laundry,
+which in fact proved to be greater than instead primarily cooking and trading with \(B\) to have the laundry
+performed.
+\par
+In the language of economics, \(A\) has an \textit{absolute advantage} in both cooking and doing laundry,
+however \(B\) has a \textit{comparative advantage} in laundry.
+
+\subsubsection*{Definitions}
+\begin{quotation}    
+Absolute advantage is the ability to produce a good using fewer inputs than another producer.
+\end{quotation}
+\begin{quotation}
+Comparative advantage is the ability to produce a good at a lower opportunity cost than another producer.    
+\end{quotation}
+
+\section*{Sunk Costs}
+When making a decision, one should ignore any costs that have been incurred prior to a decision.
+Because these resources have already be used, the perceived loss of them has no real bearing on 
+the future outcome of a decision.
+
+\section*{Opportunity Cost}
+Total opportunity costs are composed of two seperate parts:
+\begin{itemize}
+    \item Direct Opportunity Costs: This is the cost of resources that will be used in the chosen alternative.
+    \item Indirect Opportunity Costs: This is the benefits minus the explicit costs of the next best action.
+\end{itemize}
+
+\subsubsection*{Example}
+Say you have three options;
+\begin{itemize}
+    \item Option A, worth \$3000, cost of \$2500
+    \item Option B, worth \$500, cost \$200
+    \item Option C, worth \$100, with a \$20 downpayment already payed
+\end{itemize}
+Thus, you would select Option A. As B is the next best option
+this is your indirect opportunity costs. Because B is worth \$300, the total opportunity cost is equal
+to \$2500 + \$300 = \$2800. Thus Option A is still worthwhile.
+
+\section*{Marginal Analysis}
+Rather than focussing on total benefits and total costs, we should really focus on Marginal Benefits
+and costs. Consider whether consuming / producing n amount of units will be profitable or costing.
+i.e. as long as the Marginal Benefit of and action is greater than the Marginal Cost of that action,
+we should take that action as a rational agent.
+
+\subsubsection*{Example}
+Say we are hiring workers for a store. These workers are payed \$20/hr. The first worker hired is expected
+to increased sales by \$60/hr, with additional workers diminishing in value by \$15/hr until they reach \$0/hr.
+Thus, the first worker increases net benefit by \$40/hr, the second by \$25/hr etc. So for the first worker,
+the marginal benefit will be \$60/hr, while the marginal cost is a constant, \$20/hr. So looking at the marginal 
+benfit vs marginal costs for each worker, workers 1, 2 and 3 will have MB>MC while worker 4 will have MB<MC, so 
+we should hire 3 workers.
+
+\subsection*{Calculating Benefit}
+Suppose \(NB(x) = TB(x) - TC(x)\). To maximise \(NB(x)\) using calculus, we can differentiate \(NB(x)\) with respect
+to \(x\) and set this to \(0\).
+\[\frac{dNB(x)}{dx} = \frac{dTB{x}}{dx} - \frac{dTC(x)}{dx} = 0\]
+\[\frac{dNB(x)}{dx} = MB(x) - MC(x) = 0\]
+Thus the optimal \(x\) is:
+\[MB(x) = MC(x)\]
+
 
 \section*{Microeconomic Theory}
 Microeconomics centres around creating models, creating ``rational agents'' built on axioms.
@@ -22,7 +120,7 @@ These axioms are as follows: Individual actors are autonomous, individuals have 
 This theory is then compared with real world data and is validated or disproven.
 \par
 The theory is thus useful for attempting to understand how individual agents can cooperate
-with (or counteract) each other within an economic system. 
+with (or counteract) each other within an economic system.
 
 \chapter*{Prisoner's Dilemma}
 The prisoner's dilemma; that of two prisoners who are offered a light charge if neither confesses,
