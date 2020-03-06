@@ -174,7 +174,7 @@ that this leads to an absurd conclusion.
 \[x^2 + x + 1 = 0 \Rightarrow (x + \frac{1}{2})^2 + \frac{3}{4} = 0 \Rightarrow (x + \frac{1}{2})^2 = \frac{-3}{4}\]
 
 Note that \(p \Rightarrow q\) means if p is true, so is q. \(p \Leftrightarrow q\) means that if either
-is true, both are true.
+is true, both are true; \(p\) is true \textit{if and only if} \(q\) is true.
 \section*{Union}
 The elements of \(A \cup B\) are all the elements that are in either \(A\) or \(B\). 
 
@@ -184,7 +184,61 @@ Express the following sets using a union of intervals.
 \item \(\{x \in \mathbb{R} | x^2 > 1\}\): \((-\infty, -1) \cup (1, \infty)\)
 \item \(\{x \in (-2\pi, 2\pi] | sin(x) \leq 0\}\): 
 \[\{x \in (-2\pi, 0] | sin(x) \leq 0\} \cup \{x \in (0, 2\pi] | sin(x) \leq 0\} = [-\pi, 0] \cup [\pi, 2\pi]\]
+\item \(\{x \in [-2, 2] | x \notin \mathbb{Z}\}\): \((-2, -1) \cup (-1, 0) \cup (0, 1) \cup (1, 2)\)
 \end{itemize}
+
+\[(2, 8) \cup [3, 10] = (2, 10]\]
+Thus, \((2, 8) \cup [3, 10]\) is an interval. However is \((0, \sqrt{2}) \cup [\frac{\pi}{2}, 3)\) an interval?
+\par
+It is not, because \(\sqrt{2} < \frac{\pi}{2}\), thus two pieces are necessary.
+
+\section*{Intersection}
+\(A \cap B\) is the set of all elements that are in both \(A\) and \(B\).
+
+\subsubsection*{Examples}
+\begin{itemize}
+    \item Express \((2, 8) \cap [3, 10]\) as an interval: \([3, 8)\)
+    \item Express \((0, \sqrt{2}) \cap [\frac{\pi}{2}, 3)\) in the simplest ay possible: \(\emptyset\)
+    \item Express \(\mathbb{Z} \cap [-\pi, \pi]\) in list of elements form: \(\{-3, -2, -1, 0, 1, 2, 3\}\)
+    \item Express \(\mathbb{Z} \cap \{x \in \mathbb{R} | x^2 - 5 < 0\}\) in list of elements form: \(\{-2, -1, 0, 1, 2\}\)
+    \item Express the set of reals with positive sine and negative cosine with an intersection: \(\{x \in \mathbb{R} | \mathrm{sin}(x) > 0\} \cap \{x \in \mathbb{R} | \mathrm{cos}(x) < 0\}\)
+\end{itemize}
+
+When interpreting questions, a question involving ``and'' is likely to be an intersection question.
+
+\section*{Complement}
+For \(A\) and \(B\) the \textit{relative complement} of \(A\) and \(B\) is the set of elements
+that are in \(A\) but not in \(B\). This is written as:
+\[A \backslash B = \{x \in A | x \notin B\}\]
+
+\subsubsection*{Examples}
+\begin{itemize}
+    \item Find \((0, 2) \backslash (1, 3)\): \((0, 1]\)
+    \item Find \((1, 3) \backslash (0, 2)\): \([2, 3)\)
+    \item Is it generally true that \(A \backslash B = B \backslash A\). No. See previous questions for example. 
+\end{itemize}
+Express each of the following as a complemet:
+\begin{itemize}
+    \item \(\{x \in \mathbb{R} | x^2 > 1\}\): \(\mathbb{R} \backslash \{x \in \mathbb{R} | x^2 < 1\}\)
+    \item \(\{x \in [-2, 2] | x \notin \mathbb{Z}\}\): \([-2, 2] \backslash \mathbb{Z}\)
+    \item \((-\infty, 0) \cup (0, \infty)\): \(\mathbb{R} \backslash \{0\}\)
+\end{itemize}
+
+\section*{Cartesian Product}
+For sets \(A\) and \(B\):
+\[A \times B = \{(x, y) | x \in A \:\mathrm{and}\: y \in B\}\]
+\(a, b\) only equals \(a, b\), not \(b, a\).
+\par
+e.g.:
+\[\{0, 1, 5\} \times \{e, \pi\} = \{(0, e), (0, \pi), (1, e), (1, \pi), (5, e), (5, \pi)\}\]
+We can also take \(A^2\) to be \(A \times A\). This is most often seen in \(\mathbb{R}^2\), which is used to represent
+the cartesian plane. \(\mathbb{Z}^2 \subseteq \mathbb{R}^2\).
+
+\section*{Inequalities}
+When we add a constant to an inequality, the inequality is order preserved, it still faces the same direction.
+\[x > y \Rightarrow x + a > y + a\]
+When we multiply by a positive constant, \(a > 0\), is order preserving, while
+multiplying by a negative constant, \(a < 0\), is order reversing.
 
 \end{flushleft}
 \end{document}
