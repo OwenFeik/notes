@@ -236,9 +236,58 @@ the cartesian plane. \(\mathbb{Z}^2 \subseteq \mathbb{R}^2\).
 
 \section*{Inequalities}
 When we add a constant to an inequality, the inequality is order preserved, it still faces the same direction.
+Subtraction, obviously, obeys the same principle.
 \[x > y \Rightarrow x + a > y + a\]
 When we multiply by a positive constant, \(a > 0\), is order preserving, while
 multiplying by a negative constant, \(a < 0\), is order reversing.
+As division is simply multiplication by reciprocal, it follows the same principles as
+multiplication; i.e. only order reversing if the divisor \(< 0\).
+
+\subsubsection*{Examples}
+Express the set \(A = \{x \in \mathbb{R} | -2 -\frac{1}{2}x > -4\}\) as an interval.
+\begin{itemize}
+    \item \(2 -\frac{1}{2}x > -2\)
+    \item \(-\frac{1}{2} > -2\)
+    \item \(x < 4\)
+    \item \(x \in (-\infty, 4)\)
+\end{itemize}
+Express the set \(A = \{x \in \mathbb{R} | 1 - x < 3x + 2\}\) as an interval.
+\begin{itemize}
+    \item \(-1 -x < 3x\)
+    \item \(-1 < 4x\)
+    \item \(-\frac{1}{4} < x\)
+    \item \(x > -\frac{1}{4}\)
+    \item \(A = (-\frac{1}{4}, \infty)\)
+\end{itemize}
+
+\subsection*{Transitivity}
+\[x < y \:\mathrm{and}\: y < z \Rightarrow x < z\] 
+\subsubsection*{Example}
+Prove that \(x < y \:\mathrm{and}\: a < b \Rightarrow x + a < y + b\).
+\begin{itemize}
+    \item \(0 < y - x\)
+    \item \(a - b < 0\)
+    \item \(a - b < y - x\)
+    \item \(a < y - x + b\)
+    \item \(a + x < y + b\)
+\end{itemize}
+
+\subsection*{Reversing and Non-Reversing Functions}
+A function is order preserving if it is strictly increasing for the interval containing
+both sides of an inequailty. It is order-reversing if it is strictly decreasing for the same. 
+i.e. a function is order preserving if:
+\[a < b \Rightarrow f(a) < f(b) \:\mathrm{for\:all}\:a, b \in I\]
+and order reversing if:
+\[a < b \Rightarrow f(a) > f(b) \:\mathrm{for\:all}\:a, b \in I\]
+For example, the logarithm and exponential function are order preserving. A function need
+not be strictly decreasing across \textbb{R} to be applied to an inequality; if both sides
+of an inequality are known to lie within an interval that is strictly decreasing or increasing,
+the function may still be applied.
+
+\section*{Complex Numbers}
+Complex numbers extend the real numbers by adding a new number with the property
+\[i^2 = -1\]
+The usual rules of algebra nonetheless still apply.
 
 \end{flushleft}
 \end{document}
