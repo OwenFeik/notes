@@ -118,14 +118,45 @@ The dot product or scalar product of two vectors results in a scalar where a and
 \(\phi\) is the angle between the directions of the tow vectors.
 \[\vec{a} \cdot \vec{b} = ab\cos(\phi)\]
 Dot product is the projection of one vector onto another. When \(\theta = 90\degree\) the dot product
-is \(0\).
+is \(0\). \(\hat{i}, \hat{j}, \hat{k}\) are described as \textit{orthonormal}:
+\[\hat{i} \cdot \hat{i} = 1\]
+\[\hat{i} \cdot \hat{j} = 0\]
+The dot product is commutative. \(a \cdot b = b \cdot a\).
 
 \subsubsection*{Vector Product}
 
 The vector product is another ay of multiply two vectors, also known as the vector product.
-\[c = ab\sin(\phi)\]
+\[c = ab\:\sin(\phi)\]
 If \(a\) and \(b\) are parallel or antiparallel the vector product is \(0\). It is at a maximum
-when they are perpendicular. The vector product is not commutative.
+when they are perpendicular. The vector product is not commutative. The direction of \(c\)
+is perpendicular to both \(a\) and \(b\). So for example:
+\[\hat{i} \times \hat{j} = \hat{k}\]
+\[\hat{i} \times \hat{i} = 0\]
+
+\subsubsection*{Position Vector}
+\[\vec{r} = x\hat{i} + y\hat{j} +z\hat{k}\]
+Change is position vector is displacement:
+\[\Delta\vec{r} = \Delta x \hat{i} + \Delta y \hat{j} + \Delta z \hat{k}\]
+
+\subsubsection*{Instantaneous Values}
+\[\vec{v} = \frac{d\vec{r}}{dt}\]
+\[\vec{a} = \frac{d\vec{v}}{dt}\]
+In general, the instantaneous value of a changing quantity is given by the relavant
+derivative, just as with scalars.
+
+\section*{Projectile Motion}
+\[\vec{v_0} = v_{0x}\hat{i} + v_{0y}\hat{j}\]
+\[v_{0x} = v_0\cos{\theta} \:\mathrm{and}\: v_{0y} = v_0\sin{\theta}\]
+A projectile has a duration of flight equal to twice the time taken from the highest point to 
+the ground. Thus, when comparing projectiles, the one with the lower highest point will
+have a shorter period of flight. The range is given by:
+\[R = \frac{v^2_0}{g}\sin 2 \theta_0\]
+
+\section*{Uniform Circular Motion}
+In uniform circular motion, velocity and acceleration each have constant magnitude but changing direction.
+Thus acceleration is called centripetal acceleration.
+\[a = \frac{v^2}{r}\]
+\[T = \frac{2\pi r}{v}\]
 
 
 \end{flushleft}
