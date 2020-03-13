@@ -349,6 +349,54 @@ By completing the square find the solutions of \(z^2 - 6z + 10 = 0\):
 \[z - 3 = \pm i\]
 \[z = 3 \pm i\]
 
+\subsubsection*{Properties of Conjugates}
+Let \(z = x + iy\) and \(w = a + ib\) be complex numbers. Then:
+\[z + \bar{z} = 2x = 2\mathrm{Re}(z)\:\mathrm{(real)}\]
+\[z - \bar{z} = 2yi = 2 \mathrm{Im}(z)i\]
+\[z\bar{z} = x^2 + y^2\:\mathrm{(real)}\]
+\[\bar{z + w} = \bar{z} + \bar{w}\]
+\[\bar{zw} = \bar{z}\bar{w}\]
+\(\sqrt{z\bar{z}}\) can be understood as the length of a complex number by Pythagoras' theorem.
+
+\subsubsection*{Division}
+\[\frac{1}{i} = -i\]
+In general:
+\[\frac{\bar{z}}{x^2 + y^2} = \frac{1}{z}\]
+We can express the division of two complex numbers as follows:
+\[\frac{a + ib}{c + id} = \frac{a + ib}{c + id}\times\frac{c - id}{c - id} = \frac{(a + ib)(c - id)}{c^2 + d^2}\]
+\[= \frac{1}{c^2 + d^2}(ac + bd + i(-ad + bc))\]
+In essence, we rationalise the denominator, much as with surds.
+
+\subsubsection*{Examples}
+\[\frac{1 + 2i}{-1 + 3i} = \frac{1 + 2i}{-1 + 3i} \times \frac{-1 - 3i}{-1 - 3i} = \frac{(1 + 2i)(-1 - 3i)}{1 + 9}\]
+\[=\frac{1 - i}{2}\]
+Calculate: \((1 + \sqrt(3)i)^6\)
+\[(1 + \sqrt(3)i)^6 = ((1 + \sqrt(3)i)^2)^2 \times (1 + \sqrt(3)i)^2\]
+\[(1 + \sqrt(3)i)^2 = 1 + 2\sqrt{3}i + (\sqrt{3}i)^2 = 1 + 2\sqrt{3}i - 3 = -2 + 2\sqrt{3}i\]
+\[((1 + \sqrt(3)i)^2)^2 = (-2 + 2\sqrt{3}i)^2 = (-2)^2 + 2 \times (-2) \times 2\sqrt{3}i + (2\sqrt{3}i)^2\]
+\[= 4 - 8\sqrt{3}i - 21 = -8 - 8 \sqrt{3}i\]
+\[(1 + \sqrt(3)i)^6 = (-8 -8\sqrt{3}i)(-2 + 2\sqrt{3}i)\]
+\[= 16 - 16\sqrt{3}i + 16\sqrt{3}i - 8 \times 2 \times (\sqrt{3})^2i^2\]
+\[= 16 + 8 \times 2 \times 3\]
+\[= 64\]
+
+\subsubsection*{Polar Form}
+To solve this problem more easily, we can instead consider complex numbers in polar form.
+This takes the length of the line and it's angle from the origin instead. In this case we 
+take a distance \(r\) and an angle \(\theta\). \(r = |z| = \sqrt{x^2 + y^2}\). To find \(\theta\)
+we can draw \(z\) in the plane and use triangles to find \(\theta\). \(\theta \in (-\pi, \pi]\), and
+is called the principal argument of \(z\) and can be denoted \(\mathrm{Arg}(z)\).
+
+\subsubsection*{Examples}
+\begin{itemize}
+    \item \(1 + \sqrt{3}i\): \(|z| = 2, \theta = \frac{\pi}{3}\)
+    \item \(-3 - 3i\): \(|z| = \sqrt{18} = 3\sqrt{2}, \theta = \frac{-3\pi}{4}\)
+    \item \(3 + 4i\): \(|z| = 5, \theta = \arctan(\frac{4}{3})\)
+    \item \(-1\): \(|z| = 1, \theta = \pi\)
+\end{itemize}
+
+The trigonemtric polar form of a complex number is:
+\[z = r(\cos(\theta) i\sin(\theta)))\]
 
 \end{flushleft}
 \end{document}
