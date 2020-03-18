@@ -1,5 +1,6 @@
 \documentclass[12pt]{report}
 \renewcommand{\familydefault}{\sfdefault}
+\usepackage{commath}
 \begin{document}
 \title{ECON10004 Notes}
 \chapter*{Introduction}
@@ -291,5 +292,71 @@ grade food which was extremely plentiful. However, over time they became more re
  Thus, the demand has increasing radically increasing price and the supply has dropped significantly,
  also driving up the price. This is how a meal that was \$4 in 1870 might cost \$30 or more today.
 Because of the competing forces on quantity, it is difficult to be sure of how \(Q*\) has changed.
+
+\section*{Elasticity}
+
+Elasticity measures the responsiveness of quantity demanded to it's determinants. This allows us
+to analyse in detail how markets will respond to a given shock, i.e. magnitude in addition to direction.
+
+\subsection*{Demand}
+
+Price elasticity of demand measures the responsiveness of quantity demanded to a change in price. If
+\(\Delta P\) denotes change in price and \(\Delta Q_D\) denotes change in quantity demanded then 
+\(\frac{\Delta P}{P}\) yields percentage change in price and likewise \(\frac{\Delta Q_D}{Q_D}\) yields
+percentage change in \(Q_D\).
+
+\bigskip
+Elasticity for \(Q_D\) is then given by:
+\[\epsilon_D = \abs{\frac{\Delta P / P}{\Delta Q_D / Q_D}}\]
+By convention, it is a positive number. We can take a derivative to determine
+\textit{point-price elasticity}. Knowing that the rate of change of \(Q_D\) with
+respect to \(P\) is given by \(\frac{dQ_D}{dP}\):
+\[\epsilon_D = \abs{\frac{dQ_D}{dP}\frac{P}{Q_D}}\]
+This is the elasticity at a particular price, rather than for the entire demand curve.
+
+\subsubsection*{Example}
+Consider a demand curve of \(Q_D = 120 - 20P\). Find the point-price elasticity at \(Q_D = 20\):
+\[\frac{dQ_D}{dP} = -20\]
+\[\epsilon_D = \abs{\frac{dQ_D}{dP}\frac{P}{Q_D}} = \abs{-20(\frac{5}{20})} = 5)\]
+and at \(Q_D = 100\):
+\[\epsilon_D = \abs{\frac{dQ_D}{dP}\frac{P}{Q_D}} = \abs{-20(\frac{1}{100})} = \frac{1}{5})\]
+
+\subsection*{Common Elasticities}
+\begin{itemize}
+    \item Perfectly inelastic: \(\epsilon_D = 0\)
+    \item Inelastic: \(1 > \epsilon_D > 0\)
+    \item Unit elastic: \(\epsilon_D = 1\)
+    \item Elastic: \(\infty > \epsilon_D > 1\)
+    \item Perfectly elastic: \(\epsilon_D = \infty\)
+\end{itemize}
+
+\subsection*{Factors of Elasticity}
+A variety of factors can affect elasticity, such as degree of necessity; if a product is necessary,
+it's price will affect demand little. Availability of substitutes is another factor; if a product
+can be easily replaced by another product, it's likely to be highly elastic.
+
+\bigskip
+Elasticity can be used to consider change in revenue cause by a change in price. Understanding that 
+a shift upward in price causes a shift downward in demand allows us to see that an increase in 
+price will lead to more revenue only if the effect of that change is more significant than the 
+effect of the lost demand. Understanding that elasticity denotes how responsive a quantity is 
+to the change of it's inputs allows us to derive the folowing:
+\[MR(P) = (1 - \epsilon_D)Q_D\]
+Thus, the total revenue is maximised at \(\epsilon_D = 1\). For example, increasing price when \(\epsilon_D = 0.8\)
+is likely to yield an increase in revenue while doing the same at \(\epsilon_D = 1.8\) is likely to
+reduce revenue. 
+
+\bigskip
+Elasticity can be considered not only for price, but also for other factors such as income. Income 
+elasticity is denoted \(\epsilon_\gamma\). In general, normal goods have \(\epsilon_\gamma > 0\) while
+inferior goods have \(\epsilon_\gamma < 0\); demand for normal goods increases with income, while inferior goods
+obey the opposite. Necessary goods have \(1 > \epsilon > 0\), while luxury goods
+have \(\epsilon_\gamma > 1\), which makes sense; only when income is high will most people consider buying
+luxury goods, so elasticity is high.
+
+\bigskip
+Cross-price elasticity considers the demand for one good with respect to the price of another good. For
+substitutes, \(\epsilon_{AB} > 0\) while for complements, \(\epsilon_{AB} < 0\); if the xbox gets 
+cheaper, playstation demand increases; if the xbox price increases, demand for xbox games decreases.
 
 \end{document}
