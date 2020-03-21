@@ -13,12 +13,13 @@ elif [ $len -eq 0 ]; then
     exit 0
 fi
 
+subj=$(echo $subj | cut -c -19) # Trim to file name (SUBJ10001/notes.tex)
 git add $subj
-subj=$(echo $subj | cut -c -9)
+subj=$(echo $subj | cut -c -9) # Trim to subject name (SUBJ10001)
 prev_lec_no=$(awk "/$subj/ {print \$2}" lecture.txt)
 this_lec_no=$((prev_lec_no+1))
 
-sed -i "s/$subj $prev_lec_no/$subj $this_lec_no/" lecture.txt 
+sed -i "s/$subj $prev_lec_no/$subj $this_lec_no/" lecture.txt # Update lecture no counter 
 git add "lecture.txt"
 
 commit_msg="$subj lecture $this_lec_no"
@@ -27,5 +28,5 @@ git commit -m "$commit_msg"
 git push
 
 if [ ! -z "$repeat" ]; then
-    ./$(basename $0)
+    ./$(basename $0) # Re-run script.
 fi
