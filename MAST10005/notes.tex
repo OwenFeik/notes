@@ -453,5 +453,51 @@ We can represent certain shapes in the complex plane through sets. For example:
 circle can be drawn as \(\{z \in \mathbb{C}:  \abs{z - p} = r\}\), where \(p\) is
 the center point and \(r\) is the radius.
 
+\subsection*{Roots}
+Suppose we are trying to find all of the \(n\)-th roots of a complex number \(w\).
+This means we need to find all \(z\)s that satisfy \(z^n = w\). Writing \(z = re^{i\theta}\) gives us:
+\[(re^{i\theta})^n = se^{i\alpha} \Rightarrow se^{i\alpha}\]
+\[\Rightarrow \abs{z} = \abs{s} \Rightarrow r^n = s \Rightarrow r = s^\frac{1}{n} = \sqrt[^n]{s}\]
+We also have:
+\[e^{in\theta} = e^{i\alpha} \Rightarrow n\theta = \alpha + 2k\pi \Rightarrow \theta = \frac{1}{n}(\alpha + 2k\pi)\]
+Curiously, for power \(n\), there will be \(n\) solutions. Using the \(\alpha + 2k\pi\) equation, we can find an 
+infinite number of solutions. However, we can stop at \(n - 1\), because \(n = k\) will yield the same result as \(k = 0\), 
+as it will simply add \(2pi\) to the angle. Thus our solutions will be of the form:
+\[\{\sqrt[^n]{s}e^{i\frac{1}{n}(\alpha + 2k\pi)} | k \in [0, n) \cap \mathbb{N}\}\]
+
+\subsubsection*{Example}
+Find the set of cube roots of \(-8\).
+\begin{itemize}
+    \item Solve to find \(z\) such that \(z^3 = -8\)
+    \item Thus \(s = 8\), \(\alpha = \pi\)
+    \item \(z = re^{i\theta}, r^3e^{i3\theta} = 8e^{i\pi}\)
+    \item \(\therefore r^3 = 8 \Rightarrow r = 2\)
+    \item \(3\theta = \pi + 2k\pi, k \in {0, 1, 2}\)
+    \item \(\therefore \theta = \frac{\pi}{3}, \pi, \frac{5\pi}{3}\)
+    \item \(z \in \{2e^{i\frac{pi}{3}}, 2e^{i\pi}, 2e^{i\frac{5\pi}{3}}\}\)
+    \item Note we found the expected root; \(2e^{i\pi} = -2\)
+\end{itemize}
+
+These solutions represent 3 evenly spaced points on the circle with center \((0, 0)\) and radius 2.
+
+\subsection*{Trigonometric Functions}
+The complex exponential can be used to express \(\cos\) and \(\sin\) in a useful form for many calculations.
+\[e^{i\theta} = \cos(\theta) + i\sin(\theta)\]
+\[\overline{e^{i\theta}} = \cos(\theta) - i\sin(\theta)\]
+\[e^{i\theta}+\overline{e^{i\theta}} = 2\cos(\theta)\]
+\[\therefore \cos(\theta) = \frac{1}{2}(e^{i\theta}{e^{-i\theta}})\]
+This is obvious when we consider that \(z + \bar{z} = 2\mathrm{Re}(z)\). \(\sin\) found through the same logic is:
+\[\sin(\theta) = \frac{1}{2i}(e^{i\theta}-e^{-i\theta})\]
+
+Using the binomial formula, we can expand statements such as \(\sin^4(\theta)\):
+\[\sin^4(\theta) = (\frac{1}{2i})^4(e^{i\theta}-e^{-i\theta})^4\]
+\[\frac{1}{2^4}((e^{i\theta})^4 - 4(e^{i\theta})^3e^{-i\theta} + 6(e^{i\theta})^2(e^{-i\theta})^2 - 4e^{i\theta}(e^{-i\theta})^3 + (e^{-i\theta})^4)\]
+\[\frac{1}{2^4}(e^{i4\theta} - 4e^{i2\theta} + 6 - 4e^{-i2\theta} + e^{-i4\theta})\]
+\[6 + 2\cos(4\theta) - 4 \times 2\cos(2\theta)\]
+\[\sin^4(\theta) = \frac{1}{8}(3 + cos(4\theta) - 4cos(2\theta))\]
+
+Using this approach, we can convert expressions of the form \(\sin^m(\theta)\cos^n(\theta)\) to an equivalent
+form that is often more useable.
+
 \end{flushleft}
 \end{document}
