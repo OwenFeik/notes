@@ -198,7 +198,62 @@ two objects interact.
 \subsubsection*{Friction}
 This occurs when an object is attempting to slide over another. It opposes the direction
 of motion of the moving object. If the friction is significant enough to stop the objects 
-movement, then it will be equivalent to the force moving the object.
+movement, then it will be equivalent to the force moving the object. Friction exists because
+surfaces are slightly rough, thus causing them to stick together a little.
+
+\bigskip
+Friction is essential for tasks such as picking things up for for propulsion, but overcoming
+it is also important for applications like efficiency in engines or motion through means such as 
+roller skates. In general, anything intended to remain in motion must overcome friction.
+
+\bigskip
+Two types of frictional force exist; static frictional force acts as a kind of ``normal'' frictional
+force, preventing the motion of objects. It can increase from 0 to some maximum force. Thus, the maximum
+static frictional force must be overcome to begin motion for an object. Kinetic frictional force is the 
+opposing force that acts on an object in motion, and is constant and usually weaker than static force. To
+maintain constant velocity, a constant force equal to the kinetic frictional force must be applied.
+
+\bigskip
+The magnitude of static friction is given by:
+\[f_{s, \mathrm{max}} = \mu_sF_N\]
+Where \(\mu_s\) is the \textit{coefficient of static friction}. If the applied force
+exceeds \(f_{s, \mathrm{max}}\), sliding begins. The coefficient depends on the two surfaces
+involved. For example, rubber on dry concrete has a coefficient of static friction of \(\mu_s = 1.0\) and
+of kinetic friction \(\mu_k = 0.8\). Kinetic frictional force in general is given by:
+\[f_k = \mu_kF_N\]
+In general, \(\mu_s > \mu_k\). The force required to overcome frictional is known as \(F_C\), and is 
+related linearly to mass. To determine \(\mu_s\) we can use a setup with an object on a slope. If we slowly
+increase the angle, at the moment when the block just begins to move:
+\[Mg\sin(\theta) = \mu_sN\]
+\[Mg\cos(\theta) = N\]
+\[\Rightarrow \tan(\theta) = \mu_s\]
+Where \(\theta\) is the angle between the surface and the flat. If we further increase the angle, the block
+will accelerate down the slope with acceleration:
+\[a = (g\sin(\theta) - \mu_kg\cos(\theta))\]
+For a force applied at an angle, we need to decompose into \(x\) and \(y\) components to 
+address frictional forces.
+
+\subsubsection*{Drag Force}
+A fluid is anything that can flow, i.e. a gas or liquid. Where there is a relative velocity between fluid
+and object, there is a resultant drag force. This force will oppose the relative motion, and will point
+in the direction of flow, relative to the body.
+
+\bigskip
+Drag force for a moving object with constant velocity is given by:
+\[D = \frac{1}{2}C\rho Av^2\]
+Where:
+\begin{itemize}
+    \item \(v\) is relative velocity.
+    \item \(\rho\) is the air density.
+    \item \(C\) is an experimentally determined drag coefficient.
+    \item \(A\) is the cross-sectional area of the body.
+\end{itemize}
+In practice, \(C\) will not be constant for all values of \(v\).
+For a falling object:
+\[D - F_g = ma\]
+Once the drag force equals \(F_g\), the object will reach terminal velocity at:
+\[v_t = \sqrt{\frac{2F_g}{C\rho A}}\]
+If \(A\) is increased, \(v_t\) decreases; the principle behind parachutes.
 
 \subsubsection*{Tension}
 Tension occurs when a cord or rope is attached to an object and pulled to apply a force to
