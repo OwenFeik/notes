@@ -499,5 +499,72 @@ Using the binomial formula, we can expand statements such as \(\sin^4(\theta)\):
 Using this approach, we can convert expressions of the form \(\sin^m(\theta)\cos^n(\theta)\) to an equivalent
 form that is often more useable.
 
+\subsection*{Square Roots}
+For \(w = re^{i\theta} \in \mathbb{C} \backslash \{0\}\), the root finding formula gives two solutions of \(z^2 = w\):
+\[z_1 = \sqrt{r}e^{i(\frac{\theta}{2})}, z_2 = \sqrt{r}e^{i(\frac{\theta}{2} + \pi)} = -z_1\]
+\(z_1\) is called the \textit{principal square root} of \(w\), thus the square roots are \(\pm \sqrt{w}\).
+For a negative real number, \(\sqrt{w}\) will be equal to \(\sqrt{\:\abs{w}}i\).
+
+\section*{Polynomials}
+Real polynomials are those with coefficients exclusively in \(\mathbb{R}\), while complex polynomials
+extend this bank of coefficients to include all of \(\mathbb{C}\). All real polynomials are complex 
+polynomials, but the inverse is not necessarily true.
+
+\subsection*{Factorising Polynomials}
+To solve differential equations, it is important to be able to integrate polynomials of the form:
+\[\frac{p(x)}{q(x)}\]
+We can use the quadratic formula to solve complex polynomials just as we would for real numbers.
+\[\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]
+For example, factorising \(p(z) = z^2 -3iz - 2\):
+\[\frac{3i \pm \sqrt{-9 -4 \times (1) \times (-2)}}{2}\]
+\[= \frac{3}{2}i \pm \frac{1}{2}\sqrt{-1} = \frac{3}{2}i \pm \frac{1}{2}i\]
+\[\therefore p(z) = (z - 2i)(z - i)\]
+Any complex polynomial of degree \(n\) can be factorised into \(n\) linear factors over \(\mathbb{C}\).
+\[p(z) = a(z - \alpha_1)(z - \alpha_2) ... (z - \alpha_n)\]
+Thus, there is an \(x\) intercept at each value of \(\alpha\). For a polynomial of degree \(n\),
+there at \(\leq n\) roots in \(\mathbb{C}\).
+
+\bigskip
+If \(p(z)\) is a real polynomial; the non-real roots of \(p(z)\) occur in complex conjugate pairs
+\(z\) and \(\bar{z}\). For example:
+\[p(z) = z^3 - 3iz^2 - 2z = z(z^2 - 3iz - 2) = z(z - 2i)(z - i) = (z - 0)(z - 2i)(z - i)\]
+Because in this example, our polynomial is non-real, the roots are not in conjugate pairs. How about:
+\begin{center}
+    \[\{z \in \mathbb{C} | z^4 + z^2 -12 = 0\}\]
+    \[\mathrm{set}\:w = z^2 \Rightarrow p(z) = w^2 + w - 12 = 0\]
+    Now, we need to factor \(p(z)\) in terms of \(w\), and solve \(z^2 = w\).
+    \[w^2 + w - 12 = (w - 3)(w + 4)\]
+    \[z^2 = 3 \Rightarrow z = \sqrt{3}, -\sqrt{3}\]
+    \[z^2 = -4 \Rightarrow z = 2i, -2i\]
+    \[\{\sqrt{3}, -\sqrt{3}, 2i, -2i\}\]
+\end{center}
+
+\bigskip
+In this example, because our roots are real, our solutions come in complex conjugate pairs.
+
+\bigskip
+If the coefficients of a polynomial \(p(x)\) are all real, then \(p(x)\) can be written as a 
+product of linear and irreducible quadratic factors with exclusively real coefficients. Considering the previous example:
+\[p(z) = (z - \sqrt{3})(z + \sqrt{3})(z - 2i)(z + 2i)\]
+\[= (z - \sqrt{3})(z + \sqrt{3})(z^2 + 2iz - 2iz - 4i^2)\]
+\[= (z - \sqrt{3})(z + \sqrt{3})(z^2 + 4)\]
+
+\subsubsection*{Geometric Progression}
+For any \(z \in \mathbb{C} \backslash \{1\}\):
+\[z^n + z^{n - 1} + ... + z + 1 = \frac{z^{n + 1} - 1}{z - 1}\]
+Using this, let us factor \(p(z) = z^3 + z^2 + z + 1\) over \(\mathbb{R}\).
+\begin{center}
+    \[(z - 1)(z^3 + z^2 + z + 1) = z^4 - 1\]
+    The roots of the RHS are the 4th roots of \(w = 1\) which are:
+    \[1, -1, i, -i\]
+    We can also discover these by the general method:
+    \[z^4 = 1 \Rightarrow r^4e^{i4\theta} = 1e^{i0}\]
+    \[\Rightarrow r = 1,\: 4\theta = 2k\pi,\: k = 0, 1, 2, 3 \:\:\: \theta = \frac{1}{2}k\pi,\: k = 0, 1, 2, 3\]
+    \[= 0, \frac{\pi}{2}, \pi, \frac{3\pi}{2} = 1, i, -1, -i\]
+    Because these are the roots of \(z^4 - 1\), and we know that \(z - 1\) has
+    the root of \(1\), we know that the roots of our polynomial are:
+    \[z^3 + z^2 + z + 1 = (z + 1)(z - i)(z + i)\]
+
+\end{center}
 \end{flushleft}
 \end{document}
