@@ -296,5 +296,56 @@ When a person is in a high acceleration vehicle, the perceive the angle to be ti
 even when it isn't. This is because the resultant force vector of the normal force due to gravity
 and the normal force from the accceleration points upward relative to the flat plane.
 
+\section*{Energy}
+Energy is required for any sort of motion. It is a scalar quantity. The transfer of 
+energy is known as work.
+
+\subsection*{Kinetic Energy}
+The faster an object moves, the higher its kinetic energy (\(E_k\)). For a stationery object,
+\(E_k = 0\). For an object moving at non-relativistic speeds:
+\[E_k = \frac{1}{2}mv^2\]
+Kinetic energy is measured in joules (\(\mathrm{J}\)).
+\[1 \:\mathrm{joule} = 1\mathrm{J} = 1\mathrm{kg}\mathrm{m}^2\mathrm{s}^{-2}\]
+If an objects kinetic energy changes, then work has been done on that object by a force.
+If energy is transferred to an object, positive work has been done, if energy is transferred
+from an object, negative work. For example, in a descending lift, gravity is doing positive work,
+by increasing the kinetic energy of the elevator, while the tension in the cable is doing negative
+work. Work can be determined from velocity through:
+\[\frac{1}{2}mv^2 - \frac{1}{2}mv_0^2 = Fd\]
+Where \(d\) denotes distance. To calculate work done with vector quantities:
+\[W = Fd\cos(\phi)\]
+\[W = \vec{F}\cdot\vec{d}\]
+Work is also measured in joules. For two or more forces, the net work is the sum
+of work done. When working with vectors, we can either calculate work for each vector
+independently and sum these, or take a vector sum and calculate work done once.
+\[\Delta E_k = E_{k,f} - E_{k,i} = W\]
+i.e. the change in kinetic energy is equal to the net work done.
+
+\subsection*{Hooke's Law}
+When compressed or stretched, springs will attempt to return to the origin, exerting
+force given by:
+\[\vec{F}_s = -k\vec{d}\]
+Where \(k\) is the springs experimentally determined \textit{spring constant}.
+\(k\) is a measure of the stiffness of the spring. \(F_s\) is a variable force,
+and exhibits a linear relationship between \(F\) and \(d\).
+
+\bigskip
+We can find the work done by integrating:
+\[W_s = \int^{x_f}_{x_i}-F_x\:dx\]
+Plugging in \(kx\) for \(F_x\):
+\[W_s = \frac{1}{2}kx^2_i - \frac{1}{2}kx^2_f\]
+If the spring ends up closer to the origin (\(x = 0\)), \(W_s\) will be positive.
+If it is further away, \(W_s < 0\). For an initial posisition of \(x = 0\):
+\[W_s = \frac{1}{2}kx^2\]
+
+\subsection*{Power}
+Power is the time rate at which a force does work. It is measured in joules per 
+second or watts (\(W\)). If a force does \(W\) work in time \(\Delta t\) the average
+power due to the force is:
+\[P_\mathrm{avg} = \frac{W}{\Delta t}\]
+and the instantaneous power at a given moment is:
+\[P = \frac{dW}{dt}\]
+\[P = \vec{F}\cdot\vec{v}\]
+
 \end{flushleft}
 \end{document}
