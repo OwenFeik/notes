@@ -25,8 +25,9 @@ git add "lecture.txt"
 commit_msg="$subj lecture $this_lec_no"
 
 git commit -m "$commit_msg"
-git push
 
 if [ ! -z "$repeat" ]; then
     ./$(basename $0) # Re-run script.
+else
+    git push
 fi
