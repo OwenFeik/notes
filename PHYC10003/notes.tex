@@ -173,7 +173,7 @@ Thus, for a loop of radius \(2.7\mathrm{m}\):
 If reference frames are moving relative to each other, they may each observe differing velocities of 
 an event, because the frames velocity will be added to the velocity of what they observe. Each 
 observer will, however, observe the same acceleration of the event, assume both reference frames
-are inertial. If \(P\) is the event being observed, \(A\) is our primary reference frame, stationery
+are inertial. If \(P\) is the event being observed, \(A\) is our primary reference frame, stationary
 with respect to \(P\) and \(B\) is our moving reference frame:
 \[\vec{r}_{PA} = \vec{r}_{PB} + \vec{r}_{BA}\]
 
@@ -200,7 +200,7 @@ Weight is mass under gravitation force. Given by:
 The normal force is the pushback of a surface against a force (such as weight) exerted on it.
 This force is always opposite to the force applied to the surface, and is always equal to the force
 applied to the surface, so that the forces on the object are in balance and thus the object remains 
-stationery. This force is described by Newton's third law of motion.
+stationary. This force is described by Newton's third law of motion.
 \[\vec{F}_{BC} = -\vec{F}_{CB}\]
 These forces are described as a third law force pair; a concept which arises any time 
 two objects interact.
@@ -301,7 +301,7 @@ Energy is required for any sort of motion. It is a scalar quantity. The transfer
 energy is known as work.
 
 \subsection*{Kinetic Energy}
-The faster an object moves, the higher its kinetic energy (\(E_k\)). For a stationery object,
+The faster an object moves, the higher its kinetic energy (\(E_k\)). For a stationary object,
 \(E_k = 0\). For an object moving at non-relativistic speeds:
 \[E_k = \frac{1}{2}mv^2\]
 Kinetic energy is measured in joules (\(\mathrm{J}\)).
@@ -346,6 +346,99 @@ power due to the force is:
 and the instantaneous power at a given moment is:
 \[P = \frac{dW}{dt}\]
 \[P = \vec{F}\cdot\vec{v}\]
+Using our understanding of conservation of energy, we can understand average and
+instantaneous power in terms of energy.
+\[P_\mathrm{avg} = \frac{\Delta E}{\Delta t}\]
+\[P = \frac{dE}{dt}\]
+
+\subsection*{Potential Energy}
+Potential energy, denoted by \(U\) or \(E_u\) is energy associated with the configuration of a
+system of objects that exert forces on one another. As an example, we can consider the earth
+and a bungee jumper as a system. In this system, gravitational potential energy accounts for
+the increase in kinetic energy during the fall, while elastic potential energy, held in the bonds
+between the particles in the rubber, accounts for the deceleration at the bottom of the fall. Elastic
+potential energy can be calculated with:
+\[U(x) = \frac{1}{2}kx^2\]
+
+\bigskip
+When thinking about energy, it is important to understand that a system consists of two or more objects.
+A force acts between a particle and the rest of the system. When this force changes the configuration,
+the force does work denoted \(W_1\). If the configuration change is reversed, the force reverses the energy 
+transfer, doing work \(W_2\).
+
+\bigskip
+For \textit{conservative} forces \(W_1 = -W_2\) is always true. Gravitational force, spring force
+and magnetic force are conservative. For these forces we can speak of potential energy.
+\textit{Nonconservative} forces include kinetic friction force and drag force. For kinetic friction, this
+is because some energy is released as heat, which cannot be recovered into kinetic energy by
+friction.
+
+\bigskip
+For conservative forces, when an ideal object is moved around a closed path back to the
+beginning, no work is done. This implies that moving between two points costs the same amount
+of work done irrespective of the paths taken. This means that for calculations involving
+conservative forces, complex paths can be simplified. For an object being raised of lowered:
+\[\Delta U = -W\]
+This also applies to an elastic block-spring system: when a spring is compressed,
+elastic potential energy is stored, which is released as the spring returns to origin.
+In general, work can be calculated as:
+\[W = \int^{x_f}_{x_i}F(x)dx\]
+\[\Rightarrow \Delta U = -\int^{x_f}_{x_i}F(x)dx\]
+In one dimension (\(x\)) force and \(E_u\) are related by work through:
+\[F(x) = -\frac{dU(x)}{dx}\]
+This allows us to find force from a graph of potential energy through finding the slope.
+
+\subsection*{Mechanical Energy}
+The mechanical energy of a system is the sum of its potential and kinetic energy.
+\[E_\mathrm{mec} = E_k + E_u\]
+Work done by conservative forces increases \(E_k\) and decreases \(E_u\), so:
+\[\Delta E_k = - \Delta E_u\]
+If we take two instants of time \(1\) and \(2\):
+\[E_{k,2} + E_{u,2} = E_{k,1} + E_{u,1}\]
+i.e. the system has constant mechanical energy. This is known as the conservation of
+mechanical energy:
+\[\Delta E_\mathrm{mec} = \Delta E_k + \Delta E_u = 0\]
+Work on a \textit{system} can be considered to be equal to \(\Delta E_\mathrm{mec}\). Although
+energy must be conserved within the system, the total energy of the system can be increased
+through external forces, for example by raising it, engendering an increase in gravitational
+potential energy. 
+
+\bigskip
+However, most systems aren't ideal and thus suffer from friction, causing a release of
+thermal energy. Thus, work done is given in reality by:
+\[\Delta E_\mathrm{th} = f_kd\]
+\[W = \Delta E_\mathrm{mec} + \Delta E_\mathrm{th}\]
+Where \(E_\mathrm{th}\) is thermal energy and \(f_k\) is the frictional coefficient of the surface
+involved.
+
+\subsection*{Equilibrium}
+Points where \(E_k = 0\) will be turning points in the motion of an object. At these
+points, objects have maximum potential energy and reverse in direction. A particle is
+said to be in \textit{neutral equilibrium} if it is stationary and has only potential energy,
+with net force zero. An example of this is a marble on a flat surface.
+
+\bigskip
+\textit{Unstable equilibrium} occurs when a particle is stationary with only 
+potential and net force \(0\). However, if it is displaced slightly it will continue 
+to move in that direction under a new force. An example of this is a marble balanced on
+a curved surface.
+
+\bigskip
+\textit{Stable equilibrium} occurs when a particle is under the same conditions, but if 
+displaced, will return to its original position. For example, consider a marble at the base
+of the ball. This is often observed in oscillating systems like pendulums.
+
+\subsection*{Conservation of Energy}
+Energy transferred between systems can always be accounted for. Thus, the total energy \(E\)
+of a system, is constant. This includes mechanical, thermal and all other internal energy.
+\[W = \Delta E = \Delta E_\mathrm{mec} + \Delta E_\mathrm{th} + \Delta E_\mathrm{int}\]
+In an isolated system, there is no external energy transfer. The total energy of this system
+cannot change.
+\[\Delta E_\mathrm{mec} + \Delta E_\mathrm{th} + \Delta E_\mathrm{int} = 0\]
+Or, for two instants of time we can observe that:
+\[E_{mec,2} = E_{mec,1} - \Delta E_\mathrm{th} - \Delta E_\mathrm{int}\]
+The total energy of an isolated system is a function of its state; the intervening
+events are irrelevant.
 
 \end{flushleft}
 \end{document}
