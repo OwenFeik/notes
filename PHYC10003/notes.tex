@@ -3,7 +3,6 @@
 \usepackage{gensymb}
 \begin{document}
 \title{PHYC10003 Notes}
-\begin{flushleft}
 \chapter*{Motion}
 
 \section*{Galiliean Mechanics}
@@ -21,7 +20,7 @@ Dimensonal analysis is the process of taking a formula, breaking it down into in
 units, and solving this equation to ascertain whether the formula is accurate. e.g.
 \bigskip
 \begin{center}
-Fundamental quantities: length (\(L\)) and time (\(T\)).
+    Fundamental quantities: length (\(L\)) and time (\(T\)).
 \end{center}
 \[v = v_0 + \frac{1}{2}at^2\]
 \[\frac{L}{T} = \frac{L}{T} + \frac{L}{T^2}T^2\]
@@ -155,7 +154,7 @@ have a shorter period of flight. The range is given by:
 \section*{Uniform Circular Motion}
 In uniform circular motion, velocity and acceleration each have constant magnitude but changing direction.
 This acceleration is called centripetal acceleration. The velocity is always at tangent to the circular
-path, while the accceleration is always inward toward the center of the circle.
+path, while the accceleration is always inward toward the centre of the circle.
 \[a = \frac{v^2}{R} \Rightarrow F = m\frac{v^2}{R}\]
 \[T = \frac{2\pi R }{v}\]
 The centripetal acceleration can come from many sources, such as gravity in a space station, friction for 
@@ -440,5 +439,76 @@ Or, for two instants of time we can observe that:
 The total energy of an isolated system is a function of its state; the intervening
 events are irrelevant.
 
-\end{flushleft}
+\subsection*{Centre of Mass}
+For complex rotating objects, it can be extremely complex to consdier their motion.
+However, for a specific point, the centre of mass, the motion is as of a particle, and
+thus is simple to analyse. For example, a cricket bat tossed spinning will have a very
+complex pattern of movement, however if we simply consider its centre of mass, the
+particle will transcribe a parabola, just as a ball would, with the rest of the bat
+rotating about this centre point.
+
+\bigskip
+For a system of particles, the centre of mass is the point that moves as though all
+of the system's mass were concentrated there. For two particles \(d\) units apart, where
+the origin is taken to be at the position of particle \(1\):
+\[x_\mathrm{com} = \frac{m_2}{m_1 + m_2}d\]
+For two particles, with an arbitrary choice of origin:
+\[x_\mathrm{com} = \frac{m_1x_1 + m_2x_2}{m_1 + m_2}\]
+This generalises easily to any number of particles. If \(M\) is taken to be the sum
+of the masses of all of the particles:
+\[x_\mathrm{com} = \frac{m_1x_1 + m_2x_2 + m_3x_3 + ... + m_nx_n}{M}\]
+\[= \frac{1}{M}\sum^n_{i = 1}m_ix_i\]
+For three dimensions we can use:
+\[y_\mathrm{com} = \frac{1}{M}\sum^n_{i = 1}m_iy_i\ \:\mathrm{and}\: z_\mathrm{com} = \frac{1}{M}\sum^n_{i = 1}m_iz_i\]
+This can be written in terms of vectors, where \(\vec{r}_i\) is the position vector
+of the \(i\)'th particle:
+\[\vec{r}_\mathrm{com} = \frac{1}{M}\sum^n_{i = 1}m_i\vec{r}_i\]
+For solid bodies, we assume an infinite sum of infinitely small particles. We can solve
+this through integration.
+\[x_\mathrm{com} = \frac{1}{M}\int x dm\]
+Which, of course, generalises to each dimension. If we assume that our object is of uniform
+density (\(\rho)\)), then:
+\[\rho = \frac{dm}{dV} = \frac{M}{V}\]
+We can substitute this into our centre of mass formula to find that:
+\[x_\mathrm{com} = \frac{1}{V}\int x dV\]
+If the object has symmetry, such as in a sphere or cube, the centre of mass
+lies at this point. So it lies at the centre of a sphere or cube, or for a sphere,
+it lies along the centre line of the circle and halfway down, etc. Note that the 
+centre of mass need not be on the object; for a torus the centre of mass is in the
+centre of the whole. Because of this property, it is often possible to simply 
+deduce the centre of mass of an object.
+
+\bigskip
+For systems with multiple objects, we can take centre mass of each object and calculate
+the centre mass of the resultant system. This approach can allow us to determine the result
+of removing a section of an object; the effect will be the inverse of adding a second copy of 
+the object. For example, consider removing a smaller circle for a larger circle. One could find
+the centre mass of the smaller circle and the larger circle, then invert this result across
+the axes to find the resultant centre of mass of the larger circle.
+
+\bigskip
+For a system as a whole, the motion of the centre of mass will continue unaffected by
+internal forces. This assumes a closed system.
+\[\vec{F}_{net} = M\vec{a}_\mathrm{com}\]
+
+\subsection*{Linear Momentum}
+Linear momentum is given by:
+\[\vec{p} = m\vec{v}\]
+Momentum points in the same direction as velocity, and can only be changed by a net
+external force for a system. The rate of change of momentum a particle or system with
+respect to time is equal to the net force on that object and is in the direction of that force. 
+\[\vec{F}_\mathrm{net} = \frac{d\vec{p}}{dt}\]
+This is essentially Newton's second law (\(f = ma\)). Without external force, linear
+momentum cannot change. This is known as the law of conservation of linear momentum.
+
+\subsection*{Collisions and Impulse}
+During a collision, momentum of a particle can change, as a net external force is acting
+on the particle. This is described as the application of an impulse (\(J\)) to the system or particle.
+\[\vec{J} = \int^{t_f}_{t_i}\vec{F}(t)dt\]
+The applied impulse is equal to the change in momentum during the collision, a face which is 
+known as the linear momentum-impulse theorem.
+\[\Delta\vec{p} = \vec{J}\]
+Because momentum is conserved, we know that for a closed system:
+\[(m_1v_1)_i + (m_2v_2)_i = (m_1v_1)_f + (m_2v_2)f\]
+
 \end{document}
