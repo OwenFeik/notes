@@ -612,15 +612,79 @@ be two different outputs. To prove injectivity, we can show \(f(x) = f(y) \Right
 These functions are always injective.
 
 \bigskip
-\textit{Surjective} functions have a minimal codomain, i.e. the range is equal to the codomain
-or \(f(A) = B\). 
+\textit{Surjective} functions map at least one input value to each legal output value. So
+for each element of the codomain, there is at least one element of the domain which maps to it.
+This can be thought of as the function having a minimal codomain; only possible outputs are
+included in the codomain.
 
 \bigskip
-\textit{Bijective} functions are both injective and Surjective. There is a precise
+\textit{Bijective} functions are both injective and surjective. There is a precise
 correspondence between each element of \(A\) and each element of \(B\); each element in \(A\) has 
-a partner in \(B\) with no excess elements in \(B\).
+a partner in \(B\) with no excess elements in \(B\). For example a simple bijective function is
+\[f: (0, \infty) \rightarrow (0, \infty)\:\:\:f(x) = x\]
+A slightly more complex example could be:
+\[g: (0, \infty) \rightarrow (0, \infty)\:\:\:g(x) = \frac{1}{x}\]
+
+\subsubsection*{Function Equality}
+For functions to be equal, all of their attributes must be the same. This implies that
+the domain, codomain and function are the same. However, the syntax of the 
+function could be different; \(f(x) = sin(2x)\) is equivalent to \(g(x) = 2sin(x)cos(x)\). 
+
+\subsubsection*{Composition}
+Composition of functions entails taking the output of one function and feeding it into
+another. i.e. taking \(f(g(x))\). This is denoted by:
+\[(f \circ g)(x) = f(g(x))\]
+For a function composition to be valid the codomain of \(f\) must be a subset of the
+domain of \(g\). The function \(f \circ g\) will accept an argument from the domain
+of \(f\) and output from the codomain of \(g\). If \(f: A \rightarrow B\) and 
+\(g: C \rightarrow D\):
+\[(f \circ g): A \rightarrow D\]
+Composition is not commutative: \(g \circ f \neq f \circ g\). It is however
+associative: \(h \circ (f \circ g) = (h \circ f) \circ g\).
+
+\subsubsection*{Inverses}
+If \(f: A \rightarrow B\) the inverse of \(f\) will be \(g: B \rightarrow A\)
+such that \(g \circ f(x) = x\) and \(f \circ g(y) = y\) i.e. \(f\) undoes \(g\)
+and \(g\) undoes \(f\). Inverse functions are always unique. A function must be bijective
+to have an inverse function. To find an inverse function, one can observe the operations
+carried out by the function and then execute the inverses of these operations in the 
+reverse order.
+
+\bigskip
+Inverse functions are used implicitly to solve equations such as \(e^{x^3 + 1} = e^3\):
+it is our knowledge that an inverse function to \(e^x\) exists (\(\log(x)\)) that
+allows us to state with confidence that \(x^3 + 1 = 3\) and solve the equation.
+
+For example, we can ask does \(f: \mathbb{C} \rightarrow \mathbb{C}\:\:\:f(z) = \bar{z}\) 
+have an inverse? Is it bijective?
+
+\bigskip
+Yes it does. Since \(\bar{\bar{z}} = z\), \(f\) is its own inverse.
+
+\bigskip
+Sometimes, we will want to find an inverse of a function which is not bijective.
+To create a bijective function, we can restrict domain or codomain to ensure these 
+characteristics. To create an injective function, we can find a range which is
+strictly increasing or decreasing and restrict the domain to this range. To create
+a surjective function, we can simply remove all elements of the codomain which the
+input doesn't map to i.e. we can restrict the codomain of the function to its range.
+
+\bigskip
+As an example, the \(\sin\) function is not injective. Thus, we take the domain
+\([\frac{-\pi}{2}, \frac{\pi}{2}]\) to yield the inverse function arcsine. Note that the
+range restrictions mean that while \(\theta = \arcsin(y) \Rightarrow \sin(\theta) = y\),
+\(\sin(\theta) = x \Rightarrow \theta = \arcsin(x)\) only if \(\theta \in [\frac{-\pi}{2}, \frac{\pi}{2}]\)
+
+\bigskip
+Graphically, an inverse function can be understood stood as reflection across the line
+\(x = y\).
 
 \subsubsection*{Inverse Trigonometric Functions}
+Alongside \(\arcsin\) we additionally have \(\arccos\) and \(\arctan\).
+While \(\arctan\) has the same domain of \([\frac{-\pi}{2}, \frac{\pi}{2}]\) as
+\(\arcsin\), \(\arccos\) takes the domain \([0, \pi]\) as it is strictly positive
+in \([\frac{-\pi}{2}, \frac{\pi}{2}]\).
+
 \[\mathrm{cosec}(x) = \frac{1}{\sin(x)}\]
 \[\mathrm{secant}(x) = \frac{1}{\cos(x)}\]
 \[\mathrm{cot}(x) = \frac{\cos(x)}{\sin(x)}\]
