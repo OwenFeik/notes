@@ -3,6 +3,13 @@
 \usepackage{bbold}
 \usepackage{amssymb}
 \usepackage{commath}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
 \begin{document}
 \title{MAST10005 Notes}
 \chapter*{Sets}
@@ -18,7 +25,7 @@
 \end{itemize}
 
 
-\[\mathbb{N} \subseteq \mathbb{Z} \subseteq \mathbb{Q} \subseteq \mathbb{R} \subseteq \mathbb{C}\]
+\[\N \subseteq \Z \subseteq \Q \subseteq \R \subseteq \C\]
 Some numbers cannot be written as fractions, and these we describe as irrational. 
 These include \(\pi\), \(e\), \(\sqrt{2}\), etc. These numbers are not in \textbb{Q}, but they are real numbers, i.e. in \textbb{R}. 
 It can be difficult to prove numbers are irrational. An even larger set of numbers exists, that of the complex numbers \textbb{C}. ``Most'' real numbers are inrrational.
@@ -30,8 +37,8 @@ We can also use \(\notin\) to denote non-membership.
 Sets can be expressed as 2-dimensional regions, with points within them as elements.
 
 \begin{itemize}
-\item \(n \in \mathbb{Z}\) means \(n\) is an integer.
-\item \(x \in \mathbb{Q}\) means \(x\) can be expressed as a fraction.
+\item \(n \in \Z\) means \(n\) is an integer.
+\item \(x \in \Q\) means \(x\) can be expressed as a fraction.
 \end{itemize}
 
 Note that \(n\) is used in the first example while \(x\) is used in the second; conventionally, \(n\) is used to represent integers.
@@ -40,7 +47,7 @@ Note that \(n\) is used in the first example while \(x\) is used in the second; 
 \section*{Desciptive Notation}
 Descriptive notation is a way of defining a set by stating a property which all of its elements possess. 
 For example: 
-\[A = \{x \in \mathbb{R} | x^2 + 1 > 37\}\]
+\[A = \{x \in \R | x^2 + 1 > 37\}\]
 Which can be read as the set of all real numbers \(x\) such that \(x^2 + 1 > 37\). 
 The statement must be a ``predicate''; it must be true or false for all values. 
 The vertical bar is read as ``such that''. A colon is sometimes used instead.
@@ -48,13 +55,13 @@ The vertical bar is read as ``such that''. A colon is sometimes used instead.
 \subsubsection*{Examples}
 
 \begin{itemize}
-\item Express the set of real numbers whose natural (base \(e\)) logarithm is positive with descriptive notation: \({x \in \mathbb{R} | log(x) > 0}\). 
+\item Express the set of real numbers whose natural (base \(e\)) logarithm is positive with descriptive notation: \({x \in \R | log(x) > 0}\). 
 Note that \(log(x)\) denotes \(log_{e}(x)\). There is however an issue with this answer; 
 because \(log(x)\) is sometimes undefined, ``\(log(x) > 0\)'' is not a predicate. The set could instead be expressed as:
-\[\{x \in \mathbb{R}_{\scriptscriptstyle{>0}} | log(x) > 0\}\;\;\;\mathbb{R}_{\scriptscriptstyle{>0}} = \{x \in \mathbb{R} | x > 0\}\]
+\[\{x \in \R_{\scriptscriptstyle{>0}} | log(x) > 0\}\;\;\;\R_{\scriptscriptstyle{>0}} = \{x \in \R | x > 0\}\]
 \item Express the set of integers whose cube is even in descriptive notation: 
-\[\{n \in \mathbb{Z} | n^3 \:\mathrm{is\:even}\}\]
-\item Describe the set \(\{n \in \mathbb{N} | sin(n) > 0\}\) in words: 
+\[\{n \in \Z | n^3 \:\mathrm{is\:even}\}\]
+\item Describe the set \(\{n \in \N | sin(n) > 0\}\) in words: 
 \begin{quotation}
 The set of all natural numbers n such that sin(n) is greater than 0.
 \end{quotation}
@@ -62,11 +69,11 @@ The set of all natural numbers n such that sin(n) is greater than 0.
 
 
 \section*{Abbreviated Notation}
-Set notation is often abbreviated. For example \(\{x \in \mathbb{R} | sin(x) = 0\}\) could be expressed as:
-\[\{k\pi | k \in \mathbb{Z}\}\]
+Set notation is often abbreviated. For example \(\{x \in \R | sin(x) = 0\}\) could be expressed as:
+\[\{k\pi | k \in \Z\}\]
 This will be all integer multiples of pi; i.e. all values for which sin(x) = 0. 
 This could also be expressed as: 
-\[\{x \in \mathbb{R} | x = k\pi \:\mathrm{for\:some}\:k \in \mathbb{Z}\}\]
+\[\{x \in \R | x = k\pi \:\mathrm{for\:some}\:k \in \Z\}\]
 This can be thought of as a kind of ``generating'' notation, whereas descriptive notation
 could be seen to excise a set from a larger set through a condition.
 
@@ -74,15 +81,15 @@ could be seen to excise a set from a larger set through a condition.
 
 \begin{itemize}
 \item Express the set of odd integers in abbreviated set notation: 
-\[\{2k + 1 | k \in \mathbb{Z}\} \:\mathrm{or}\: \{2k - 1 | k \in \mathbb{Z}\}\]
-\item Express the set \(\{x \in \mathbb{R} | cos(x) = 0\}\) in abbreviated set notation: 
-\[\{\frac{\pi}{2} + k\pi | k \in \mathbb{Z}\}\]
+\[\{2k + 1 | k \in \Z\} \:\mathrm{or}\: \{2k - 1 | k \in \Z\}\]
+\item Express the set \(\{x \in \R | cos(x) = 0\}\) in abbreviated set notation: 
+\[\{\frac{\pi}{2} + k\pi | k \in \Z\}\]
 \end{itemize}
 
 
 \section*{Intervals}
 \((a, b)\) means the set of real numbers between \(a\) and \(b\) (exclusive). Therefore:
-\[(a, b) = \{ x \in \mathbb{R} | a < x \:\mathrm{and}\: x < b\} = \{ x \in \mathbb{R} | a < x < b\} \]
+\[(a, b) = \{ x \in \R | a < x \:\mathrm{and}\: x < b\} = \{ x \in \R | a < x < b\} \]
 This can be illustrated on a number line with an open circle at \(a\) and \(b\). This is an open interval.
 To denote a closed interval (inclusive of \(a\) and \(b\)), we use a square brackets (\([a, b]\)) and a filled circle.
 
@@ -95,29 +102,29 @@ Give definitions of \([a, b)\) and \((a, b]\) with diagrams:
 
 
 \section*{Unbounded Intervals}
-For any \(a \in \mathbb{R}\), 
-\[(-\infty, a) = \{x \in \mathbb{R} | x < a\}\]
+For any \(a \in \R\), 
+\[(-\infty, a) = \{x \in \R | x < a\}\]
 Note that \(-\infty \:\mathrm{and}\: \infty\) are not elements of \textbb{R}.
 
 \section*{Small Sets}
 Sets with finitely many elements can be described with a list of elements.
-\[\{x \in \mathbb{R} | x^2 - 1 = 0\} = \{-1, 1\}\]
-\[\{x \in \mathbb{Z} | x^2 - 1 < 0\} = \{0\}\]
-\[\{x \in \mathbb{Z} | x^3 - x = 0\} = \{-1, 0, 1\}\]
+\[\{x \in \R | x^2 - 1 = 0\} = \{-1, 1\}\]
+\[\{x \in \Z | x^2 - 1 < 0\} = \{0\}\]
+\[\{x \in \Z | x^3 - x = 0\} = \{-1, 0, 1\}\]
 
 \subsubsection*{Example}
 Write the set of prime numbers less than 20 in descriptive and list of elements form:
 \[\{2, 3, 5, 7, 11, 13, 17, 19\}\]
 
 We can use a kind of "list of elements" notation to denote some infinite sets with ellipses.
-e.g.: \[(2k + 1)\pi | k \in \mathbb{Z} = \{..., -3\pi, -\pi, \pi, 3\pi, ...\}\]
+e.g.: \[(2k + 1)\pi | k \in \Z = \{..., -3\pi, -\pi, \pi, 3\pi, ...\}\]
 
 The smallest set is taken to be the empty set, written as \(\emptyset\). It can also be written as 
 \(\{\}\) in list of elements form.
 
 \subsubsection*{Examples}
-\[\{x \in \mathbb{R} | x^2 + 1 = 0\} = \emptyset\]
-\[\{x \in \mathbb{R} | cos(x) > 1\} = \emptyset\]
+\[\{x \in \R | x^2 + 1 = 0\} = \emptyset\]
+\[\{x \in \R | cos(x) > 1\} = \emptyset\]
 
 \section*{Subsets}
 If \(A\) and \(B\) are sets then \(A \subseteq B\) means that every element of \(A\) is also an element
@@ -134,8 +141,8 @@ it must also meet those of \(B\).
 
 \subsubsection*{Example}
 Prove \(A \subseteq B\) where:
-\[A = \{n \in \mathbb{N} | sin(n) > 0\}\]
-\[B = \{n \in \mathbb{N} | sin^2(n) \leq sin(n)\}\]
+\[A = \{n \in \N | sin(n) > 0\}\]
+\[B = \{n \in \N | sin^2(n) \leq sin(n)\}\]
 \par
 Let \(n \in A\), thus \(sin(n) > 0\).
 \par
@@ -149,7 +156,7 @@ statement does not hold. Thus, to prove \(A\) is not a subset of \(B\), we must 
 \(x\) in \(A\) but not in \(B\).
 
 \subsubsection*{Example}
-Prove that \(A \nsubseteq B\) where \(A = \{3n + 1 | n \in \mathbb{Z}\}\) and \(B = \{6m + 1 | m \in \mathbb{Z}\}\).
+Prove that \(A \nsubseteq B\) where \(A = \{3n + 1 | n \in \Z\}\) and \(B = \{6m + 1 | m \in \Z\}\).
 \par
 \[A = \{..., -2, 1, 4, 7, ...\}\]
 \[B = \{..., 1, 7, ...\}\]
@@ -160,7 +167,7 @@ To prove this:
 \item Claim \(4 \in A\); this is true since \(4 = 3*1 + 1\). 
 \item Claim \(4 \notin B\). 
 \item Suppose for a contradiction that \(4 \in B\).
-\item This would mean \(4 = 6m + 1\) for some \(m \in \mathbb{Z}\).
+\item This would mean \(4 = 6m + 1\) for some \(m \in \Z\).
 \item But then, \(3 = 6m\)
 \end{itemize}
 \[\therefore m = \frac{3}{6} = \frac{1}{2}\]
@@ -170,7 +177,7 @@ This is a contradiction! Thus we conclude \(4 \notin B\).
 \section*{Proof by Contradiction}
 
 How do we prove that \(x^2 + x + 1 = 0\) has no real solutions?
-Proof by contradiction. Assume that there is a solution, \(x \in \mathbb{R}\) and show
+Proof by contradiction. Assume that there is a solution, \(x \in \R\) and show
 that this leads to an absurd conclusion.
 \[x^2 + x + 1 = 0 \Rightarrow (x + \frac{1}{2})^2 + \frac{3}{4} = 0 \Rightarrow (x + \frac{1}{2})^2 = \frac{-3}{4}\]
 
@@ -182,10 +189,10 @@ The elements of \(A \cup B\) are all the elements that are in either \(A\) or \(
 \subsubsection*{Examples}
 Express the following sets using a union of intervals.
 \begin{itemize}
-\item \(\{x \in \mathbb{R} | x^2 > 1\}\): \((-\infty, -1) \cup (1, \infty)\)
+\item \(\{x \in \R | x^2 > 1\}\): \((-\infty, -1) \cup (1, \infty)\)
 \item \(\{x \in (-2\pi, 2\pi] | sin(x) \leq 0\}\): 
 \[\{x \in (-2\pi, 0] | sin(x) \leq 0\} \cup \{x \in (0, 2\pi] | sin(x) \leq 0\} = [-\pi, 0] \cup [\pi, 2\pi]\]
-\item \(\{x \in [-2, 2] | x \notin \mathbb{Z}\}\): \((-2, -1) \cup (-1, 0) \cup (0, 1) \cup (1, 2)\)
+\item \(\{x \in [-2, 2] | x \notin \Z\}\): \((-2, -1) \cup (-1, 0) \cup (0, 1) \cup (1, 2)\)
 \end{itemize}
 
 \[(2, 8) \cup [3, 10] = (2, 10]\]
@@ -200,9 +207,9 @@ It is not, because \(\sqrt{2} < \frac{\pi}{2}\), thus two pieces are necessary.
 \begin{itemize}
     \item Express \((2, 8) \cap [3, 10]\) as an interval: \([3, 8)\)
     \item Express \((0, \sqrt{2}) \cap [\frac{\pi}{2}, 3)\) in the simplest ay possible: \(\emptyset\)
-    \item Express \(\mathbb{Z} \cap [-\pi, \pi]\) in list of elements form: \(\{-3, -2, -1, 0, 1, 2, 3\}\)
-    \item Express \(\mathbb{Z} \cap \{x \in \mathbb{R} | x^2 - 5 < 0\}\) in list of elements form: \(\{-2, -1, 0, 1, 2\}\)
-    \item Express the set of reals with positive sine and negative cosine with an intersection: \(\{x \in \mathbb{R} | \mathrm{sin}(x) > 0\} \cap \{x \in \mathbb{R} | \mathrm{cos}(x) < 0\}\)
+    \item Express \(\Z \cap [-\pi, \pi]\) in list of elements form: \(\{-3, -2, -1, 0, 1, 2, 3\}\)
+    \item Express \(\Z \cap \{x \in \R | x^2 - 5 < 0\}\) in list of elements form: \(\{-2, -1, 0, 1, 2\}\)
+    \item Express the set of reals with positive sine and negative cosine with an intersection: \(\{x \in \R | \mathrm{sin}(x) > 0\} \cap \{x \in \R | \mathrm{cos}(x) < 0\}\)
 \end{itemize}
 
 When interpreting questions, a question involving ``and'' is likely to be an intersection question.
@@ -220,9 +227,9 @@ that are in \(A\) but not in \(B\). This is written as:
 \end{itemize}
 Express each of the following as a complemet:
 \begin{itemize}
-    \item \(\{x \in \mathbb{R} | x^2 > 1\}\): \(\mathbb{R} \backslash \{x \in \mathbb{R} | x^2 < 1\}\)
-    \item \(\{x \in [-2, 2] | x \notin \mathbb{Z}\}\): \([-2, 2] \backslash \mathbb{Z}\)
-    \item \((-\infty, 0) \cup (0, \infty)\): \(\mathbb{R} \backslash \{0\}\)
+    \item \(\{x \in \R | x^2 > 1\}\): \(\R \backslash \{x \in \R | x^2 < 1\}\)
+    \item \(\{x \in [-2, 2] | x \notin \Z\}\): \([-2, 2] \backslash \Z\)
+    \item \((-\infty, 0) \cup (0, \infty)\): \(\R \backslash \{0\}\)
 \end{itemize}
 
 \section*{Cartesian Product}
@@ -232,8 +239,8 @@ For sets \(A\) and \(B\):
 \par
 e.g.:
 \[\{0, 1, 5\} \times \{e, \pi\} = \{(0, e), (0, \pi), (1, e), (1, \pi), (5, e), (5, \pi)\}\]
-We can also take \(A^2\) to be \(A \times A\). This is most often seen in \(\mathbb{R}^2\), which is used to represent
-the cartesian plane. \(\mathbb{Z}^2 \subseteq \mathbb{R}^2\).
+We can also take \(A^2\) to be \(A \times A\). This is most often seen in \(\R^2\), which is used to represent
+the cartesian plane. \(\Z^2 \subseteq \R^2\).
 
 
 \chapter*{Inequalities}
@@ -246,14 +253,14 @@ As division is simply multiplication by reciprocal, it follows the same principl
 multiplication; i.e. only order reversing if the divisor \(< 0\).
 
 \subsubsection*{Examples}
-Express the set \(A = \{x \in \mathbb{R} | -2 -\frac{1}{2}x > -4\}\) as an interval.
+Express the set \(A = \{x \in \R | -2 -\frac{1}{2}x > -4\}\) as an interval.
 \begin{itemize}
     \item \(2 -\frac{1}{2}x > -2\)
     \item \(-\frac{1}{2} > -2\)
     \item \(x < 4\)
     \item \(x \in (-\infty, 4)\)
 \end{itemize}
-Express the set \(A = \{x \in \mathbb{R} | 1 - x < 3x + 2\}\) as an interval.
+Express the set \(A = \{x \in \R | 1 - x < 3x + 2\}\) as an interval.
 \begin{itemize}
     \item \(-1 -x < 3x\)
     \item \(-1 < 4x\)
@@ -295,14 +302,14 @@ This value can be used to solve equations such as:
 \[x^2 + 1 = 0 \Rightarrow x^2 = -1\ \Rightarrow x = \pm i\]
 \(i\) can also be used to solve equations such as \(x^2 + 4 = 0\):
 \[x^2 + 4 = 0 \Rightarrow x^2 = \sqrt{-2} \Rightarrow x = i\sqrt{2}\]
-Solutions of the form \(yi | y \in \mathbb{R}\) are useful for solving many polynomials. For 
+Solutions of the form \(yi | y \in \R\) are useful for solving many polynomials. For 
 some others, such as \(x^2 -2x + 5 = 0\) we need solutions of the form \(x + iy\):
 \[(x - 1)^2 + 4 = 0\ \Rightarrow (x - 1)^2 = -4 \Rightarrow x = 1 \pm 2i\]
 Thus, we define complex numbers, typically denoted as \(z\) as a quantity consisting of a real number
 added to a real multiple of \(i\):
 \[z = x + iy\]
 Thus \textbb{C} is defined as:
-\[\mathbb{C} = \{x + iy | x, y \in \mathbb{R}\}\]
+\[\C = \{x + iy | x, y \in \R\}\]
 
 \subsubsection*{Examples}
 \begin{itemize}
@@ -449,8 +456,8 @@ Exponentiation works through:
 
 \subsection*{Subsets of the Complex Plane}
 We can represent certain shapes in the complex plane through sets. For example:
-\(\{z \in \mathbb{C} | \mathrm{Re}(z) = 3\}\) describes the line \(x = 3\). A
-circle can be drawn as \(\{z \in \mathbb{C}:  \abs{z - p} = r\}\), where \(p\) is
+\(\{z \in \C | \mathrm{Re}(z) = 3\}\) describes the line \(x = 3\). A
+circle can be drawn as \(\{z \in \C:  \abs{z - p} = r\}\), where \(p\) is
 the center point and \(r\) is the radius.
 
 \subsection*{Roots}
@@ -463,7 +470,7 @@ We also have:
 Curiously, for power \(n\), there will be \(n\) solutions. Using the \(\alpha + 2k\pi\) equation, we can find an 
 infinite number of solutions. However, we can stop at \(n - 1\), because \(n = k\) will yield the same result as \(k = 0\), 
 as it will simply add \(2pi\) to the angle. Thus our solutions will be of the form:
-\[\{\sqrt[^n]{s}e^{i\frac{1}{n}(\alpha + 2k\pi)} | k \in [0, n) \cap \mathbb{N}\}\]
+\[\{\sqrt[^n]{s}e^{i\frac{1}{n}(\alpha + 2k\pi)} | k \in [0, n) \cap \N\}\]
 
 \subsubsection*{Example}
 Find the set of cube roots of \(-8\).
@@ -500,14 +507,14 @@ Using this approach, we can convert expressions of the form \(\sin^m(\theta)\cos
 form that is often more useable.
 
 \subsection*{Square Roots}
-For \(w = re^{i\theta} \in \mathbb{C} \backslash \{0\}\), the root finding formula gives two solutions of \(z^2 = w\):
+For \(w = re^{i\theta} \in \C \backslash \{0\}\), the root finding formula gives two solutions of \(z^2 = w\):
 \[z_1 = \sqrt{r}e^{i(\frac{\theta}{2})}, z_2 = \sqrt{r}e^{i(\frac{\theta}{2} + \pi)} = -z_1\]
 \(z_1\) is called the \textit{principal square root} of \(w\), thus the square roots are \(\pm \sqrt{w}\).
 For a negative real number, \(\sqrt{w}\) will be equal to \(\sqrt{\:\abs{w}}i\).
 
 \section*{Polynomials}
-Real polynomials are those with coefficients exclusively in \(\mathbb{R}\), while complex polynomials
-extend this bank of coefficients to include all of \(\mathbb{C}\). All real polynomials are complex 
+Real polynomials are those with coefficients exclusively in \(\R\), while complex polynomials
+extend this bank of coefficients to include all of \(\C\). All real polynomials are complex 
 polynomials, but the inverse is not necessarily true.
 
 \subsection*{Factorising Polynomials}
@@ -519,10 +526,10 @@ For example, factorising \(p(z) = z^2 -3iz - 2\):
 \[\frac{3i \pm \sqrt{-9 -4 \times (1) \times (-2)}}{2}\]
 \[= \frac{3}{2}i \pm \frac{1}{2}\sqrt{-1} = \frac{3}{2}i \pm \frac{1}{2}i\]
 \[\therefore p(z) = (z - 2i)(z - i)\]
-Any complex polynomial of degree \(n\) can be factorised into \(n\) linear factors over \(\mathbb{C}\).
+Any complex polynomial of degree \(n\) can be factorised into \(n\) linear factors over \(\C\).
 \[p(z) = a(z - \alpha_1)(z - \alpha_2) ... (z - \alpha_n)\]
 Thus, there is an \(x\) intercept at each value of \(\alpha\). For a polynomial of degree \(n\),
-there at \(\leq n\) roots in \(\mathbb{C}\).
+there at \(\leq n\) roots in \(\C\).
 
 \bigskip
 If \(p(z)\) is a real polynomial; the non-real roots of \(p(z)\) occur in complex conjugate pairs
@@ -530,7 +537,7 @@ If \(p(z)\) is a real polynomial; the non-real roots of \(p(z)\) occur in comple
 \[p(z) = z^3 - 3iz^2 - 2z = z(z^2 - 3iz - 2) = z(z - 2i)(z - i) = (z - 0)(z - 2i)(z - i)\]
 Because in this example, our polynomial is non-real, the roots are not in conjugate pairs. How about:
 \begin{center}
-    \[\{z \in \mathbb{C} | z^4 + z^2 -12 = 0\}\]
+    \[\{z \in \C | z^4 + z^2 -12 = 0\}\]
     \[\mathrm{set}\:w = z^2 \Rightarrow p(z) = w^2 + w - 12 = 0\]
     Now, we need to factor \(p(z)\) in terms of \(w\), and solve \(z^2 = w\).
     \[w^2 + w - 12 = (w - 3)(w + 4)\]
@@ -550,9 +557,9 @@ product of linear and irreducible quadratic factors with exclusively real coeffi
 \[= (z - \sqrt{3})(z + \sqrt{3})(z^2 + 4)\]
 
 \subsubsection*{Geometric Progression}
-For any \(z \in \mathbb{C} \backslash \{1\}\):
+For any \(z \in \C \backslash \{1\}\):
 \[z^n + z^{n - 1} + ... + z + 1 = \frac{z^{n + 1} - 1}{z - 1}\]
-Using this, let us factor \(p(z) = z^3 + z^2 + z + 1\) over \(\mathbb{R}\).
+Using this, let us factor \(p(z) = z^3 + z^2 + z + 1\) over \(\R\).
 \begin{center}
     \[(z - 1)(z^3 + z^2 + z + 1) = z^4 - 1\]
     The roots of the RHS are the 4th roots of \(w = 1\) which are:
@@ -579,19 +586,19 @@ there is a rule that associates each element of \(A\) to a unique element of \(B
 To express a function \(f\) with domain \(A\) and codomain \(B\) we write:
 \[f: A \rightarrow B\]
 This can also be read as \(f\) maps \(A\) into \(B\). For example
-\[f: \mathbb{R} \rightarrow \mathbb{R}, f(x) = \frac{x + 1}{x^2 + 4}\]
+\[f: \R \rightarrow \R, f(x) = \frac{x + 1}{x^2 + 4}\]
 is a valid function. However,
-\[h: \mathbb{C} \rightarrow \mathbb{C}, h(z) = \frac{x + 1}{x^2 + 4}\]
-is not, as the rule \(h(z)\) is undefined for some \(z \in \mathbb{C}\).
+\[h: \C \rightarrow \C, h(z) = \frac{x + 1}{x^2 + 4}\]
+is not, as the rule \(h(z)\) is undefined for some \(z \in \C\).
 To make it a valid function, we could change the domain to
-\(\mathbb{C} \backslash \{2i, -2i\}\).
-When a function has a domain and codomain as subsets of \(\mathbb{R}\), we can
+\(\C \backslash \{2i, -2i\}\).
+When a function has a domain and codomain as subsets of \(\R\), we can
 visualise it as a graph. Formally, a graph of \(f: A \rightarrow B\) is the set defined by:
 \[\{(a, f(a)) | a \in A\} \subseteq A \times B\]
 i.e. all points that can be generated by the form (input, output). The codomain
 of a function does not necessarily need to be minimal or maximal. For \(f(x) = \sin(x)\),
 the range of the function is \([-1, 1]\), but any codomain inclusive of this range (such 
-as \(\mathbb{R}\)) can be chosen.
+as \(\R\)) can be chosen.
 
 \bigskip
 The image of a set under a function is the outputs of each element of that set when passed through
@@ -642,6 +649,26 @@ of \(f\) and output from the codomain of \(g\). If \(f: A \rightarrow B\) and
 Composition is not commutative: \(g \circ f \neq f \circ g\). It is however
 associative: \(h \circ (f \circ g) = (h \circ f) \circ g\).
 
+\bigskip
+When composing functions, we may know the domain and codomain of each of the parts.
+For example, taking the following functions, we know:
+\[f: (0, \infty) \rightarrow \R \:\:\: f(x) = \log(x)\]
+\[g: \R \rightarrow (-\infty, 1] \:\:\: g(x) = 1 - x^2\]
+But what of the composition?
+\[(f \circ g)(x) = \log(1 - x^2)\]
+Let us consider this problem more generally. For two functions:
+\[f: \mathrm{dom}(f) \rightarrow \mathrm{range}(f)\]
+\[g: \mathrm{dom}(g) \rightarrow \mathrm{range}(g)\]
+For composition to be possible, \(\mathrm{range}(g)\) and \(\mathrm{dom}(f)\) must
+intersect. Otherwise, the resultant function would have an empty domain. Thus, the implied
+domain of the resultant function is:
+\[\mathrm{dom}(f \circ g) = \{x \in \mathrm{dom}(g) | g(x) \in \mathrm{dom}(f)\}\]
+And the implied range is given by:
+\[\mathrm{range}(f \circ g) = f(\mathrm{range}(g) \cap \mathrm{dom}(f))\]
+So for our original functions:
+\[\mathrm{dom}(f \circ g) = \{x \in R | g(x) \in (0, \infty)\} = (-1, 1)\]
+\[\mathrm{range}(f \circ g) = f((-\infty, 1] \cap (0, \infty)) = f((0, 1]) = (-\infty, 0]\]
+
 \subsubsection*{Inverses}
 If \(f: A \rightarrow B\) the inverse of \(f\) will be \(g: B \rightarrow A\)
 such that \(g \circ f(x) = x\) and \(f \circ g(y) = y\) i.e. \(f\) undoes \(g\)
@@ -655,7 +682,7 @@ Inverse functions are used implicitly to solve equations such as \(e^{x^3 + 1} =
 it is our knowledge that an inverse function to \(e^x\) exists (\(\log(x)\)) that
 allows us to state with confidence that \(x^3 + 1 = 3\) and solve the equation.
 
-For example, we can ask does \(f: \mathbb{C} \rightarrow \mathbb{C}\:\:\:f(z) = \bar{z}\) 
+For example, we can ask does \(f: \C \rightarrow \C\:\:\:f(z) = \bar{z}\) 
 have an inverse? Is it bijective?
 
 \bigskip
@@ -691,8 +718,46 @@ in \([\frac{-\pi}{2}, \frac{\pi}{2}]\).
 It turns out that \(\mathrm{cot}(x)\) is not strictly the inverse function of \(\tan(x)\).
 Because \(\tan{x} = 0\) for multiples of \(\pi\), these values would be excluded from the function
 of \(\frac{1}{\tan(x)}\), which they are in \(\mathrm{cot}(x)\), however, the values for which
-\(\tan(x)\) is undefined, (\(\{k\pi + \frac{\pi}{2} | k \in \mathbb{z}\}\)) are defined 
+\(\tan(x)\) is undefined, (\(\{k\pi + \frac{\pi}{2} | k \in \Z\}\)) are defined 
 for \(\mathrm{cot}(x)\) thus yielding a different domain to that of \(\frac{1}{\tan(x)}\).
+
+\section*{Vectors}
+Because not all quantities are measurable by a scalar value, we sometimes need to reach
+for a vector, which by being a representation of multiple values can offer both magnitude
+and direction. Formally, a vector is a member of the set \(\R^2\) where
+\[\R^2 = \R \times \R = \set{(a_1, a_2) | a_1 \in \R \:\mathrm{and}\: a_2 \in \R}\]
+We can consider higher dimensions through \(n\)-dimensional space with \(\R^n\):
+\[\R^n = \set{(a_1, a_2, ..., a_n) | a_1, a_2, ..., a_n \in \R}\]
+Vectors have definitions of arithmetical operations \textit{component-wise}.
+\begin{itemize}
+    \item Addition: \(\vec{a} + \vec{b} = (a_1, a_2) + (b_1, b_2) = (a_1 + b_1, a_2 + b_2)\)
+    \item Subtraction: \(\vec{a} - \vec{b} = (a_1, a_2) - (b_1, b_2) = (a_1 - b_1, a_2 - b_2)\)
+    \item Multiplication \textit{by scalar}: \(n \times \vec{a} = (n \times a_1, n \times a_2)\)
+\end{itemize}
+Vectors cannot be multiplied or divided by other vectors. It is important to understand
+what the elements of a vector stand for; in general vectors with differing numbers of
+elements may not be added.
+
+\bigskip
+For two points \(A = (a_1, a_2)\) and \(B = (b_1, b_2)\) the vector displacement \(\vec{AB}\) is
+defined as the vector subtraction of \(A\) from \(B\) i.e.
+\[\vec{AB} = (b_1 - a_1, b_2 - a_2)\]
+If we take the origin as \(O\), \(\vec{AB} = \vec{OB} - \vec{OA}\).
+
+\bigskip
+Two vectors are parallel if through multiplication by some constant one can
+be transformed into the other. This is obvious when we consider that this is essentially
+the same as saying they point in the same direction, as a consequence of the
+fact that scalar multiplication doesn't change direction.
+
+\bigskip
+The length or \textit{norm} of a vector can be determined through Pythagoras's Theorem, and is
+denoted \(||\vec{v}||\):
+\[||\vec{v}|| = \sqrt{v_1^2 + v_2^2}\]
+In higher dimensions, this extends simply through:
+\[||\vec{v}|| = \sqrt{v_1^2 + v_2^2 + ... + v_n^2}\]
+Which essentially corresponds to the recursive application of Pythagoras in each
+dimension.
 
 \end{flushleft}
 \end{document}
