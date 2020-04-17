@@ -1,6 +1,39 @@
 \documentclass[12pt]{report}
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{commath}
+\usepackage{pgfplots}
+
+\pgfplotsset{compat = 1.16}
+\usepgfplotslibrary{fillbetween}
+
+% Create simple plots with consistent styling
+\newenvironment{simpleplot}{
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                xmax = 6,
+                ymax = 6,
+                width = 12cm,
+                height = 9cm,
+                xlabel = Quantity,
+                xlabel near ticks,
+                xtick style = {draw = none},
+                xticklabels = \empty,
+                axis x line = bottom,
+                ylabel = Price,
+                ylabel near ticks,
+                ytick style = {draw = none},
+                yticklabels = \empty,
+                axis y line = left
+            ]
+                \path[name path = axis] (rel axis cs: 0, 0) -- (rel axis cs: 6, 0);
+                \path[name path = mid] (-6, 0) -- (6, 0);
+}{
+            \end{axis}
+        \end{tikzpicture}
+    \end {center}
+}
+
 \begin{document}
 \title{ECON10004 Notes}
 \chapter*{Introduction}
@@ -407,5 +440,105 @@ in terms of effect on total surplus. Tax is given in all cases by \(t = P_D - P_
 A subsidy is essentially a negative tax; \(s = P_S - P_D\). It incentivises trade in the market. If applied to a
 seller, it will drive the supply curve down, lower price and increasing quantity. If applied to a buyer, it will 
 drive the demand curve up, increasing demand and price.
+
+\subsubsection*{Interventions and Welfare}
+The effect of taxation thus is to introduce a \textit{deadweight loss}, a decrease in the 
+total market surplus. This is because the perfect efficiency of the equilibrium is disrupted.
+In the case of a tax, this happens because the increased price of goods causes people to
+not purchase goods they would otherwise buy, resulting in a loss of utility. In the case of
+a subsidy, consumers purchase goods they would not otherwise purchase, resulting in the sale of
+goods for below their production price, the difference in costs making up the deadweight loss.
+
+\begin{simpleplot}
+    \addplot[name path = q, blue, ultra thick] {-x}
+    node [pos = 0.2, above right] {\(Q_D\)};
+    \addplot[name path = p, red, ultra thick] {x}
+    node [pos = 0.6, below right] {\(S\)};
+    \addplot[name path = pt, red, ultra thick] {x + 2}
+    node [pos = 0.6, above left] {\(S_t\)};
+    \addplot[black, ultra thick, dashed] (-1, x)
+    node [pos = 0.15, left] {\(Q_{**}\)};
+    \addplot[black, ultra thick, dashed] (0, x)
+    node [pos = 0.2, right] {\(Q_*\)};
+
+    \path[name path = deq] (-6, 1) -- (6, 1);
+    \path[name path = peq] (-6, -1) -- (6, -1);
+
+    \addplot[fill = blue, opacity = 0.2] fill between [
+        of = deq and mid,
+        soft clip = {domain = -6:-1}
+    ];
+    \addplot[fill = red, opacity = 0.2] fill between [
+        of = mid and peq,
+        soft clip = {domain = -6:-1}
+    ];
+    \addplot[fill = red, opacity = 0.3] fill between [
+        of = p and peq,
+        soft clip = {domain = -6:-1}
+    ];
+    \addplot[fill = blue, opacity = 0.3] fill between [
+        of = q and deq,
+        soft clip = {domain = -6:-1}
+    ];
+    \addplot[fill = gray, opacity = 0.3] fill between [
+        of = q and p,
+        soft clip = {domain = -1:0}
+    ];
+\end{simpleplot}
+
+This is illustrated in the above chart. The line \(S_t\) shows the supply
+curve under a tax on suppliers, with \(Q_{**}\) indicating the new equilibrium
+quantity traded. The lighter coloured block here shows taxation revenue for the 
+government, which contributes to total surplus but is paid for by consumers and supplies.
+The blue section of this block is payed for by consumers, while the red section is payed
+by suppliers. The inefficiency introduced by taxation is apparent in the grey shaded
+triangle, representing deadweight loss of the system due to the tax.
+
+\subsubsection*{Tax Burden}
+The effect of a tax will tend to be heavier on the side of the market which
+has the lower elasticity. This is intuitive when we consider that those
+for who price has little relevance to quantity will continue to interact in
+much the same way after a tax, while those with higher elasticity will 
+be more likely to reduce quantity due to a tax.
+
+\bigskip
+The impact of a subsidy can be understood in much the same way. When a subsidy 
+is applied, the supply curve is lowered. Thus \(Q_{**}\) will be larger than \(Q_*\)
+and the equilibrium price will be lower. An additional surplus will be introduced
+for suppliers and consumers, payed for by the government. The side with more 
+elasticity will derive more benefit from the subsidy than the side with lower elasticity.
+Although the subsidy will create a surplus for consumers and producers, it will
+cost more than this surplus and thus net a deadweight loss.
+
+\subsubsection*{Price Controls}
+Direct market controls can take the form of a price floor or price ceiling.
+For each of these, they are \textit{binding} when they are set so as to affect
+the equilibrium price, so when they are above the equilibrium price in the case
+of floors and below in the case of ceilings. If they are not binding, price
+controls have no effect.
+
+\bigskip
+In the case of a binding price floor, an excess supply will be created due
+to the lower equilibrium quantity. This will lower the equilibrium quantity force
+and result in a loss of consumer surplus, due to reduced competition, and a change
+to supplier surplus, with a loss of volume but an increase of margin. It will
+introduce a deadweight loss, as the increase in supplier surplus will be less
+than the less of consumer surplus.
+
+\bigskip
+For a price ceiling, the inverse will occur, with an excess demand created.
+Once again, the equilibrium quantity will decrease and this will result in
+a loss of supplier surplus and a change to consumer surplus, suffering a
+loss of volume but increase in value per transaction. A deadweight loss is
+introduced in the lost volume.
+
+\subsubsection*{Quotas}
+A quota imposes a maximum quantity traded for a good or service. To be 
+binding, a quota must be below the equilibrium quantity. This will have the
+effect of setting the quantity to the quantity specified by the quota,
+thus increasing price to the relevant point on the supply curve. This
+results in a decrease in consumer surplus and a change in consumer surplus,
+having essentially the same effect as a price floor. Once again, it creates
+a deadweight loss.
 
 \end{document}
