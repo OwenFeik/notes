@@ -453,7 +453,7 @@ goods for below their production price, the difference in costs making up the de
     \addplot[name path = q, blue, ultra thick] {-x}
     node [pos = 0.2, above right] {\(Q_D\)};
     \addplot[name path = p, red, ultra thick] {x}
-    node [pos = 0.6, below right] {\(S\)};
+    node [pos = 0.6, below right] {\(Q_S\)};
     \addplot[name path = pt, red, ultra thick] {x + 2}
     node [pos = 0.6, above left] {\(S_t\)};
     \addplot[black, ultra thick, dashed] (-1, x)
@@ -540,5 +540,108 @@ thus increasing price to the relevant point on the supply curve. This
 results in a decrease in consumer surplus and a change in consumer surplus,
 having essentially the same effect as a price floor. Once again, it creates
 a deadweight loss.
+
+\subsection*{Trade}
+Countries trade because they have different resource endowments; some countries
+have a comparative or absolute advantage in certain industries, which allows them
+to produce these goods more efficiently, providing opportunities to increase
+total surplus through trade.
+
+\bigskip
+Despite the various benefits of trade, its impacts are not equally distributed;
+it can lead to inequalities, domination of smaller economies by larger ones causing
+national security issues, etc.
+
+\bigskip
+Comparative advantage arises when an entity can produce goods at a lower opportunity
+cost than their competition, while absolute advantage arises when a good can be
+produced with fewer inputs than used by their competition. In general, countries
+will produce more of the goods in which they have a comparative advantage, and export
+the excess, while they produce less of goods in which they suffer a comparative
+disadvantage.
+
+\bigskip
+Countries isolated from international trade are said to be in \textit{Autarky}.
+This means that only domestic trade is possible in their economies. By
+considering a country in Autarky and comparing this to the resultant
+market after introduction of trade, we can understand the effect of trade
+on a market. The world market will usually be essentially pre-determined, 
+making an individual country a price-taker, because it is too small to significantly
+effect the global market.
+
+\bigskip
+In the case that \(P_W\), the world price is greater than \(P^*\), the
+local equilibrium price, sellers who were selling at \(P^*\) will be able
+to export and so the local price \(P^*\) must rise to match \(P_W\).
+
+\begin{simpleplot}
+    \addplot[name path = qd, blue, ultra thick] {-x}
+    node [pos = 0.2, above right] {\(Q_D\)};
+    \addplot[name path = qs, red, ultra thick] {x}
+    node [pos = 0.8, below right] {\(Q_S\)};
+    \addplot[name path = pw, blue, ultra thick] (x, 1)
+    node [pos = 0.8, below] {\(P_W\)};
+
+    \addplot[black, ultra thick, dashed] (-1, x)
+    node [pos = 0.1, left] {\(Q_D(P_W)\)};
+    \addplot[black, ultra thick, dashed] (0, x)
+    node [pos = 0.1, left] {\(Q_*\)};
+    \addplot[black, ultra thick, dashed] (1, x)
+    node [pos = 0.1, right] {\(Q_S(P_W)\)};
+
+    \addplot[fill = red, opacity = 0.2] fill between [
+        of = pw and qs,
+        soft clip = {domain = -6:1}
+    ];
+    \addplot[fill = red, opacity = 0.2] fill between [
+        of = qs and mid,
+        soft clip = {domain = -6:0}
+    ];
+    \addplot[fill = blue, opacity = 0.4] fill between [
+        of = qd and pw,
+        soft clip = {domain = -6:-1}
+    ];
+\end{simpleplot}
+
+For local suppliers, this is excellent, as can be seem on the above graph.
+Their surplus has increased by the area of the light red section, with the 
+section under \(Q_D\) to the left of \(Q_D(P_W)\) coming directly out of 
+local consumer surplus, and remainder constituting the surplus acquired through
+international trade.
+
+\bigskip
+In this case, the total added surplus for the local market is equal to the area
+of the small triangle in the centre. The gains made by the suppliers outweigh
+the losses of the consumers.
+
+\bigskip
+Intuitively, in the case that \(P_W < P^*\), consumers will be bettered by
+imports of goods for which the country is at a comparative disadvantage,
+while producers will be harmed by the necessary reduction of \(P^*\) to \(P^W\).
+Once again, the total surplus rises, though in this case at the cost of producers
+rather than consumers.
+
+\subsubsection*{Trade and Interventions}
+An import tariff is a tax applied to goods imported from overseas. This
+reduces the comparative advantage of overseas goods, moving the market price
+closer to the Autarky price in the case of \(P_W < P^*\). This will result
+in an increase of local supply of the good, by artificially making 
+local goods more competitive. This will be good for suppliers, but bad
+for producers. This tariff inevitably introduces a deadweight loss into
+the system, in addition to taxation revenue for the government.
+
+\bigskip
+Quotas have the effect of fixing the maximum quantity of good that can be
+imported. If a binding quota is applied to a good, it has the effect of setting the
+price of a good for a quantity up to the maximum of the quota, at which stage
+the normal local market behaviour resumes (in the case \(P_W < P^*\)).
+Thus, it will result in a lower price, but one which is less significant
+than is there was no quota. This results in a reduction in consumer surplus
+and an increase in producer surplus when compared with the equilibrium.
+There is a deadweight loss when compared with the unrestricted market.
+A quota introduces a benefit for those who have permission to fill the quota;
+because this is limited, not all everyone can benefit from it. A quota
+has essentially the same impact as a tariff, in that the losses are in the
+imports which don't occur due to reduced foreign comparative advantage.
 
 \end{document}
