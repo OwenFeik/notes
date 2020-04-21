@@ -2,19 +2,20 @@
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{commath}
 \usepackage{pgfplots}
+\usepackage{calc}
 
 \pgfplotsset{compat = 1.16}
 \usepgfplotslibrary{fillbetween}
 
 % Create simple plots with consistent styling
-\newenvironment{simpleplot}{
+\newenvironment{simpleplot}[1][1]{
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
                 xmax = 6,
                 ymax = 6,
-                width = 12cm,
-                height = 9cm,
+                width = 12 * #1 cm,
+                height = 9 * #1 cm,
                 xlabel = Quantity,
                 xlabel near ticks,
                 xtick style = {draw = none},
@@ -643,5 +644,168 @@ A quota introduces a benefit for those who have permission to fill the quota;
 because this is limited, not all everyone can benefit from it. A quota
 has essentially the same impact as a tariff, in that the losses are in the
 imports which don't occur due to reduced foreign comparative advantage.
+
+\subsection*{Market Failure}
+We have seen thus far the perfectly competitive markets generate perfectly
+efficient outcomes, while government interventions tend to result in 
+deadweight losses. However, the reality is that markets operating in an
+unfettered fashion often result in outcomes that are socially and or economically
+undesirable. An assortment of causes can cause market failures:
+
+\begin{itemize}
+    \item Externalities
+    \item Asymmetric information
+    \item Imperfect competition
+    \item Public goods
+\end{itemize}
+
+A \textit{negative externality} causes costs of others which aren't borne
+by the agent. This could be something like a consumer deciding
+to smoke in public; this can cause cancer for the people around them for
+which the smoker needn't pay. A \textit{positive externality} occurs when
+a decision-maker's action causes benefits for others, which the decision-maker
+doesn't receive. An example could be vaccinations; if someone gets vaccinated,
+they protect not only themselves but those they come into contact with are
+saved from a disease. Because the costs of these actions are not borne
+by the decision-maker, they are often not considered when making decisions.
+
+\bigskip
+When considering a market, we look at the \textit{private} benefits and 
+costs of the individual. Thus, we can interpret demand as \textit{private
+marginal benefit} (\(PMB\)) and supply as \textit{private marginal cost}
+(\(PMC\)). Thus market equilibrium occurs at \(PMB = PMC\) and \(Q^*\)
+maximises private net benefits. To consider a society's broader perspective,
+we can add \textit{social} marginal benefits and marginal costs, to arrive
+at a socially optimal outcome \(Q^{**}\). If \(PMB = SMB\) and \(PMC = SMC\),
+the market equilibrium is socially efficient. This balance can be disrupted
+by externalities. The following types of externalities can occur:
+
+\begin{itemize}
+    \item Positive externality in production (\(SMC < PMC\)), such as between
+    a beekeeper and orchardist. The more honey the beekeeper produces, the
+    more efficient the orchardists farm. Thus, the beekeeper is effecting a
+    net good for the orchardist, the benefits of which they don't see.
+    \item Negative externality in production (\(SMC > PMC\)), such as in the
+    case of industrial pollution. A dye factory may pollute a river system,
+    reducing the efficiency of the downstream fishery causing social marginal
+    cost to be higher than the private marginal cost of the polluter.
+    \item Positive externality in consumption (\(SMB > PMB\)), for example
+    vaccination. When one gets a vaccination, they contribute to heard 
+    immunity, a societal good.
+    \item Negative externality in consumption (\(SMB < PMB\)), like smoking
+    causing unpleasantness for those around them or incurring health care 
+    costs through a socialised health care system.
+\end{itemize}
+
+\subsubsection*{Example}
+
+\begin{figure}[h]
+    \centering
+    \hspace{-1.5cm}
+    \begin{minipage}{0.4\textwidth}
+        \begin{simpleplot}[0.6]
+            \addplot[name path = q, blue, ultra thick] {-x}
+            node [pos = 0.8, below left] {\(MB\)};
+            \addplot[name path = pmc, red, ultra thick] {x}
+            node [pos = 0.8, below right] {\(PMC\)};
+            \addplot[name path = smc, violet, ultra thick] {x + 2}
+            node [pos = 0.77, above left] {\(SMC\)};
+            \addplot[black, ultra thick, dashed] (0, x)
+            node [pos = 0.15, left] {\(Q_*\)};
+            \addplot[name path = p, black, ultra thick, dashed] (x, 0)
+            node [pos = 0.8, below] {\(P_*\)};
+
+            \addplot[fill = red, opacity = 0.3] fill between [
+                of = pmc and p,
+                soft clip = {domain = -2:0}
+            ];
+            \addplot[fill = red, opacity = 0.3] fill between [
+                of = smc and pmc,
+                soft clip = {domain = -6:-2}
+            ];
+            \addplot[fill = blue, opacity = 0.3] fill between [
+                of = q and p,
+                soft clip = {domain = -6:-0}
+            ];
+            \addplot[fill = violet, opacity = 0.3] fill between [
+                of = p and smc,
+                soft clip = {domain = -6:-2}
+            ];
+            \addplot[fill = gray, opacity = 0.3] fill between [
+                of = smc and q,
+                soft clip = {domain = -1:0}
+            ];
+        \end{simpleplot}
+    \end{minipage}
+    \hspace{1cm}
+    \begin{minipage}{0.4\textwidth}
+        \begin{simpleplot}[0.6]
+            \addplot[name path = q, blue, ultra thick] {-x}
+            node [pos = 0.8, below left] {\(MB\)};
+            \addplot[name path = pmc, red, ultra thick] {x}
+            node [pos = 0.8, below right] {\(PMC\)};
+            \addplot[name path = smc, violet, ultra thick] {x + 2}
+            node [pos = 0.7, above left] {\(SMC\)};
+            \addplot[black, ultra thick, dashed] (-1, x)
+            node [pos = 0.15, left] {\(Q_{**}\)};
+            \addplot[name path = p, black, ultra thick, dashed] (x, 1)
+            node [pos = 0.7, below] {\(P_{**}\)};
+
+            \addplot[fill = red, opacity = 0.3] fill between [
+                of = smc and pmc,
+                soft clip = {domain = -6:-1}
+            ];
+            \addplot[fill = blue, opacity = 0.3] fill between [
+                of = q and p,
+                soft clip = {domain = -6:-1}
+            ];
+            \addplot[fill = violet, opacity = 0.3] fill between [
+                of = p and smc,
+                soft clip = {domain = -6:-1}
+            ];
+        \end{simpleplot}
+    \end{minipage}
+\end{figure}
+
+In the above plots, the purple area represents social producer surplus;
+the surplus generated when considering social marginal cost, adding this to
+the red area yields the surplus considering private marginal cost of 
+suppliers and the blue area is the marginal benefit of consumers (and 
+society, as \(PMB = SMB\) for this example). In this case, social loss 
+caused by a negative externality is given by the sum of the areas where
+\(PMC < SMC\). In the first case, that of market equilibrium (\(Q_*\)),
+there is a significant social cost, visible as the grey shaded region.
+This deadweight loss eats into the total surplus of the society.
+In the second case, \(Q_{**}\) or social equilibrium, the price is 
+dependent on the social marginal cost of production, and thus the total
+social surplus is conserved, with no deadweight societal loss.
+Thus, it is clear that the perfectly efficient market doesn't necessarily
+result in the maximum social surplus. This is an example of how a negative
+production externality might leave to market failure.
+
+\bigskip
+For a different example, consider a postitive externality in consumption.
+In this case, there will be a deadweight loss at the market equilibrium
+because individual agents will lack the incentive to perform an action
+that will increase social surplus but not private surplus.
+
+\subsubsection*{Accounting for Externalities}
+To coerce the market into behaving in a socially optimal fashion, a
+government can encourage people to internalise an externality; get
+agents to consider the social costs and benefits of their actions.
+If more force is required, a government can directly intervene in a
+market, through taxes, subsidies, quotas, etc. Here, a government
+is rectifying an inefficiency introduced by a free market, rather
+than distorting an efficient market as we have previously observed.
+
+\bigskip
+An example of such an intervention to rectify the case of a negative
+production externality is a \textit{Pigouvian tax}. This is a tax on
+a producer equal to the difference between the social marginal cost
+and the private marginal cost, thus forcing the market into the
+social equilibrium state, though in this case with a slice of total
+surplus benefitting government rather than producers or suppliers.
+To be efficient, a Pigouvian must be \textit{exactly} equal to the
+externality it aims to resolve.
 
 \end{document}
