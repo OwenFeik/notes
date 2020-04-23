@@ -659,6 +659,8 @@ undesirable. An assortment of causes can cause market failures:
     \item Public goods
 \end{itemize}
 
+\subsubsection*{Externalities}
+
 A \textit{negative externality} causes costs of others which aren't borne
 by the agent. This could be something like a consumer deciding
 to smoke in public; this can cause cancer for the people around them for
@@ -807,5 +809,124 @@ social equilibrium state, though in this case with a slice of total
 surplus benefitting government rather than producers or suppliers.
 To be efficient, a Pigouvian must be \textit{exactly} equal to the
 externality it aims to resolve.
+
+\subsubsection*{Asymmetric Information}
+Asymmetric information occurs when one agent knows more than another.
+Because in an ideal market, both sides have perfect information, when
+this is not the case issues can arise. When there are goods of varying
+qualities and some sections of a market know more about these than others, 
+market failures can arise. Goods are categorised into three categories
+for the purposes of information.
+\begin{itemize}
+    \item \textit{Search goods} have characteristics which are easy to
+    evaluate pre-purchase, such as commodities, groceries or toys.
+    \item \textit{Experience goods} have important characteristics which
+    are not easily observable at time of purchase, but which teh consumer
+    learns about over time. These include used cards, haircuts and travel.
+    \item \textit{Credence goods} are goods where quality is both difficult
+    to determine at time of purchase, and continue to be mysterious, such as
+    vitamins, plumbing or education.
+\end{itemize}
+For experience goods, the seller generally has more information about the
+goods than the buyer. This creates asymmetry. Sellers with lower-quality 
+goods may be more eager to sell goods than those with higher-quality goods,
+creating a situation known as \textit{adverse selection}. This is where an
+offer from an informed party (usually the seller) reveals negative information
+about the product on offer.
+
+\subsubsection*{Example}
+A classical example of adverse selection is the market for lemons, or used
+cars. In a situation where there are three grades of car:
+\begin{itemize}
+    \item High, 10\% chance of failure
+    \item Medium, 50\% chance of failure
+    \item Low, 90\% change of failure
+\end{itemize}
+And buyers value a working car at \$10000 and a non-working car at \$0, while
+sellers value cars at \$1000 less than the buyers. We then have these prices
+for cars in a market with perfect information:
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Quality & Buyers & Sellers \\
+        \hline
+        \hline
+        High & \$9000 & \$8000 \\
+        Medium & \$5000 & \$4000 \\
+        Low & \$1000 & \$0 \\
+        \hline
+    \end{tabular}
+\end{center}
+Thus, we will essentially have three markets transacting at the buyer price
+for each car type. A total surplus of \$1000 per car will exist. Even if
+neither side knows what grade a car is in, we still have symmetric information.
+The value of a car becomes:
+\[\frac{\$9000 + \$5000 + \$1000}{3} = \$5000\]
+\[\frac{\$8000 + \$4000 + \$0}{3} = \$4000\]
+And so, assuming that both sides are risk-neutral; that is they are happy
+to transact based on expected value, the three smaller marktes combine into
+one larger market for all qualities of cars, essentially at random. 
+Symmetry is retained, as is the surplus of \$1000 per car.
+
+\bigskip
+However, let us now consider an environment where sellers know the grade of
+their cars, but not buyers, one with asymmetric information. Buyers have the
+same valuation of a random car of \$5000, and so this would be the market
+price. However, sellers with high quality cars will not transact at \$5000,
+because they value their cars at \$8000. Thus, the market can contain only
+medium and low quality cars, changing the value to a buyer to
+\((\$5000 + \$1000) \div 2 = \$3000\). Disaster! As this is below the seller
+value of a medium quality car, they will also refuse to transact, and the
+market will be left selling only low quality cars, at a market price of \$1000.
+The total surplus will be only a third of what it would be if all cars where
+transacted. Total welfare drops and only the lowest quality goods are traded.
+This is adverse selection.
+
+\subsubsection*{Accounting for Adverse Selection}
+A variety of mechanisms exist for government intervention to protect against
+adverse selection. These include:
+\begin{itemize}
+    \item Legal systems (lemon laws in the US protect purchasers of new cars)
+    \item Quality inspections and certifications
+    \item Reputation systems, such as those used on eBay or Amazon
+    \item Signals such as warranties and service agreements
+\end{itemize}
+
+\bigskip
+Adverse selection is also prevalent in insurance; when purchasing insurance,
+the insuree generally has more information than the insurer. The insurer will
+be incentivised to price their insurance at the average cost for all people,
+which will disincentivise low risk individuals from purchasing insurance, thus
+driving up costs as the average risk of a customer increases. This 
+disincentivises slightly less row risk people, and the death spiral has begun.
+Governments often resolve this issue in car insurance by mandating its purchase,
+thus forcing even the lowest risk drivers to purchase it. In the case of 
+health insurance, universal health care can be an alternative that doesn't
+suffer this issue.
+
+\subsubsection*{Moral Hazard}
+\textit{Moral hazard} arises when one agent engages in risky behaviour because
+the other agent bears the consequences of this action. This is an issue in
+markets like insurance. For example, after obtaining health insurance one might
+(perhaps unwisely) take up unhealthy behaviours because the insurer will foot
+the bill for any medical issues. Moral hazard is another example of an issue
+with asymmetric information; the seller cannot monitor the buyers actions.
+
+\bigskip
+One way to resolve this is by transferring some responsibility to the buyer.
+If a car dealer offers a full warranty, and a driver enjoys driving recklessly,
+increasing the risk of the car breaking down, then the driver will do so as
+it costs them nothing for the duration of the warranty, and the cost to the 
+dealer is increased. However, if the dealer instead offers a partial insurance,
+meaning that they will pay some portion of the costs associated with a broken
+car, but the buyer will also pay some, the driver is now disincentivised from
+driving recklessly and is more likely to drive safely. Thus the risk for the 
+dealer is reduced and the incentive for bad behaviour from the buyer is 
+removed. These systems are seen in practice in places such as:
+\begin{itemize}
+    \item Insurance deductables, where insurees pay some fees upon a claim
+    \item CEO payment schemes, where salary is perfomance dependent
+    \item Grades, where students are incentivised to study
+\end{itemize}
 
 \end{document}
