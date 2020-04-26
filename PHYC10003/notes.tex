@@ -511,4 +511,100 @@ known as the linear momentum-impulse theorem.
 Because momentum is conserved, we know that for a closed system:
 \[(m_1v_1)_i + (m_2v_2)_i = (m_1v_1)_f + (m_2v_2)f\]
 
+\subsection*{Elastic and Inelastic Collisions}
+When a tennis ball is placed atop a basketball and dropped, the tennis
+ball will rebound with a velocity in excess of what it's velocity would
+suggest, while the basketball will bounce very little.
+
+\bigskip
+Across subsequent bounces, the momentum of the ball will diminish, because
+it is not ideally elastic and thus loses energy as heat or sound with each 
+bounce. The coefficient of restitution \(e\) is given by:
+\[e = \frac{\mathrm{relative\:velocity\:after\:collision}}{\mathrm
+{relative\:velocty\:before\:collision}}\]
+When a ball is bouncing in parabolic arcs, the square root of the ratio of the
+height of one bounce as compared to the next is a direct measure of \(e\).
+\begin{itemize}
+    \item \(e = 1\) is perfectly elastic
+    \item \(e = 0\) is perfectly inelastic
+\end{itemize}
+A basketball would have a reasonably high coefficient of restitution, while
+a material like mud or gelatin would have a very low coefficient of
+restitution.
+
+\bigskip
+Collisions come in several varieties.
+
+\begin{itemize}
+    \item In \textit{elastic collisions} total kinetic energy is conserved.
+    A useful approximation for common situations, such as on a pool table. 
+    In real situations, some energy is always transferred; as sound or friction
+    in our billiards example.
+    \item \textit{Inelastic collisions} transfer some energy.
+    \item \textit{Completely inelastic collisions} result in the two objects
+    stuck together, such as in the case of a bullet lodging in another object. 
+\end{itemize}
+For two moving particles undergoing an inelastic collision, the resultant
+transfer of energy will be described by
+\[m_1v_{1i} + m_2v_{2i} = m_1v_{if} + m_2v_{2f}\]
+For a completely inelastic collision with \(m_2\) at rest,
+\[m_1v_{1i} = (m_1 + m_2)v_f\]
+In the case of a completely inelastic collision, the velocity of the centre
+of mass will remain unchanged.
+\[\vec{v}_{\mathrm{com}} = \frac{\vec{P}}{m_1 + m_2} = \frac{\vec{p}_{1i} + 
+\vec{p}_{2i}}{m_1 + m_2}\]
+For elastic collisions, the total kinetic energy is always conserved. In the
+case of a stationary \(m_2\) for momentum:
+\[m_1v_{1i} = m_1v_{1f} + m_2v_{2f}\]
+and for kinetic energy:
+\[\frac{1}{2}m_1v^2_{1i} = \frac{1}{2}m_1v^2_{1f} + \frac{1}{2}m_2v^2_{2f}\]
+For the individual objects:
+
+\begin{minipage}[h]{0.4\linewidth}
+    \[v_{1f} = \frac{m_1 - m_2}{m_1 + m_2}v_{1i}\]    
+\end{minipage}
+\begin{minipage}[h]{0.4\linewidth}
+    \[v_{2f} = \frac{2m_1}{m_1 + m_2}v_{1i}\]    
+\end{minipage}
+
+\bigskip
+This makes perfect sense when we consider with an example. For a pool ball, 
+\(m_1 \approx m_2\), all of the velocity of \(m_1\) will be transferred to
+\(m_2\), which will continue with that speed, exactly the situation observed
+in pool. As another example, consider a ball colliding with a building. Here,
+\(m_1 \ll m_2\) and so \(v_{1f}\) will be roughly equal to \(-v_{1i}\), i.e.
+the ball has bounced back with roughly its initial velocity, as we would 
+expect. What this tells us is that when two masses collide, their final 
+velocities are determined by the ratio of their masses.
+
+\bigskip
+For higher dimensions, these formulas can be used by breaking the problem
+down into components for each dimension.
+
+\subsubsection*{Rockets}
+Rockets and their exhaust products form an isolated system. Thus momentum
+within the system must be conserved. However, because the rocket is ejecting
+mass out, its mass is not a constant. Thus it will be accelerating with time.
+\[M_v = -dMU + (M + dM)(v + dv)\]
+This can be simplified using relative speed, given by
+\[U = v + dv - v_\mathrm{rel}\]
+This leads us to the first rocket equation:
+\[Rv_\mathrm{rel} = Ma\]
+Where:
+\begin{itemize}
+    \item \(R\) is the mass rate of fuel consumption (\(\mathrm{kgs}^{-1}\))
+    \item \(v_\mathrm{rel}\) is the relative velocity of the ejected fuel
+    \item \(M\) is the (time dependent) mass of the rocket
+    \item \(a\) is the acceleration of the rocket
+\end{itemize}
+Thus, \(Rv_\mathrm{rel}\) is the \textit{thrust}, \(T\). Which is the force exerted
+by the rocket engine. This eventually gives us the second rocket equation:
+\[v_f - v_i = v_\mathrm{rel}\ln\frac{M_i}{M_f}\]
+Which in words states that the change in velocity of the rocket will be equal
+to the relative velocity multiplied by the logarithm of the ration between the
+initial and final mass of the rocket. This logarithmic relationship is why
+it is so expensive to launch spacecraft; the fuel must make up a significant
+proportion of the mass to achieve sufficient velocity. This is why rockets
+often drop stages to increase this ratio.
+
 \end{document}
