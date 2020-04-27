@@ -521,7 +521,7 @@ Across subsequent bounces, the momentum of the ball will diminish, because
 it is not ideally elastic and thus loses energy as heat or sound with each 
 bounce. The coefficient of restitution \(e\) is given by:
 \[e = \frac{\mathrm{relative\:velocity\:after\:collision}}{\mathrm
-{relative\:velocty\:before\:collision}}\]
+{relative\:velocity\:before\:collision}}\]
 When a ball is bouncing in parabolic arcs, the square root of the ratio of the
 height of one bounce as compared to the next is a direct measure of \(e\).
 \begin{itemize}
@@ -606,5 +606,86 @@ initial and final mass of the rocket. This logarithmic relationship is why
 it is so expensive to launch spacecraft; the fuel must make up a significant
 proportion of the mass to achieve sufficient velocity. This is why rockets
 often drop stages to increase this ratio.
+
+\subsection*{Rotational Motion}
+Rotational motion occurs with rigid bodies, which rotate as units, locked together
+without changing in shape or other properties. In this subject rotation around a 
+fixed axis, usually an axis of symmetry. Thus the rotation of a star, where layers
+of gas rotate independently is excluded. In addition a rolling bowling ball is
+excluded as both rotation and translation are ocurring.
+
+\bigskip
+Rotation of bodies around an axis of rotation is measured by angular position 
+from the \(x\)-axis. Rotation is measured in radians, which are dimensionless.
+\[1 \:\mathrm{revolution} = 360\degree = 2\pi \:\mathrm{rad}\]
+Radians do not reset to \(0\) after passing \(2\pi\), they continue to increase.
+If we know \(\theta(t)\), the rotation of the object with respect to time, we
+know all we need to about its kinematics. We can define angular displacement as
+the size of the angle between the initial position (the \(x\)-axis) and the
+current angle:
+\[\Delta\theta = \theta_2 - \theta_1\]
+It is worth noting that ``clocks are negative''; a counterclockwise rotation in
+the context of angular rotation is positive.
+
+\bigskip
+Rotations are \textit{non-commutative}, that is the order in which rotations
+are performed is significant. Rotation in the \(y\) followed by in the \(x\)
+is not equivalent to the inverse.
+
+\bigskip
+Average angular velocity is given by the average angular displacement during
+a time interval.
+\[\omega_{\mathrm{avg}} = \frac{\theta_2 - \theta_1}{t_2 - t_1}
+ = \frac{\Delta\theta}{\Delta t}\]
+Instantaneous angular velocity can be found by taking the limit of this:
+\[\omega = \lim_{\Delta t \rightarrow 0} \frac{\Delta\theta}{\Delta t}
+ = \frac{d\theta}{dt}\]
+The magnitude of angular velocity is the angular speed. Average angular
+acceleration is given by the change in angular velocity.
+\[\alpha_{\mathrm{avg}} = \frac{\omega_2 - \omega_1}{t_2 - t_1}
+ = \frac{\Delta\omega}{\Delta t}\]
+We can of course take the limit of this for instantaneous angular acceleration.
+For a rigid body, these statements will be true for all points; all points will
+have the same angular velocity. Angular velocity and acceleration can be 
+written as vectors. The \textit{right hand rule} is used to determine the 
+direction of these vectors. If one wraps the fingers of their right hand around
+the axis of rotation, with the fingers pointing in the direction of rotation,
+the extended thumb will point in the direction of the resultant vector.
+
+\subsubsection*{Equations}
+The system of equations of constant acceleration can be converted simply into
+rotation by simply considering angle where one would consider position; our
+first derivative of position is angular velocity, our second angular 
+acceleration.
+
+\begin{center}
+    \begin{tabular}{c|c}
+        \(\mathrm{Position}\) & \(\mathrm{Angle}\) \\
+        \hline
+        \(v = v_0 + at\) & 
+        \(\omega = \omega_0 + at\) \\[7pt]
+        \(\Delta x = v_0t + \frac{1}{2}at^2\) & 
+        \(\Delta\theta = \omega_0t + \frac{1}{2}\alpha t^2\) \\[7pt]
+        \(\Delta x = vt - \frac{1}{2}at^2\) &
+        \(\Delta\theta = \omega t - \frac{1}{2}\alpha t^2\) \\[7pt]
+        \(\Delta x = \frac{1}{2}(v_0 + v)t\) &
+        \(\Delta\theta = \frac{1}{2}(\omega_0 + \omega)t\) \\[7pt]
+        \(v^2 = v_0^2 + 2a\Delta x\) & 
+        \(\omega^2 = \omega_0^2 + 2\alpha\Delta\theta\) \\[7pt]
+    \end{tabular}        
+\end{center}
+
+To relate angular variables with linear variables, we need to use the angle and
+the radius. For a \(\theta\) in radians and \(r\) in metres:
+\begin{itemize}
+    \item For position, \(s = \theta r\)
+    \item For speed, \(v = \omega r\)
+    \item Tangential acceleration is given by \(a_t = \alpha r\)
+    \item Radial acceleration, \(a_r = \frac{v^2}{r} = \omega^2 r\)
+    \item For period, \(T = \frac{2\pi}{\omega}\)
+\end{itemize}
+Note that tangential acceleration is the acceleration at a tangent to the
+rotation while radial acceleration is the centripetal acceleration back in
+toward the axis of rotation.
 
 \end{document}
