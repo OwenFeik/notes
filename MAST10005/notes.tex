@@ -752,31 +752,31 @@ fact that scalar multiplication doesn't change direction.
 
 \bigskip
 The length or \textit{norm} of a vector can be determined through Pythagoras's Theorem, and is
-denoted \(||\vec{v}||\):
-\[||\vec{v}|| = \sqrt{v_1^2 + v_2^2}\]
+denoted \(\norm{\vec{v}}\):
+\[\norm{\vec{v}} = \sqrt{v_1^2 + v_2^2}\]
 In higher dimensions, this extends simply through:
-\[||\vec{v}|| = \sqrt{v_1^2 + v_2^2 + ... + v_n^2}\]
+\[\norm{\vec{v}} = \sqrt{v_1^2 + v_2^2 + ... + v_n^2}\]
 Which essentially corresponds to the recursive application of Pythagoras in each
 dimension.
 
 \bigskip
 Some important properties of vector norms:
 \begin{itemize}
-    \item For any \(\vec{u}\), \(||\vec{u}|| = 0\) precisely if 
+    \item For any \(\vec{u}\), \(\norm{\vec{u}} = 0\) precisely if 
     \(\vec{u} = 0\).
-    \item \(||\lambda\vec{u}|| = |\lambda|||\vec{u}||\) for any 
+    \item \(\norm{\lambda\vec{u}} = |\lambda|\norm{\vec{u}}\) for any 
     \(\lambda\in\R\) and and vector \(\vec{u}\).
-    \item \(||\vec{u} + \vec{v}|| \leq ||\vec{u}|| + ||\vec{v}||\) for any
-    \(\vec{u}, \vec{v}\).
+    \item \(\norm{\vec{u} + \vec{v}} \leq \norm{\vec{u}} + \norm{\vec{v}}\) 
+    for any \(\vec{u}, \vec{v}\).
 \end{itemize}
 
 Vectors of length \(1\) are called \textit{unit vectors}. They are denoted by
 the ``hat'': \(\hat{u}\). These are special, because they describe a direction.
 To find a unit vector for a given vector \(\vec{u}\):
-\[\hat{u} = \frac{1}{||\vec{u}||}\vec{u} = \frac{\vec{u}}{||\vec{u}||}\]
+\[\hat{u} = \frac{1}{\norm{\vec{u}}}\vec{u} = \frac{\vec{u}}{\norm{\vec{u}}}\]
 So for a piecewise example:
 \[\vec{u} = (1, 2, -1)\]
-\[||\vec{u}|| = \sqrt{1^2 + 2^2 + (-1)^2} = \sqrt{6}\]
+\[\norm{\vec{u}} = \sqrt{1^2 + 2^2 + (-1)^2} = \sqrt{6}\]
 \[\hat{u} = (\frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}}, \frac{-1}{\sqrt{6}})\]
 
 \bigskip
@@ -797,17 +797,17 @@ operation applied to a set of parenthesis will affect all operations within the
 parenthesis. In addition, scalar multiplication by either of the vectors before 
 the operation is the same as scalar multiplication by the resultant vector. 
 One other useful property is that:
-\[\vec{u}\cdot\vec{u} = ||\vec{u}||^2\]
+\[\vec{u}\cdot\vec{u} = \norm{\vec{u}}^2\]
 For \(\vec{u}\) and \(\vec{v}\), the \textit{angle between} them is \(\theta\),
 which will always be \(\leq\pi\). This angle is closely related to the dot 
 product \(\vec{u}\cdot\vec{v}\). Using the Law of Cosines 
 (\(c^2 = a^2 + b^2 - 2ab\cos(C)\)), we can find that:
-\[||\vec{v} - \vec{u}||^2 = ||\vec{u}||^2 + ||\vec{v}||^2 - 2||\vec{u}||
-||\vec{v}||\cos(\theta)\]
+\[\norm{\vec{v} - \vec{u}}^2 = \norm{\vec{u}}^2 + \norm{\vec{v}}^2 - 2\norm{\vec{u}}
+\norm{\vec{v}}\cos(\theta)\]
 Rearranging this, we can solve for \(\cos(\theta)\)
-\[\cos(\theta) = \frac{\vec{u}\cdot\vec{v}}{||\vec{u}||||\vec{v}||}\]
+\[\cos(\theta) = \frac{\vec{u}\cdot\vec{v}}{\norm{\vec{u}}\norm{\vec{v}}}\]
 \[\theta = \arccos\left(\
-\frac{\vec{u}\cdot\vec{v}}{||\vec{u}||||\vec{v}||}\right)\]
+\frac{\vec{u}\cdot\vec{v}}{\norm{\vec{u}}\norm{\vec{v}}}\right)\]
 Some information can be drawn from the dot product with using trigonemtric
 functions. Depending on the sign of the dot product we can determine the 
 following:
