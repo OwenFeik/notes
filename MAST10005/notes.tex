@@ -759,5 +759,63 @@ In higher dimensions, this extends simply through:
 Which essentially corresponds to the recursive application of Pythagoras in each
 dimension.
 
+\bigskip
+Some important properties of vector norms:
+\begin{itemize}
+    \item For any \(\vec{u}\), \(||\vec{u}|| = 0\) precisely if 
+    \(\vec{u} = 0\).
+    \item \(||\lambda\vec{u}|| = |\lambda|||\vec{u}||\) for any 
+    \(\lambda\in\R\) and and vector \(\vec{u}\).
+    \item \(||\vec{u} + \vec{v}|| \leq ||\vec{u}|| + ||\vec{v}||\) for any
+    \(\vec{u}, \vec{v}\).
+\end{itemize}
+
+Vectors of length \(1\) are called \textit{unit vectors}. They are denoted by
+the ``hat'': \(\hat{u}\). These are special, because they describe a direction.
+To find a unit vector for a given vector \(\vec{u}\):
+\[\hat{u} = \frac{1}{||\vec{u}||}\vec{u} = \frac{\vec{u}}{||\vec{u}||}\]
+So for a piecewise example:
+\[\vec{u} = (1, 2, -1)\]
+\[||\vec{u}|| = \sqrt{1^2 + 2^2 + (-1)^2} = \sqrt{6}\]
+\[\hat{u} = (\frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}}, \frac{-1}{\sqrt{6}})\]
+
+\bigskip
+There are standard unit vectors for the axis vectors up to \(\R^3\):
+\begin{itemize}
+    \item \(\hat{i} = (1, 0, 0)\)
+    \item \(\hat{j} = (0, 1, 0)\)
+    \item \(\hat{k} = (0, 0, 1)\)
+\end{itemize}
+These can be used to write any vector in \(\R^3\).
+
+\subsubsection*{The Dot Product}
+For two vectors \(\vec{u}\) and \(\vec{v}\) we take the scalar or dot product 
+to be
+\[\vec{u}\cdot\vec{v} = u_1v_1 + u_2v_2 + ... + u_nv_n\]
+This operation is commutative and distributive. Order does not matter, and the
+operation applied to a set of parenthesis will affect all operations within the
+parenthesis. In addition, scalar multiplication by either of the vectors before 
+the operation is the same as scalar multiplication by the resultant vector. 
+One other useful property is that:
+\[\vec{u}\cdot\vec{u} = ||\vec{u}||^2\]
+For \(\vec{u}\) and \(\vec{v}\), the \textit{angle between} them is \(\theta\),
+which will always be \(\leq\pi\). This angle is closely related to the dot 
+product \(\vec{u}\cdot\vec{v}\). Using the Law of Cosines 
+(\(c^2 = a^2 + b^2 - 2ab\cos(C)\)), we can find that:
+\[||\vec{v} - \vec{u}||^2 = ||\vec{u}||^2 + ||\vec{v}||^2 - 2||\vec{u}||
+||\vec{v}||\cos(\theta)\]
+Rearranging this, we can solve for \(\cos(\theta)\)
+\[\cos(\theta) = \frac{\vec{u}\cdot\vec{v}}{||\vec{u}||||\vec{v}||}\]
+\[\theta = \arccos\left(\
+\frac{\vec{u}\cdot\vec{v}}{||\vec{u}||||\vec{v}||}\right)\]
+Some information can be drawn from the dot product with using trigonemtric
+functions. Depending on the sign of the dot product we can determine the 
+following:
+\begin{itemize}
+    \item \(\theta\) is acute if \(\vec{u}\cdot\vec{v} > 0\)
+    \item \(\theta\) is obtuse if \(\vec{u}\cdot\vec{v} < 0\)
+    \item \(\theta = \frac{\pi}{2}\) if \(\vec{u}\cdot\vec{v} = 0\)
+\end{itemize}
+
 \end{flushleft}
 \end{document}
