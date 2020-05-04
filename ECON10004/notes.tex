@@ -929,4 +929,123 @@ removed. These systems are seen in practice in places such as:
     \item Grades, where students are incentivised to study
 \end{itemize}
 
+\section*{Firms}
+In the examinations of markets to date, we have generally considered small,
+independent buyers and sellers, a construct which aligns poorly with the
+reality of massive corporations. To remedy this, we now examine firms as a
+concept.
+
+\bigskip
+The role of a firm is to produce; to utilise inputs to produce outputs to
+sell onward to consumers. Firms offer a means of coordinating work. They have
+numerous benefits. They eliminate the need to negotiate each task a worker
+undertakes. They can internalise externalities in different layers of a 
+production process, reducing losses. There are many varieties of firms, from
+single proprietor entities to larger corporations.
+
+\bigskip
+The most basic fact of a firm is, speaking economically, its 
+\textit{technology}, the method through which it transforms inputs into 
+outputs. These inputs might include labour, capital or raw materials.
+
+\subsubsection*{Example}
+Consider a bookbinding firm. The books are bound by a machine, an item of 
+capital, which can bind 36 books per minute with a crew of 6 people. With less
+workers, more books can be output. The following table describes the quantity
+produced for each number of workers:
+
+\begin{center}    
+    \begin{tabular}{c|c|c}
+        Workers & Output & \(F(1, L)\) \\
+        \hline
+        \(1\) & \(10\) & \(10\) \\
+        \(2\) & \(18\) & \(18\) \\
+        \(3\) & \(24\) & \(24\) \\
+        \(4\) & \(30\) & \(30\) \\
+        \(5\) & \(34\) & \(34\) \\
+        \(6\) & \(36\) & \(36\) \\
+        \(7\) & \(34\) & \(36\) \\
+        \(8\) & \(32\) & \(36\) \\
+        \(9\) & \(30\) & \(36\) \\
+        \(10\) & \(26\) & \(36\) \\  
+    \end{tabular}
+\end{center}
+
+This is a \textit{production function}, which describes the highest output
+(denoted \(Q\)) a firm can produce for every specified combination of inputs.
+While firms can use a wide variety of inputs, here we will consider labour 
+(\(L\)) and capital (\(K\)). Thus, the production function, shown for \(K = 1\)
+in the third column is:
+\[Q = F(K, L)\]
+As we add machines, the maximum productivity for higher numbers of workers will
+increase. While in this example the production function is discrete, in general
+we consider the production function as outputting an average, and so represent 
+the production function as a continuous multi-variable function.
+
+\bigskip
+If we plot capital against labour, we can draw curves of \(F(K, L) = n\) which
+show how a given quantity can be produced with different combinations of 
+capital and labour. When describing productivity, we use the constructs of 
+total and marginal product. Total product (\(TP\)) describes the total quantity
+of outputs given some inputs. Marginal product (\(MP\)) describes the increase
+in production from an additional unit of input. In the example of \(F(K, L)\),
+we can find the productivity of labour by holding capital as a constant and 
+taking the limit of \(L\), i.e. take the partial derivative of \(F\) with 
+respect to \(L\).
+\[MP_L = \frac{\partial F(K, L)}{\partial L}\]
+We could do the reverse to find the marginal product of capital. In general,
+we assume that the law of diminishing returns applies to both quantities.
+
+\bigskip
+The profit of a firm is given by subtracting its total costs, what it pays for
+its input, from its total revenue, what it is paid for its outputs. The goal of
+a firm is to maximise this value. Let us assume a firm can sell each unit of 
+output for \(p\), must pay \(w\) for each unit of labour and \(r\) for each 
+unit of capital. Then:
+\[pF(K, L) - wL - rK\]
+This is the equation which the firm seeks to optimise. While for a simple 
+equation this is fairly simple, it will be more complex in a more realistic
+scenario. We can simplify the problem by considering that:
+\[\pi(Q) = TR(Q) - TC(Q)\]
+Where \(\pi(Q)\) is the total profit for a given quantity. Here, \(TR(Q)\) is
+simple \(pQ\). However, it is a little more difficult to find a function 
+\(TC(Q)\). For this purpose we can look to our production functions. We can
+plug in the costs of each unit of production and capital to our production 
+function and define \(TC(Q)\) to be the lowest cost combination of different
+inputs to the production function to produce \(Q\) units. 
+
+\bigskip
+The slope of this function will be governed by the relative costs of capital
+and labour. If the two are roughly in balance the function will track 
+\(x = y\), if labour is more expensive it will favour capital, etc.
+
+\bigskip
+To maximise \(\pi(Q)\), we can differentiate it.
+\[\frac{d\pi(Q)}{dQ} = \frac{dTR(Q)}{dQ} - \frac{dTC(Q)}{dQ} = MR(Q) - MC(Q)\]
+If we set this equal to 0 to maximise the function, we find that
+\[MR(Q^*) = MC(Q^*)\]
+
+\subsubsection*{Time and Costs}
+While conceptually we can simply try and maximise this function, in reality it
+can be difficult to vary inputs like capital. Thus, we define two \textit{time 
+horizons}. In the short term, only one variable can be changed, usually labour,
+while in the long term, all variables can be changed. The function examined
+previously was for the long term, as it was assumed that all inputs could be
+adjusted.
+
+\bigskip
+In the short run, we have costs which do not vary with the level of output, as
+the input cannot be varied. These are fixed costs. In addition, we have 
+variable costs, which are dependent on quantity.
+\[SRTC(Q) = FC + VC(Q)\]
+For our example of the bookbinder, we can consider a situation where the 
+machines are rented on a yearly contract. Say that \(2\) machines have been 
+rented for a \(1\) year period. Thus \(F(2, L)\) will give the variable costs.
+Here, \(Q\) is capped at \(72\), because the maximum production for a single
+machine is \(36\). In this case, the short run function will only coincide
+with the long run function in the case that \(2\) units of capital is optimal.
+The long run function will always be less than or equal to the short run 
+function, because it can always take the value of the short run function, but
+can additionally make other optimisations.
+
 \end{document}
