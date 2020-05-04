@@ -688,4 +688,83 @@ Note that tangential acceleration is the acceleration at a tangent to the
 rotation while radial acceleration is the centripetal acceleration back in
 toward the axis of rotation.
 
+\subsubsection*{Energy}
+For a rotation system, the rotation kinetic energy is given by summing the
+individual kinetic energies of all particles in the system.
+\[E_k = \sum^n_{i=0} \frac{1}{2}m_iv_i^2\]
+For a rigid body, all particles have the same rotational velocity. We can use
+this fact to express the kinetic energy as follows:
+\[E_k = \frac{1}{2}\left(\sum^n_{i=0}m_ir_i^2\right)\omega^2\]
+The term in brackets here is known as the \textit{rotational inertia} or 
+\textit{moment of inertia} of the body in the axis of rotation, denoted \(I\).
+This is a property of the body being considered. The formula for kinetic energy
+can then be rewritten:
+\[E_k = \frac{1}{2}I\omega^2\]
+Relating this to linear quantities, \(I\) relates to mass while \(\omega\), as 
+elsewhere relates to velocity. \(I\) in effect tells us how difficult it is to
+change the speed of rotation of a body. The moment of inertia can be considered
+in a general sense by taking the limit across a solid body:
+\[I = \int r^2dm\]
+Rather than calculate the moment of inertia in this course, it is more common
+to use one of a few common shapes which have intuitive moments.
+\begin{itemize}
+    \item A thin hoop around an axis with radius \(r\) has a moment of inertia
+    given by \(I = mr^2\) where \(m\) is the mass of the hoop. This is the 
+    maximum motion of inertia for a given mass.
+    \item An annulus, which is a hoop with thickness, the moment of inertia is
+    given by \(I = \frac{1}{2}m(r_1^2 + r_2^2)\), where \(r_1\) is the inner
+    radius and \(r_2\) is the outer radius. The limit of this case is 
+    \(r_1 = r_2\), the thin hoop.
+    \item A cylinder has moment given by \(\frac{1}{2}mr^2\), the other limit
+    of the annulus, where \(r_1 = 0\). 
+    \item A sphere of uniform density has \(I = \frac{2}{5}mr^2\).
+    \item A hollow sphere has \(I = \frac{2}{3}mr^2\), because the mass is more
+    concentrated further away from the center.
+\end{itemize}
+These concepts are used often in machinery, where objects with a high moment of
+intertia are used to store energy. A classical example is in a flywheel.
+
+\bigskip
+If we want to consider different axes of rotation for the same object, as long
+as they are parallel and one of them is through the center of mass, we can use
+the \textit{parallel-axis theorem} to relate the center of mass' moment of 
+inertia to that of another parallel axis.
+\[I = I_\mathrm{com} + mh^2\]
+Where \(I_\mathrm{com}\) is the moment of inertia of the axis through the 
+center of mass, \(m\) is the mass of the body and \(h\) is the distance to
+the other axis of rotation.
+
+\subsubsection*{Force}
+The force necessary to rotate an object depends on the angle of the force and
+where on the object it is applied. When force is applied to an object, only 
+force applied tangentially will cause a rotation. The magnitude of the rotation
+will be dependent on the radial distance at which the force is applied. The
+construct used to understand this \textit{torque}.
+\[\tau = rF\sin(\phi)\]
+Here, \(r\) is the radial distance, \(F\) is the magnitude of the force applied
+and \(\phi\) is the angle between the force and a line from the rotation axis.
+The perpendicular between the force and the axis if one extends out the force 
+as a line is known as the \textit{moment arm} of the force. Torque is expressed
+in \(\mathrm{Nm}\), the same as Joules, but as it is not an energy not 
+\textit{in} Joules. A torque is defined as positive if it would cause a 
+counterclockwise rotation and negative if it would cause a clockwise rotation.
+For several torques, we can sum them to find the net or resultant torque.
+
+\bigskip
+With torque, we now have the tools to rewrite \(F = ma\) with our rotational
+variables. Torque will take the role of force, with \(I\) replacing mass and
+\(\alpha\) acceleration.
+\[\tau = I\alpha\]
+
+\bigskip
+We can understand rotational work as the change in rotational kinetic energy.
+\[\Delta E_k = E_{k, f} - E_{k, i} = 
+\frac{1}{2}I\omega^2_f - \frac{1}{2}I\omega^2_i = W\]
+For rotation in a fixed axis, work is the area under a torque vs angle graph.
+\[W = \int^{\theta_f}_{\theta_i}\tau d\theta\]
+When we have a constant torque, this is simply \(W = \tau(\theta_f - 
+\theta_i)\), the rotational equivalent of \(W = Fd\). Work can be related to
+power through.
+\[P = \frac{dW}{dt} = \tau\omega\]
+
 \end{document}
