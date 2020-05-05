@@ -802,8 +802,8 @@ For \(\vec{u}\) and \(\vec{v}\), the \textit{angle between} them is \(\theta\),
 which will always be \(\leq\pi\). This angle is closely related to the dot 
 product \(\vec{u}\cdot\vec{v}\). Using the Law of Cosines 
 (\(c^2 = a^2 + b^2 - 2ab\cos(C)\)), we can find that:
-\[\norm{\vec{v} - \vec{u}}^2 = \norm{\vec{u}}^2 + \norm{\vec{v}}^2 - 2\norm{\vec{u}}
-\norm{\vec{v}}\cos(\theta)\]
+\[\norm{\vec{v} - \vec{u}}^2 = \norm{\vec{u}}^2 + 
+\norm{\vec{v}}^2 - 2\norm{\vec{u}}\norm{\vec{v}}\cos(\theta)\]
 Rearranging this, we can solve for \(\cos(\theta)\)
 \[\cos(\theta) = \frac{\vec{u}\cdot\vec{v}}{\norm{\vec{u}}\norm{\vec{v}}}\]
 \[\theta = \arccos\left(\
@@ -816,6 +816,78 @@ following:
     \item \(\theta\) is obtuse if \(\vec{u}\cdot\vec{v} < 0\)
     \item \(\theta = \frac{\pi}{2}\) if \(\vec{u}\cdot\vec{v} = 0\)
 \end{itemize}
+
+\subsubsection*{Vector Projections}
+Vector projections describe the subsection of a vector which lies along another
+vector. A common example is the representation of vectors through \((a\hat{i},
+b\hat(j), c\hat(k))\). In this form, \(a\hat{i}\) is the parallel projection of
+the vector onto \(\hat{i}\).
+
+\bigskip
+If we have vectors \(\vec{u}\) and \(\vec{v}\) and we want to find the vector
+projection of \(\vec{v}\) onto \(\vec{u}\), essentially what we are trying to
+do is find some scalar \(k\) such that a third vector \(\vec{w}\) is 
+perpendicular (or \textit{orthogonal}) to \(\vec{u}\) when defined as:
+\[\vec{w} = \vec{v} - k\vec{u}\]
+Then, the parallel projection of \(\vec{v}\) onto \(\vec{u}\), denoted 
+\(\vec{v}_{\parallel \vec{u}}\), is \(k\vec{u}\). The perpendicular 
+projection of \(\vec{v}\) onto \(\vec{u}\), written as 
+\(\vec{v}_{\perp \vec{u}}\), is \(\vec{w}\), or \(\vec{v} - k\vec{u}\).
+Since vectors are perpendicular when their dot product is \(0\), this means
+we want the solution to:
+\[\vec{u}\cdot(\vec{v} - k\vec{u}) = 0\]
+After rearranging, this formula is:
+\[k = \frac{\vec{u}\cdot\vec{v}}{\vec{u}\cdot\vec{u}}\]
+If the value of \(k\) is negative, the means the projetion is in the opposite
+direction to \(\vec{u}\) and that the angle between \(\vec{u}\) and \(\vec{v}\)
+is obtuse. When \(k\) is \(0\), the angle is \(\frac{\pi}{2}\) and If \(k\) is 
+positive, the angle is acute.  
+
+\subsubsection*{Example}
+Find the closest point \(Q\) on a line \(L\) which passes through 
+\(A = (0, 1)\) and \(B = (4, 3)\) to the point \(P = (1, 3)\). How far away
+is this point from \(L\).
+\begin{itemize}
+    \item The closest point to a line will be perpendicular to the line.
+    \item We can use a perpendicular projection to find this point.
+    \item Taking our base vector to be \(\vec{AP} = (1, 3) - (0, 1) = (1, 2)\)
+    \item And projecting on to \(\vec{AB} = (4, 3) - (0, 1) = (4, 2)\)
+    \item Then \(k = \vec{AB}\cdot\vec{AP} \div \vec{AB}\cdot\vec{AB}
+    = \frac{8}{20} = \frac{2}{5}\)
+    \item Our perpendicular projection is given by \(\vec{AP} - k\vec{AB}\)
+    \item \(\vec{AP}_{\perp\vec{AB}} = (1, 2) - \frac{2}{5}(4, 2) = (1, 2) - 
+    (\frac{8}{5}, \frac{4}{5}) = (\frac{-3}{5}, \frac{6}{5})\)
+    \item The distance from \(Q\) to \(P\) is 
+    \(\norm{\vec{AP}_{\perp\vec{AB}}} = \frac{3}{\sqrt{5}}\)
+    \item To find \(Q\), we can use \(\vec{OQ} = \vec{OA} = \vec{AQ}\)
+    \item \(\vec{OA} = A, \vec{AQ} = (\frac{8}{5}, \frac{4}{5}\) as 
+    calculated previously
+    \item Thus, \(\vec{OQ} = (\frac{8}{5}, \frac{9}{5})\)
+\end{itemize}
+
+\subsubsection*{Parametric Curves}
+With the tool of vectors of the form \((x\hat{i}, y\hat{j})\), we gain access
+to a new construct of vectors which vary with time.
+\[\vec{r}(t) = x(t)\hat{i} + y(t)\hat{j}\]
+Here, \(\vec{r}\) is a function which maps a real number \(t\), usually time, 
+to a vector. \(x(t)\) and \(y(t)\) are known as \textit{parametric equations} 
+as they depend on the parameter \(t\). The curve which \(\vec{r}\) traces
+out in \(\R^2\) is known as a \textit{parametric curve}. Functions of this form
+are useful for tasks such as describing the motion of a particle with time. The
+graph resultant from this, i.e. the set of points, is the range of the 
+function.
+
+\bigskip
+Sometimes, it can be useful to find the equation of a path. For example, 
+consider
+\[\vec{r}(t) = t\hat{i} + t^2\hat{j}\]
+For this equation we can solve for a function with the simultaneous 
+equations
+\[t = x\]
+\[y = t^2 = x^2\]
+Thus, the cartesian equal of this curve is \(y = x^2\). In many cases it is
+difficult or impossible to find such an equation. The goal is essentially
+to eliminate \(t\) from the equation of one of the equations.
 
 \end{flushleft}
 \end{document}
