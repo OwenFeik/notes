@@ -767,4 +767,81 @@ When we have a constant torque, this is simply \(W = \tau(\theta_f -
 power through.
 \[P = \frac{dW}{dt} = \tau\omega\]
 
+\subsubsection*{Analogy Summary}
+\begin{center}
+    \begin{tabular}{c|c}
+        \(\mathrm{Translation}\) & \(\mathrm{Rotation}\) \\
+        \hline
+        \(x\) & \(\theta\) \\[7pt]
+        \(v = \frac{dx}{dt}\) & \(\omega = \frac{d\theta}{dt}\) \\[7pt]
+        \(a = \frac{dv}{dt}\) & \(\alpha = \frac{d\omega}{dt}\) \\[7pt]
+        \(m\) & \(I = mr^2\) \\[7pt]
+        \(F_\mathrm{net} = ma\) & \(\tau_\mathrm{net} = I\alpha\) \\[7pt]
+        \(W = \int Fdx\) & \(W = \int\tau d\theta\) \\[7pt]
+        \(E_K = \frac{1}{2}mv^2\) & \(E_K = \frac{1}{2}I\omega^2\) \\[7pt]
+        \(P = Fv\) & \(P = \tau\omega\) \\[7pt]
+        \(W = \Delta E_K\) & \(W = \Delta E_K\) \\[7pt]        
+    \end{tabular}        
+\end{center}
+
+\subsubsection*{Rolling Objects}
+For a rolling object, both translational and rotational motion is occurring.
+For a wheel for instance, the centre of mass is always moving in a straight
+line, with the rest of the object rotating. For a wheel rolling in this way,
+one period is the time taken for a full rotation to occur. The displacement
+between the starting position of a rotation and the end position will be given
+by \(s = 2\pi R\), the circumfrence of the wheel. For an arc of size \(\theta\)
+the distance covered while the wheel turns this angle will be \(s = \theta R\).
+We can take the derivative to find the velocity of the centre of the mass:
+\[v_\mathrm{com} = \omega R\]
+The translational velocity of the wheel is directly related to its speed of
+rotation. This is only true for a wheel with no slippage. For a turning wheel,
+a point on one side of the wheel as a velocity exactly opposite to the velocity
+of a point on the other side. For a wheel which is purely translating, these
+points will have an equal velocity \(= v_\mathrm{com}\). To find the velocity
+of these points for a rolling wheel, we can add the vectors, finding that
+the point at the top has a velocity of twice the centre of mass, while the
+point at the bottom has no velocity.
+
+\bigskip
+For this system, the kinetic energy must be the sum of the translational and
+rotational kinetic energy.
+\[E_K = \frac{1}{2}I_\mathrm{com}\omega^2 + \frac{1}{2}mv^2_\mathrm{com}\]
+For a wheel to accelerate, its angular speed must change. This can be seen
+simply from the derivation of the velocity formula, and yields:
+\[a_\mathrm{com} = \alpha R\]
+If a slip occurs, an object is not rolling smoothly. In this case, the object
+has a frictional force exerting a torque on the object. For all rolling 
+objects, we can write the moment of inertia in the form
+\[I = cmr^2\]
+This can be seen in the earlier examples of a sphere (\(c = \frac{2}{5}\)) or
+the hoop (\(c = 1\)). We can accomodate any other rolling object by adjusting
+to a different value of \(c\). For a point particle \(c = 0\), because there is
+no accumulation of rotational motion with a very small radius. For an object
+rolling down a ramp of height \(h\):
+\[mgh = \frac{1}{2}I_\mathrm{com}\omega^2 + \frac{1}{2}mv^2_\mathrm{com}\]
+Here, we can replace \(\omega\) with \(\frac{v_\mathrm{com}}{r}\) to simplify.
+\[\frac{1}{2}cmr^2\left(\frac{v_\mathrm{com}}{r}\right)^2+
+\frac{1}{2}mv^2_\mathrm{com} = mgh\]
+\[\frac{1}{2}m(1 + c)v^2_\mathrm{com} = mgh\]
+Rearranging for \(v_\mathrm{com}\) we find
+\[v_\mathrm{com} = \sqrt{\frac{2gh}{1 + c}}\]
+This tells us that the final velocity of the object is independent of its mass
+and of its radius, and depends only on the geometry of the object, represented
+by \(c\). This makes sense; the large the value of \(c\), the more rotational
+energy the object gains.
+
+\bigskip
+Using equations of constant acceleration, we can find the acceleration of the
+object, and after some rearranging, this yields the following expression, where
+\(\theta\) is the angle of incline down which the object rolls.
+\[a_\mathrm{com} = \frac{g\sin(\theta)}{1 + c}\]
+This tells us that a point particle (\(c = 0\)), will have the greatest 
+acceleration of any shape. This makes sense as for a point particle, no energy
+is gained as rotational kinetic energy, and so all gain in kinetic energy is as
+downward velocity. A sphere (\(c = \frac{2}{5}\)) will have a greater 
+acceleration than a hoop (\(c = 1\)). The relationship between these 
+accelerations can be analysed through
+\[a_\mathrm{com} = \frac{a_\mathrm{particle}}{1 + c} \:\mathrm{for}\: c > 0\]
+
 \end{document}
