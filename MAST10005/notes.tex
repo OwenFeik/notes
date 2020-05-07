@@ -889,5 +889,43 @@ Thus, the cartesian equal of this curve is \(y = x^2\). In many cases it is
 difficult or impossible to find such an equation. The goal is essentially
 to eliminate \(t\) from the equation of one of the equations.
 
+\bigskip
+An application of parametric functions is in the modelling of ellipses. An
+ellipse of width \(a\) and height \(b\) has a cartesian equation of
+\[\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 \:\: a, b > 0\]
+This path can be parametrised through
+\[\vec{r}(t) = a\cos(t)\hat{i} + b\sin(t)\hat{j}\]
+This is proved by substituting \(a\cos(t)\) for \(x\) and \(b\sin(t)\) for 
+\(y\):
+\[\left(\frac{a\cos(t)}{a}\right)^2 + \left(\frac{b\sin(t)}{b}\right)^2 = 1\]
+\[\cos^2(t) + \sin^2(t) = 1\]
+Which is simply a trigonemtric identity. Ellipses are fairly easy to analyse.
+Let us use an example to practice this:
+\[\vec{r}(t) = \cos(2t)\hat{i} - 2\sin(2t)\hat{j}\]
+Here, we can immediately determine \(a = 1\) and \(b = 2\) from the 
+coefficients of \(\cos\) and \(\sin\). We can tell that the direction is 
+reversed from the \(-\) in front of \(\sin\). Finally, we can tell that the
+period is reduced from \(2\pi\) to \(\pi\) by the \(2t\) inner term.
+
+\bigskip
+A parametric equation is distinct from a path, because it contains more 
+information. The equation can tell us where the particle is at any given time,
+it tells us which direction the particle is moving in at any given time, and it
+tells us how long the particle takes to traverse the path.
+
+\bigskip
+When we have a pair of parametric functions, it can be useful to determine
+when the two particles collide. To find these points, we can take the \(x\)
+and \(y\) coordinate of each function and set them equal to each other for an
+arbritary value of \(t\). It is worth noting that the \textit{paths} of two
+particles might intersect without the particles every colliding, as the two 
+might pass through the same point at different times. As an example, let us
+consider the following functions:
+\[\vec{r}_1(t) = (t + 1)\hat{i} + (t^2 - 4t)\hat{j} \:\:\mathrm{and}\:\:
+\vec{r}_2(t) = (2t)\hat{i} + (6t - 9)\hat{j}\] 
+\[t + 1 = 2t \:\:\mathrm{and}\:\: t^2 - 4t = 6t - 9\]
+\[t = 1 \:\:\mathrm{and}\:\: 1^2 - 4 \times 1 = 6 \times 1 - 9 = -3\]
+Thus, the two particles collide at \(t = 1\).
+
 \end{flushleft}
 \end{document}
