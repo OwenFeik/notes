@@ -1093,6 +1093,7 @@ calculating on a case by case basis. Some of these common cases follow.
         \(\frac{d}{dx}[\sin(x)] = \cos(x)\) \\[7pt]
         \(\frac{d}{dx}[\cos(x)] = -\sin(x)\) \\[7pt]
         \(\frac{d}{dx}[e^x] = e^x\) \\[7pt]
+        \(\frac{d}{dx}[e^{f(x)}] = f^\prime(x)e^{f(x)}\) \\[7pt]
         \(\frac{d}{dx}[\log(x)] = \frac{1}{x}\) \\[7pt]
         \(\frac{d}{dx}[\tan(x)] = \sec^2(x)\) \\[7pt]
     \end{tabular}
@@ -1162,6 +1163,50 @@ It is worth noting that a derivative can change sign only when a function is
 undefined or when it passes through \(0\), which means we can find the extrema
 of a function by finding the sign of the function between each of the 
 stationary points.
+
+\subsubsection*{Higher Derivatives}
+We are not limited to differentiating functions once; we can take the 
+derivative of these derivatives; what we call the \textit{second} or 
+\textit{third} derivative of a function. This is very relevant in areas such
+as kinematics, where velocity is the first derivative of position and 
+acceleration is the derivative of velocity, the second derivative of position.
+
+\bigskip
+Just as with the first derivative, the second derivative has conditions to 
+exist. For \(f^{\prime\prime}\) to exist, \(f^\prime\) must differentiable for
+the interval considered. If this is true, \(f\) is twice differentiable on the
+interval. We the second derivative as follows:
+\[f^{\prime\prime}(x) = \frac{d}{dx}[f^\prime(x)] = \frac{d^2}{dx^2}[f(x)]\]
+Higher derivatives follow the same pattern. Some information can be drawn from
+a second derivative. The second derivative tells us the \textit{concavity} of a
+function. A function is \textit{concave up} on an interval if it displays a 
+kind of cup shape; this occurs when \(f^\prime\) is increasing on the interval
+or when \(f^{\prime\prime}\) is positive for the interval. The function is 
+concave down when it displays an inverted bowl shape; when \(f^\prime\) is
+decreasing or \(f^{\prime\prime}\) is less than \(0\).
+
+\bigskip
+Concavity is a geometric property; it describes the direction of curvature of 
+the graph. We can understand it by thinking about chords; if a graph is concave
+up, such as a normal parabola, the chords will all be above the graph, while
+for a concave down graph they will all be below the graph. Let us consider an
+example:
+\begin{itemize}
+    \item Use the second derivative to determine where \(f(x) = x^4\) is 
+    concave up and where it is concave down.
+    \item \(f^\prime(x) = 4x^3\)
+    \item \(f^{\prime\prime}(x) = 12x^2\)
+    \item \(12x^2 > 0\) for \(x \in (-\infty, 0) \cup (0, \infty)\)
+    \item Thus \(f(x)\) is concave up for \((-\infty, 0))\) 
+    and \((0, \infty)\).
+\end{itemize}
+
+A \textit{point of inflection} is a point where a function changes between 
+being concave up and concave down. These can be found where 
+\(f^{\prime\prime} = 0\). In addition, they can occur at points where the
+function is undefined, or at start or end points. For example, in the function
+\(f(x) = x^3\), \(f^{\prime\prime}(x) = 6x\) and we can see that the only point
+of inflection of this function is \(x = 0\).
 
 \end{flushleft}
 \end{document}
