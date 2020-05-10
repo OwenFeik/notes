@@ -1,7 +1,10 @@
 \documentclass[12pt]{report}
 \renewcommand{\familydefault}{\sfdefault} % San Serif Font
 \usepackage{gensymb}
+\usepackage{amsmath}
+\usepackage{commath}
 \begin{document}
+\begin{flushleft}
 \title{PHYC10003 Notes}
 \chapter*{Motion}
 
@@ -844,4 +847,141 @@ acceleration than a hoop (\(c = 1\)). The relationship between these
 accelerations can be analysed through
 \[a_\mathrm{com} = \frac{a_\mathrm{particle}}{1 + c} \:\mathrm{for}\: c > 0\]
 
+\subsubsection*{Torque}
+Previously, we defined torque for a rotating body and a fixed axis. We can now
+redefined this for any particle moving along a path. As this path need not be 
+circle, torque will be defined here as a vector. The direction of torque is 
+defined with the right hand rule, if \(a\) is the first vector and \(b\) is the
+second, the right hand rule tells us the direction of torque by taking \(a\) as
+the index finger and \(b\) as the middle finger, and taking the direction of the
+extended thumb.
+
+\bigskip
+If we take \(\vec{r}\) to be a vector from the origin to the particles current
+position and \(\vec{F}\) to be the force on the particle, the torque is then 
+given by
+\[\vec{\tau} = \vec{r}\times\vec{F}\]
+And the magnitude of the torque is given by
+\[\tau = rF\sin(\phi)\]
+Thus, the torque will be a maximum when the force and \(\vec{r}\) are at 
+\(\phi = \frac{\pi}{2}\) from each other, with fits with our understanding
+of reality. If \(\vec{F}\) is in the same direction as the position vector,
+no torque will be exerted. This can be expressed in two equivalent ways.
+\[\tau = rF_\perp = r_\perp F\]
+The direction of torque will be perpendicular to the plane defined by 
+\(\vec{r}\) and \(\vec{F}\). The cross product is calculated as follows.
+\[\vec{a} = 2\hat{i} + 3\hat{j}\]
+\[\vec{b} = 2\hat{i} + 3\hat{j} + 2\hat{k}\]
+\[\vec{a} \times \vec{b} = 4(\hat{i} \times \hat{i}) + 6(\hat{i} \times 
+\hat{j}) + 4(\hat{i} \times \hat{k}) + 6(\hat{j} \times \hat{i}) + 
+9(\hat{j} \times \hat{j}) + 6(\hat{j} \times \hat{k})\]
+Because the cross product of two vectors which are proportional to each other
+is \(0\), \(\hat{i}\times\hat{i} = 0\), so most of these terms disappear. In
+addition, if we reverse the order of vectors in a cross product, we reverse the
+direction of the resultant vector. So \(\hat{i}\times\hat{j} = 
+-\hat{j}\times\hat{i} = \hat{k}\). Thus, each of these pairs produces another
+unit vector: \(\hat{i}\times\hat{j} = \hat{k}\), \(\hat{j}\times\hat{k} = 
+\hat{i}\) and \(\hat{k}\times\hat{i} = \hat{j}\). This fact is known as the 
+\textit{cyclic permutation}; if we write these letters in a triangle and read
+them clockwise, we can remember these equalities. Applying this knowledge to 
+\(\vec{a} \times \vec{b}\):
+\[\vec{a} \times \vec{b} = 0 + 6(\hat{i} \times \hat{j}) + 4(\hat{i} \times 
+\hat{k}) + 6(\hat{j} \times \hat{i}) + 0 + 6(\hat{j} \times \hat{k})\]
+\[= 6(\hat{i} \times \hat{j}) + 4(\hat{i} \times 
+\hat{k}) - 6(\hat{i} \times \hat{j}) + 6(\hat{j} \times \hat{k})\]
+\[= -4(\hat{k} \times \hat{i}) + 6(\hat{j} \times \hat{k})\]
+\[= 6\hat{i} - 4\hat{j}\]
+This, however is a little bit long winded, and the value can instead be 
+calculated using a \textit{determinant}. To find the determinant of 
+\(\vec{r}\times\vec{F}\) we can use the following matrix, where \((x, y, z)\)
+is \(\vec{r}\), the position vector and \((F_x, F_y, F_z)\) is \(\vec{F}\), the
+force vector.
+\[
+    \begin{vmatrix}
+        \hat{i} & \hat{j} & \hat{k} \\
+        x & y & z \\
+        F_x & F_y & F_z
+    \end{vmatrix}
+\]
+What this asks us to do, in essence, is to take the top left cell, eliminate
+its row and column, and multiply the top left (\(y\)) and bottom right 
+(\(F_z\)) cells of the resultant matrix, then subtract the product of the top
+right (\(z\)) and bottom left (\(F_y\)) from this, then subtract from this term
+the result of doing the same with the middle top cell and add the result of the
+top right cell. As an equation, this becomes:
+\[\tau = (yF_z - zF_y)\hat{i} - (xF_z - zF_x)\hat{j} + (xF_y - yF_x)\hat{k}\]
+\[= (yF_z - zF_y)\hat{i} + (zF_x - xF_z)\hat{j} + (xF_y - yF_x)\hat{k}\]
+This structure can of course be used more generally to solve any cross product.
+The first vector goes on the second line and the second on the third line. With
+the previous example:
+\[\vec{a} = 2\hat{i} + 3\hat{j}\]
+\[\vec{b} = 2\hat{i} + 3\hat{j} + 2\hat{k}\]
+\[\vec{a} \times \vec{b} = 
+    \begin{vmatrix}
+        \hat{i}\: & \hat{j}\: & \hat{k} \\
+        2 & 3 & 0 \\
+        2 & 3 & 2
+    \end{vmatrix}
+\]
+\[\vec{a} \times \vec{b} = (6 - 0)\hat{i} + (0 - 4)\hat{j} + (6 - 6)\hat{k}\]
+\[= 6\hat{i} - 4\hat{j}\]
+A property of determinants is that any pair of rows or columns can be swapped
+with the result of multiplying the result by \(-1\). This makes clear that 
+\(\vec{a}\times\vec{b} = -\vec{b}\times\vec{a}\).
+
+\subsubsection*{Angular Momentum}
+This understanding can be extended to a concept of angular momentum. Angular
+momentum is denoted \(\vec{l}\) and can be calculated from position and 
+momentum or equivalently position, mass and velocity.
+\[\vec{l} = \vec{r} \times \vec{p} = m(\vec{r} \times \vec{v})\]
+It bears noting that the particle doesn't need to be rotating around the origin
+to have angular momentum around it. Angular momentum is measured in the same 
+units as momentum, in \(\mathrm{kgms}^{-1}\). The same properties of torque 
+hold here, with the magnitude of \(l\) being given by
+\[l = rmv\sin(\phi) = rp_\perp = rmv_\perp = r_\perp p = r_\perp mv\]
+It is worth reiterating the angular momentum has meaning only with respect to
+the specified origin; if the origin is moved, angular momentum will change. In
+addition, as a vector product, angular momentum is always perpendicular to the
+plane formed by the position and momentum vectors. If position and momentum
+are in the same direction, there is no angular velocity.
+
+\bigskip
+Using the tool of angular momentum, we can rewrite Newton's second law as
+\[\vec{\tau}_\mathrm{net} = \frac{d\vec{l}}{dt}\]
+As angular momentum is a vector, we can find the angular momentum of a system
+by summing the angular momentum of particles in the systems. Thus the rate of
+change of the total angular momentum in the system is the total net torque on 
+all particles in the system. We denote angular momentum for a system as \(L\)
+as opposed to the \(l\) for a single particle.
+
+\bigskip
+When considering these equations, it is essential that both torque and angular
+momentum are measured relative to the same origin. In addition, when 
+considering a system, if the centre of mass of that system is accelerating, the
+origin taken must be the centre of mass, less unbalanced acceleration of the 
+particles disrupt the solution.
+
+\bigskip
+The angular momentum of a rigid body can be found through summation. For a body
+rotating about the \(z\) axis:
+\[L_z = \sum^n_{i = 1}l_{iz} = \sum^n_{i = 1} m_iv_ir_{\perp i} =
+\sum^n_{i = 1} m_i(\omega r_{\perp i})r_{\perp i}\]
+\[= \omega\left(\sum^n_{i = 1}m_ir^2_{\perp i}\right) = \omega I\]
+i.e. the total linear momentum of the body is equal to the sum of the linear 
+momentums of its particles, is equal to the moment of inertia of the body
+multiplied by its rate of rotation.
+
+\bigskip
+As with translational momentum, angular momentum is conserved. This implies 
+that if the moment of inertia of an object decreases, the angular velocity
+must increase, and that if the angular velocity decreases this must coincide
+with an increase in moment of inertia. It also suggests that if an object 
+with angular momentum is introduced into a system, it will impart some of
+its momentum to the system. For example, a person on a rotation capable chair
+is handed a spinning wheel. If the person tilts the wheel such that it is 
+spinning in the same axis as the rotation of the chair, the chair must rotate
+slightly in the opposite direction to maintain the \(0\) angular velocity
+it had before the wheel was introduced.
+
+\end{flushleft}
 \end{document}
