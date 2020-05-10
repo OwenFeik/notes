@@ -19,47 +19,57 @@
 \begin{itemize}
 \item \textbb{N} is the set of positive integers: \(\{ 1, 2, 3, 4, ... \}\)
 \item \textbb{Z} is the set of all integers: \(\{ ..., -1, 0, 1, 2, 3, ... \}\)
-\item \textbb{Q} is the set of rational numbers, those that can be written as fractions
+\item \textbb{Q} is the set of rational numbers, those that can be written as 
+fractions
 \item \textbb{R} is the set of real numbers.
 \item \textbb{C} is the set of complex numbers.        
 \end{itemize}
 
 
 \[\N \subseteq \Z \subseteq \Q \subseteq \R \subseteq \C\]
-Some numbers cannot be written as fractions, and these we describe as irrational. 
-These include \(\pi\), \(e\), \(\sqrt{2}\), etc. These numbers are not in \textbb{Q}, but they are real numbers, i.e. in \textbb{R}. 
-It can be difficult to prove numbers are irrational. An even larger set of numbers exists, that of the complex numbers \textbb{C}. ``Most'' real numbers are inrrational.
+Some numbers cannot be written as fractions, and these we describe as 
+irrational. These include \(\pi\), \(e\), \(\sqrt{2}\), etc. These numbers are 
+not in \textbb{Q}, but they are real numbers, i.e. in \textbb{R}. It can be
+difficult to prove numbers are irrational. An even larger set of numbers 
+exists, that of the complex numbers \textbb{C}. ``Most'' real numbers are 
+inrrational.
 
 
 \section*{Denoting Membership}
 If \(A\) is a set, saying \(x \in A\) means \(x\) is in the set \(A\). 
-We can also use \(\notin\) to denote non-membership. 
-Sets can be expressed as 2-dimensional regions, with points within them as elements.
+We can also use \(\notin\) to denote non-membership. Sets can be expressed as 
+2-dimensional regions, with points within them as elements.
 
 \begin{itemize}
 \item \(n \in \Z\) means \(n\) is an integer.
 \item \(x \in \Q\) means \(x\) can be expressed as a fraction.
 \end{itemize}
 
-Note that \(n\) is used in the first example while \(x\) is used in the second; conventionally, \(n\) is used to represent integers.
+Note that \(n\) is used in the first example while \(x\) is used in the second; 
+conventionally, \(n\) is used to represent integers.
 
 
 \section*{Desciptive Notation}
-Descriptive notation is a way of defining a set by stating a property which all of its elements possess. 
+Descriptive notation is a way of defining a set by stating a property which all
+of its elements possess. 
 For example: 
 \[A = \{x \in \R | x^2 + 1 > 37\}\]
-Which can be read as the set of all real numbers \(x\) such that \(x^2 + 1 > 37\). 
-The statement must be a ``predicate''; it must be true or false for all values. 
-The vertical bar is read as ``such that''. A colon is sometimes used instead.
+Which can be read as the set of all real numbers \(x\) such that 
+\(x^2 + 1 > 37\). The statement must be a ``predicate''; it must be true or 
+false for all values. The vertical bar is read as ``such that''. A colon is 
+sometimes used instead.
 
 \subsubsection*{Examples}
 
 \begin{itemize}
-\item Express the set of real numbers whose natural (base \(e\)) logarithm is positive with descriptive notation: \({x \in \R | log(x) > 0}\). 
-Note that \(log(x)\) denotes \(log_{e}(x)\). There is however an issue with this answer; 
-because \(log(x)\) is sometimes undefined, ``\(log(x) > 0\)'' is not a predicate. The set could instead be expressed as:
-\[\{x \in \R_{\scriptscriptstyle{>0}} | log(x) > 0\}\;\;\;\R_{\scriptscriptstyle{>0}} = \{x \in \R | x > 0\}\]
-\item Express the set of integers whose cube is even in descriptive notation: 
+\item Express the set of real numbers whose natural (base \(e\)) logarithm is 
+positive with descriptive notation: \({x \in \R | log(x) > 0}\). Note that 
+\(log(x)\) denotes \(log_{e}(x)\). There is however an issue with this answer; 
+because \(log(x)\) is sometimes undefined, ``\(log(x) > 0\)'' is not a 
+predicate. The set could instead be expressed as:
+\[\{x \in \R_{\scriptscriptstyle{>0}} | log(x) > 0\}\;\;\;
+\R_{\scriptscriptstyle{>0}} = \{x \in \R | x > 0\}\]
+\item Express the set of integers whose cube is even in descriptive notation:
 \[\{n \in \Z | n^3 \:\mathrm{is\:even}\}\]
 \item Describe the set \(\{n \in \N | sin(n) > 0\}\) in words: 
 \begin{quotation}
@@ -69,35 +79,45 @@ The set of all natural numbers n such that sin(n) is greater than 0.
 
 
 \section*{Abbreviated Notation}
-Set notation is often abbreviated. For example \(\{x \in \R | sin(x) = 0\}\) could be expressed as:
+Set notation is often abbreviated. For example \(\{x \in \R | sin(x) = 0\}\) 
+could be expressed as:
 \[\{k\pi | k \in \Z\}\]
 This will be all integer multiples of pi; i.e. all values for which sin(x) = 0. 
 This could also be expressed as: 
 \[\{x \in \R | x = k\pi \:\mathrm{for\:some}\:k \in \Z\}\]
-This can be thought of as a kind of ``generating'' notation, whereas descriptive notation
-could be seen to excise a set from a larger set through a condition.
+This can be thought of as a kind of ``generating'' notation, whereas 
+descriptive notation could be seen to excise a set from a larger set through a
+condition.
 
 \subsubsection*{Examples}
 
 \begin{itemize}
 \item Express the set of odd integers in abbreviated set notation: 
 \[\{2k + 1 | k \in \Z\} \:\mathrm{or}\: \{2k - 1 | k \in \Z\}\]
-\item Express the set \(\{x \in \R | cos(x) = 0\}\) in abbreviated set notation: 
+\item Express the set \(\{x \in \R | cos(x) = 0\}\) in abbreviated set 
+notation: 
 \[\{\frac{\pi}{2} + k\pi | k \in \Z\}\]
 \end{itemize}
 
 
 \section*{Intervals}
-\((a, b)\) means the set of real numbers between \(a\) and \(b\) (exclusive). Therefore:
-\[(a, b) = \{ x \in \R | a < x \:\mathrm{and}\: x < b\} = \{ x \in \R | a < x < b\} \]
-This can be illustrated on a number line with an open circle at \(a\) and \(b\). This is an open interval.
-To denote a closed interval (inclusive of \(a\) and \(b\)), we use a square brackets (\([a, b]\)) and a filled circle.
+\((a, b)\) means the set of real numbers between \(a\) and \(b\) (exclusive).
+Therefore:
+\[(a, b) = \{ x \in \R | a < x \:\mathrm{and}\: x < b\} = 
+\{ x \in \R | a < x < b\} \]
+This can be illustrated on a number line with an open circle at \(a\) and 
+\(b\). This is an open interval. To denote a closed interval (inclusive of 
+\(a\) and \(b\)), we use a square brackets (\([a, b]\)) and a filled circle.
 
 \subsubsection*{Examples}
 Give definitions of \([a, b)\) and \((a, b]\) with diagrams:
 \begin{itemize}
-\item \([a, b)\) represents all numbers from \(a\) (inclusive) to \(a\) (exclusive). On a number line, it would be drawn as a filled dot at \(a\) and an open dot at \(b\).
-\item \((a, b]\) represents all numbers greater than \(a\) and less than or equal to \(b\). It could be illustrated with a number line with an empty dot at \(a\) and a filled dot at \(b\).
+\item \([a, b)\) represents all numbers from \(a\) (inclusive) to \(a\) 
+(exclusive). On a number line, it would be drawn as a filled dot at \(a\) 
+and an open dot at \(b\).
+\item \((a, b]\) represents all numbers greater than \(a\) and less than or 
+equal to \(b\). It could be illustrated with a number line with an empty dot
+ at \(a\) and a filled dot at \(b\).
 \end{itemize}
 
 
@@ -113,31 +133,33 @@ Sets with finitely many elements can be described with a list of elements.
 \[\{x \in \Z | x^3 - x = 0\} = \{-1, 0, 1\}\]
 
 \subsubsection*{Example}
-Write the set of prime numbers less than 20 in descriptive and list of elements form:
+Write the set of prime numbers less than 20 in descriptive and list of elements
+form:
 \[\{2, 3, 5, 7, 11, 13, 17, 19\}\]
 
-We can use a kind of "list of elements" notation to denote some infinite sets with ellipses.
-e.g.: \[(2k + 1)\pi | k \in \Z = \{..., -3\pi, -\pi, \pi, 3\pi, ...\}\]
+We can use a kind of "list of elements" notation to denote some infinite sets 
+with ellipses. e.g.: 
+\[(2k + 1)\pi | k \in \Z = \{..., -3\pi, -\pi, \pi, 3\pi, ...\}\]
 
-The smallest set is taken to be the empty set, written as \(\emptyset\). It can also be written as 
-\(\{\}\) in list of elements form.
+The smallest set is taken to be the empty set, written as \(\emptyset\). It can
+ also be written as \(\{\}\) in list of elements form.
 
 \subsubsection*{Examples}
 \[\{x \in \R | x^2 + 1 = 0\} = \emptyset\]
 \[\{x \in \R | cos(x) > 1\} = \emptyset\]
 
 \section*{Subsets}
-If \(A\) and \(B\) are sets then \(A \subseteq B\) means that every element of \(A\) is also an element
-of \(B\). It is read as \(A\) is a subset of \(B\).
+If \(A\) and \(B\) are sets then \(A \subseteq B\) means that every element of
+\(A\) is also an element of \(B\). It is read as \(A\) is a subset of \(B\).
 \[x \in A \Rightarrow x \in B\]
 
 The empty set is taken to be a subset of every set.
 
 \section*{Proofs}
-A proof begins with a set of true assumptions, from which mathematical reasoning is used
-to prove a conclusion.
-To prove \(A \subseteq B\), we need to show that if something meets the criteria of \(A\),
-it must also meet those of \(B\).
+A proof begins with a set of true assumptions, from which mathematical 
+reasoning is used to prove a conclusion.
+To prove \(A \subseteq B\), we need to show that if something meets the 
+criteria of \(A\), it must also meet those of \(B\).
 
 \subsubsection*{Example}
 Prove \(A \subseteq B\) where:
@@ -146,17 +168,19 @@ Prove \(A \subseteq B\) where:
 \par
 Let \(n \in A\), thus \(sin(n) > 0\).
 \par
-Since \(sin(n) \leq 1\) and if \(x \leq y\) and \(a > 0\) then \(ax \leq ay\), we have \(sin(n)sin(n) \leq sin(n)\).
-Therefore \(n \in B\) so \(A \subseteq B\).
+Since \(sin(n) \leq 1\) and if \(x \leq y\) and \(a > 0\) then \(ax \leq ay\),
+we have \(sin(n)sin(n) \leq sin(n)\). Therefore \(n \in B\) so 
+\(A \subseteq B\).
 
 \bigskip
 
-To prove a statement is false, we must find a counterexample - an example for which a
-statement does not hold. Thus, to prove \(A\) is not a subset of \(B\), we must find any
-\(x\) in \(A\) but not in \(B\).
+To prove a statement is false, we must find a counterexample - an example
+for which a statement does not hold. Thus, to prove \(A\) is not a subset of 
+\(B\), we must find any \(x\) in \(A\) but not in \(B\).
 
 \subsubsection*{Example}
-Prove that \(A \nsubseteq B\) where \(A = \{3n + 1 | n \in \Z\}\) and \(B = \{6m + 1 | m \in \Z\}\).
+Prove that \(A \nsubseteq B\) where \(A = \{3n + 1 | n \in \Z\}\) and 
+\(B = \{6m + 1 | m \in \Z\}\).
 \par
 \[A = \{..., -2, 1, 4, 7, ...\}\]
 \[B = \{..., 1, 7, ...\}\]
@@ -179,24 +203,31 @@ This is a contradiction! Thus we conclude \(4 \notin B\).
 How do we prove that \(x^2 + x + 1 = 0\) has no real solutions?
 Proof by contradiction. Assume that there is a solution, \(x \in \R\) and show
 that this leads to an absurd conclusion.
-\[x^2 + x + 1 = 0 \Rightarrow (x + \frac{1}{2})^2 + \frac{3}{4} = 0 \Rightarrow (x + \frac{1}{2})^2 = \frac{-3}{4}\]
+\[x^2 + x + 1 = 0 \Rightarrow (x + \frac{1}{2})^2 + \frac{3}{4} = 0 \Rightarrow
+(x + \frac{1}{2})^2 = \frac{-3}{4}\]
 
-Note that \(p \Rightarrow q\) means if p is true, so is q. \(p \Leftrightarrow q\) means that if either
-is true, both are true; \(p\) is true \textit{if and only if} \(q\) is true.
+Note that \(p \Rightarrow q\) means if p is true, so is q. 
+\(p \Leftrightarrow q\) means that if either is true, both are true; \(p\) is
+true \textit{if and only if} \(q\) is true.
+
 \section*{Union}
-The elements of \(A \cup B\) are all the elements that are in either \(A\) or \(B\). 
+The elements of \(A \cup B\) are all the elements that are in either 
+\(A\) or \(B\). 
 
 \subsubsection*{Examples}
 Express the following sets using a union of intervals.
 \begin{itemize}
 \item \(\{x \in \R | x^2 > 1\}\): \((-\infty, -1) \cup (1, \infty)\)
 \item \(\{x \in (-2\pi, 2\pi] | sin(x) \leq 0\}\): 
-\[\{x \in (-2\pi, 0] | sin(x) \leq 0\} \cup \{x \in (0, 2\pi] | sin(x) \leq 0\} = [-\pi, 0] \cup [\pi, 2\pi]\]
-\item \(\{x \in [-2, 2] | x \notin \Z\}\): \((-2, -1) \cup (-1, 0) \cup (0, 1) \cup (1, 2)\)
+\[\{x \in (-2\pi, 0] | sin(x) \leq 0\} \cup \{x \in (0, 2\pi] | sin(x) \leq 0\}
+= [-\pi, 0] \cup [\pi, 2\pi]\]
+\item \(\{x \in [-2, 2] | x \notin \Z\}\): \((-2, -1) \cup (-1, 0) \cup (0, 1)
+\cup (1, 2)\)
 \end{itemize}
 
 \[(2, 8) \cup [3, 10] = (2, 10]\]
-Thus, \((2, 8) \cup [3, 10]\) is an interval. However is \((0, \sqrt{2}) \cup [\frac{\pi}{2}, 3)\) an interval?
+Thus, \((2, 8) \cup [3, 10]\) is an interval. However is \((0, \sqrt{2}) \cup 
+[\frac{\pi}{2}, 3)\) an interval?
 \par
 It is not, because \(\sqrt{2} < \frac{\pi}{2}\), thus two pieces are necessary.
 
@@ -206,17 +237,22 @@ It is not, because \(\sqrt{2} < \frac{\pi}{2}\), thus two pieces are necessary.
 \subsubsection*{Examples}
 \begin{itemize}
     \item Express \((2, 8) \cap [3, 10]\) as an interval: \([3, 8)\)
-    \item Express \((0, \sqrt{2}) \cap [\frac{\pi}{2}, 3)\) in the simplest ay possible: \(\emptyset\)
-    \item Express \(\Z \cap [-\pi, \pi]\) in list of elements form: \(\{-3, -2, -1, 0, 1, 2, 3\}\)
-    \item Express \(\Z \cap \{x \in \R | x^2 - 5 < 0\}\) in list of elements form: \(\{-2, -1, 0, 1, 2\}\)
-    \item Express the set of reals with positive sine and negative cosine with an intersection: \(\{x \in \R | \mathrm{sin}(x) > 0\} \cap \{x \in \R | \mathrm{cos}(x) < 0\}\)
+    \item Express \((0, \sqrt{2}) \cap [\frac{\pi}{2}, 3)\) in the simplest way
+    possible: \(\emptyset\)
+    \item Express \(\Z \cap [-\pi, \pi]\) in list of elements form: 
+    \(\{-3, -2, -1, 0, 1, 2, 3\}\)
+    \item Express \(\Z \cap \{x \in \R | x^2 - 5 < 0\}\) in list of elements
+    form: \(\{-2, -1, 0, 1, 2\}\)
+    \item Express the set of reals with positive sine and negative cosine with
+    an intersection: \(\{x \in \R | \mathrm{sin}(x) > 0\} \cap \{x \in \R | 
+    \mathrm{cos}(x) < 0\}\)
 \end{itemize}
 
 When interpreting questions, a question involving ``and'' is likely to be an intersection question.
 
 \section*{Complement}
-For \(A\) and \(B\) the \textit{relative complement} of \(A\) and \(B\) is the set of elements
-that are in \(A\) but not in \(B\). This is written as:
+For \(A\) and \(B\) the \textit{relative complement} of \(A\) and \(B\) is the 
+set of elements that are in \(A\) but not in \(B\). This is written as:
 \[A \backslash B = \{x \in A | x \notin B\}\]
 
 \subsubsection*{Examples}
@@ -247,13 +283,14 @@ the cartesian plane. \(\Z^2 \subseteq \R^2\).
 
 
 \chapter*{Inequalities}
-When we add a constant to an inequality, the inequality is order preserved, it still faces the same direction.
-Subtraction, obviously, obeys the same principle.
+When we add a constant to an inequality, the inequality is order preserved, 
+it still faces the same direction. Subtraction, obviously, obeys the same 
+principle.
 \[x > y \Rightarrow x + a > y + a\]
 When we multiply by a positive constant, \(a > 0\), is order preserving, while
 multiplying by a negative constant, \(a < 0\), is order reversing.
-As division is simply multiplication by reciprocal, it follows the same principles as
-multiplication; i.e. only order reversing if the divisor \(< 0\).
+As division is simply multiplication by reciprocal, it follows the same 
+principles as multiplication; i.e. only order reversing if the divisor \(< 0\).
 
 \subsubsection*{Examples}
 Express the set \(A = \{x \in \R | -2 -\frac{1}{2}x > -4\}\) as an interval.
@@ -285,30 +322,34 @@ Prove that \(x < y \:\mathrm{and}\: a < b \Rightarrow x + a < y + b\).
 \end{itemize}
 
 \subsection*{Reversing and Non-Reversing Functions}
-A function is order preserving if it is strictly increasing for the interval containing
-both sides of an inequailty. It is order-reversing if it is strictly decreasing for the same. 
-i.e. a function is order preserving if:
+A function is order preserving if it is strictly increasing for the interval 
+containing both sides of an inequailty. It is order-reversing if it is strictly
+decreasing for the same. i.e. a function is order preserving if:
 \[a < b \Rightarrow f(a) < f(b) \:\mathrm{for\:all}\:a, b \in I\]
 and order reversing if:
 \[a < b \Rightarrow f(a) > f(b) \:\mathrm{for\:all}\:a, b \in I\]
-For example, the logarithm and exponential function are order preserving. A function need
-not be strictly decreasing across \textbb{R} to be applied to an inequality; if both sides
-of an inequality are known to lie within an interval that is strictly decreasing or increasing,
-the function may still be applied.
+For example, the logarithm and exponential function are order preserving. A 
+function need not be strictly decreasing across \textbb{R} to be applied to an 
+inequality; if both sides of an inequality are known to lie within an interval
+that is strictly decreasing or increasing, the function may still be applied.
 
 \chapter*{Complex Numbers}
-Complex numbers extend the real numbers by adding a new number with the property
+Complex numbers extend the real numbers by adding a new number with the 
+property
 \[i^2 = -1\]
-The usual rules of algebra nonetheless still apply. Though one should note that:
+The usual rules of algebra nonetheless still apply. Though one should note 
+that:
 \[\sqrt{-1}\sqrt{-1} \neq \sqrt{1}\]
 This value can be used to solve equations such as:
 \[x^2 + 1 = 0 \Rightarrow x^2 = -1\ \Rightarrow x = \pm i\]
 \(i\) can also be used to solve equations such as \(x^2 + 4 = 0\):
 \[x^2 + 4 = 0 \Rightarrow x^2 = \sqrt{-2} \Rightarrow x = i\sqrt{2}\]
-Solutions of the form \(yi | y \in \R\) are useful for solving many polynomials. For 
-some others, such as \(x^2 -2x + 5 = 0\) we need solutions of the form \(x + iy\):
+Solutions of the form \(yi | y \in \R\) are useful for solving many 
+polynomials. For some others, such as \(x^2 -2x + 5 = 0\) we need solutions
+of the form \(x + iy\):
 \[(x - 1)^2 + 4 = 0\ \Rightarrow (x - 1)^2 = -4 \Rightarrow x = 1 \pm 2i\]
-Thus, we define complex numbers, typically denoted as \(z\) as a quantity consisting of a real number
+Thus, we define complex numbers, typically denoted as \(z\) as a quantity 
+consisting of a real number
 added to a real multiple of \(i\):
 \[z = x + iy\]
 Thus \textbb{C} is defined as:
@@ -317,9 +358,12 @@ Thus \textbb{C} is defined as:
 \subsubsection*{Examples}
 \begin{itemize}
     \item Using \(i\) write down two square roots of \(-25\): \(5i\), \(-5i\)
-    \item Simplify \(i^7\): \(i^0 = 1\), \(i^1 = i\), \(i^2 = -1\), \(i^3 = ii^2 = -i\), \(i^4 = (i^2)^2 = 1\), \(i^5 = i\), \(i^6 = -1\), \(i^7 = i(i^2)^3 = -1^3 = -i\)
+    \item Simplify \(i^7\): \(i^0 = 1\), \(i^1 = i\), \(i^2 = -1\), 
+    \(i^3 = ii^2 = -i\), \(i^4 = (i^2)^2 = 1\), \(i^5 = i\), \(i^6 = -1\), 
+    \(i^7 = i(i^2)^3 = -1^3 = -i\)
 \end{itemize}
-For a complex number, the real part is \(x\) while \(y\) is known as the imaginary part.
+For a complex number, the real part is \(x\) while \(y\) is known as the 
+imaginary part.
 
 \subsubsection*{Example}
 For \(z = 2 - 3i\), write down:
@@ -331,27 +375,30 @@ For \(z = 2 - 3i\), write down:
 
 
 \section*{The Complex Plane}
-A complex number \(z\) can be seen as a point on a plane, where \(\mathrm{Re}(z)\) denotes
-the \(x\) or horizontal component while \(\mathrm{Im}(z)\) denotes the \(y\) or vertical component.
-This is sometimes known as the Argand plane.
+A complex number \(z\) can be seen as a point on a plane, where 
+\(\mathrm{Re}(z)\) denotes the \(x\) or horizontal component while 
+\(\mathrm{Im}(z)\) denotes the \(y\) or vertical component. This is sometimes
+known as the Argand plane.
 
 \bigskip
 Addition and subtraction work as expected with complex numbers.
 \[z_1 + z_2 = (a + ib) + (c + id) = (a + c) + i(b + d)\]
-This can be interpreted as a vector operation, in the same way that adding two vectors
-entails summing their components, complex numbers seen as points are effectively vectors
-which add in essentially the same way. Multiplication by a real number is essentially stretching
-the complex number, the same as multiplying a vector by a scalar.
+This can be interpreted as a vector operation, in the same way that adding 
+two vectors entails summing their components, complex numbers seen as points 
+are effectively vectors which add in essentially the same way. Multiplication 
+by a real number is essentially stretching the complex number, the same as 
+multiplying a vector by a scalar.
 
 \bigskip
 Multiplication is a little more complex.
 \[(a + ib)(c + id) = a(c +id) + ib(c + id) =\]
 \[ac + aid + ibc + ibid = ac + adi + bci - bd = (ac -bd) + i(ad + bc)\]
 
-The complex conjugate of a number \(z = a + ib\) is denoted \(\bar{z}\) and is defined:
+The complex conjugate of a number \(z = a + ib\) is denoted \(\bar{z}\) and 
+is defined:
 \[\bar{z} = a - ib\]
-The real part remains the same, while the imaginary part has its sign reversed. In the plane,
-this operation represents reflection in the \(x\) or real axis.
+The real part remains the same, while the imaginary part has its sign reversed.
+In the plane, this operation represents reflection in the \(x\) or real axis.
 
 \subsubsection*{Example}
 By completing the square find the solutions of \(z^2 - 6z + 10 = 0\):
@@ -367,14 +414,16 @@ Let \(z = x + iy\) and \(w = a + ib\) be complex numbers. Then:
 \[z\bar{z} = x^2 + y^2\:\mathrm{(real)}\]
 \[\bar{z + w} = \bar{z} + \bar{w}\]
 \[\bar{zw} = \bar{z}\bar{w}\]
-\(\sqrt{z\bar{z}}\) can be understood as the length of a complex number by Pythagoras' theorem.
+\(\sqrt{z\bar{z}}\) can be understood as the length of a complex number by 
+Pythagoras' theorem.
 
 \subsubsection*{Division}
 \[\frac{1}{i} = -i\]
 In general:
 \[\frac{\bar{z}}{x^2 + y^2} = \frac{1}{z}\]
 We can express the division of two complex numbers as follows:
-\[\frac{a + ib}{c + id} = \frac{a + ib}{c + id}\times\frac{c - id}{c - id} = \frac{(a + ib)(c - id)}{c^2 + d^2}\]
+\[\frac{a + ib}{c + id} = \frac{a + ib}{c + id}\times\frac{c - id}{c - id} = 
+\frac{(a + ib)(c - id)}{c^2 + d^2}\]
 \[= \frac{1}{c^2 + d^2}(ac + bd + i(-ad + bc))\]
 In essence, we rationalise the denominator, much as with surds.
 
@@ -384,8 +433,10 @@ In essence, we rationalise the denominator, much as with surds.
 \[=\frac{1 - i}{2}\]
 Calculate: \((1 + \sqrt{3}i)^6\)
 \[(1 + \sqrt{3}i)^6 = ((1 + \sqrt{3}i)^2)^2 \times (1 + \sqrt{3}i)^2\]
-\[(1 + \sqrt{3}i)^2 = 1 + 2\sqrt{3}i + (\sqrt{3}i)^2 = 1 + 2\sqrt{3}i - 3 = -2 + 2\sqrt{3}i\]
-\[((1 + \sqrt{3}i)^2)^2 = (-2 + 2\sqrt{3}i)^2 = (-2)^2 + 2 \times (-2) \times 2\sqrt{3}i + (2\sqrt{3}i)^2\]
+\[(1 + \sqrt{3}i)^2 = 1 + 2\sqrt{3}i + (\sqrt{3}i)^2 = 1 + 2\sqrt{3}i - 3 = 
+-2 + 2\sqrt{3}i\]
+\[((1 + \sqrt{3}i)^2)^2 = (-2 + 2\sqrt{3}i)^2 = (-2)^2 + 2 \times (-2) 
+\times 2\sqrt{3}i + (2\sqrt{3}i)^2\]
 \[= 4 - 8\sqrt{3}i - 12 = -8 - 8 \sqrt{3}i\]
 \[(1 + \sqrt{3}i)^6 = (-8 -8\sqrt{3}i)(-2 + 2\sqrt{3}i)\]
 \[= 16 - 16\sqrt{3}i + 16\sqrt{3}i - 8 \times 2 \times (\sqrt{3})^2i^2\]
@@ -393,17 +444,19 @@ Calculate: \((1 + \sqrt{3}i)^6\)
 \[= 64\]
 
 \subsubsection*{Polar Form}
-To solve this problem more easily, we can instead consider complex numbers in polar form.
-This takes the length of the line and it's angle from the origin instead. In this case we 
-take a distance \(r\) and an angle \(\theta\).
+To solve this problem more easily, we can instead consider complex numbers in
+polar form. This takes the length of the line and it's angle from the origin 
+instead. In this case we take a distance \(r\) and an angle \(\theta\).
 \[r = |z| = \sqrt{x^2 + y^2}\]
-To find \(\theta\) we can draw \(z\) in the plane and use triangles to find \(\theta\). \(\theta \in (-\pi, \pi]\), and
-is called the principal argument of \(z\) and can be denoted \(\mathrm{Arg}(z)\).
+To find \(\theta\) we can draw \(z\) in the plane and use triangles to find 
+\(\theta\). \(\theta \in (-\pi, \pi]\), and is called the principal argument of
+\(z\) and can be denoted \(\mathrm{Arg}(z)\).
 
 \subsubsection*{Examples}
 \begin{itemize}
     \item \(1 + \sqrt{3}i\): \(|z| = 2, \theta = \frac{\pi}{3}\)
-    \item \(-3 - 3i\): \(|z| = \sqrt{18} = 3\sqrt{2}, \theta = \frac{-3\pi}{4}\)
+    \item \(-3 - 3i\): \(|z| = \sqrt{18} = 3\sqrt{2}, \theta = 
+    \frac{-3\pi}{4}\)
     \item \(3 + 4i\): \(|z| = 5, \theta = \arctan(\frac{4}{3})\)
     \item \(-1\): \(|z| = 1, \theta = \pi\)
 \end{itemize}
@@ -415,15 +468,18 @@ The trigonemtric polar form of a complex number is:
 
 For any \(\theta\), the complex exponential is given by:
 
-\[e^{i\theta} = 1 + i\theta + \frac{1}{2!}(i\theta)^2 + \frac{1}{3!}(i\theta)^3 \: ...\]
+\[e^{i\theta} = 1 + i\theta + \frac{1}{2!}(i\theta)^2 + 
+\frac{1}{3!}(i\theta)^3 \: ...\]
 \[e^{i\theta} = \cos(\theta) + i\sin\theta\]
 \[\abs{e^{i\theta}} = 1\]
 
 \subsubsection*{Exponential Polar Form}
 
-Knowing this, we can write a given complex number \(z\) in exponential polar form:
+Knowing this, we can write a given complex number \(z\) in exponential polar 
+form:
 \[z = re^{i\theta}\]
-This happens to be an extremely useful way of expressing complex numbers. An example:
+This happens to be an extremely useful way of expressing complex numbers. An 
+example:
 
 \bigskip
 Express \(z = -2 + 2\sqrt{3}i\) in exponential polar form.
@@ -439,17 +495,20 @@ It takes the form of inversion across the x-axis.
 
 \subsubsection*{Properties of the Complex Exponential}
 \[e^{i0} = 1\]
-\[e^{i\theta_1}e^{i\theta_2} = e^{i\theta_1+i\theta_2} = e^{i(\theta_1+\theta_2)}\]
-\[\frac{e^{i\theta_1}}{e^{i\theta_2}} = e^{i\theta_1 - i\theta_2} = e^{i(\theta_1-\theta_2)}\]
+\[e^{i\theta_1}e^{i\theta_2} = e^{i\theta_1+i\theta_2} = 
+e^{i(\theta_1+\theta_2)}\]
+\[\frac{e^{i\theta_1}}{e^{i\theta_2}} = e^{i\theta_1 - i\theta_2} = 
+e^{i(\theta_1-\theta_2)}\]
 \[e^{i\theta_1} = e^{i\theta_2} \Leftrightarrow \theta_2 = \theta_1 + 2k\pi\]
 
-Multiplication by \(e^{i\theta}\) is equivalent to rotation by\(\theta\). For two complex
-numbers, \(z_1\) and \(z_2\), the product is given by:
+Multiplication by \(e^{i\theta}\) is equivalent to rotation by\(\theta\). 
+For two complex numbers, \(z_1\) and \(z_2\), the product is given by:
 \[z_1z_2 = r_1r_2e^{i(\theta_1+\theta_2)}\]
-Thus, the modulus of the result is simply the product of the two inputs modulus. The
-angle is increased by \(\theta\). It is intuitive that multiplication by \(i^2\) constitutes
-inversion of the vector; reflection in the y-axis. The resultant angle will not necessarily be
-the principle argument; one can simply add or subtract \(2\pi\) to find the principle argument.
+Thus, the modulus of the result is simply the product of the two inputs 
+modulus. The angle is increased by \(\theta\). It is intuitive that 
+multiplication by \(i^2\) constitutes inversion of the vector; reflection in
+the y-axis. The resultant angle will not necessarily be the principle argument;
+one can simply add or subtract \(2\pi\) to find the principle argument.
 
 \bigskip
 Division is simply given by:
@@ -465,15 +524,20 @@ circle can be drawn as \(\{z \in \C:  \abs{z - p} = r\}\), where \(p\) is
 the center point and \(r\) is the radius.
 
 \subsection*{Roots}
-Suppose we are trying to find all of the \(n\)-th roots of a complex number \(w\).
-This means we need to find all \(z\)s that satisfy \(z^n = w\). Writing \(z = re^{i\theta}\) gives us:
+Suppose we are trying to find all of the \(n\)-th roots of a complex 
+number \(w\). This means we need to find all \(z\)s that satisfy \(z^n = w\).
+Writing \(z = re^{i\theta}\) gives us:
 \[(re^{i\theta})^n = se^{i\alpha} \Rightarrow se^{i\alpha}\]
-\[\Rightarrow \abs{z} = \abs{s} \Rightarrow r^n = s \Rightarrow r = s^\frac{1}{n} = \sqrt[^n]{s}\]
+\[\Rightarrow \abs{z} = \abs{s} \Rightarrow r^n = s \Rightarrow 
+r = s^\frac{1}{n} = \sqrt[^n]{s}\]
 We also have:
-\[e^{in\theta} = e^{i\alpha} \Rightarrow n\theta = \alpha + 2k\pi \Rightarrow \theta = \frac{1}{n}(\alpha + 2k\pi)\]
-Curiously, for power \(n\), there will be \(n\) solutions. Using the \(\alpha + 2k\pi\) equation, we can find an 
-infinite number of solutions. However, we can stop at \(n - 1\), because \(n = k\) will yield the same result as \(k = 0\), 
-as it will simply add \(2pi\) to the angle. Thus our solutions will be of the form:
+\[e^{in\theta} = e^{i\alpha} \Rightarrow n\theta = \alpha + 2k\pi \Rightarrow 
+\theta = \frac{1}{n}(\alpha + 2k\pi)\]
+Curiously, for power \(n\), there will be \(n\) solutions. Using the 
+\(\alpha + 2k\pi\) equation, we can find an infinite number of solutions. 
+However, we can stop at \(n - 1\), because \(n = k\) will yield the same result
+as \(k = 0\), as it will simply add \(2pi\) to the angle. Thus our solutions 
+will be of the form:
 \[\{\sqrt[^n]{s}e^{i\frac{1}{n}(\alpha + 2k\pi)} | k \in [0, n) \cap \N\}\]
 
 \subsubsection*{Example}
@@ -489,48 +553,63 @@ Find the set of cube roots of \(-8\).
     \item Note we found the expected root; \(2e^{i\pi} = -2\)
 \end{itemize}
 
-These solutions represent 3 evenly spaced points on the circle with center \((0, 0)\) and radius 2.
+These solutions represent 3 evenly spaced points on the circle with center 
+\((0, 0)\) and radius 2.
 
 \subsection*{Trigonometric Functions}
-The complex exponential can be used to express \(\cos\) and \(\sin\) in a useful form for many calculations.
+The complex exponential can be used to express \(\cos\) and \(\sin\) in a 
+useful form for many calculations.
 \[e^{i\theta} = \cos(\theta) + i\sin(\theta)\]
 \[\overline{e^{i\theta}} = \cos(\theta) - i\sin(\theta)\]
 \[e^{i\theta}+\overline{e^{i\theta}} = 2\cos(\theta)\]
 \[\therefore \cos(\theta) = \frac{1}{2}(e^{i\theta}{e^{-i\theta}})\]
-This is obvious when we consider that \(z + \bar{z} = 2\mathrm{Re}(z)\). \(\sin\) found through the same logic is:
+This is obvious when we consider that \(z + \bar{z} = 2\mathrm{Re}(z)\). 
+\(\sin\) found through the same logic is:
 \[\sin(\theta) = \frac{1}{2i}(e^{i\theta}-e^{-i\theta})\]
 
-Using the binomial formula, we can expand statements such as \(\sin^4(\theta)\):
+Using the binomial formula, we can expand statements 
+such as \(\sin^4(\theta)\):
 \[\sin^4(\theta) = (\frac{1}{2i})^4(e^{i\theta}-e^{-i\theta})^4\]
-\[\frac{1}{2^4}((e^{i\theta})^4 - 4(e^{i\theta})^3e^{-i\theta} + 6(e^{i\theta})^2(e^{-i\theta})^2 - 4e^{i\theta}(e^{-i\theta})^3 + (e^{-i\theta})^4)\]
-\[\frac{1}{2^4}(e^{i4\theta} - 4e^{i2\theta} + 6 - 4e^{-i2\theta} + e^{-i4\theta})\]
+\[\frac{1}{2^4}((e^{i\theta})^4 - 4(e^{i\theta})^3e^{-i\theta} + 
+6(e^{i\theta})^2(e^{-i\theta})^2 - 
+4e^{i\theta}(e^{-i\theta})^3 + (e^{-i\theta})^4)\]
+\[\frac{1}{2^4}(e^{i4\theta} - 4e^{i2\theta} + 6 - 4e^{-i2\theta} + 
+e^{-i4\theta})\]
 \[6 + 2\cos(4\theta) - 4 \times 2\cos(2\theta)\]
 \[\sin^4(\theta) = \frac{1}{8}(3 + cos(4\theta) - 4cos(2\theta))\]
 
-Using this approach, we can convert expressions of the form \(\sin^m(\theta)\cos^n(\theta)\) to an equivalent
-form that is often more useable.
+Using this approach, we can convert expressions of the form 
+\(\sin^m(\theta)\cos^n(\theta)\) to an equivalent form that is often more 
+useable.
 
 \subsection*{Square Roots}
-For \(w = re^{i\theta} \in \C \backslash \{0\}\), the root finding formula gives two solutions of \(z^2 = w\):
-\[z_1 = \sqrt{r}e^{i(\frac{\theta}{2})}, z_2 = \sqrt{r}e^{i(\frac{\theta}{2} + \pi)} = -z_1\]
-\(z_1\) is called the \textit{principal square root} of \(w\), thus the square roots are \(\pm \sqrt{w}\).
-For a negative real number, \(\sqrt{w}\) will be equal to \(\sqrt{\:\abs{w}}i\).
+For \(w = re^{i\theta} \in \C \backslash \{0\}\), the root finding formula 
+gives two solutions of \(z^2 = w\):
+\[z_1 = \sqrt{r}e^{i(\frac{\theta}{2})}, z_2 = 
+\sqrt{r}e^{i(\frac{\theta}{2} + \pi)} = -z_1\]
+\(z_1\) is called the \textit{principal square root} of \(w\), thus the square
+roots are \(\pm \sqrt{w}\). For a negative real number, \(\sqrt{w}\) will be 
+equal to \(\sqrt{\:\abs{w}}i\).
 
 \section*{Polynomials}
-Real polynomials are those with coefficients exclusively in \(\R\), while complex polynomials
-extend this bank of coefficients to include all of \(\C\). All real polynomials are complex 
-polynomials, but the inverse is not necessarily true.
+Real polynomials are those with coefficients exclusively in \(\R\), while 
+complex polynomials extend this bank of coefficients to include all of \(\C\).
+All real polynomials are complex polynomials, but the inverse is not 
+necessarily true.
 
 \subsection*{Factorising Polynomials}
-To solve differential equations, it is important to be able to integrate polynomials of the form:
+To solve differential equations, it is important to be able to integrate 
+polynomials of the form:
 \[\frac{p(x)}{q(x)}\]
-We can use the quadratic formula to solve complex polynomials just as we would for real numbers.
+We can use the quadratic formula to solve complex polynomials just as we would
+for real numbers.
 \[\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]
 For example, factorising \(p(z) = z^2 -3iz - 2\):
 \[\frac{3i \pm \sqrt{-9 -4 \times (1) \times (-2)}}{2}\]
 \[= \frac{3}{2}i \pm \frac{1}{2}\sqrt{-1} = \frac{3}{2}i \pm \frac{1}{2}i\]
 \[\therefore p(z) = (z - 2i)(z - i)\]
-Any complex polynomial of degree \(n\) can be factorised into \(n\) linear factors over \(\C\).
+Any complex polynomial of degree \(n\) can be factorised into \(n\) linear 
+factors over \(\C\).
 \[p(z) = a(z - \alpha_1)(z - \alpha_2) ... (z - \alpha_n)\]
 Thus, there is an \(x\) intercept at each value of \(\alpha\). For a 
 polynomial of degree \(n\), there at \(\leq n\) roots in \(\C\).
@@ -1051,6 +1130,38 @@ letter variables.
         \frac{dy}{du}\frac{du}{dx}\) \\[7pt]
     \end{tabular}
 \end{center}
+
+\subsubsection*{Applications}
+If we know that a function has a positive derivative at some value, we know
+that the function is increasing at that point. The same is true for a negative
+derivative, though the function is decreasing. For an interval, if the 
+derivative of a function is \(> 0\) at every point in that interval, then the
+function is increasing on that interval. The inverse does not apply; if \(f\) 
+is increasing on an interval, that does not imply that \(f^\prime > 0\) on that
+same interval.
+
+\bigskip
+This understanding of the implications of a positive or negative derivative
+suggest that points where the derivative \(= 0\) have some significance. We 
+call these points local maxima or local minima. Maxima occur where the function
+has a greater value at a point than at any other nearby point, minima for the
+inverse. These points are called \textit{local} if the range of ``nearby'' is
+less than the domain of the function, and global if they are the highest or 
+lowest points in the path of the function.
+
+\bigskip
+In addition to points where \(f^\prime = 0\), points where the gradient of a
+function is undefined may also be local minima or maxima. It is also worth 
+noting that a stationary point is not necessarily a local extrema and that a
+local extreme is not necessarily a stationary point. To check if a local 
+extrema is, we need to show that the points on either side have opposite sign.
+These points include the start and end points of a function.
+
+\bigskip
+It is worth noting that a derivative can change sign only when a function is 
+undefined or when it passes through \(0\), which means we can find the extrema
+of a function by finding the sign of the function between each of the 
+stationary points.
 
 \end{flushleft}
 \end{document}
