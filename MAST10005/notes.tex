@@ -1199,6 +1199,8 @@ example:
     \item \(12x^2 > 0\) for \(x \in (-\infty, 0) \cup (0, \infty)\)
     \item Thus \(f(x)\) is concave up for \((-\infty, 0))\) 
     and \((0, \infty)\).
+    \item It is worth noting that this implies that the first derivative is
+    increasing on \(\R\), so \(f(x)\) is actually concave up for all \(\R\).
 \end{itemize}
 
 A \textit{point of inflection} is a point where a function changes between 
@@ -1207,6 +1209,64 @@ being concave up and concave down. These can be found where
 function is undefined, or at start or end points. For example, in the function
 \(f(x) = x^3\), \(f^{\prime\prime}(x) = 6x\) and we can see that the only point
 of inflection of this function is \(x = 0\).
+
+\subsubsection*{Asymptotes}
+Often when a graph has a gap in its domain, an \textit{asymptote} exists at 
+this location. An asymptote is an area of the domain where the graph becomes
+increasingly (arbritrarily) closer to a value without ever reaching it. 
+Mathematically, this can be represented as
+\[\lim_{x \rightarrow a}f(x) = \pm \infty\]
+Where \(x = a\) is the equation of the asymptote in \(f\). A vertical asymptote
+exists at \(y = a\) where
+\[\lim_{x \rightarrow \pm\infty} f(x) = a\]
+A third case exists, that of an \textit{oblique asymptote}, which is an 
+asymptote defined by a linear function of the form \(y = mx + b\). In this
+case, we can say a limit exists if
+\[\lim_{x \rightarrow \pm\infty}[f(x) - (mx + b)] = 0\]
+i.e. the value of the function converges with that of the line. It is worth
+noting that an asymptote is not impassable; it simply states that the function
+can be approximated by the asymptote for appropriate values of \(x\). These
+asymptotes can be found through polynomial long division. As an example, let us
+consider the following
+\[f(x) = \frac{2x^3 - 3x^2 + 2x - 2}{x^2 + 1}\]
+\[2x^3 - 3x^2 + 2x - 2 = (x^2 + 1)(2x - 3) + 1\]
+\[f(x) = 2x - 3 + \frac{1}{x^2 + 1}\]
+Thus, \(y = 2x - 3\) is an oblique asymptote to \(f\).
+
+\bigskip
+Vertical asymptotes are often encountered when dividing one function by 
+another, as a function spits out smaller and smaller values as it approaches
+\(0\), resulting in values tending towards \(\infty\), eventually reaching
+the case of division by \(0\) and an undefined value. They can also occur
+in functions like the logarithm. Some functions can have surprising behaviours.
+\[f(x) = \frac{x^2 + 2x + 1}{x^2 - 1}\]
+Looking at this function, we would assume that it was undefined for \(-1\) and
+\(1\), as we would have a \(0\) denominator. However, if we factorise it we
+find
+\[f(x) = \frac{(x + 1)(x + 1)}{(x - 1)(x + 1)} = \frac{x + 1}{x - 1}\]
+So the function is indeed defined for \(x = -1\). This teaches us to check
+for common factors before crying asymptote.
+
+\subsubsection*{Example}
+Using the tools for analysis of functions discussed thus far, we can analyse
+\[f(x) = \frac{x^2}{x + 1}\]
+\begin{itemize}
+    \item The implied domain of \(f\) is \(\R \backslash \set{-1}\).
+    \item Performing long division, we can find that 
+    \[x^2 = (x+1)(x-1)+1 \Rightarrow f(x) = x-1 + \frac{1}{x+1}\]
+    This tells us that there is a vertical asymptote at \(x = -1\), approaching
+    \(-\infty\) on the negative side and \(\infty\) on the positive side.
+    \item In addition, we can see that the line \(y = x - 1\) is an oblique
+    asymptote.
+    \item The \(y\) intercept of the function is \(0\) and the \(x\) intercept
+    of the function is also \(0\).
+    \item Using the quotient rule we find that the derivative of the function
+    is \[\frac{x(x + 2)}{(x + 1)^2}\]
+    \item From this we can find the stationary points of the function at
+    \(f^\prime(x) = 0\), \(x = 0\) and \(x = -2\).
+    \item Again using the quotient rule we can find the second derivative
+    \[f^{\prime\prime} = \frac{2}{(x + 1)^3}\]
+\end{itemize}
 
 \end{flushleft}
 \end{document}
