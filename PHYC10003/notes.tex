@@ -492,7 +492,7 @@ The total energy of an isolated system is a function of its state; the
 intervening events are irrelevant.
 
 \subsection*{Centre of Mass}
-For complex rotating objects, it can be extremely complex to consdier their 
+For complex rotating objects, it can be extremely complex to consider their 
 motion. However, for a specific point, the centre of mass, the motion is as of
 a particle, and thus is simple to analyse. For example, a cricket bat tossed 
 spinning will have a very complex pattern of movement, however if we simply 
@@ -1075,6 +1075,108 @@ Note that this is independent of \(\phi\), the angle with the ground, and,
 due to the \(m\) term in \(I\), the mass of the top. This implies that any top
 of similar geometry will have the same behavior in terms of precession. This 
 formula will not hold for a gyroscope spinning too slowly.
+
+\subsubsection*{Equilibrium}
+It is common that we want objects to remain static despite forces acting on 
+them. For example a ceiling fan, a sliding ice puck or a rolling bicycle wheel
+have a constant linear momentum and a constant angular momentum. These objects
+are said to be in \textit{equilibrium}, their linear and angular momentums are
+each constant. Objects with \(\vec{P} = \vec{L} = 0\), such as a book on a 
+table are said to be in \textit{static equilibrium}. If an object would return
+to this equilibrium after a disturbance, it is in the previously visited stable
+equilibrium. If a disturbance disrupts the equilibrium, the object is in 
+unstable equilibrium.
+
+\bigskip
+We can define requirements of equilibrium using Newton's second law, for both
+the rotational and linear cases.
+\[\vec{F}_\mathrm{net} = 0\]
+\[\vec{\tau}_\mathrm{net} = 0\]
+Often we will only consider equilibrium in a single plane, for example in the
+\(xy\) plane.
+
+\bigskip
+The gravitational force on a body is the sum of the forces on the particles
+making up the body. In general, the force due to gravity on an object can be
+assumed to apply to the \textit{center of gravity} of the body, which is for
+most purposes well approximated by the center of mass of the body. However this
+is an approximation; in reality the attraction of each particle is slightly 
+different than for its neighbours.
+
+\bigskip
+We can use equilibrium to gain insight into some situations. Consider as an
+example a beam of length \(L\) and mass \(m = 1.8\mathrm{kg}\) placed such 
+that each end is supported by a fulcrum. The beam has a block of mass 
+\(M = 2.7\mathrm{kg}\) placed at \(\frac{L}{4}\) units along it. We can 
+determine the force on each of the fulcrums by considering that the momentum
+of the system must be \(0\) for the beam to be stationary. In that case,
+the net torque on the beam must be \(0\). If we take the leftmost fulcrum
+as our rotation axis we can find the net torque due to gravity through
+\[\tau = \frac{1}{4}MgL + \frac{1}{2}mgL\]
+And we know that this torque must be equal to the torque from the normal force
+exerted by the right fulcrum. Thus
+\[F_rL = \frac{1}{4}MgL + \frac{1}{2}mgL\] 
+\[F_r = \frac{1}{4}Mg + \frac{1}{2}mg\]
+\[F_r = \frac{1}{4}\times2.7\times9.8 + \frac{1}{2}\times1.8\times9.8\]
+\[F_r = 15.4\mathrm{N}\]
+This accounts for an angular momentum of \(0\), so we can use this figure to
+find the force on the left fulcrum by observing that the linear momentum must
+also be \(0\). For this to be the case, the total normal force must cancel with
+the total downward force from gravity.
+\[F_l = (M + m)g - F_r\]
+\[F_l = (2.7 + 1.8) \times 9.8 - 15.4\]
+\[F_l = 28.7\mathrm{N}\]
+
+\subsubsection*{Elasticity}
+Some problems suffer from a wide range of unknowns which make them 
+unnapproachable with the techniques studied thus far, and these problems are
+described as \textit{indeterminate}. Often this is due to a fault assumption;
+that the bodies involved are rigid and do not deform. In reality, bodies do not
+behave this way and it is through the concept of \textit{elasticity} that we
+are to solve some more complex problems.
+
+\bigskip
+A \textit{stress}, which is a deforming force applied per unit area, produces
+a \textit{strain} or a unit deformation. Three main types of stress exist.
+\begin{itemize}
+    \item Tensile stress occurs when an object is stretched or squished in a 
+    single dimension.
+    \item Shearing stress occurs when an object has opposite forces applied to
+    each end, causing it to warp.
+    \item Hydraulic stress occurs when an object is compressed from all sides.
+\end{itemize}
+For a given object, an \textit{elastic range} for which the relatioship between
+stress and strain is roughly linear. Beyond this range we reach the 
+\textit{yield strength} and enter the range of \textit{permanent deformation}
+which is the case until the object eventually ruptures at its \textit{ultimate
+strength}. This linear relationship is defined by the \textit{modulus of 
+elasticity} of the object related through
+\[\mathrm{stress} = \mathrm{modulus}\times\mathrm{strain}\]
+For simple tension or compression, stress is given by force divided by area.
+The strain is a dimension quantity given by the change in length of the object
+divided by its total length. The objects modulus of elasticity is also known
+as its \textit{Young's modulus} denoted \(E\).
+\[\frac{F}{A} = E\frac{\Delta L}{L}\]
+Many materials have very different tensile and compressive strengths, even
+though they will use the same modulus for both calculations. Concrete for 
+example has an extremely high compressive strength and very low tensile 
+strength. The region of elastic deformation is characterised by Hooke's law.
+
+\bigskip
+Strain guages are objects used to measure strain as their resistance changes
+due to strains placed on them. They are commonly used in large buildings to 
+monitor the strains on them.
+
+\bigskip
+When a force is exerted on an axis perpendicular to the long axis of an object
+we use the objects \textit{shear modulus} \(G\) to calculate the results. When
+an object has one end stretched by a distance \(\Delta x\) as compared to its
+inital state
+\[\frac{F}{A} = F\frac{\Delta x}{L}\]
+Where \(L\) is the objects long axis length. For hydraulic compression, the
+\textit{bulk modulus} \(B\) is used. Where \(\Delta V\) is the change in volume
+of the objects volume \(V\). There pressure \(p\) is found through
+\[p = B\frac{\Delta V}{V}\]
 
 \end{flushleft}
 \end{document}
