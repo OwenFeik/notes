@@ -3,12 +3,33 @@
 \usepackage{bbold}
 \usepackage{amssymb}
 \usepackage{commath}
+\usepackage{pgfplots}
 
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
+
+% Create simple plots with consistent styling
+\newenvironment{functionplot}[1][-5:5]{
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                samples = 1000,
+                domain = #1,
+                width = 12cm,
+                height = 9cm,
+                xlabel = \(x\),
+                ylabel = \(y\),
+                axis lines = middle,
+                restrict y to domain = -10:10
+            ]
+}{
+            \end{axis}
+        \end{tikzpicture}
+    \end {center}
+}
 
 \begin{document}
 \title{MAST10005 Notes}
@@ -1095,6 +1116,7 @@ calculating on a case by case basis. Some of these common cases follow.
         \(\frac{d}{dx}[e^x] = e^x\) \\[7pt]
         \(\frac{d}{dx}[e^{f(x)}] = f^\prime(x)e^{f(x)}\) \\[7pt]
         \(\frac{d}{dx}[\log(x)] = \frac{1}{x}\) \\[7pt]
+        \(\frac{d}{dx}[\log(f(x))] = \frac{f^\prime(x)}{f(x)}\) \\[7pt]
         \(\frac{d}{dx}[\tan(x)] = \sec^2(x)\) \\[7pt]
     \end{tabular}
 \end{center}
@@ -1170,6 +1192,10 @@ derivative of these derivatives; what we call the \textit{second} or
 \textit{third} derivative of a function. This is very relevant in areas such
 as kinematics, where velocity is the first derivative of position and 
 acceleration is the derivative of velocity, the second derivative of position.
+The second derivative is denoted \(f^{\prime\prime}\) to the first derivative's
+\(f^\prime\), and this trend continues to higher derivative with the alternate
+notation of \(f^{(n)}\) for the \(n\)th derivative becoming useful for third 
+and higher derivatives.
 
 \bigskip
 Just as with the first derivative, the second derivative has conditions to 
@@ -1264,9 +1290,84 @@ Using the tools for analysis of functions discussed thus far, we can analyse
     is \[\frac{x(x + 2)}{(x + 1)^2}\]
     \item From this we can find the stationary points of the function at
     \(f^\prime(x) = 0\), \(x = 0\) and \(x = -2\).
+    \item By looking at the sign of the derivative around these stationary 
+    points we can see that the function is increasing on 
+    \((-\infty, -2) \cup (0, \infty)\) and decreasing on 
+    \((-2, -1) \cup (-1, 0)\)
+    \item Through the same logic we can see that a local maximum exists at 
+    \(x = -2\) and a local minimum exists at \(x = 0\).
     \item Again using the quotient rule we can find the second derivative
     \[f^{\prime\prime} = \frac{2}{(x + 1)^3}\]
+    \item Looking at this function, we can tell there is only one stationary
+    point at \(x = -1\), and noticing that it is negative for \(x < -1\) and
+    positive for \(x > -1\) we can say \(f\) is concave down on 
+    \((-\infty, 1)\) and concave up on \(-1, \infty\).
+    \item Because \(-1\) is the only place where the sign of the second 
+    derivative changes, and this is known to be an undefined point, we can tell
+    the function has no points of inflection.
 \end{itemize}
+
+We can use this information to plot the function.
+
+\begin{functionplot}[-4:2]
+    \addplot [dashed] {x-1};
+    \addplot [dashed] coordinates {(-1, 10)(-1, -10)};
+    \addplot [ultra thick, blue, domain = {-4:-1}, <->] {(x^2)/(x+1)};
+    \addplot [ultra thick, blue, domain = {-1:2}, <->] {(x^2)/(x+1)};
+\end{functionplot}
+
+\subsubsection*{Implicit Differentiation}
+In some cases, we might have a curve defined by some rule, but this rule might
+not express y in terms of \(x\), it may instead be a function of both \(x\) and
+\(y\) or some other arcane mess of symbols. Nonetheless, it is evident that we
+should be able to find a rule which yields the slope of the tangent line to 
+this curve at some point. In this case, we say there is an \textit{implicit}
+dependence of \(y\) on \(x\), and we find the derivative through 
+\textit{implicit differentiation}.
+
+\bigskip
+To do this we assume that near any given \(x\), it is possible to write \(y\) 
+as a function of \(x\). For example:
+\[x^2y = 1\]
+\[\frac{d}{dx}[x^2y] = \frac{d}{dx}[1] = 0\]
+\[\frac{d}{dx}[x^2]y + x^2\frac{d}{dx}[y] = 0\]
+\[2xy + x^2\frac{d}{dx}[y] = 0\]
+\[\frac{dy}{dx} = \frac{-2xy}{x^2} = \frac{-2y}{x} \:\:(x \neq 0)\]
+This tells us that a tangent line to a point \(x, y\) on this curve has a slope
+given by this formula.
+
+\bigskip
+In general, implicit differentiation is performed as follows.
+\begin{itemize}
+    \item For an equation involving \(x\) and \(y\).
+    \item Take the derivative of each side, with respect to \(x\).
+    \item Simplify each side as much as possible. Remember that \(y\) is 
+    assumed to be a function of \(x\), so the product, chain and quotient rules
+    must be appropriately applied.
+    \item Rearrange to solve for \(\frac{dy}{dx}\). Usually this solution will
+    involve both \(x\) and \(y\).
+\end{itemize}
+
+A more complex example:
+\[x^4 + y^2 = 1 + x^2y\]
+\[\frac{d}{dx}[x^4 + y^2] = \frac{d}{dx}[1 + x^2y]\]
+\[4x^3 + 2y\frac{dy}{dx} = \frac{d}{dx}[x^2y]\]
+\[4x^3 + 2y\frac{dy}{dx} = \frac{d}{dx}[x^2]y + x^2\frac{dy}{dx}\]
+\[4x^3 + 2y\frac{dy}{dx} = 2xy + x^2\frac{dy}{dx}\]
+\[(2y - x^2)\frac{dy}{dx} = 2xy - 4x^3\]
+At this stage we run into a small problem; we want to divide through by 
+\(2y - x^2\), but if this is ever \(0\), our solution will be undefined.
+We can solve to see if this is ever the case:
+\[2y - x^2 = 0 \Rightarrow y = \frac{1}{2}x^2\]
+Subbing this into our original equation:
+\[x^4 + \left(\frac{1}{2}x^2\right)^2 = 1 + x^2\times\frac{1}{2}x^2\]
+\[x^4 + \frac{1}{4}x^4 = 1 + \frac{1}{2}x^4\]
+\[\frac{3}{4}x^4 = 1 \Rightarrow x^4 = \frac{4}{3} \Rightarrow x^2 = 
+\pm \frac{2}{\sqrt{3}}\]
+\[x = \pm \sqrt{\frac{2}{\sqrt{3}}}\]
+So at these points, our derivative will be undefined, which tells us the curve
+is vertical at these points. With this caveat, we can continue solving.
+\[\frac{dy}{dx} = \frac{2xy - 4x^3}{2y - x^2}\]
 
 \end{flushleft}
 \end{document}
