@@ -1179,6 +1179,7 @@ of the objects volume \(V\). There pressure \(p\) is found through
 \[p = B\frac{\Delta V}{V}\]
 
 \section*{Special Relativity}
+\subsubsection*{Galiliean Mechanics}
 Classical mechanics are useful for many everyday phenomena, but the reality is
 somewhat different in reference frames moving at a significant proportion of
 the speed of light, \(c\). The speed of light is determined through the 
@@ -1223,6 +1224,60 @@ by
 These can be performed as vector additions if necessary. Acceleration is 
 constant between frames. The laws of mechanics are the same in all reference
 frames.
+
+\subsubsection*{Relativity}
+Einstein's principle of relativity states that the speed of light is constant
+in all inertial reference frames. Indeed it states that all laws of physics are
+the same in all inertial reference frames. If all laws are the same, and 
+Maxwell's equations yield the same speed for \(c\) in all frames, it makes 
+sense that \(c\) must be a constant. If this is the case, we must adjust our
+understanding of space and time to match.
+
+\bigskip
+Consider a cyclist moving at speed \(u\). His velocity is given by
+\[u = \frac{\Delta x}{\Delta t}\]
+If we instead measured \(\Delta x^\prime\) from a moving car, it would appear
+that the cyclist had moved less distance over the same interval \(\Delta t\),
+and thus that they had a lower velocity. This makes sense; the relative 
+velocity of the cyclist compared to the car is lower than the relative velocity
+of the cyclist as compared with a stationary reference frame; say the road.
+
+\bigskip
+If, however, we replace the cyclist with a beam of light we find:
+\[u = \frac{\Delta x^\prime}{\Delta t} = \frac{\Delta x}{\Delta t} = c\]
+A problematic result; despite a smaller distance covered 
+(\(\Delta x > \Delta x^\prime\)), we know that the velocity of the light 
+is unchanged. This implies that the time passed in the car must be lower
+than in the stationary reference frame; we have run up against time dilation.
+
+\bigskip
+To implement this, we need to add a new quality to our events; where before 
+something happened at a given coordinate \((x, y, z)\) at a given time, we must
+now consider that the event occured at a given \textit{spacetime coordinate}
+\((x, y, z, t)\), all of which are prone to transformation between reference
+frames.
+
+\bigskip
+An important fact to note is that \(t\) is not the time an event was observed,
+but the time at which it occurred. If an event occurs at \(t = 1\mu\mathrm{s}\)
+and light takes an additional two microseconds to reach one observer and 1 
+further microsecond to reach another, each observer should nonetheless state
+the same value of \(t\). Indeed, the delay could be used to calculate \(x\) in
+some circustances.
+
+\bigskip
+Two events can be said to be simultaneous only if they take place at the same
+time in the same inertial frame. They might be at different positions, but must
+be measured to have the same time. For example, with the knowledge that light
+travels at \(300\mathrm{m}\) per \(\mu\mathrm{s}\), consider an event 
+\(1200\mathrm{m}\) away observed at \(3\mu\mathrm{s}\) and a second event 
+\(600\mathrm{m}\) away observed at \(5\mu\mathrm{s}\) are they 
+simultaneous?
+\[t_1 = 5\mu\mathrm{s} - \frac{1200\mathrm{m}}{300\mathrm{m}\mu\mathrm{s^{-1}}}
+= 1\mu\mathrm{s}\]
+\[t_2 = 3\mu\mathrm{s} - \frac{600\mathrm{m}}{300\mathrm{m}\mu\mathrm{s^{-1}}}
+= 1\mu\mathrm{s}\]
+The two events are simultaneous, because they occurred at the same time \(t\).
 
 \end{flushleft}
 \end{document}
