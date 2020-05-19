@@ -1304,7 +1304,7 @@ of motion must have reached the detector first, as the train is moving in the
 direction of that light, effecting a higher velocity. Thus, the events are 
 simultaneous in the external frame but at different times on board the train.
 
-\subsubsection*{Time Dilation}
+\subsubsection*{Time Dilation and Length Contraction}
 Consider a set up with a light emitting box which releases a pulse of light 
 toward a mirror, which reflects the light back to the box which measures the
 time taken, \(\Delta t\). This time in the (moving) reference frame of the box
@@ -1329,7 +1329,86 @@ the time between two events that occur at the same position and denoted
 proper time. Proper time is considered to be in the relevant stationary 
 reference frame.
 
+\bigskip
+If an object is moving very rapidly, time moves more slowly in its reference
+frame as compared to a stationary reference frame. This means, that for the
+object to measure the same velocity as an observer in an external frame, the
+distances covered must be shorter. For an object in the \(S^\prime\) reference
+frame, with beta value \(\beta\), the contracted length of a distance of prpoer
+length \(L\) is given by
 \[L^\prime = L\sqrt{1 - \beta^2}\]
+Proper length is the length between two objects in the frame at which those 
+objects are at rest.
+
+\bigskip
+If we consider a distance \(d\) in a cartesian coordinate system, it can be
+said that
+\[d^2 = \Delta x^2 + \Delta y^2\]
+For some \(x\) and \(y\). An interesting geometric property of this is that it
+is \textit{invariant}; if we rotate our coordinate system, \(x\) and \(y\) 
+might move but \(d\) will always stay the same. A similar invariant exists for
+relativistic physics:
+\[s^2=c^2(\Delta t)^2 - (\Delta x)^2 \:\:\: (- (\Delta y)^2 - (\Delta z)^2)\]
+This expression has the same value in all inertial reference frames. \(s\) is
+known as the \textit{spacetime interval}. We can use the knowledge of this 
+invariant to effect transformations of the spacetime coordinates of events 
+between reference frames.
+\[\gamma = \frac{1}{\sqrt{1 - \beta^2}}\]
+The \textit{Lorentz factor} \(\gamma\) allows us to perform these 
+transformations. For a stationary reference frame \(S\) and a second reference
+frame \(S^\prime\), moving at speed \(v\) relative to \(S\) in the \(x\) 
+direction, we transform the coordinates as follows.
+
+\begin{center}
+    \begin{tabular}{c|c}
+        \(\mathrm{S^\prime}\) & \(\mathrm{S}\) \\
+        \hline
+        \(x^\prime = \gamma(x - vt)\) & \(x = x^\prime + vt^\prime\) \\[7pt]
+        \(y^\prime = y\) & \(y = y^\prime\) \\[7pt]
+        \(z^\prime = z\) & \(z = z^\prime\) \\[7pt]
+        \(t^\prime = \gamma(t - \frac{vx}{c^2})\) &
+        \(t = \gamma(t^\prime + \frac{vx^\prime}{c^2})\) \\[7pt]
+    \end{tabular}
+\end{center}
+
+It is very important to make sure the events one is comparing are equivalent
+and not e.g. the measurement of an event.
+
+\bigskip
+If we have stationary frame \(S\), with an object inside it moving at speed 
+\(u\) and a second frame \(S^\prime\), moving relative to \(S\) with speed 
+\(v\) then we can find \(u\) and \(u^\prime\), the velocity as measured by
+an observer in \(S^\prime\) as
+\begin{center}
+    \begin{tabular}{c|c}
+        \(u^\prime = \frac{u - v}{1 - \frac{uv}{c^2}}\) & 
+        \(u = \frac{u^\prime + v}{1 + \frac{u^\prime v}{c^2}}\) \\
+    \end{tabular}
+\end{center}
+
+\subsubsection*{Relativistic Momentum}
+Because relativistic velocity doesn't have simple transformations, we need to
+reconsider concepts such as momentum for this new framework. If we take 
+velocity for a particle of mass \(m\) to be given by
+\[p = m \frac{\Delta x}{\Delta \tau}\]
+i.e. mass multiplied by velocity (using proper time). If \(u\) is the velocity
+of the particle as measured in a given frame \(s\) then \(p\) in that frame is
+given by
+\[p = \frac{mu}{\sqrt{1 - \frac{u^2}{c^2}}} = \gamma mu\]
+With this definition, momentum is conserved in all intertial reference frames.
+It can be seen in this formula that as the velocity of the particle increases
+closer to \(c\) it's momentum approaches infinity. This is an intuitive way to
+understand why particles can't reach the speed of light; it would require an 
+infinite quantity of energy.
+
+\bigskip
+If we use our equation for the spacetime invariant from earlier, the equation
+for relativistic momentum and apply some witchcraft, we find that the total 
+energy of a particle is given by
+\[E = \gamma mc^2 = E_0 + K = \mathrm{rest\:energy}+\mathrm{kinetic\:energy}\]
+Where \(E_0\), the rest energy is given my \(mc^2\). We can find another 
+equation, known as the relativistic energy equation:
+\[E^2 = E_0^2 + p^2c^2\]
 
 \end{flushleft}
 \end{document}
