@@ -1118,6 +1118,9 @@ calculating on a case by case basis. Some of these common cases follow.
         \(\frac{d}{dx}[\log(x)] = \frac{1}{x}\) \\[7pt]
         \(\frac{d}{dx}[\log(f(x))] = \frac{f^\prime(x)}{f(x)}\) \\[7pt]
         \(\frac{d}{dx}[\tan(x)] = \sec^2(x)\) \\[7pt]
+        \(\frac{d}{dx}[\arcsin(x)] = \frac{1}{\sqrt{1 - x^2}}\) \\[7pt]
+        \(\frac{d}{dx}[\arccos(x)] = \frac{-1}{\sqrt{1-x^2}}\) \\[7pt]
+        \(\frac{d}{dx}[\arctan(x)] = \frac{1}{1 + x^2}\) \\[7pt]
     \end{tabular}
 \end{center}
 
@@ -1368,6 +1371,44 @@ Subbing this into our original equation:
 So at these points, our derivative will be undefined, which tells us the curve
 is vertical at these points. With this caveat, we can continue solving.
 \[\frac{dy}{dx} = \frac{2xy - 4x^3}{2y - x^2}\]
+It is important to note that at points where both the numerator and denominator
+are \(0\), it is impossible to know what happens at this location without 
+further analysis; the derivative could be horizontal, vertical or otherwise.
+
+\subsubsection*{Derivatives of Inverse Functions}
+To find a derivative of \(y = \log(x)\), we could rewrite as
+\[e^y = x\]
+\[\frac{d}{dx}[e^y] = \frac{d}{dx}[x]\]
+\[\frac{d}{dx}[y]e^y = 1\]
+\[\frac{dy}{dx} = \frac{1}{e^y} = \frac{1}{x}\]
+Here, we have used implicit differentiation to find a derivative of \(\log(x)\)
+based on the knowledge of the derivative of the exponential function. We can
+use the technique to find the derivatives of the inverse trigonemtric 
+functions. For example, to find the derivative of \(y = \arcsin(x)\)
+\[\sin(y) = x \:\:\: x \in [-1, 1]\]
+\[\frac{d}{dx}[sin(y)] = \frac{d}{dx}[x]\]
+\[\frac{dy}{dx}\cos(y) = 1\]
+\[\frac{dy}{dx} = \frac{1}{\cos(y)}\]
+We can rewrite \(\cos(y)\) in terms of \(x\):
+\[\sin^2(y) + \cos^2(y) = 1\]
+\[\cos^2(y) = 1 - \sin^2(y)\]
+\[\cos(y) = \sqrt{1 - \sin^2(y)}\]
+\[\frac{d}{dx}[\arcsin(x)] = \frac{1}{\sqrt{1 - x^2}}\]
+Using implicit differentiation we once again find that we can find a derivative
+for this function using knowledge of other derivatives.
+
+\subsubsection*{Derivatives of Parametric Curves}
+Where for a function \(\R \rightarrow \R\) our derivative supplies a linear 
+approximation of the curve near some \(x\) value, for a parametric curve, we
+need to find a \textit{velocity vector} which approximates the movement of a
+parametric function fora small time period. As opposed to
+\[f(x_0 + h) \approx f(x_0) + f^\prime(x_0)\times h\]
+we have the vector equation
+\[\vec{r}(t_0 + \Delta t) \approx \vec{r}(t_0) + \vec{v}\Delta t\]
+Formally the definition of this vector \(\vec{v}\) is
+\[\vec{r}^{\:\prime}(t) = \lim_{h\rightarrow0}\frac{1}{h}(\vec{r}(t + h) - 
+\vec{r}(t))\]
+If and only if this limit exists is \(\vec{r}\) differentiable at time \(t\).
 
 \end{flushleft}
 \end{document}
