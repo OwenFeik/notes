@@ -12,12 +12,17 @@
 \newcommand{\C}{\mathbb{C}}
 
 % Create simple plots with consistent styling
-\newenvironment{functionplot}[1][-5:5]{
+\newenvironment{functionplot}[1][
+    xmin = -5,
+    xmax = 5,
+    ymin = -5,
+    ymax = 5
+]{
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                #1,
                 samples = 1000,
-                domain = #1,
                 width = 12cm,
                 height = 9cm,
                 xlabel = \(x\),
@@ -1312,7 +1317,12 @@ Using the tools for analysis of functions discussed thus far, we can analyse
 
 We can use this information to plot the function.
 
-\begin{functionplot}[-4:2]
+\begin{functionplot}[    
+    xmin = -4,
+    xmax = 2,
+    ymin = -10,
+    ymax = 10
+]
     \addplot [dashed] {x-1};
     \addplot [dashed] coordinates {(-1, 10)(-1, -10)};
     \addplot [ultra thick, blue, domain = {-4:-1}, <->] {(x^2)/(x+1)};
@@ -1409,6 +1419,80 @@ Formally the definition of this vector \(\vec{v}\) is
 \[\vec{r}^{\:\prime}(t) = \lim_{h\rightarrow0}\frac{1}{h}(\vec{r}(t + h) - 
 \vec{r}(t))\]
 If and only if this limit exists is \(\vec{r}\) differentiable at time \(t\).
+We can understand this by examining it's components:
+\[\frac{1}{h}(\vec{r}(t + h) - \vec{r}(t))\]
+Here we have simply the vector displacement between the times \(t\) and 
+\(t + h\), divided by \(\Delta t = h\). Thus, this is simply the instantaneous
+velocity at time \(t\). This makes clear the relationship between velocity
+and \(\vec{r}^{\:\prime}\). To find this derivative, if the parametric function
+is of the form \(\vec{r} = x(t)\hat{i} + y(t)\hat{j}\) then the derivative is
+simply
+\[\vec{r}^{\:\prime} = x^\prime(t)\hat{i} + y^\prime(t)\hat{j}\]
+For example:
+\[\vec{r}(t) = (t^2 + 1)\hat{i} + (\frac{1}{3}t^3 + 1)\hat{j}\]
+\[\vec{r}^{\:\prime}(t) = 2t\hat{i} - (3t^3 + 1)\hat{j}\]
+Or:
+\[\vec{r}(t) = 2\cos(t)\hat{i} + \sin(t)\hat{j}\]
+\[\vec{r}^{\:\prime}(t) = -2\sin(t)\hat{i} + \cos(t)\hat{j}\]
+Calculating the velocity vectors for a few values we find that:
+\begin{itemize}
+    \item \(\vec{r}^{\:\prime}(0) = \hat{j}\)
+    \item \(\vec{r}^{\:\prime}(\frac{\pi}{2}) = -2\hat{i}\)
+    \item \(\vec{r}^{\:\prime}(\pi) = -\hat{j}\)
+    \item \(\vec{r}^{\:\prime}(\frac{3\pi}{2}) = 2\hat{i}\)
+\end{itemize}
+And when plotting this graph, we find these vectors (in blue) look exactly how
+we would expect for the velocity of an object undergoing circular motion. The
+length of the resultant vectors is the instantaneous velocity of the particle
+at the time.
+
+\begin{functionplot}[    
+    xmin = -4,
+    xmax = 4,
+    ymin = -3,
+    ymax = 3
+]
+    \addplot[ultra thick, dashed] {(-1*(x/2)^2 + 1)^0.5};
+    \addplot[ultra thick, dashed] {-1*(-1*(x/2)^2 + 1)^0.5};
+
+    \addplot[ultra thick, blue, ->] coordinates {(2, 0) (2, 1)};
+    \addplot[ultra thick, blue, ->] coordinates {(0, 1) (-2, 1)};
+    \addplot[ultra thick, blue, ->] coordinates {(-2, 0) (-2, -1)};
+    \addplot[ultra thick, blue, ->] coordinates {(0, -1) (2, -1)};
+
+    \addplot[ultra thick, red, ->] coordinates {(2, 0) (0.05, 0)};
+    \addplot[ultra thick, red, ->] coordinates {(0, 1) (0, 0.05)};
+    \addplot[ultra thick, red, ->] coordinates {(-2, 0) (-0.05, 0)};
+    \addplot[ultra thick, red, ->] coordinates {(0, -1) (0, -0.05)};
+\end{functionplot}
+
+We can differentiate again to find
+\[\vec{r}^{\:\prime\prime}(t) = -2\cos(t)\hat{i} - \sin(t)\hat{j}\]
+Solving for the same values as earlier:
+\begin{itemize}
+    \item \(\vec{r}^{\:\prime\prime}(0) = -2\hat{i}\)
+    \item \(\vec{r}^{\:\prime\prime}(\frac{\pi}{2}) = -\hat{j}\)
+    \item \(\vec{r}^{\:\prime\prime}(\pi) = 2\hat{i}\)
+    \item \(\vec{r}^{\:\prime\prime}(\frac{3\pi}{2}) = \hat{j}\)
+\end{itemize}
+These vectors are marked in red on the graph; the acceleration is of
+course toward the center.
+
+\bigskip
+We can study the motions of objects through their derivatives. In the case
+that the derivative of a parametric function is \(0\), the velocity of the
+particle is \(0\). These points usually correspond to a sharp point on a
+curve, known as a \textit{cusp}. To check, one can check the signs of the two
+components either side of the point; at least one must change sign for a cusp
+to exist at the point. There is no tangent line at the curve at this point, 
+however it is still differentiable. If a curve has no cusps, it is smooth.
+
+\bigskip
+The reason we have sharp points in differentiable parametric functions is 
+because the plot of the curve is not a plot of the graph; the plot of the
+graph would be in \(\R^3\), as the input is one dimensional and the output
+is two dimensional, much as the input to a single dimensional function needs
+a two dimensional graph in a plane.
 
 \end{flushleft}
 \end{document}
