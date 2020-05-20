@@ -1363,7 +1363,8 @@ direction, we transform the coordinates as follows.
     \begin{tabular}{c|c}
         \(\mathrm{S^\prime}\) & \(\mathrm{S}\) \\
         \hline
-        \(x^\prime = \gamma(x - vt)\) & \(x = x^\prime + vt^\prime\) \\[7pt]
+        \(x^\prime = \gamma(x - vt)\) & 
+        \(x = \gamma(x^\prime + vt^\prime)\) \\[7pt]
         \(y^\prime = y\) & \(y = y^\prime\) \\[7pt]
         \(z^\prime = z\) & \(z = z^\prime\) \\[7pt]
         \(t^\prime = \gamma(t - \frac{vx}{c^2})\) &
@@ -1406,9 +1407,45 @@ If we use our equation for the spacetime invariant from earlier, the equation
 for relativistic momentum and apply some witchcraft, we find that the total 
 energy of a particle is given by
 \[E = \gamma mc^2 = E_0 + K = \mathrm{rest\:energy}+\mathrm{kinetic\:energy}\]
-Where \(E_0\), the rest energy is given my \(mc^2\). We can find another 
-equation, known as the relativistic energy equation:
+Where \(E_0\), the rest energy is given my \(mc^2\). Thus, the kinetic energy,
+\(K\), is given by \((\gamma - 1)E_0\). This kinetic energy is roughly the same
+as \(\frac{1}{2}mv^2\) for low velocitys, but approaches infinity as velocity 
+approaches \(c\). We can find another equation, known as the relativistic 
+energy equation:
 \[E^2 = E_0^2 + p^2c^2\]
+As an example, let us find the energy of a Muon moving at \(0.96c\), with a 
+mass \(207\) times that of an electron.
+\[E_0 = mc^2 = 207\times9.1\times10^{-31}\times(3\times10^8)^2 = 
+1.7\times10^{-11}\mathrm{J}\]
+\[\gamma_p = \frac{1}{\sqrt{1 - \frac{(0.96c)^2}{c^2}}} = 3.57\]
+\[E = \gamma_p mc^2 = 3.57\times1.7\times10^{-11} = 6\times10^{-11}\mathrm{J}\]
+The energy levels here are almost absurdly miniscule; exponents like 
+\(10^{-11}\) are somewhat ridiculous. Thus we instead often use a different
+unit for energy levels of particles This value is the energy of an electron
+after being accelerated through a potential difference of \(1\mathrm{V}\).
+\[1\mathrm{eV} = 1.6\times10^{-19}\mathrm{J}\]
+The electron volt (\(\mathrm{eV}\)) is this unit. We also use mega-electron
+volts, which are simply greater by a factor of \(10^6\).
+
+\bigskip
+Using the relativistic energy equation, we can find a momentum for photons, 
+despite their having \(0\) mass:
+\[E^2 = E_0^2 + p^2c^2 = 0 + p^2c^2\]
+\[\Rightarrow p = \frac{E}{c}\]
+Thus the momentum of a photon is given by its energy divided by \(c\).
+What happens when two particles collide and fuse together? Let us consider
+two equivalent particles, each with mass \(m\) and kinetic energy \(K\).
+\[E_i = 2E_0 + 2K = 2mc^2 + 2K\]
+When they collide from opposite directions, their momentum cancels and we are
+left with a single particle of mass \(M\)
+\[E_f = E_0 + 0 = Mc^2\]
+We can figure out what this mass is using conservation of energy
+\[M = 2m + \frac{2K}{c^2}\]
+The final mass is greater than the initial mass, as some of the energy has been
+converted into mass during the collision. Energy in an isolated system is 
+conserved, although mass is not.
+\[E = \sum E_i\]
+\[E_i = \gamma_im_ic^2\]
 
 \end{flushleft}
 \end{document}
