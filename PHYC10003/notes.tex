@@ -174,7 +174,7 @@ by:
 In uniform circular motion, velocity and acceleration each have constant 
 magnitude but changing direction. This acceleration is called centripetal 
 acceleration. The velocity is always at tangent to the circular path, while 
-the accceleration is always inward toward the centre of the circle.
+the acceleration is always inward toward the centre of the circle.
 \[a = \frac{v^2}{R} \Rightarrow F = m\frac{v^2}{R}\]
 \[T = \frac{2\pi R }{v}\]
 The centripetal acceleration can come from many sources, such as gravity in a 
@@ -329,7 +329,7 @@ move, cells detect their force and report this to the brain.
 \bigskip
 When a person is in a high acceleration vehicle, the perceive the angle to be
 tilting upward even when it isn't. This is because the resultant force vector 
-of the normal force due to gravity and the normal force from the accceleration
+of the normal force due to gravity and the normal force from the acceleration
 points upward relative to the flat plane.
 
 \section*{Energy}
@@ -1503,6 +1503,86 @@ radius is related to the orbital period by
 An orbit where the period matches the period of rotation of the earth is 
 described as geosynchronous. Using Kepler's law, we can find that the
 radius needs to be \(36,900\mathrm{km}\).
+
+\bigskip
+Kepler's Second Law, that the area swept out across a time \(t\) by an orbiting
+body is a constant can be shown through conservation of angular momentum. 
+Angular momentum of an orbiting body is given by
+\[\vec{l} = \vec{r}\times\vec{p} = rmv\sin(\beta)\]
+Where \(\beta\) is the angle between the radius and the velocity. Here the 
+value
+\[\frac{1}{2}\frac{L}{m}\]
+Is a constant.
+
+\subsubsection*{Oscillations}
+Simple Harmonic Motion occurs when a system is cycling through a cycle of 
+states, such as a block on a spring, oscillating out and back as the spring
+compresses and depresses. A system in such a state has the properties \(T\) or
+period, which is the time taken for it to complete a full cycle, \(f\), 
+frequency, which is the inverse of period, measured in \(\mathrm{Hz}\) or 
+cycles per second and amplitude, the maximum displacement from its equilibrium
+position.
+
+\bigskip
+We can model oscillating systems using the tool of trigonometric functions.
+For a system with amplitude \(A\) and frequency \(f\), we can use angular
+velocity \(\omega\) to model the displacement at a time \(t\).
+\[x(t) = A\cos(\omega t)\]
+Here, \(\omega\) is simply \(2\pi f\), the angular frequency. We can take a
+derivative of this to find the velocity at a given time.
+\[v(t) = \frac{dx}{dt} = -\omega A\sin(\omega t)\]
+Through these equations, we can essentially consider oscillating systems to
+be examples of circular motion. If we have different starting conditions for
+particles we want to compare, we can use a phase constant \(\phi\):
+\[x(t) = A\cos(\omega t + \phi)\]
+If we want to compare two different sytems, we can take \(\phi_2 - \phi_1\) to
+be the \textit{phase difference}.
+
+\bigskip
+We can study the energy in an oscillating system by considering that it must
+be the sum of kinetic and potential energies.
+\[E = K + U = \frac{1}{2}mv^2 + \frac{1}{2}kx^2\]
+At the extremes of the system, when \(x = \pm A\), we know the value of \(K\)
+and \(U\).
+\[x = \pm A \Rightarrow v = 0 \Rightarrow E = U = \frac{1}{2}kA^2\]
+\[x = 0 \Rightarrow U = 0 \Rightarrow E = K = \frac{1}{2}mv^2_\mathrm{max}\]
+\[\Rightarrow \frac{1}{2}mv^2_\mathrm{max} = \frac{1}{2}kA^2\]
+This lets us derive an equation for maximum velocity in an oscillating system
+\[v_\mathrm{max} = A\sqrt{\frac{k}{m}} = \omega A \]
+\[\Rightarrow \omega = \sqrt{\frac{k}{m}} = 2\pi f = \frac{2\pi}{T}\]
+\[\Rightarrow f = \frac{1}{2\pi}\sqrt{\frac{k}{m}}\]
+This tells us that the frequency is independent of the amplitude, and is 
+proportional to the ratio between \(k\), the spring constant and \(m\).
+
+\bigskip
+We can use our function for position to find equations for energy.
+\[x(t) = A\cos(\omega t) \:\:\: v(t) = -\omega A\sin(\omega t)\]
+\[U(t) = \frac{1}{2}kA^2\cos^2(\omega t) \:\:\: 
+K(t) = \frac{1}{2}kA^2\sin^2(\omega t)\]
+\[E(t) = U(t)+ K(t) = \frac{1}{2}kA^2(\cos^2(\omega t) + \sin^2(\omega t))\]
+\[E = \frac{1}{2}kA^2\]
+Thus, we find what we would expect; the energy in the system is constant, due 
+to the trigonometric identity cancelling the terms of the potential and kinetic
+energies.
+
+\bigskip
+Taking a derivative of the velocity function we can find \(a(t)\)
+\[a(t) = -\omega^2A\cos(\omega t) = -\omega^2x(t)\]
+And we see that the acceleration is related to the displacement. As the 
+position grows further from the origin, its acceleration increases by the 
+square of the systems angular velocity.
+
+\subsubsection*{Example}
+Consider a \(5\mathrm{kg}\) block hanging at an equilibrium position from a 
+spring with constant \(2000\mathrm{Nm}^{-1}\). The block is pulled down 
+\(5\mathrm{cm}\) and then given an initial velocity of \(1\mathrm{ms}^{-1}\)
+upward. Find the frequency, amplitude and total mechanical energy.
+\[f = \frac{1}{2\pi}\sqrt{\frac{k}{m}} = \frac{1}{2\pi}\sqrt{\frac{2000}{5}}
+= \frac{20}{2\pi} = \frac{10}{\pi}\mathrm{rads}^{-1}\]
+\[E = \frac{1}{2}kx^2 + \frac{1}{2}mv^2 = \frac{1}{2}\times2000\times0.05^2 +
+\frac{1}{2}\times5\times1^2 = 5\mathrm{J}\]
+\[E = \frac{1}{2}kA^2 = 5 = \frac{1}{2}\times2000\times A^2 \Rightarrow
+\sqrt{\frac{10}{2000}} = A = 0.071\mathrm{m}\]
 
 \end{flushleft}
 \end{document}
