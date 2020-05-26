@@ -1460,5 +1460,92 @@ As consumer privacy erodes, information rents erode alongside them. If privacy
 continues to degrade in coming years, the economy will be highly efficient, but
 with extremely low consumer surplus.
 
+\section*{Game Theory}
+Thus far, we have analysed economic agents make decisions without overarching 
+strategy. They make decisions based on environments which they accept as 
+givens. In reality, the actions of agents (or \textit{players}) are dependent
+on each other. We call these effects \textit{cross-effects}. Game theory is 
+used to study these. Two main branches of game theory exist.
+
+\begin{itemize}
+    \item \textit{Cooperative Game Theory} is used to understand bargaining and
+    matching.
+    \item \textit{Non-Cooperative Game Theory} is the primary theory used in 
+    this course, and addresses players aiming to better themselves with purely
+    selfish decisions.
+\end{itemize}
+
+Game theory is important in many scenarios such as auctions, markets or 
+politics. It helps us analyse inter-dependencies among actions taken by 
+decision makers, and make the best choices in strategic situations.
+
+\bigskip
+Game theory models are described as ``Shakespearean''. This is because of the
+way we define a game theory problem by splitting it into three parts, in a way
+like the setting or stage and actors, the actions the characters can take and 
+the interactions between the actors.
+
+\begin{itemize}
+    \item The environment; who are the actors in this situation, what 
+    information do they have and what are their goals.
+    \item Market mechanism; what are the rules of the game, what are the 
+    mechanics of the situation.
+    \item Strategic action; how do individual decisions affect those of other
+    actors.
+\end{itemize}
+
+Games are often categorised as \textit{simultaneous} games and 
+\textit{sequential} games. Simultaneous, such as rock-paper-scissors involved
+players making decisions simultaneously, without information as to the other
+players' moves. In sequential games, like chess, players take turns interacting
+with the game, with full information about their opponents moves. A few other
+pieces of important vocabulary are strategy, which describes the overarching
+gameplan of a player, with decisions for every possible situation and 
+equilibrium, a situation where each player chooses a strategy which represents
+the best response to the strategies of other players.
+
+\bigskip
+A strategy should be deep enough to perfectly describe the action that should
+be taken in every possible situation. These can be \textit{pure}, where the
+action taken in every situation is deterministic, or \textit{mixed}, where the
+strategy incorporates a random element. An action is a single decision, a small
+part of an overarching strategy. In a game like rock-paper-scissors, the action
+taken is the entire strategy.
+
+\bigskip
+A \textit{Nash} equilibrium is a situation where each player knows the strategy
+of each other player and has chosen the optimal response to these strategies.
+
+\subsubsection*{Prisoner's Dilemma}
+Consider a situation where if one player ``rats out'' the other, that player
+receives a one year prison sentence and the other receives a twenty-five year
+sentence, while if both confess they each receive a ten year sentence. If 
+neither confesses, each will receive a three year sentence. We can examine 
+this, effectively a simultaneous game, through a game table. Here 
+\(a, b\) indicates the value of the outcome to player \(a\), the player whose
+options are on the left and to player \(b\), the player whose options are along
+the top.
+
+\begin{center}
+    \begin{tabular}{c|c|c}
+        & Confess & Not Confess \\
+        \hline
+        Confess & \(-10, -10\) & \(-1, -25\)\\
+        Not Confess & \(-25, -1\) & \(-3, -3\) \\ 
+    \end{tabular}
+\end{center}
+
+Here we can introduce a new term: a \textit{strictly dominant} strategy is one
+for which the payoff is always higher than for all other strategies. If a 
+rational player has access to a strictly dominant strategy, they will choose 
+it. If all players have access to a strictly dominant strategy the Nash 
+equilibrium will be all strictly dominant strategies. In this case, both 
+players can choose the strictly dominant strategy of ``confess'', and so they
+will. If either player chooses to confess, then it is optimal for the other
+player to confess, as they will receive a ten year sentence rather than twenty-
+five. If either player chooses not to confess, then it is optimal for the other
+player to choose to confess, because then they will receive a one year sentence
+rather than three.
+
 \end{flushleft}
 \end{document}
