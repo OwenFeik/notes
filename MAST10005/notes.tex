@@ -1649,5 +1649,62 @@ from \([a, b]\) to \([\log(a), \log(b)]\), because in this case \(\log\) was
 our \(h\).
 \[\int_0^\frac{\pi}{2} \sin(u) \:du = \left[-\cos(u)\right]_0^\frac{\pi}{2}\] 
 
+\subsubsection*{Linear Substitution}
+Not all functions are obviously transformed to use integration by substitution.
+However, sometimes we can use the trick of \textit{linear substitution} to find
+a way to do so. The key to using integration by substitution is to rearrange
+the function into the form
+\[\int g(u) \frac{du}{dx} \: dx\]
+So one way we can do this is by finding a linear function \(u(x)\) and 
+rearranging to find \(x\) in terms of \(u\). Example:
+\[\int (2x + 1)\sqrt{x - 3} \:dx\]
+\[u = x - 3 \Rightarrow x = u + 3\]
+\[\int (2(u + 3) + 1)\sqrt{u} \:dx = \int (2u + 7)\sqrt{u}\frac{du}{dx} \:dx
+\left(\frac{du}{dx} = 1\right)\]
+\[= \int 2u^{\frac{3}{2}} + 7u^{\frac{1}{2}} \:du = 
+2\frac{1}{\frac{3}{2} + 1}u^{\frac{3}{2} + 1} + 
+7\frac{1}{\frac{1}{2} + 1}u^{\frac{1}{2} + 1} + C\]
+\[= 2\frac{2}{5}u^\frac{5}{2} + 7\frac{2}{3}u^\frac{3}{2} + C\]
+\[= \frac{4}{5}(x - 3)^\frac{5}{2} + \frac{14}{3}(x - 3)^\frac{3}{2} + C\]
+Here, we used the fact that we could easily find \(x\) in terms of \(u\) to
+simplify the integral. This trick can also be used for high powers of \(\sin\)
+and \(\cos\).
+\[\int \sin^4\cos^3 \:dx = \int u^4\cos^2(x)\cos(x) \:dx = 
+\int u^4\cos^2(x)\frac{du}{dx} \:dx\]
+\[\cos^2(x) + sin^2(x) = 1 \Rightarrow cos^2(x) = 1 - \sin^2(x) = 1 - u^2\]
+\[\int u^4(1 - u^2) \:du = \int u^4 - u^6 = 
+\frac{1}{5}u^5 - \frac{1}{7}u^7 + C\]
+\[\int \sin^4\cos^3 \:dx = \frac{1}{5}\sin^5(x) - \frac{1}{7}\sin^7(x) + C\]
+This trick will work as long as the power of either \(\sin\) or \(\cos\) is odd
+for any similar function. If both are odd, either can be used. If both are 
+even, the complex exponential can be used.
+\bigskip
+Linear substitution happens to make one particular common form of substitution 
+very simple. For a function of the form \(f(kx)\) where \(\int f(x)\) is 
+already known, linear substitution tells us that \(\int f(kx)\) is simply
+\[\int f(kx) \:dx = \frac{1}{k}F(kx) + C\]
+A couple of examples of this
+\[\int \sin(kx) \:dx = -\frac{1}{k}\cos(kx) + C\]
+\[\int e^{kx} \: dx = \frac{1}{k}e^{kx} + C\]
+
+\subsubsection*{Integration of Rational Functions}
+Functions of the form
+\[\frac{p(x)}{q(x)}\]
+Turn out to be a very important structure to integrate, and a general process 
+for this exists. We already know that
+\[\int \frac{1}{x} \: dx = \log(\;\abs{x}\;) + C\]
+And now we extend this to examine integrals of the form
+\[\int \frac{1}{ax + b} \:dx\]
+Here, we use the substitution \(u = ax + b\).
+\[u = ax + b \Rightarrow \frac{du}{dx} = a\]
+So for an integral
+\[\int \frac{1}{2x - 3} \:dx\]
+\[u = 2x - 3 \Rightarrow \frac{du}{dx} = 2\]
+We can multiply \(\frac{du}{dx}\) by \(\frac{1}{2}\) to simplify this process
+somewhat.
+\[\int \frac{1}{u} \frac{1}{2}\frac{du}{dx} \:dx 
+= \frac{1}{2} \int\frac{1}{u}\:du = \frac{1}{2}\log(\;\abs{u}\;) + C\]
+\[\int \frac{1}{2x - 3} \:dx = \frac{1}{2}\log(\;\abs{2x - 3}\;) + C\]
+
 \end{flushleft}
 \end{document}
