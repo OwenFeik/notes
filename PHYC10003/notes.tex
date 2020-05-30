@@ -1584,5 +1584,56 @@ upward. Find the frequency, amplitude and total mechanical energy.
 \[E = \frac{1}{2}kA^2 = 5 = \frac{1}{2}\times2000\times A^2 \Rightarrow
 \sqrt{\frac{10}{2000}} = A = 0.071\mathrm{m}\]
 
+\bigskip
+For a pendulum hanging on a string of length \(L\), oscillating slightly
+around the rest posisition, the displacement equation has a value \(\omega\)
+given by
+\[\omega = \sqrt{\frac{g}{L}} = 2\pi f\]
+The period of oscillation is independent of both the amplitude and mass.
+This expression is only valid for small values of \(\theta\), less than
+around \(10\degree\), because it relies on \(\theta\approx\sin(\theta)\) to
+calculate \(\tau\) as a linear force through
+\[\tau = -Mgl\theta\]
+
+As a general rule, any system with a linear restoring force, such as the 
+horizontal component of gravity for the pendulum, or the restoring force of the
+spring in the previous example, will undergo simple harmonic motion around its
+origin position.
+
+\subsubsection*{Damped Oscillation}
+While in an ideal system, oscillations would continue indefinitely, in reality
+they can only go on for so long before halting. This is due to damping in
+real world systems, due to forces like drag and friction. A damping force
+is usually of the form
+\[\vec{D} = -b\vec{v}\]
+Where \(\vec{D}\) is the damping force and \(b\) is the \textit{damping
+constant}. This changes the net force equation to
+\[F_\mathrm{net} = F_\mathrm{restorative} + D = -kx - bv = ma\]
+This yields a somewhat more complex equation of motion
+\[\frac{d^2x}{dt^2} + \frac{b}{m}\frac{dx}{dt} + \frac{k}{m}x = 0\]
+\[\Rightarrow x(t) = Ae^{-\frac{bt}{2m}}\cos(\omega t + \phi)\]
+With \(\omega\) given by
+\[\omega = \sqrt{\frac{k}{m} - \frac{b^2}{4m^2}} 
+= \sqrt{\omega_0^2 - \frac{b^2}{4m^2}}\]
+In this equation, a negative exponential function is added as a damping factor
+to the oscillating term. This makes the oscillations smaller and smaller with
+time, gradually bringing the energy lower. We can derive a new equation for
+the energy of a sytem with a damping factor.
+\[E(t) = \frac{1}{2}k\left(Ae^{-\frac{bt}{2m}}\right)^2 
+= \frac{1}{2}kA^2e^{-\frac{bt}{m}}\]
+The lost energy is usually as thermal energy. Knowing this allows us to write
+\[E(t) = U + K \rightarrow 0 \Rightarrow 
+E_\mathrm{total} = E(t) + E_\mathrm{thermal}\]
+\[\Rightarrow E_\mathrm{thermal} = E_\mathrm{total} - E(t)\]
+We take advantage of damping in structures like damping tanks in the Eureka
+Tower, where large tanks of water are used to dissipate oscillation due to wind
+by allow the water within to slosh about.
+
+\bigskip
+A counterpart to damped oscillation is driven oscillation. If a driving
+force, such as a person pushing a swing, is applied at a frequency matching
+the natural frequency of an oscillator, resonance occurs dramatically 
+increasing amplitude of oscillation.
+
 \end{flushleft}
 \end{document}
