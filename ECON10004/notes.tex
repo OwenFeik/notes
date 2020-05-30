@@ -4,6 +4,7 @@
 \usepackage{pgfplots}
 \usepackage{calc}
 \usepackage{amssymb}
+\usepackage{xcolor}
 
 \pgfplotsset{compat = 1.16}
 \usepgfplotslibrary{fillbetween}
@@ -1546,6 +1547,163 @@ player to confess, as they will receive a ten year sentence rather than twenty-
 five. If either player chooses not to confess, then it is optimal for the other
 player to choose to confess, because then they will receive a one year sentence
 rather than three.
+
+\bigskip
+There are a few main techniques for finding Nash equilibria. These include
+\begin{itemize}
+    \item Cell-by-cell inspection, the process of selecting a cell and checking
+    whether the payoff can be improved for either player by changing strategy.
+    This process can be repeated until no improvement can be made, indicating 
+    an equilibrium.
+    \item Elimination of dominated strategies. For a player, we can consider 
+    whether all possible outcomes of a decision would be improved by selecting
+    a different move; i.e. if that move is dominated. If the strategy is 
+    dominated it can be eliminated from consideration. Repeated application of
+    the process can collapse the decision pool to equilibria.
+    \item Best-response analysis involves determining the best action for a 
+    player in response to each possible move of their opponent. In situations
+    where the best response for each player is the same cell a Nash equilibrium
+    exists.
+\end{itemize}
+
+\pagebreak
+As an example of elimination of dominated strategies, we can consider the 
+tables below. Starting from the top left and moving left to right, top to
+bottom, they show the process of elimination of dominated strategies to find
+the Nash equilibrium of 5, 4.
+
+\begin{figure}[!htb]
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \begin{tabular}{p{0.3cm}|c|c|c|c|}
+            & A & B & C & D \\
+            \hline
+            A & 3, 1 & 2, 3 & 10, 2 & 7, 2 \\
+            \hline
+            B & \textcolor{red}{4}, 5 & \textcolor{red}{3}, 1 & 
+            \textcolor{red}{6}, 4 & \textcolor{red}{7}, 2 \\
+            \hline
+            C & 2, 2 & 5, 4 & 12, 3 & 8, 2 \\
+            \hline
+            D & \textcolor{blue}{5}, 6 & \textcolor{blue}{4}, 5 & 
+            \textcolor{blue}{9}, 7 & \textcolor{blue}{9}, 2 \\
+            \hline
+        \end{tabular}
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \begin{tabular}{p{0.3cm}|c|c|c|c|}
+            & A & B & C & D \\
+            \hline
+            A & 3, \textcolor{red}{1} & 2, 3 & 10, 
+            \textcolor{blue}{2} & 7, 2 \\
+            \hline
+            B & & & & \\
+            \hline
+            C & 2, \textcolor{red}{2} & 5, 4 & 12, 
+            \textcolor{blue}{3} & 8, 2 \\
+            \hline
+            D & 5, \textcolor{red}{6} & 4, 5 & 9, 
+            \textcolor{blue}{7} & 9, 2 \\
+            \hline
+        \end{tabular}
+    \end{minipage}
+\end{figure}
+\begin{figure}[!htb]
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \begin{tabular}{p{0.3cm}|c|c|c|c|}
+            & A & B & C & D \\
+            \hline
+            A & & 2, \textcolor{blue}{3} & 10, 2 & 7, \textcolor{red}{2} \\
+            \hline
+            B & & & & \\
+            \hline
+            C & & 5, \textcolor{blue}{4} & 12, 3 & 8, \textcolor{red}{2} \\
+            \hline
+            D & & 4, \textcolor{blue}{5} & 9, 7 & 9, \textcolor{red}{2} \\
+            \hline
+        \end{tabular}
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \begin{tabular}{p{0.3cm}|c|c|c|c|}
+            & A & B & C & D \\
+            \hline
+            A & & \textcolor{red}{2}, 3 & \textcolor{red}{10}, 2 & \\
+            \hline
+            B & & & & \\
+            \hline
+            C & & \textcolor{blue}{5}, 4 & \textcolor{blue}{12}, 3 & \\
+            \hline
+            D & & \textcolor{red}{4}, 5 & \textcolor{red}{9}, 7 & \\
+            \hline
+        \end{tabular}
+    \end{minipage}
+\end{figure}
+\begin{figure}[!htb]
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \begin{tabular}{p{0.3cm}|c|c|c|c|}
+            & A & B & C & D \\
+            \hline
+            A & & & & \\
+            \hline
+            B & & & & \\
+            \hline
+            C & & 5, \textcolor{blue}{4} & 12, \textcolor{red}{3} & \\
+            \hline
+            D & & & & \\
+            \hline
+        \end{tabular}
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \begin{tabular}{p{0.3cm}|c|c|c|c|}
+            & A & B & C & D \\
+            \hline
+            A & & & & \\
+            \hline
+            B & & & & \\
+            \hline
+            C & & 5, 4 & & \\
+            \hline
+            D & & & & \\
+            \hline
+        \end{tabular}
+    \end{minipage}
+\end{figure}
+
+In words, these tables tell us that for the row player (player 1), strategy
+B is dominated by strategy D, and so will never be played. In this case, C
+dominates A for the column player (player 2), and can be eliminated. Now B
+dominates D for player 2, so D can be eliminated. For player 1, C dominates
+both A and D, so only C will be played. For player 2, B is the best response
+to C, dominating C, so the equilibrium outcome is C for player 1 and B for 
+player 2. 
+
+\bigskip
+Let us consider another game, where two players split a dollar between 
+themselves, by each choosing a value between out of 25c, 50c and 75c. If
+the sum is less than a dollar, each receives their chosen share, otherwise
+neither receives anything.
+
+\begin{center}
+    \begin{tabular}{c|c|c|c|}
+        & 25c & 50c & 75c \\
+        25c & 25, 25 & 25, 50 & \textcolor{blue}{25, 75} \\
+        50c & 50, 25 & \textcolor{blue}{50, 50} & 0, 0 \\
+        75c & \textcolor{blue}{75, 25} & 0, 0 & 0, 0 \\
+    \end{tabular}
+\end{center}
+
+Our strategies learnt thus far would tell us that there are three Nash 
+equilibria in this situation. However, reality doesn't seem to align with
+this outcome. We need further tools to properly analyse simultaneous games.
+Ideally, we would be able to indentify the most likely outcome, or the 
+probability of each possible outcome. In this case, human psychology dictates
+a bias towards fairness which skews results toward 50c. Sometimes, however,
+there isn't a simple explanation.
 
 \end{flushleft}
 \end{document}
