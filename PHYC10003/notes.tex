@@ -1635,5 +1635,64 @@ force, such as a person pushing a swing, is applied at a frequency matching
 the natural frequency of an oscillator, resonance occurs dramatically 
 increasing amplitude of oscillation.
 
+\subsection*{Waves and Particles}
+When a particle moves between two points, both matter and energy are 
+transferred. On the other hand, when waves move only energy is transferred.
+Many types of waves exist. These include
+\begin{itemize}
+    \item Mechanical waves, such as sound waves, which propagate physically
+    through a medium such as air or water
+    \item Electromagnetic which do not require a medium and self propagate
+    through vacuum or a medium. Visible light is a small section of the 
+    electromagnetic spectrum.
+    \item Matter waves which describe atomic particles such as electrons,
+    governed by quantum mechanics.
+\end{itemize}
+Waves can also be broken into transverse waves, sinusoidal waves and 
+longitudinal waves. A transverse wave propagates a single peak through
+space, such as a wave on the ocean, while a sinusoidal wave resembles a
+sine or cosine pattern. Longitudinal waves have displacement parallel to the
+direction of motion, such as in the case of a tugged spring.
+
+\bigskip
+For a transverse wave propagating along a string, a peak will move along
+the string with a speed given by
+\[v = \sqrt{\frac{T}{\mu}}\]
+Where \(T\) is the tension in the string, the restoring force term allowing
+oscillation and \(\mu\) is the mass per unit length of the string, the inertial
+term enforcing oscillation. For a travelling sinusoidal wave, we have a general
+form for the displacement at a given time \(t\) and position \(x\) of
+\[D(x, t) = A\sin(kx \pm \omega t + \phi_0)\]
+Where \(k\) is the \textit{angular wave number}. For this expression to yield
+the correct displacement at each point seperated by one wavelength, we know 
+that \(k\) must be given by
+\[k = \frac{2\pi}{\lambda}\]
+Because we know that the displacement of a point on the wave should be constant
+as the wave propagates, we know that
+\[kx - \omega t + \phi_0\]
+Is a constant. This allows us to find a relationship between position \(x\) and
+time \(t\) for a point travelling at wave speed \(v\).
+\[\frac{d}{dt}(kx - \omega t + \phi_0)\]
+\[k\frac{dx}{dt} - \omega = 0 \Rightarrow v = \frac{\omega}{k}\]
+The vertical velocity of a point on the wave is given by
+\[\frac{dy}{dt} = -\omega A \cos(kx - \omega t + \phi_0)\]
+\[\Rightarrow v_{y,\mathrm{max}} = \omega A\]
+The phase difference between two points on a sine wave is given by
+\[\delta \phi = 2\pi \frac{\Delta x}{\lambda}\]
+Thus, waves are out of phase when \(\Delta x = \frac{\lambda}{2}\) and in
+phase when \(\Delta x = \lambda\).
+
+\bigskip
+A quick summary of useful formulae:
+\begin{center}
+    \begin{tabular}{||c|c|c|c|c||}
+        \(k = \frac{2\pi}{\lambda}\) &
+        \(\omega = \frac{2\pi}{T}\) &
+        \(f = \frac{1}{T}\) &
+        \(v = \frac{\omega}{k}\) &
+        \(v = f\lambda\) \\[7pt]  
+    \end{tabular}        
+\end{center}
+
 \end{flushleft}
 \end{document}
