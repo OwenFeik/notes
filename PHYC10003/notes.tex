@@ -3,6 +3,8 @@
 \usepackage{gensymb}
 \usepackage{amsmath}
 \usepackage{commath}
+\usepackage{bbold}
+
 \begin{document}
 \begin{flushleft}
 \title{PHYC10003 Notes}
@@ -1657,8 +1659,8 @@ direction of motion, such as in the case of a tugged spring.
 \bigskip
 For a transverse wave propagating along a string, a peak will move along
 the string with a speed given by
-\[v = \sqrt{\frac{T}{\mu}}\]
-Where \(T\) is the tension in the string, the restoring force term allowing
+\[v = \sqrt{\frac{\tau}{\mu}}\]
+Where \(\tau\) is the tension in the string, the restoring force term allowing
 oscillation and \(\mu\) is the mass per unit length of the string, the inertial
 term enforcing oscillation. For a travelling sinusoidal wave, we have a general
 form for the displacement at a given time \(t\) and position \(x\) of
@@ -1693,6 +1695,80 @@ A quick summary of useful formulae:
         \(v = f\lambda\) \\[7pt]  
     \end{tabular}        
 \end{center}
+
+\subsubsection*{Superposition}
+For multiple travelling waves in the same medium, the total displacement in the
+medium is given by the sum of the displacements of the individual waves.
+\[D(x, t) = D_1(x, t) + D_2(x, t) + ...\]
+This will hold as long as \(D\) is below the elastic limit of the medium. If
+\(D\) exceeds this limit, deformation or breaking can occur. A consequence of
+this is that any wave can be generated with a sufficient number of sinusoidal
+waves, known as Fourier's Theorem.
+
+\bigskip
+An important consequence of superposition is standing waves, where two waves
+with equal amplitude, wavelength and frequency interact while travelling in
+opposite directions. In this situation, the two have the equations
+\[D_1 = A\sin(kx - \omega t) \:\:\: D_2 = A\sin(kx + \omega t)\]
+\[D = A\sin(kx - \omega t) + A\sin(kx + \omega t)\]
+The resultant wave \(D\) will be a standing wave, which appears to be a 
+stationary oscillating wave. The equation \(D\) can be rearranged to find
+\[D = 2A\sin(kx)\cos(\omega t)\]
+Which tells us that the wave doesn't travel, instead the amplitude is dependent
+on \(x\) position and the volume at a time changes. In addition, it tells us 
+there are points which are always \(0\), where \(\sin(kx) = 0\), at 
+\(kx = m\pi\). If we remember our relationship between \(k\) and \(\lambda\),
+we can find that
+\[kx = m\pi \Rightarrow x = \set{m\frac{\lambda}{2} | m \in \mathbb{Z}}\]
+So the \textit{nodes} of the wave occur at integer multiples of a half 
+wavelength. Nodes are points where the standing wave is always \(0\). Their
+inverse are \textit{antinodes}, where the amplitude of the standing wave is a
+maximum, occuring when \(\sin(kx) = \pm1\). These points are given by
+\[x = \left(m + \frac{1}{2}\right)\frac{\lambda}{2}\]
+
+\bigskip
+One way which standing waves occur, such as in stringed instruments, is through
+reflection of waves. When a transverse wave in a string reaches the end of the
+string, the wave is reflected back with inverse displacement. This allows a
+standing wave to form along a string, the key principle behind stringed 
+instruments. 
+
+\bigskip
+Reflection of waves occurs not only at boundaries of strings or
+media, but also at discontinuities, places where the properties of the medium
+change. Because the velocity of the wave is affected by the mass of a string,
+if a string drops in mass the nature of the wave changes. For a wave moving 
+from a heavier to a lighter string, a portion of the wave will be reflected
+backwards (with lower amplitude in the same vertical direction) at lower speed
+while another portion will continue onto the lighter string (with greater 
+amplitude than the reflected portion due to the lower mass) and higher speed.
+
+\bigskip
+For a smaller string moving into a larger string, the larger string acts 
+partially like a hard boundary, reflecting part of the wave with reduced
+inverse displacement and equal speed, and partially like a transition, with
+a slow, smaller wave with displacement in the same direction continuing along
+the thicker string.
+
+\bigskip
+This principle can be used to diffuse vibrations by including many changes in
+thickness of material to reduce transmission of sound or other mechanical waves
+in a structure.
+
+\bigskip
+A string of a certain length will have standing waves within it of wavelengths
+dependent on its length. For a string with both ends fixed, of length \(L\), 
+the \textit{first harmonic} will have a wave length given by \(2L\), the second
+wavelength of \(L\) and the third of \(\frac{2}{3}L\). In general, the 
+wavelength of the \(n\)th harmonic is given by
+\[\lambda = \frac{2L}{n}\]
+For example consider a violin string of length \(32\mathrm{cm}\) and mass of
+\(4.5\cdot10^{-4}\mathrm{kg}\). What is the tension in the string if its 
+fundamental frequency (first harmonic) is \(f_1 = 196\mathrm{Hz}\)?
+\[v = \sqrt{\frac{\tau}{\mu}}\]
+\[\mu = \frac{m}{l} = \frac{4.5\cdot10^{-4}}{0.32} = 0.0014\]
+\[v = f\lambda \Rightarrow v = 196 \times (2 \times 0.32) = 125.44\]
+\[v^2\mu = \tau \Rightarrow 125.44^2\times0.0014 = \tau = 22.13\mathrm{N}\]
 
 \end{flushleft}
 \end{document}
