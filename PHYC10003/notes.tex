@@ -1650,6 +1650,12 @@ Many types of waves exist. These include
     \item Matter waves which describe atomic particles such as electrons,
     governed by quantum mechanics.
 \end{itemize}
+Waves occur not only in one dimension, such as along a string, but also in two
+dimensions, such as the ripples on a lake, where each ripple corresponds to a
+peak and thus is a wavelength apart, or in three dimensions such as when sound
+waves are created at a point in the air and scurry away in all directions.
+
+\bigskip
 Waves can also be broken into transverse waves, sinusoidal waves and 
 longitudinal waves. A transverse wave propagates a single peak through
 space, such as a wave on the ocean, while a sinusoidal wave resembles a
@@ -1769,6 +1775,124 @@ fundamental frequency (first harmonic) is \(f_1 = 196\mathrm{Hz}\)?
 \[\mu = \frac{m}{l} = \frac{4.5\cdot10^{-4}}{0.32} = 0.0014\]
 \[v = f\lambda \Rightarrow v = 196 \times (2 \times 0.32) = 125.44\]
 \[v^2\mu = \tau \Rightarrow 125.44^2\times0.0014 = \tau = 22.13\mathrm{N}\]
+
+\subsubsection*{Sound Waves}
+Sound waves are longitudinal mechanical waves, which can travel through all 
+media irrespective of state, operating by compressing the material ahead of 
+them while the material behind them relaxes. Where transverse waves apply a
+shearing stress to a material, longitudinal waves apply a compressive stress.
+It is for this reason that fluids such as water or are cannot transmit a 
+transverse wave while solids can. Because fluids can be compressed, they can
+transmit longitudinal waves.
+
+\bigskip
+Knowing that sound waves move through a medium through compression, we can find
+an equation for the speed of sound in a fluid. Once again, we find that it is 
+of the form 
+\[\sqrt{\frac{\mathrm{restoring\:force}}{\mathrm{inertial\:term}}}\]
+The requirement for oscillation which allows waves to transmit. In this case, 
+the restoring force is the materials \textit{Bulk modulus}, visited earlier 
+when stresses were examined. Here, it is coupled with density to understand the
+behaviour of compressed materials and see how they can transmit waves.
+\[v = \sqrt{\frac{B}{\rho}}\]
+\(B\) is the Bulk modulus of the relevant fluid, while \(\rho\) is the density.
+As an example, we can consider air at \(0\degree\mathrm{C}\). Here, air has a
+density of \(1.29\mathrm{kgm}^{-3}\) and sound travels through it at
+\(331\mathrm{ms}^{-1}\). What is the Bulk modulus of air at this temperature?
+\[331 = \sqrt{\frac{B}{1.29}} \Rightarrow 331^2\times1.29 = B = 141333.7\]
+For a solid, the speed of sound is given by a slightly different equation. 
+Here, the restoring force is given by Young's modulus (\(E\)), rather than the
+Bulk  modulus, and density is still used as the denominator. The resultant 
+equation for velocity is
+\[v = \sqrt{\frac{E}{\rho}}\]
+
+\bigskip
+Sound waves are the most common case where we observe wave interference. 
+Constructive interference occurs when waves are offset by a whole number of
+wavelengths, which can occur due to a phase difference of \(0\) and a starting
+position offset by a whole number of wavelengths or in a situation where the
+phase difference compensates the position difference, e.g. \(\phi = \pi\) and
+\(\Delta x = \frac{\lambda}{2}\).
+
+\bigskip
+Destructive interference occurs when the waves are offset by 
+\(\frac{\lambda}{2}\), which can occur for the same reasons. Both of these
+interferences can occur in higher dimensions. To understand these situations,
+we use the concept of path difference. If \(r\) is the distance from a source
+to a point, we can say constructive interference occurs at that point if
+\[\Delta r = m\lambda\]
+Where \(\Delta r\) is the difference in distances from two sources and \(m\) is
+an integer. As long as the path difference is a whole number of wavelengths, 
+constructive interference will occur. For the inverse case, when a crest of
+one wave meets another we have
+\[\Delta r = \left(m + \frac{1}{2}\right)\lambda\]
+Standing waves can also occur in situations less contrived than in an 
+instrument string, such as in a simple room with a speaker at one end, due to
+the interference that occurs. The pressure at certain points will be at a 
+maximum, offset by \(\pi\) from the points where pressure is at equilibrium
+levels, where the wave amplitude is at a maximum.
+
+\bigskip
+For a pipe which is closed at one end and open at the other, resonance can 
+still occur. In this case, the first harmonic will occur at 
+\[L = \frac{\lambda}{4}\]
+An interesting property of this set up is that only odd harmonics can occur,
+with the wavelengths of these harmonics given by the equation
+\[\lambda_n = \frac{4L}{n}\]
+For the \(n\)th harmonic, where \(n\) is always odd. The reason for this 
+behaviour is because the air at the closed end of the tube must be fixed, which
+implies that the air at the open end must be at maximum displacement. Thus, we
+have a cycle from \(0\) to maximum across the length of the pipe, i.e. 
+\(\frac{\lambda}{4}\) across the length of the pipe.
+
+\bigskip
+This makes it simple to understand that for a closed pipe, the air must be
+stationary at each end, which gives us the same result as for a fixed string,
+with the first harmonic at \(\lambda = 2L\) and the general form of
+\[\lambda_n = \frac{2L}{n}\]
+A third case can be considered, where both ends are open. This behaves 
+(shockingly enough) as the inverse of the case of both ends closed, with 
+antinodes at each end in contrast to the closed tubes nodes. The wavelengths
+are determined in the same fashion as for the doubly closed tube.
+
+\subsubsection*{Doppler Effect}
+An interesting frequency related phenomena is the Doppler effect, which is the
+change in frequency which occurs when a sound source and an observer are moving
+relative to each other, such as the change in frequency of the siren of a
+passing emergency vehicle.
+
+\bigskip
+This effect occurs because the velocity of the source is added to the waves in
+front of it, resulting in a higher frequency ahead of the source and a lower
+frequency behind it, where the velocity is subtracted from that of the waves.
+The magnitude of the change in frequency can be calculated using the relative 
+velocities of the waves and source. Here, \(v\) is the velocity of the wave,
+\(v_s\) is the velocity of source \(f_o\) is the frequency observed and \(f_s\)
+is the frequency emitted at the source. In this situation, the source is 
+approaching the observer with velocity \(v\). \(f_o > f_s\).
+\[f_o = \left(\frac{v}{v - v_s}\right)f_s\]
+For a source moving away from the observer, the sign of the source velocity
+is flipped. Here, \(f_o < f_s\).
+\[f_o = \left(\frac{v}{v + v_x}\right)f_s\]
+The same effect occurs when the observer is moving toward the source. For an
+observer approaching the source, the observed frequency is given by
+\[f_o = \left(\frac{v + v_o}{v}\right)f_s\]
+Here, the sign of \(v_o\) is flipped to find the observed frequency for an
+observer retreating from the source. As an example, let us find the speed with
+which one would need to move toward an observer to make a \(4800\mathrm{Hz}\)
+sound shift up to \(5200\mathrm{Hz}\). The speed of sound can be taken to be
+\(343\mathrm{ms}^{-1}\).
+\[f_o = \left(\frac{v}{v - v_s}\right)f_s\]
+\[\frac{f_o}{f_s} = \left(\frac{v}{v - v_s}\right) \Rightarrow 
+\frac{f_s}{f_o} = \left(\frac{v - v_s}{v}\right) \Rightarrow
+\frac{f_s}{f_o} = 1 - \frac{v_s}{v} \Rightarrow 
+v_s = \left(1 - \frac{f_s}{f_o}\right)v\]
+\[v_s = \left(1 - \frac{4800}{5200}\right)343 = 26.4\]
+
+In the case that a source of sound is moving faster than the sound waves which
+it emits, these sound waves will tend to build up on top of each other, 
+increasing the size of the resultant waves through constructive interference.
+This is the cause of a sonic boom.
 
 \end{flushleft}
 \end{document}
