@@ -1705,5 +1705,53 @@ probability of each possible outcome. In this case, human psychology dictates
 a bias towards fairness which skews results toward 50c. Sometimes, however,
 there isn't a simple explanation.
 
+\subsubsection*{Oligopoly}
+Oligopolistic markets involve a few competing firms, as opposed to the single
+firm of a monopoly or the broad competition of a perfectly competitive market.
+It turns out that game theory has important implications for the optimal 
+behaviour of a firm participating in an oligopoly.
+
+\bigskip
+While at first, it may seem optimal for firms to collude and create a monopoly
+structure in the market, it turns out that there are incentives for a firm to
+deviate from this agreement if possible, and overproduce to increase profits.
+To understand this, we can consider a situation known as a Cournot duopoly.
+
+\bigskip
+Say two firms \(A\) and \(B\) exist, with identical marginal cost curves of 
+\(MC = \$100\cdot10^6\). Here, \(Q_S = Q_A + Q_B\). The inverse demand curve is
+\(P = 800 - Q_D\). What is the monopoly outcome for this situation?
+\[MC = MR \Rightarrow Q = 350, P = 450\]
+If the two firms cooperated, each should produce half of this quantity and 
+receive half of the profits. Let us now examine if this is the best possible
+outcome for each player. Say firm \(B\) decides to produce this quantity.
+Should the other player choose to match? In essence, the demand curve has been
+shifted downward by the quantity produced by firm \(B\), and so for firm \(A\)
+it looks like 
+\[P = (800 - Q_B) - Q_A\]
+\[R = (800 - Q_A - Q_B)Q_A\]
+\[MR = 800 - Q_B - 2Q_A = MC \Rightarrow Q_A(Q_B) = 350 - \frac{Q_B}{2}\]
+The optimal quantity for firm \(A\) to produce is dependent on the quantity
+produced by \(B\). This \textit{best-response function} tells us that it is
+optimal for \(A\) to produce \textit{more} than the monopoly amount. Thus, both
+firms have an incentive to deviate from the agreement, and each must try to 
+react optimally to the others behaviour. To find the Nash equilibrium of this
+situation, we can use the best response function we found earlier.
+\[Q_A = 350 - \frac{Q_B}{2} \:\:\: Q_B = 350 - \frac{Q_A}{2}\]
+\[Q_A^* = \frac{700}{3} = Q_B^*\]
+The Nash equilibrium has each firm producing the same quantity, which is 
+greater than the monopoly quantities. We can extend this concept to a greater
+number of identical firms by simply considering player \(A\) playing against
+\((n - 1)Q_B\). 
+\[R = P(Q)Q_A = (800 - Q_A - (n - 1)Q_B)Q_A\]
+\[MR = 800 - (n - 1)Q_B - 2Q_A = MC = 100 \Rightarrow 
+Q_A(Q_B) = 350 - \frac{(n - 1)Q_B}{2}\]
+We can set \(Q_B = Q_A\) because we know that all of the firms are identical 
+and so the optimal quantity will be the same.
+\[Q_A = 350 - \frac{(n - 1)Q_A}{2} \Rightarrow Q_A = \frac{700}{n + 1}\]
+This yields the same result for our duopoly situation, and generalises to
+higher numbers of firms. As \(n\) increases, the equilibrium quantity converges
+to marginal cost, as in a perfectly competitive market.
+
 \end{flushleft}
 \end{document}
