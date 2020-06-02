@@ -1753,5 +1753,123 @@ This yields the same result for our duopoly situation, and generalises to
 higher numbers of firms. As \(n\) increases, the equilibrium quantity converges
 to marginal cost, as in a perfectly competitive market.
 
+\subsection*{Game Theory and Market Failures}
+
+\subsubsection*{Externalities and Coase's Theorem}
+Externalities, as explored earlier, are costs or benefits incurred by an agent
+who is not party to a transaction. Externalities can cause market failure 
+because they are not accounted for in the private marginal costs and benefits
+of individual agents. Earlier we examined how Pigouvian taxes and direct
+regulation can be used to manage subsidies, and now we have the tools to 
+explore market based solutions, using property rights over the externality to
+manipulate the behaviour of market agents.
+
+\bigskip
+An example of a situation where this was applied can be found in radio bands in
+the United States. In the early years of radio broadcasting, licenses for 
+certain frequencies were sold by the newly formed FCC, solving the externality
+of clashing broadcasts on the same frequencies. However, as time passed the
+inefficiencies in this system became clear as legacy incumbent broadcasters
+prevented new players from entering the scene as they possessed the all 
+important licences. Ronald Coase introduced a solution where licenses could
+be bought and sold independently of the FCC, between broadcasters, arguing that
+this system would allow private individuals to solve the externality 
+independently of regulation.
+
+\bigskip
+The foundation of the was what is known as the Coase Theorem, that if property
+rights for an externality are established, and private parties can trade the
+externality at a low transaction cost, bargaining will necessarily result in an
+efficient outcome.
+
+\bigskip
+Consider a situation where a chemical produces chemicals, releasing pollutants
+into a lake shared with a boat hire company as it does so. In a situation with
+no regulation, an obvious Nash equilibrium is reached on the following table.
+\begin{center}
+    \begin{tabular}{c|c|c|c}
+        & 0 & 1 & 2 \\
+        0 & 0, 0 & 0, 14 & 0, 15 \\
+        1 & 10, 0 & 10, 10 & 10, 5 \\
+        2 & 15, 0 & \textcolor{blue}{15, 2} & 15, -3 \\
+    \end{tabular}        
+\end{center}
+Because the chemical plant (row player) has no incentive to limit its output, 
+it will always produce 2 units, and the best response of the boat hire company
+(column player) is simply to produce 1 unit. This is not, however, the socially
+optimal outcome of a 20 unit surplus. To rectify this, property rights could be
+awarded to either party.
+
+\bigskip
+In the case that property rights are awarded to the boat hire firm, it could
+simply ban pollution, forcing a move of 0 from the chemical plant, and ensuring
+a surplus for itself of \$15. However, it could instead charge the chemical 
+plant a fee of \$10 per unit to pollute the lack. The chemical plant would have
+a surplus of \$0, and thus would be indifferent as to the outcome, while the
+boat hire firm would gain a surplus of \$20, the socially maximal surplus. By
+awarding property rights, a situation was constructed which ensured an
+efficient outcome in spite of a negative externality.
+
+\bigskip
+It would also work for the rights to be awarded to the chemical firm. In this
+case, the chemical firm could of course simply produce 2 units, gaining a 
+surplus of \$15. However, this is less than the possible maximum. If instead
+the chemical firm charged the boat hire firm \$8 per unit, the socially
+maximal surplus would once again be attained, though this time with the surplus
+on the side of the chemical firm.
+
+\bigskip
+This is obviously an idealisation; in reality transaction costs, and other 
+costs such as monitoring pollution levels make it difficult for an efficient
+outcome to arise. For this reason, Coase argued that it was important to ensure
+that the initial allocation of property rights was efficient, because the 
+secondary market may not be able to find this outcome.
+
+\subsubsection*{Public Goods}
+For a public good, such as national defence, two important characteristics need
+to be considered for proper management to occur.
+\begin{itemize}
+    \item Are these goods \textit{excludeable}? Can others be prevented from
+    utilising them?
+    \item Are these goods \textit{rivalrous}? If one person uses them, is the
+    quantity available for others reduced?
+\end{itemize}
+Goods that satisfy either of these two properties are \textit{not} public 
+goods. All goods can be categorised according to the following table, with
+most goods being private goods.
+
+\begin{center}
+    \begin{tabular}{c|c|c|}
+        & Rivalrous & Non-rivalrous \\
+        \hline
+        Excludeable & Private goods & Club goods \\
+        \hline
+        Non-Excludeable & Common resources & Public goods \\
+        \hline
+    \end{tabular}        
+\end{center}
+
+In a competitive market, public goods are under-provided, because they 
+generally entail a positive externality in production, and the fact of 
+non-excludeability leads to what is known as a \textit{free-rider problem}:
+where people receive the benefit of a good without paying for it. 
+
+\bigskip
+An example could be a Jeweller and a Cafe considering hiring security guards.
+Obviously, the marginal benefit of the Jeweller is much higher, but if the
+Jeweller hires guards both firms will benefit. The social marginal benefit
+can be found by adding the two marginal benefit curve. If a constant marginal
+cost of security exists, the Jeweller will hire security at its own marginal
+benefit, with the cafe hiring none as the cost is well above its marginal
+benefit. However, the cafe will nonetheless benefit from the security, and the
+quantity of security hired will be below the socially optimal level, where 
+\(SMB = MC\). This is an example of a \textit{free-rider problem}.
+
+\bigskip
+It is difficult to find a private solution for this, and so government 
+intervention is often required, through e.g. public provision of security.
+Alternately, they can assign property rights to create excludeability in the
+market, a solution less applicable to the example of security.
+
 \end{flushleft}
 \end{document}
