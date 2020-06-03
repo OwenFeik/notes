@@ -1871,5 +1871,27 @@ intervention is often required, through e.g. public provision of security.
 Alternately, they can assign property rights to create excludeability in the
 market, a solution less applicable to the example of security.
 
+\subsubsection*{Sequential Games}
+We can apply the concepts we have studied not only to games with players in
+simultaneous games, but additionally in sequential games where one player moves
+after another. Strategies in this case are slightly more complex; for a player
+responding to an action, they need to have an action for each possible outcome.
+
+\bigskip
+We can analyse these situations by using a table as we have previously, but
+rather than placing the possible moves of the second player on the table, we
+can place their possible strategies, to find the optimal strategy. However, 
+this representation has some issues with identifying sub-optimal strategies.
+Thus, the representation used for a sequential game is a game tree. We first
+track down to the bottom of the game tree, and find the optimal outcome in each
+case. These outcomes become the strategy for higher layers of the tree. More or
+less a mini-max approach.
+
+\bigskip
+A Nash equilibrium found in this way is a \textit{subgame perfect Nash 
+equilibrium}. The key difference from a simultaneous game is that it 
+essentially restricts the possibilities; instead of each player considering
+their response to each other player, only one person gets to respond.
+
 \end{flushleft}
 \end{document}
