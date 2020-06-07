@@ -11,6 +11,8 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 
+\newcommand{\dx}{\:\mathrm{d}x}
+
 % Create simple plots with consistent styling
 \newenvironment{functionplot}[1][
     xmin = -5,
@@ -1520,7 +1522,7 @@ projectile with initial velocity \(a\hat{i}, b\hat{j}\) and launch height
 \section*{Integral Calculus}
 The definite integral of a function \(f\) in the interval \([a, b]\) is
 denoted
-\[\int_a^b f(x) dx\]
+\[\int_a^b f(x) \dx\]
 It is defined to be the sum of the \textit{signed areas} bounded by the curve
 \(y = f(x)\), the \(x\) axis and the lines \(x = a\) and \(x = b\). Signed area
 here refers to the fact that areas which are under the graph and above the 
@@ -1530,8 +1532,8 @@ together for the interval of integration.
 
 \bigskip
 Definite integrals share some of the properties of derivatives
-\[\int_a^b f(x) + g(x) dx = \int_a^b f(x) dx + \int_a^b g(x) dx\]
-\[\int_a^b kf(x) + g(x) dx = k\int_a^b f(x) dx\]
+\[\int_a^b f(x) + g(x) \dx = \int_a^b f(x) dx + \int_a^b g(x) \dx\]
+\[\int_a^b kf(x) + g(x) \dx = k\int_a^b f(x) \dx\]
 i.e. linearity. Integrals also have the property that for an interval 
 \([a, a]\) the result will be \(0\). An integral of \(f\) on \([a, b]\)
 and an integral on \([b, c]\) will add to the same value as an integral
@@ -1547,13 +1549,13 @@ manually each time we can use antidifferentiation. For a function \(f\), we
 call \(F\) an antiderivative of \(f\) if
 \[F^\prime(x) = f(x)\]
 A property of this gives rise to the \textit{Fundamental Theorem of Calculus}:
-\[\int_a^b f(x) dx = F(b) - F(a) = [F(x)]_a^b\]
+\[\int_a^b f(x) \dx = F(b) - F(a) = [F(x)]_a^b\]
 This tells us that the area under \(f(x)\) is given by the value of an 
 antiderivative of \(f\) at \(b\) minus the value of that antiderivative at 
 \(a\). We can use this to easily find the area under a curve.
-\[\int_0^1 x^2 dx\]
+\[\int_0^1 x^2 \dx\]
 \[\frac{d}{dx}[\frac{1}{3}x^3] = x^2\]
-\[\int_0^1 x^2 dx = F(1) - F(0) = \frac{1}{3}1^3 - \frac{1}{3}0^3=\frac{1}{3}\]
+\[\int_0^1 x^2 \dx = F(1) - F(0) = \frac{1}{3}1^3 - \frac{1}{3}0^3=\frac{1}{3}\]
 It is important to note that antiderivatives are not unique. For any \(F\) that
 is an antiderivative of \(f\), there is an arbritary number of possible 
 variations. We thus introduce the concept of the indefinite integral.
@@ -1569,18 +1571,18 @@ variable, and we can then integrate \(dy\) to find the area.
 \subsubsection*{Standard Antiderivatives}
 \begin{center}
     \begin{tabular}{||c||}
-        \(\int x^a \:dx = \frac{x^{a + 1}}{a + 1} + C \: (a \neq -1)\) \\[7pt]
-        \(\int \frac{1}{x} \:dx = \log(\;\abs{x}\;) + C\) \\[7pt]
-        \(\int e^x \:dx = e^x + C\) \\[7pt]
-        \(\int e^{ax} \:dx = \frac{1}{a}e^{ax} + C\) \\[7pt]
-        \(\int \sin(x) \:dx = -\cos(x) + C\) \\[7pt]
-        \(\int \cos(x) \:dx = \sin(x) + C\) \\[7pt]
-        \(\int \sec^2(x) \:dx = \tan(x) + C\) \\[7pt]
-        \(\int \frac{1}{\sqrt{s^2 - x^2}} \:dx = 
+        \(\int x^a \dx = \frac{x^{a + 1}}{a + 1} + C \: (a \neq -1)\) \\[7pt]
+        \(\int \frac{1}{x} \dx = \log(\;\abs{x}\;) + C\) \\[7pt]
+        \(\int e^x \dx = e^x + C\) \\[7pt]
+        \(\int e^{ax} \dx = \frac{1}{a}e^{ax} + C\) \\[7pt]
+        \(\int \sin(x) \dx = -\cos(x) + C\) \\[7pt]
+        \(\int \cos(x) \dx = \sin(x) + C\) \\[7pt]
+        \(\int \sec^2(x) \dx = \tan(x) + C\) \\[7pt]
+        \(\int \frac{1}{\sqrt{s^2 - x^2}} \dx = 
             \arcsin(\frac{x}{s}) + C\) \\[7pt]
-        \(\int \frac{-1}{\sqrt{s^2 - x^2}} \:dx = 
+        \(\int \frac{-1}{\sqrt{s^2 - x^2}} \dx = 
             \arccos(\frac{x}{s}) + C\) \\[7pt]
-        \(\int \frac{1}{s^2 + x^2} \:dx = 
+        \(\int \frac{1}{s^2 + x^2} \dx = 
             \frac{1}{s}\arctan(\frac{x}{s}) + C\) \\[7pt]
     \end{tabular}
 \end{center}
@@ -1594,39 +1596,39 @@ situations. If we have a function \(f(x)\) that we can't differentiate, but we
 can replace some sections of this function with a second function \(h(x)\), 
 then we can use integration by substitution. For example, we might replace 
 \(x^4\) with  \(u\). The \textit{substitution rule} which makes this work is
-\[\int g(u)\frac{du}{dx} \:dx = \int g(u) du\]
+\[\int g(u)\frac{du}{dx} \dx = \int g(u) du\]
 So we then find an antiderivative in terms of \(u\) and then substitute back.
 For example
-\[\int 2x(x^2 - 5)^4 \:dx\]
+\[\int 2x(x^2 - 5)^4 \dx\]
 \[u = x^2 - 5 \Rightarrow g(u) = u^4\]
 \[\frac{du}{dx} = 2x\]
-\[\int 2x(x^2 - 5)^4 \:dx = \int u^4\frac{du}{dx} \:dx = \int u^4 du  
+\[\int 2x(x^2 - 5)^4 \dx = \int u^4\frac{du}{dx} \dx = \int u^4 du  
 = \frac{1}{5}u^5\]
 \[\frac{1}{5}(x^2 - 5)^5 + C\]
 Note that here \(dx\) cancels with the denominator of \(\frac{du}{dx}\). 
 Another example:
-\[\int cos(3x) \sqrt{\sin(3x + 4)} \:dx\]
+\[\int cos(3x) \sqrt{\sin(3x + 4)} \dx\]
 \[u = \sin(3x) + 4 \Rightarrow g(u) = \sqrt{u}\]
 \[\frac{du}{dx} = 3\cos(3x) \Rightarrow \frac{1}{3}\frac{du}{dx} = \cos(3x)\]
-\[\int cos(3x) \sqrt{u} \:dx = \int \sqrt{u}\frac{1}{3}\frac{du}{dx} \:dx
-= \frac{1}{3}\int \sqrt{u}\frac{du}{dx} \:dx = \frac{1}{3}\int u^\frac{1}{2} 
+\[\int cos(3x) \sqrt{u} \dx = \int \sqrt{u}\frac{1}{3}\frac{du}{dx} \dx
+= \frac{1}{3}\int \sqrt{u}\frac{du}{dx} \dx = \frac{1}{3}\int u^\frac{1}{2} 
 \:du\]
 \[= \frac{1}{3}\frac{2}{3}u^\frac{3}{2} = \frac{2}{9}u^\frac{3}{2}\]
-\[\Rightarrow \int cos(3x) \sqrt{\sin(3x + 4)} \:dx = 
+\[\Rightarrow \int cos(3x) \sqrt{\sin(3x + 4)} \dx = 
 \frac{2}{9}(\sin(3x) + 4)^\frac{3}{2}\]
 Integration by substitution is essentially a backwards application of the chain
 rule. To demonstrate, the chain rule gives us
 \[\frac{d}{dx}\left[\sin^5(x)\right] = 5\sin^4(x)\cos(x)\]
 Using the Fundamental Theorem
-\[\int_a^b 5\sin^4(x)\cos(x) \:dx = \int_a^b \frac{d}{dx}\left[\sin^5(x)\right]
-\:dx = \sin^5(b) - \sin^5(a)\]
+\[\int_a^b 5\sin^4(x)\cos(x) \dx = \int_a^b \frac{d}{dx}\left[\sin^5(x)\right]
+\dx = \sin^5(b) - \sin^5(a)\]
 The key here is noticing that the integrand \(5\sin^4(x)\cos(x)\) can be 
 written as a product of a function on a function multiplied by a derivative,
 the form of output of the chain rule.
 \[\frac{d}{dx}\left[G(h(x))\right] = g(h(x))h^\prime(x)\]
 Where \(g(x) = 5x^4\) and \(h(x) = \sin(x)\). We can integrate any function in
 this form, as long as we know an antiderivative of \(g\) (that is \(G\) above).
-\[\int_a^b g(h(x))h^\prime(x) \:dx = \int_a^b G^\prime(h(x))h^\prime(x) \: dx
+\[\int_a^b g(h(x))h^\prime(x) \dx = \int_a^b G^\prime(h(x))h^\prime(x) \: dx
 = \int_a^b \frac{d}{dx}\left[G(h(x))\right] \: dx = \]
 \[\left[G(h(x))\right]_a^b = G(h(b)) - G(h(a))\]
 Here, an inverse chain rule is applied to transform the second integral into
@@ -1634,15 +1636,15 @@ the third, by recognising that \(G^\prime(h(x))h^\prime(x)\) is the output of a
 chain rule on \(G(h(x))\). One interesting factor of this form is that
 \[\left[G(h(x))\right]_a^b = \left[G(x)\right]_{h(a)}^{h(b)}\]
 This knowledge lets us skip a few steps. Backtracking up the process we find
-\[\left[G(x)\right]_{h(a)}^{h(b)} = \int_{h(a)}^{h(b)}G^\prime(x) \:dx
-= \int_{h(a)}^{h(b)}g(x) \:dx\]
+\[\left[G(x)\right]_{h(a)}^{h(b)} = \int_{h(a)}^{h(b)}G^\prime(x) \dx
+= \int_{h(a)}^{h(b)}g(x) \dx\]
 This gives us the final rule for integration by substitution for definite 
 integrals.
-\[\int_a^b g(h(x))h^\prime(x) \:dx = \int_{h(a)}^{h(b)} g(x) \:dx\]
+\[\int_a^b g(h(x))h^\prime(x) \dx = \int_{h(a)}^{h(b)} g(x) \dx\]
 As an example:
-\[\int_1^{e^\frac{\pi}{2}} \frac{\sin(\log(x))}{x} \:dx\]
+\[\int_1^{e^\frac{\pi}{2}} \frac{\sin(\log(x))}{x} \dx\]
 \[u = \log(x) \Rightarrow \frac{du}{dx} = \frac{1}{x}\]
-\[\int_1^{e^\frac{\pi}{2}} \sin(u)\frac{du}{dx} \:dx = 
+\[\int_1^{e^\frac{\pi}{2}} \sin(u)\frac{du}{dx} \dx = 
 \int_0^\frac{\pi}{2} \sin(u) \:du\]
 Note that at this stage the bounds of integration have changed; we have moved
 from \([a, b]\) to \([\log(a), \log(b)]\), because in this case \(\log\) was 
@@ -1657,9 +1659,9 @@ the function into the form
 \[\int g(u) \frac{du}{dx} \: dx\]
 So one way we can do this is by finding a linear function \(u(x)\) and 
 rearranging to find \(x\) in terms of \(u\). Example:
-\[\int (2x + 1)\sqrt{x - 3} \:dx\]
+\[\int (2x + 1)\sqrt{x - 3} \dx\]
 \[u = x - 3 \Rightarrow x = u + 3\]
-\[\int (2(u + 3) + 1)\sqrt{u} \:dx = \int (2u + 7)\sqrt{u}\frac{du}{dx} \:dx
+\[\int (2(u + 3) + 1)\sqrt{u} \dx = \int (2u + 7)\sqrt{u}\frac{du}{dx} \dx
 \left(\frac{du}{dx} = 1\right)\]
 \[= \int 2u^{\frac{3}{2}} + 7u^{\frac{1}{2}} \:du = 
 2\frac{1}{\frac{3}{2} + 1}u^{\frac{3}{2} + 1} + 
@@ -1669,12 +1671,12 @@ rearranging to find \(x\) in terms of \(u\). Example:
 Here, we used the fact that we could easily find \(x\) in terms of \(u\) to
 simplify the integral. This trick can also be used for high powers of \(\sin\)
 and \(\cos\).
-\[\int \sin^4\cos^3 \:dx = \int u^4\cos^2(x)\cos(x) \:dx = 
-\int u^4\cos^2(x)\frac{du}{dx} \:dx\]
+\[\int \sin^4\cos^3 \dx = \int u^4\cos^2(x)\cos(x) \dx = 
+\int u^4\cos^2(x)\frac{du}{dx} \dx\]
 \[\cos^2(x) + sin^2(x) = 1 \Rightarrow cos^2(x) = 1 - \sin^2(x) = 1 - u^2\]
 \[\int u^4(1 - u^2) \:du = \int u^4 - u^6 = 
 \frac{1}{5}u^5 - \frac{1}{7}u^7 + C\]
-\[\int \sin^4\cos^3 \:dx = \frac{1}{5}\sin^5(x) - \frac{1}{7}\sin^7(x) + C\]
+\[\int \sin^4\cos^3 \dx = \frac{1}{5}\sin^5(x) - \frac{1}{7}\sin^7(x) + C\]
 This trick will work as long as the power of either \(\sin\) or \(\cos\) is odd
 for any similar function. If both are odd, either can be used. If both are 
 even, the complex exponential can be used.
@@ -1682,9 +1684,9 @@ even, the complex exponential can be used.
 Linear substitution happens to make one particular common form of substitution 
 very simple. For a function of the form \(f(kx)\) where \(\int f(x)\) is 
 already known, linear substitution tells us that \(\int f(kx)\) is simply
-\[\int f(kx) \:dx = \frac{1}{k}F(kx) + C\]
+\[\int f(kx) \dx = \frac{1}{k}F(kx) + C\]
 A couple of examples of this
-\[\int \sin(kx) \:dx = -\frac{1}{k}\cos(kx) + C\]
+\[\int \sin(kx) \dx = -\frac{1}{k}\cos(kx) + C\]
 \[\int e^{kx} \: dx = \frac{1}{k}e^{kx} + C\]
 
 \subsubsection*{Integration of Rational Functions}
@@ -1694,17 +1696,17 @@ Turn out to be a very important structure to integrate, and a general process
 for this exists. We already know that
 \[\int \frac{1}{x} \: dx = \log(\;\abs{x}\;) + C\]
 And now we extend this to examine integrals of the form
-\[\int \frac{1}{ax + b} \:dx\]
+\[\int \frac{1}{ax + b} \dx\]
 Here, we use the substitution \(u = ax + b\).
 \[u = ax + b \Rightarrow \frac{du}{dx} = a\]
 So for an integral
-\[\int \frac{1}{2x - 3} \:dx\]
+\[\int \frac{1}{2x - 3} \dx\]
 \[u = 2x - 3 \Rightarrow \frac{du}{dx} = 2\]
 We can multiply \(\frac{du}{dx}\) by \(\frac{1}{2}\) to simplify this process
 somewhat.
-\[\int \frac{1}{u} \frac{1}{2}\frac{du}{dx} \:dx 
+\[\int \frac{1}{u} \frac{1}{2}\frac{du}{dx} \dx 
 = \frac{1}{2} \int\frac{1}{u}\:du = \frac{1}{2}\log(\;\abs{u}\;) + C\]
-\[\int \frac{1}{2x - 3} \:dx = \frac{1}{2}\log(\;\abs{2x - 3}\;) + C\]
+\[\int \frac{1}{2x - 3} \dx = \frac{1}{2}\log(\;\abs{2x - 3}\;) + C\]
 For functions with an \textit{irreducible quadratic denominator} of the form
 \(q(x) = x^2 + bx + c\), we have a special technique. First, we complete the
 square of the denominator, to yield an equation of form
@@ -1723,27 +1725,27 @@ use the following method.
 \subsubsection*{Examples}
 Here we complete the square and then use \(u\) substitution to rearrange into
 the derivative of \(\arctan\).
-\[\int \frac{1}{x^2 + 2x + 2} \:dx\Rightarrow p(x) = x^2 + 2x + 2\]
+\[\int \frac{1}{x^2 + 2x + 2} \dx\Rightarrow p(x) = x^2 + 2x + 2\]
 \[x^2 + 2x + 2 = (x + 1)^2 + 1\]
-\[\int \frac{1}{1 + (x + 1)^2} \:dx = \int \frac{1}{1 + u^2} \frac{du}{dx}dx\]
+\[\int \frac{1}{1 + (x + 1)^2} \dx = \int \frac{1}{1 + u^2} \frac{du}{dx}dx\]
 \[= \int \frac{1}{1 + u^2} \:du = \arctan(u) + C = \arctan(x + 1) + C\]
 In this second example, substitution is used twice to rearrange into a simpler
 form.
-\[\int \frac{x + 1}{x^2 + 2x + 2} \:dx = \int \frac{x + 1}{(x + 1)^2 + 1}\:dx
+\[\int \frac{x + 1}{x^2 + 2x + 2} \dx = \int \frac{x + 1}{(x + 1)^2 + 1}\dx
 = \int \frac{u}{u^2 + 1} \:\frac{du}{dx}dx\]
 \[u = (x + 1) \Rightarrow \frac{du}{dx} = 1\]
 \[v = u^2 + 1 \Rightarrow \frac{dv}{du} 
 = 2u \Rightarrow \frac{1}{2}\frac{dv}{du} = u\]
 \[\int \frac{u}{u^2 + 1} \:du = \frac{1}{2}\int\frac{1}{v}\:\frac{dv}{du}du
 = \frac{1}{2}\int \frac{1}{v} \:dv\]
-\[\Rightarrow \int \frac{x + 1}{x^2 + 2x + 2} \:dx 
+\[\Rightarrow \int \frac{x + 1}{x^2 + 2x + 2} \dx 
 = \int \frac{u}{u^2 + 1} \:du = \frac{1}{2}\int \frac{1}{v} \:dv\]
 \[= \frac{1}{2}\log(\abs{v}) + C = \frac{1}{2}\log(u^2 + 1) + C
 = \frac{1}{2}\log((x + 1)^2 + 1) + C\]
 Note that the \(\abs{v}\) becomes \(u^2 + 1\) because this term is always
 positive, so the absolute value is the same. Finally, a less ideal example;
 here, the linear equation on top doesn't appear in the quadratic factorisation.
-\[\int\frac{x - 2}{x^2 + 2x + 2} \:dx = \int\frac{x - 2}{(x + 1)^2 + 1} \:dx\]
+\[\int\frac{x - 2}{x^2 + 2x + 2} \dx = \int\frac{x - 2}{(x + 1)^2 + 1} \dx\]
 \[u = x + 1 \Rightarrow x = u - 1 \Rightarrow \frac{du}{dx} = 1\]
 \[\int\frac{(u - 1) - 1}{u^2 + 1}\frac{du}{dx}dx =\int\frac{u - 3}{u^2 + 1}\:du
 = \int\left(\frac{u}{u^2 + 1} - \frac{3}{u^2 + 1}\right)\:du\]
@@ -1770,8 +1772,8 @@ simple example
 \[A_2 = 2, A_1 = 7\]
 This is a general method for finding values of \(A\), one can also choose
 values of \(x\) and substitute them in to find the appropriate values.
-\[\int \frac{9x + 1}{(x - 3)(x + 1)} \:dx = \int \frac{7}{x - 3} \:dx +
-\int \frac{2}{x + 1} \:dx\]
+\[\int \frac{9x + 1}{(x - 3)(x + 1)} \dx = \int \frac{7}{x - 3} \dx +
+\int \frac{2}{x + 1} \dx\]
 \[= 7\log(\abs{x - 3}) + 2\log(\abs{x + 1}) + C\]
 Note that the reason constants \(A\) are found is because the factors of the
 denominator are linear. For quadratic factors, the relevant numerators will be
@@ -1779,6 +1781,100 @@ of the form \(Bx + C\). In the case of non-distinct factors of the denominator,
 a special case applies. If \((x - a)^n\) appears, the related terms in the 
 result will be of the form
 \[\frac{A_1}{x - a} + \frac{A_2}{(x - a)^2} + ... + \frac{A_n}{(x - a)^n}\]
+The general algorithm for integration by this method is as follows.
+\begin{itemize}
+    \item Perform long division to find a numerator of lower degree than the
+    denominator.
+    \item Factorise the denominator into linear and irreducible quadratic 
+    factors.
+    \item Use partial fractions to break the more complex terms into simple
+    terms.
+    \item Integrate the linear terms as logarithms and the irreducible 
+    quadratic terms as \(\arctan\) derivatives.
+\end{itemize}
+Yet another example.
+\[\int \frac{2x^3 - 3x^2 - 8x + 24}{x^2 - 4} \dx 
+= \int \frac{(2x - 3)(x^2 - 4) + 12}{x^2 - 4} \dx\]
+\[= \int 2x - 3 \dx + \int \frac{12}{x^2 - 4} \dx 
+= x^2 - 3x + 12\int \frac{1}{x^2 - 4} \dx\]
+\[x^2 - 4 = (x - 2)(x + 2) \Rightarrow 
+\frac{1}{(x - 2)(x + 2)} = \frac{A_1}{x - 2} + \frac{A_2}{x + 2}\]
+\[\Rightarrow 1 = A_1(x + 2) + A_2(x - 2)\]
+\[x = 2 \Rightarrow 1 = 4A_1 \Rightarrow A_1 = \frac{1}{4} \Rightarrow A_2 
+= -\frac{1}{4}\]
+\[12\int \frac{1}{x^2 - 4} = 12\int \frac{1}{4(x - 2)} - \frac{1}{4(x + 2)}
+= 3\int  \frac{1}{x - 2} \dx - 3\int \frac{1}{x + 2} \dx\]
+\[\int \frac{2x^3 - 3x^2 - 8x + 24}{x^2 - 4} \dx 
+= x^2 - 3x + 3\log(\abs{x - 2}) - 3\log(\abs{x + 2}) + C\]
+
+\section*{Differential Equations}
+Differential equations are a key tool in many fields of science for 
+mathematically modelling phenomena. The reason for this is that it happens to
+be much easier to describe phenomena in terms of their second derivative, such
+as acceleration, than it is to directly describe their state. It is therefore
+very useful to be able to move from a second derivative to an equation 
+describing the state. In a way, differential equations are to algebra as
+functions are to numbers; where we aim to find a constant in algebra, we aim to
+find a function with a differential equation.
+
+\bigskip
+A differential equation, in a mathematical sense, is an equation involving a
+variable \(x\), and unknown function \(y\) and the derivatives of \(y\) with
+respect to \(x\). This is an \textit{ordinary} differential equation. The order
+of the highest derivative of in the equation is called the order of the 
+differential equation. Some examples of differential equations:
+\begin{itemize}
+    \item \(\frac{dy}{dx} = -5y\)
+    \item \(\frac{d^3y}{dt^3} + t\frac{dy}{dt} + (t^4 - 1)y = \sin(t)\)
+    \item \(e^xf^\prime(x) + f^{\prime\prime}(x) = f^3(x) + x\)
+\end{itemize} 
+For an algrebraic equation, we can check if a value is a solution by
+substitution, simply checking if a value of \(x\) satisfies the equality. 
+Likewise to check a solution for a differential equation, we can substitute in
+a function and see if the statement satisfies function equality. For example
+\[y + \cos^2(x) = x^2 + 1\]
+\begin{itemize}
+    \item Is \(y = \sin^2(x) + x^2\) a solution?
+    \[\sin^2(x) + cos^2(x) = 1 
+    \Rightarrow \sin^2(x) + x^2 + \cos^2(x) = x^2 + 1\]
+    \item Is \(y = x^2\) a solution?
+    \[x^2 + \cos^2(x) = x^2 + 1 \Rightarrow \cos^2(x) = 1\]
+    \[\cos^2(\frac{\pi}{2}) = 0 \neq 1\]
+\end{itemize}
+Let us now try this in the case of a differential equation, by checking whether
+\(y = e^{3x}\) is a solution to
+\[\frac{d^2y}{dx^2} = 15y - 2\frac{dy}{dx}\]
+\[\frac{d^2}{dx^2}\left[e^{3x}\right] = \frac{d}{dx}\left[3e^{3x}\right] 
+= 9e^{3x}\] 
+\[15e^{3x} - 2(3e^{3x}) = 9e^{3x}\]
+Thus, both sides are equivalent functions and \(y\) is a solution to the 
+differential equation. Note that while in this case, both sides were identical,
+that need not always be the case. As long as the functions are equivalent, a
+solution has been found.
+
+\bigskip
+When solving a differential equation, there are usually infinitely many 
+solutions. The reason for this is much the same as the reason for the \(+C\)
+when solving an integral, and indeed an integral is simply a special case of
+a differential equation, as can been seen through the following differential
+equation.
+\[\frac{dy}{dx} = \cos(x)\]
+\[\int \frac{dy}{dx} \dx = \int \cos(x) \dx \Rightarrow y = sin(x) + C\]
+The general solution for a differential equation is a formula for all of the
+possible solutions to that differential equation. For an equation involving
+an order of one, a single integration can yield a solution, with a single
+constant of integration in the solution. For an order two equation, there will
+be more constants of integration and so on. If we fix the values of these 
+constants of integration, we have a particular solution of the differential
+equation.
+\[\frac{d^2y}{dx^2} = \cos(x) \Rightarrow 
+\int \frac{d}{dx}\left[\frac{dy}{dx}\right] \dx 
+= \int \cos(x) \dx = \sin(x) + C\]
+\[\frac{dy}{dx} = \sin(x) + C \Rightarrow \int \frac{dy}{dx} \dx  
+= \int \sin(x) + C \dx\]
+\[y = \int\sin(x) \dx + \int C \dx = -\cos(x) + Cx + D\]
+This tells us that all of the equations which satisfy the differential equation
+are of the form \(-\cos(x) + Cx + D\) with varying values of \(C\) and \(D\).
 
 \end{flushleft}
 \end{document}
