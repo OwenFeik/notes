@@ -1875,6 +1875,50 @@ equation.
 \[y = \int\sin(x) \dx + \int C \dx = -\cos(x) + Cx + D\]
 This tells us that all of the equations which satisfy the differential equation
 are of the form \(-\cos(x) + Cx + D\) with varying values of \(C\) and \(D\).
+To find a particular solution, we usually need additional information, such as
+the solution of \(y\) at a particular \(x\), which can be used to solve for
+constants. Solving for these constants is known as solving an \textit{initial 
+value problem}. More values are required for higher order differential 
+equations. An example:
+\[f^{\prime\prime}(x) = x, f(1) = 2, f^\prime(0) = 1\]
+\[\int f^{\prime\prime}(x) \dx = \int x \dx\]
+\[\int f^\prime(x) \dx = \int \frac{1}{2}x^2 + C \dx\]
+\[f(x) = \frac{1}{6}x^3 + Cx + D\]
+\[f(1) = 2 \Rightarrow 2 = \frac{1}{6}\times1^3 + C\times1 + D 
+\Rightarrow 11 = 6C + 6D\]
+\[f^\prime(0) = 1 \Rightarrow 1 = \frac{1}{2}\times0^2 + C \Rightarrow C = 1\]
+\[11 = 6\times1 + 6D \Rightarrow D = \frac{5}{6}\]
+\[f(x) = \frac{1}{6}x^3 + x + \frac{5}{6}\]
+
+\subsubsection*{Seperable Differential Equations}
+A special case of differential equations is \textit{seperable differential 
+equations}, which are of the form
+\[\frac{dy}{dx} = F(x)G(y)\]
+Where \(F\) and \(G\) are known functions. An example of this form is found in
+some of the simpler equations solved in previous examples
+\[\frac{dy}{dx} = F(x)\]
+Another important form, known as \textit{autonomous} differential equations is
+\[\frac{dy}{dx} = G(y)\]
+A simple example:
+\[\frac{dy}{dx} = y, y > 0\]
+\[F(x) = 1, G(y) = y \Rightarrow \frac{1}{y}\frac{dy}{dx} = 1\]
+\[\int \frac{1}{y}\frac{dy}{dx} \dx = \int 1 \dx = x + C \Rightarrow
+\int \frac{1}{y} \:\mathrm{d}y = x + C\]
+\[\log(y) = x + C \Rightarrow e^{\log(y)} = e^{x + C} \Rightarrow y = e^Ce^x
+\Rightarrow\]
+\[y = Ae^x, A > 0\]
+Here, integration by substitution was used to deal with the \(\frac{dy}{dx}\)
+term. The fact that \(e^C\) could take any positive value was used to replace
+\(e^C\) with \(A\). The general method for solving seperable differential 
+equations is
+\begin{itemize}
+    \item First divide both sides by \(G(y)\), on the proviso that 
+    \(G(y)\neq 0\)
+    \item Then, integrate both sides and evaluate the integrals.
+    \item If possible, solve the resultant function to obtain a formula for 
+    \(y\).
+    \item The case \(G(y) = 0\) must be handled seperately.
+\end{itemize}
 
 \end{flushleft}
 \end{document}
