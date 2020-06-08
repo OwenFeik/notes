@@ -1897,5 +1897,116 @@ it emits, these sound waves will tend to build up on top of each other,
 increasing the size of the resultant waves through constructive interference.
 This is the cause of a sonic boom.
 
+\subsection*{Wave Model of Light}
+Wave properties are used to explain refraction, diffraction and interference of 
+light. However, particle properties are needed to explain effects like the 
+photoelectric and compton effects. Thus, light has a dual nature, displaying
+both sets of behaviours.
+
+\bigskip
+Dispersion occurs when white light moves between mediums. For a given material,
+each wavelength of light will have a different \textit{index of refraction} 
+\(n\), which is related to the velocity of the light as it passes through the 
+material through
+\[v = \frac{c}{n}\]
+The visible spectrum of light ranges from wavelengths of \(400\mathrm{nm}\) to
+around \(700\mathrm{nm}\), with violet at the low end and red at the high end.
+The refractive index of red light in glass is \(1.520\) while for violet light
+the index is \(1.538\); this implies that in general higher wavelengths suffer
+less diffraction. Because of this, white light, which is in reality a
+combination of numerous colours of light, moving between mediums will be 
+decomposed into its component colours.
+
+\subsubsection*{Interference}
+Interference between different waves generally only occurs when the wavelengths
+of the waves involved are within around two orders of magnitude of each other.
+
+\bigskip
+When waves pass through a gap of comparable size to their wavelength,
+diffraction occurs. If multiple adjacent waves undergo similar diffraction, an
+interference pattern emerges, with bands of contstructive and destructive
+interference appearing. If a screen is placed in the path of the light, a
+repeating pattern of light and dark waves will appear. The dark points are
+nodes, while the bright bands are antinodes. The further apart the sources are,
+the closer the bands will be.
+
+\bigskip
+The positions of these bands are determined by phase difference, which for
+sources that are in phase is determined by path difference of the two waves.
+For the central point, the two waves will be in phase as the length of the path
+will be the same. For the first dark band, the path difference is 
+\(\frac{\lambda}{2}\), then the first off center light band will be at 
+\(\lambda\). This can also be expressed in terms of the distance apart of the
+two slits (\(d\)) and the angle to the band on the screen \(\theta\). In this
+notation, constructive interference occurs when
+\[d\sin(\theta) = m\lambda, m \in \mathbb{N}\]
+And destructive interference occurs at points offset by half a wavelength.
+\[d\sin(\theta) = \left(m + \frac{1}{2}\right)\lambda, m \in \mathbb{N}\]
+Examining these expressions, we can see how as \(d\) increases, the \(\theta\)
+values for a given band will decrease. When \(L\), the distance from the slits
+to the screen is increased, the bands grow further apart. If the wavelength is
+lowered, the bands will move closer together.
+
+\subsubsection*{Examples}
+\begin{itemize}
+    \item Find the angle of the first antinode for two sound waves of frequency 
+    \(2000\mathrm{Hz}\) passing through slits seperated by \(0.3\mathrm{m}\) 
+    with velocity \(354\mathrm{ms}^{-1}\).
+    \[m = 1 \Rightarrow d\sin(\theta) = 1\lambda = \frac{v}{f}\]
+    \[\Rightarrow \theta = \arcsin\left(\frac{\frac{v}{f}}{d}\right) 
+    = 36\degree\]
+    \item What slit seperation would be required for \(0.03\mathrm{m}\) 
+    microwaves to have the same angle to the first antinode?
+    \[\lambda = 0.03, \theta = 36\degree\]
+    \[m = 1 \Rightarrow d\sin(\theta) = \lambda \Rightarrow d 
+    = \frac{\lambda}{\sin(\theta)} = \frac{0.03}{\sin(36\degree)} 
+    = 0.05\mathrm{m}\]
+    \item If the slit seperation is reduced to \(1.00\mu\mathrm{m}\), what
+    frequency of light should be used to maintain the angle?
+    \[m = 1, d = 1\cdot10^{-6}\]
+    \[d\sin(\theta) = \lambda = \frac{v}{f} \Rightarrow f 
+    = \frac{3\cdot10^8}{1\cdot10^6\sin(36\degree)} = 5\cdot10^{14}\mathrm{Hz}\]
+\end{itemize}
+
+If multiple slits are in the line, we have a diffraction grating, and the 
+interference patterns will add, resulting in a very clear pattern on a screen.
+In natural examples such as feathers, \textit{reflection gratings} often cause
+beautiful shining patterns through similar mechanisms.
+
+\subsubsection*{Single Slit}
+A way to understand diffraction through a single slit is by considering a 
+wavefront to be made up of an arbitrary number of infinetismal wavelets, each 
+of which emits a spherical wave. The tangent line to these wavelets then forms
+the next wave front. In this way, light spreads around corners. The magnitude
+of diffraction is greatest when 
+\[d \approx \lambda\]
+Diffraction occurs in single slit experiments because the wavelets act 
+independently, and the path difference between their wavelets creates 
+interference. The nodes of such a diffraction pattern occur depending on the
+spacing of the wavelets. For a slit of width \(a\),
+\[a\sin(\theta) = p\lambda, p \in \mathbb{N}^{+}\]
+The central maximum will be of a width \(2y\) where 
+\(\tan(\theta) = \frac{y}{L}\). If \(\lambda\) decreases, the pattern tightens
+as \(\theta\) decreases. If white light is diffracted in this way, dispersion
+occurs at the edge of the interference pattern.
+
+\bigskip
+By applying similar concepts to circular light sources, it has been found that
+for two objects to be individaully resolved in an image, they must have 
+\[\Delta\theta \geq 2.44\frac{\lambda}{D}\]
+Where \(D\) is the diameter of the emitting circles, and \(\Delta\theta\) is 
+the difference in angle between the centres of the two circles.
+
+\subsubsection*{Example}
+A laser light of wavelength \(632.8\mathrm{nm}\) is passed through a 
+\(0.3\mathrm{mm}\) single slit. What is the width of the central maximum on a
+screen a distance one metre from the slit?
+\[\lambda = 632.8\cdot10^{-9}, d = 0.3\cdot10^{-3}, L = 1\]
+\[a\sin(\theta) = p\lambda \Rightarrow \theta = 
+\arcsin\left(\frac{p\lambda}{a}\right) = 
+\arcsin(\frac{1\times632.8\cdot10^{-9}}{0.3\cdot10^{-3}}) = 0.12\degree\]
+\[\tan(\theta) = \frac{y}{L} \Rightarrow 2y = 2L\tan(\theta) 
+= 2L\tan(0.12\degree) = 4.2\mathrm{mm}\]
+
 \end{flushleft}
 \end{document}
