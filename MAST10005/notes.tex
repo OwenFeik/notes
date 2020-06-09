@@ -12,6 +12,7 @@
 \newcommand{\C}{\mathbb{C}}
 
 \newcommand{\dx}{\:\mathrm{d}x}
+\newcommand{\dy}{\:\mathrm{d}y}
 
 % Create simple plots with consistent styling
 \newenvironment{functionplot}[1][
@@ -1903,7 +1904,7 @@ A simple example:
 \[\frac{dy}{dx} = y, y > 0\]
 \[F(x) = 1, G(y) = y \Rightarrow \frac{1}{y}\frac{dy}{dx} = 1\]
 \[\int \frac{1}{y}\frac{dy}{dx} \dx = \int 1 \dx = x + C \Rightarrow
-\int \frac{1}{y} \:\mathrm{d}y = x + C\]
+\int \frac{1}{y} \dy = x + C\]
 \[\log(y) = x + C \Rightarrow e^{\log(y)} = e^{x + C} \Rightarrow y = e^Ce^x
 \Rightarrow\]
 \[y = Ae^x, A > 0\]
@@ -1919,6 +1920,66 @@ equations is
     \(y\).
     \item The case \(G(y) = 0\) must be handled seperately.
 \end{itemize}
+For a given differential equation with a known \((x, y)\) point there will be
+a single unique solution which passes through that point. This extends 
+generally to tell us that no two different solutions may meet at any point.
+
+\subsubsection*{Constant Solutions}
+A differential equation might have a constant solution, where a single value
+satisfies the equation. As an example we can consider the equation
+\[\frac{dy}{dx} = -6xy^2, y(0) = 0\]
+\[G(y) = y^2 \Rightarrow y = 0 \mathrm{\:\:is\:a\:constant\:solution}\]
+As we discovered that a solution can never cross another solution, this 
+constant solution tells us that another solution can never touch the line
+\(y = 0\). For the differential equation
+\[\frac{dy}{dx} = y - \frac{y^2}{4}\]
+Has constant solutions of \(y = 0\) and \(y = 4\), which tells us that 
+all solutions must be one of \(y > 4\), \(4 > y > 0\) or \(y < 0\). This
+tool can allow us to use the technique for seperable differential equations
+if a constant solution of \(y = 0\) exists, because we know \(y\) can never
+be \(0\) in any other solution.
+
+\subsubsection*{Example}
+\[\frac{dy}{dx} = y - \frac{y^2}{3}, y(0) = 1\]
+\[y \equiv 0, y \equiv 4\]
+\[\frac{dy}{dx} = y(1 - \frac{y}{4}) 
+\Rightarrow \frac{1}{y(1 - \frac{y}{4})}\frac{dy}{dx} = 1\]
+\[\int \frac{1}{y(1 - \frac{y}{4})}\frac{dy}{dx}\dx = x + C 
+\Rightarrow \int \frac{1}{y(1 - \frac{y}{4})}\dy = x + C\]
+We first use integration by substitution to rearrange into a more workable
+form, through the knowledge that this is a seperable differential equation.
+\[\int \frac{1}{y(1 - \frac{y}{4})} \dy 
+= \int \frac{4}{y(4 - y)} \dy
+= 4\int \frac{1}{y(4 - y)} \dy
+= -4\int \frac{1}{y(y - 4)} \dy\]
+After rearranging and simplifying we can easily use partial fractions to
+integrate this integral.
+\[\frac{1}{y(y - 4)} = \frac{A_1}{y} + \frac{A_2}{y - 4} \Rightarrow
+1 = A_1(y - 4) + A_2y\]
+\[y = 0 \Rightarrow 1 = -4A_1 \Rightarrow -\frac{1}{4} = A_1\]
+\[y = 4 \Rightarrow 1 = 4A_2 \Rightarrow \frac{1}{4} = A_2\]
+\[\frac{1}{y(y - 4)} = \frac{-1\frac{1}{4}}{y} + \frac{\frac{1}{4}}{y - 4}\]
+\[-4\int \frac{-1\frac{1}{4}}{y} + \frac{\frac{1}{4}}{y - 4} 
+= \int \frac{1}{y} \dy - \int \frac{1}{y - 4} \dy 
+= \log(\abs{y}) - \log(\abs{y - 4}) = \]
+The knowledge that the difference of logarithms is a ratio allows us to write
+this as
+\[\log\left(\abs{\frac{y}{y - 4}}\right) = x + C 
+\Rightarrow \abs{\frac{y}{y - 4}} = Ae^x\]
+Because we know that for this function as \(y\) is \(1\) at \(x = 0\), the
+function must always be between the two constant functions, \(y \equiv 0\) and
+\(y \equiv 4\), thus we can assume \(0 < y < 4\).
+\[\frac{y}{y - 4} < 0 \Rightarrow \abs{\frac{y}{y - 4}} = \frac{-y}{y - 4}\]
+\[\frac{-y}{y - 4} = Ae^x \Rightarrow -y = Ae^x(y - 4) = Ae^xy - 4Ae^x\]
+\[y = -Ae^xy + 4Ae^x \Rightarrow y + Ae^xy = 4Ae^x 
+\Rightarrow y(1 + Ae^x) = 4Ae^x \Rightarrow\]
+\[y = \frac{4Ae^x}{1 + Ae^x}\]
+This form has a known simplification. By dividing through by \(Ae^x\) we find
+\[y = \frac{4}{\frac{1}{A}e^{-x} + 1}\]
+Solving our initial value problem of \(y(0) = 1\)
+\[1 = \frac{4}{\frac{1}{A} + 1} \Rightarrow \frac{1}{A} + 1 = 4 
+\Rightarrow \frac{1}{A} = 3 \Rightarrow A = \frac{1}{3}\]
+\[y = \frac{4}{3e^{-x} + 1}\]
 
 \end{flushleft}
 \end{document}
