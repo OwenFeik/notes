@@ -1981,5 +1981,83 @@ Solving our initial value problem of \(y(0) = 1\)
 \Rightarrow \frac{1}{A} = 3 \Rightarrow A = \frac{1}{3}\]
 \[y = \frac{4}{3e^{-x} + 1}\]
 
+\subsubsection*{Population Model}
+A simple application of differential equations is an exponential population
+growth model. This model begins with an assumption that population varies due
+to births and deaths. This is the classic process of constructing differential
+equation; begin with some reasonable assumptions, describe them with equations
+and solve these equations to understand the model better. For our population
+growth model, we might say that for a change in time \(\Delta t\) a change in
+population is given by
+\[P(t_0 + \Delta t) = P(t_0) + \mathrm{births} - \mathrm{deaths}\]
+\[\mathrm{births} = (\mathrm{probability\:of\:giving\:birth})P(t_0) = bP(t_0)\]
+\[\mathrm{deaths} = (\mathrm{probability\:of\:dying})P(t_0)) = dP(t_0)\]
+\[P(t_0 + \Delta t) = P(t_0) + bP(t_0) - dP(t_0) = P(t_0)\Delta t(b - d) 
+\Rightarrow\]
+\[\frac{P(t_0 + \Delta t) - P(t_0)}{\Delta t} = (b - d)P(t_0)\]
+\[\lim_{\Delta t \rightarrow 0} \frac{P(t_0 + \Delta t) - P(t_0)}{\Delta t} 
+= P^\prime(t_0) \Rightarrow\]
+What we have found is that the rate of change of the population is independent
+of the time. As we used a general \(t_0\), if our assumptions were appropriate,
+the population must be modelled by the differential equation
+\[\frac{dP}{dt} = (b - d)P(t_0)\]
+As an example, let us consider a population of mice where \(b - d = 0.2\), with
+an initial population of \(M = 50\) mice.
+\[\frac{dM}{dt} = 0.2M\]
+\[\int \frac{1}{M}\frac{dM}{dt} \:\mathrm{d}t = \int 0.2 \:\mathrm{d}t\]
+\[\log(\abs{M}) + = 0.2t + C \Rightarrow M = Ae^{0.2t}\]
+\[50 = Ae^{0.2 \times 0} \Rightarrow A = 50\]
+\[M = 50e^{0.2t}\]
+If we wanted to find at what time the population reaches \(500\), we can simply
+perform a substitution.
+\[500 = 50e^{0.2t} \Rightarrow 10 = e^{0.2t} \Rightarrow \log(10) = 0.2t 
+\Rightarrow t = \frac{\log(10)}{0.2}\]
+It is worth noting that this model indicates that the population of mice would
+outweigh the earth in around six years. This is an important point to observe;
+a model is only valid as long as it properly represents all of the relevant
+variables. This model might work for small populations and short times, but it
+has the issue of ignoring competition and other relevant variables. 
+
+\bigskip
+To rectify this, we can make some modifications to our model. Let us replace 
+\(b - d\) with \(b\), which we will change from a simple probability of giving
+birth per unit time to a more complex factor, dependent on \(P\). The simplest
+function we can use for this is a linear function of \(P\), with a maximum
+birth rate at \(P = 0\) and a \(x\)-intercept at \(C\), the birth rate capacity
+of the environment. This gives us a linear function of
+\[b = b_0 - \frac{b_0}{C}P\]
+\[P(t_0 + \Delta t) = P(t_0) + (b_0 - \frac{b_0}{C}P(t_0))\Delta tP(T_0))\]
+\[\frac{P(t_0 + \Delta t) - P(t_0)}{\Delta t} = (b_0 - \frac{b_0}{C}P(t_0))\]
+\[\lim_{\Delta t \rightarrow 0} \frac{P(t_0 + \Delta t) - P(t_0)}{\Delta t} 
+= \frac{dP}{dt}\]
+\[\frac{dP}{dt} = (b_0 - \frac{b_0}{C}P)P = b_0P(1 - \frac{1}{C}P)\]
+This is known as the logistic differential equation, and refines the
+exponential growth model to incorporate constraints in a minimal way. As long
+as \(0 < P < C\), \(\frac{dP}{dt} > 0\). As \(P \rightarrow C\), the growth
+rate drops off to \(0\). For a \(P\) small relative to \(C\), this equation is
+roughly equivalent to the exponential example. Let us take a \(b_0\) of \(1\)
+and attempt to solve, with an initial population of \(1\) and carrying capacity
+of \(4\).
+\[\frac{dP}{dt} = P(1 - \frac{P}{4}) \Rightarrow \frac{1}{P(1 - \frac{P}{4})}
+\frac{dP}{dt} = 1\]
+\[1 - \frac{P}{4} = -\frac{1}{4}(P - 4) 
+\Rightarrow \frac{1}{P(1 - \frac{P}{4})} = \frac{1}{P(-\frac{1}{4}(P - 4) )}\]
+\[\int \frac{1}{P(-\frac{1}{4}(P - 4) )} \:\mathrm{d}p 
+= \int \frac{-4}{P(P - 4)} \:\mathrm{d}p = t + C\]
+Using partial fractions we can rearrange to find that
+\[\frac{-4}{P(P - 4)} = \frac{1}{P} - \frac{1}{P - 4}\]
+\[\int \frac{1}{P} - \int \frac{1}{P - 4} \:\mathrm{d}p = t + C\]
+\[\log(\abs{P}) - \log(\abs{P - 4}) = t + C 
+= \log\left(\abs{\frac{P}{P - 4}}\right)\]
+\[\abs{\frac{P}{P - 4}} = e^Ce^t = Ae^t\]
+Because the solutions to this problem must be between \(0\) and \(4\), as these
+are constant solutions to this equation (our minimum and maximum population),
+we know that \(P\) is always positive and \(P - 4\) is always negative, meaning
+\[\abs{\frac{P}{P - 4}} = -\frac{P}{P - 4} = Ae^t\]
+\[-P = (P - 4)Ae^t = PAe^t - 4Ae^t \Rightarrow 4Ae^t =PAe^t + P = P(Ae^t + 1)\]
+\[P = \frac{4Ae^t}{1 + Ae^t}\]
+\[P(0) = 1 \Rightarrow 1 = \frac{4Ae^0}{1 + Ae^0} = \frac{4A}{1 + A}\]
+\[1 + A = 4A \Rightarrow A = \frac{1}{3}\]
+
 \end{flushleft}
 \end{document}
