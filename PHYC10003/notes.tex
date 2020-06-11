@@ -2067,10 +2067,76 @@ Objects beyond the critical angle outside the medium will be invisible to
 observers within the medium.
 
 \bigskip
+For an object at an apparent depth \(s^\prime\) within some refractive material
+(e.g. water), the real depth is given by
+\[s^\prime = \frac{n_2}{n_1}s \Rightarrow s = s^\prime\frac{n_1}{n_2}\]
+Where \(n_1 > n_2\) and \(n_1\) is the material the object is in, with the
+observer looking in from \(n_2\).
+
+\bigskip
 The reason for dispersion, the division of white light into its component
 colours, is also refraction; because light is of differening wavelengths,
 different components of the light refract by different amounts, thus spreading
 out as they change medium.
+
+\subsection*{Lenses}
+Ray tracing is a technique where we follow the path of a ray to understand the
+behaviour of light through a lens or other surface. Using this technique and
+considering a single surved surface we can noticed that if a point source
+projects light onto all points of the surface of a curved lens equally, at each
+of these points the light will curve toward the normal of the surface at that
+point, resulting in all of the light being focussed at some point inside the
+glass. While this trait of focussing the light is desirable, we obviously can't
+observe from inside glass.
+
+\bigskip
+We get around this by using a symmetrical convex lens, which takes in light on
+one side at focusses it at a point on the other side at a focal length \(F\).
+The inverse process of spreading out light can be undertaken with a symettric
+concave lens. A symettric concave lens appears to focus the image at a negative
+focal point \(F\) on the side of the light.
+
+\bigskip
+The \textit{power} of a lens is described as the inverse of the focal length.
+\[P = \frac{1}{F}\]
+To find the resultant focal point of a system of lenses we can add the powers
+of the individual lenses. For example a convex lens with \(F = 1\mathrm{m}\) is
+placed in contact with a concave lens with focal length \(F = -0.5\mathrm{m}\).
+The focal length of the combined lens is given by
+\[P = \frac{1}{f} \Rightarrow P_1 = 1, P_2 = -2\]
+\[P = P_1 + P_2 = 1 - 2 = -1\]
+\[F = \frac{1}{P} = -1\mathrm{m}\]
+Light refracted through a convex lens will create a real, inverted image at a
+certain distance from the lens. This can be understood by seeing that light
+which passes through the center of a convex lens will effectively have no
+refraction affecting it, and will pass through the same point as two rays
+which will be each others inverse; these rays are the ray which travels 
+parallel between the object and the lens and the ray which exits parallel
+from the lens. This applys for objects outside the focal length of the convex
+lens. In the case of an object \textit{inside} the focal length, the resultant
+image will be vertical and will exist behind the real object.
+For an object outside the focal length of a concave lens, the virtual image
+which appears will be a smaller object closer to the lens.
+
+\bigskip
+The lens equation can be used to determine the focal length, and therefore
+power of a lens based on the distance of an object and its image. The formula,
+known as the \textit{Thin Lens Formula} uses Snell's law to state
+\[\frac{1}{s}+ \frac{1}{s^\prime} = \frac{1}{f}\]
+Where \(s\) is the distance from the object to the center of the lens, 
+\(s^\prime\) is the distance to the image and \(f\) is the focal length. If
+\(f > 0\) the lens is converging, like a convex lens. \(s^\prime > 0\) when
+the image is real, while it is less than \(0\) is the image is vertical. The
+equation for the magnification of an object is
+\[m = -\frac{s^\prime}{s}\]
+If half of a lens is blocked, the effect will be to make the resultant image
+fainter.
+
+\bigskip
+Chromatic aberration occurs as a result of dispersion in glass, as each
+wavelength has a different focal length. The solution is to use a glass which
+has very similar focal lengths for ever colour of light, or a combination of
+glasses which cancel out each others flaws.
 
 \end{flushleft}
 \end{document}
