@@ -4,6 +4,7 @@
 \usepackage{amssymb}
 \usepackage{commath}
 \usepackage{pgfplots}
+\usepackage{gensymb}
 
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -2066,6 +2067,46 @@ With carrying capactiy \(C\), birth rate \(b_0\) and a constant \(A\) yielded
 by the initial condition problem. For this model, there is a point of
 inflection at \(P = \frac{C}{2}\). If \(P(0) > C\), there will be no point of
 inflection and the population will asymptotically approach \(C\) from above.
+
+\subsubsection*{Newton's Law of Cooling}
+The rate at which an object cools (or heats) is proportional to the difference
+between its temperature \(T\) and the (taken to be constant) temperature 
+\(T_s\) of its surroundings. For a time \(t\) minutes:
+\[\frac{dT}{dt} = -k(T - T_s)\]
+As an example, let us consider a loaf of bread in a freezer of 
+\(-15\degree\mathrm{C}\). The bread is initially \(20\degree\mathrm{C}\) and
+takes \(20\) minutes to reach \(10\degree\mathrm{C}\). How long will the bread
+take to reach \(0\degree\mathrm{C}\)?
+\[\frac{dT}{dt} = -k(T - (- 15)) = -k(T + 15)\]
+\[\frac{1}{T + 15}\frac{dT}{dt} = -k \Rightarrow 
+\int \frac{1}{T + 15}\frac{dT}{dt} \:\mathrm{d}t = \int -k \:\mathrm{d}t\]
+\[\log(\abs{T + 15}) = -kt + C \Rightarrow \abs{T + 15} = e^{-kt}e^D\]
+Assuming \(T > -15\), as we are looking at the case of a cooling object, 
+\[T + 15 > 0 \Rightarrow \abs{T + 15} = T + 15\]
+\[T = Ae^{-kt} - 15\]
+\[T(0) = 20 \Rightarrow 20 = Ae^{-0k} - 15 \Rightarrow 35 = A\]
+\[T(20) = 10 \Rightarrow 10 = 35e^{-20k} - 15 \Rightarrow 25 = 35e^{-20k}\]
+\[\frac{25}{35} = e^{-20k} \Rightarrow \log\left(\frac{25}{35}\right) = -20k\]
+\[\frac{\log\left(\frac{25}{35}\right)}{-20} = k \approx 0.0168 \Rightarrow
+T = 35e^{-0.0168t} - 15\]
+\[0 = 35e^{-0.0168t} - 15 \Rightarrow \frac{15}{35} = e^{-0.0168t} \Rightarrow
+\log\left(\frac{15}{35}\right) = -0.0168t\]
+\[\frac{\log\left(\frac{15}{35}\right)}{-0.0168} = t \approx 50.434\]
+The general form of Newton's law of cooling is therefore
+\[T = T_s + Ae^{-kt}\]
+
+\subsubsection*{General Process}
+The general process of generating and using differential equations is as 
+follows.
+\begin{itemize}
+    \item First, one makes observations of a phenomena, using these
+    observations to generate a hypothesis of some behaviour of the system.
+    \item This hypothesis is then encoded in a differential equation, which is
+    analysed to find either a solution, or to identify some behaviours of the
+    system.
+    \item If a solution can't be found, one can instead find an approximation
+    of the equation to approximate the state of the system.
+\end{itemize}
 
 \end{flushleft}
 \end{document}
