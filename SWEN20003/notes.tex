@@ -1,8 +1,127 @@
 \documentclass[12pt]{report}
 \renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\usepackage{listings}
+
+\lstset{
+    frame = tb,
+    language = Java,
+    aboveskip = 3mm,
+    belowskip = 3mm,
+    showstringspaces = false,
+    columns = flexible,
+    basicstyle = {\small\ttfamily},
+    numbers = none,
+    numberstyle = \tiny\color{gray},
+    keywordstyle = \color{blue},
+    commentstyle = \color{darkgray},
+    stringstyle = \color{orange},
+    breaklines = true,
+    breakatwhitespace = true,
+    tabsize = 3
+}
+
+% \newenvironment{codeblock}{\begin{lstlisting}}{\end{lstlisting}}
+\newcommand{\code}[1]{\lstinline{#1}}
 
 \begin{document}
 \begin{flushleft}
-        
+\section*{Java}    
+
+Java was developed by Sun Microsystems, under James Gosling in 1991.
+The goal was to develop a language suitable for applications in embedded 
+systems. This use case failed to manifest, and they instead reoriented
+Java as a language to develop browser applets.
+
+\bigskip
+On arrival Java had the unique feature that it was both compiled and
+interpreted. It was also platform-independent and portable. Finally it was
+object oriented.
+
+\bigskip
+While with a C program, plain text code is compiled by a compiler and then
+linked by a linker which produces a different executable for every platform.
+For Java, plain text source code is compiled and output as byte code, which
+is directly interpreted by a Java interpreter. Therefore, all that is needed
+to run Java on a given platform is an interpreter. This gives Java its 
+platform independence.
+
+\bigskip
+In Java, two types of programs exist.
+\begin{itemize}
+    \item An \textit{application} is a stand-alone program, which has a main 
+        method and can be run directly as a program, for example from the 
+        command line.
+    \item An \textit{applet} is a program, initially intended for use in 
+        webpages which has no main method, and instead has a specific 
+        contruction which allows the environment to function. This form is
+        less popular, generally considered outdated, and is not covered in
+        detail in this subject. 
+\end{itemize}
+
+\bigskip
+The fundamental constructs in Java, and in all object oriented languages
+are classes, objects and methods.
+
+\bigskip
+Below lies a ``Hello World'' program written in Java.
+
+
+\begin{lstlisting}
+    import java.lang.*;
+
+    // Display "Hello World"
+    public class HelloWorld {
+        public static void main(String args[]) {
+            System.out.println("Hello World");
+            return;
+        }
+    }
+\end{lstlisting}
+
+A variety of interesting things are visible in even this small snippet of
+code.
+\begin{itemize}
+    \item The whole program is encased in a class; here \code{HelloWorld}.
+    \item The \code{main} function is prefaced by \code{public static}.
+    \item The \code{main} function has return type \code{void}.
+    \item Where in C we might \code{#include} here we \code{import}. 
+\end{itemize}
+Aside these differences, the code is rather similar to a comparable C program.
+
+\bigskip
+Three types of comments exist in java.
+\begin{lstlisting}
+    // This is a single line comment, as in C
+    /* This is a multi-line comment, as in C */
+    /** This is a documentation comment, to be explored later */
+\end{lstlisting}
+
+\bigskip
+To run a Java program that has been saved as plain text, a few conditions must
+be satisfied.
+\begin{itemize}
+    \item The filename must be the same as the name of the class. For example,
+        our ``Hello World'' program would be \code{HelloWorld.java}.
+    \item Java build and runtime environment must be installed on the machine.
+        This can be checked with \code{javac -version} or \code{java -version}.
+\end{itemize}
+Then, one can compile with \code{javac HelloWorld.java}. If successful, an 
+output file \code{HelloWorld.class} will be generated. This can be run with
+\code{java HelloWorld}.
+
+\bigskip
+Arguments passed in at program execution can be accessed in the \code{args[]} 
+array. The number of arguments can be found through \code{args.length}.
+
+\bigskip
+Key differences between Java and C
+\begin{itemize}
+    \item While C is a procedural language, Java is object oriented.
+    \item Java lacks many of the lower level facilities of C; goto, sizeof,
+        pointers, etc. No direct memory management.
+    \item Java has no preprocessor, macros, defines, etc are not available.
+\end{itemize}
+
 \end{flushleft}
 \end{document}
