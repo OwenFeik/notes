@@ -1,8 +1,49 @@
 \documentclass[12pt]{report}
 \renewcommand{\familydefault}{\sfdefault}
 
+\usepackage{bbold}
+\usepackage{commath}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\dx}{\:\mathrm{d}x}
+\newcommand{\dy}{\:\mathrm{d}y}
+
 \begin{document}
 \begin{flushleft}
-        
+
+\section*{Notation}
+In this subject, a variety of notation is used.
+\begin{itemize}
+    \item \(\mid\) read ``such that'' used largely in set definitions: 
+        \(\set{x \in \R \mid x \geq 2}\)
+    \item \(\forall\) read ``for all''.
+    \item \(\exists\) read ``there exists''.
+    \item \(\equiv\) read ``is equivalent to' used to signify function
+        equality, etc.
+    \item \(\ll\) read ``much less than''.
+    \item \(\log\) denotes the natural logarithm, \(\ln\).
+    \item Inverse trigonometric functions are written \(\arcsin\) rather than
+        \(\sin^{-1}\).
+\end{itemize}
+
+Some common sets have specific symbols associated with them.
+\begin{itemize}
+    \item Natural numbers, \(\N = \set{1, 2, 3, \ldots}\). Exclusive of \(0\)
+        in this course.
+    \item Integers, \(\Z = \set{\ldots, -2, -1, 0, 1, 2, \ldots}\)
+    \item Rational numbers, 
+        \(\Q = \set{\frac{m}{n} \mid m, n \in \Z, n \neq 0}\)
+    \item Real numbers, \(\R\)
+    \item Complex numbers, \(\C = \set{x + iy \mid x, y \in \R, i^2 = -1}\)
+    \item \(xy\) plane, \(\R^2 = \set{(x, y) \mid x, y \in \R}\)
+    \item Three dimensional space, 
+        \(\R^3 = \set{(x, y, z) \mid x, y, z \in \R}\)
+\end{itemize}
+
 \end{flushleft}
 \end{document}
