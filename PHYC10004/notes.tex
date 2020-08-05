@@ -1,7 +1,36 @@
 \documentclass[12pt]{report}
 \renewcommand{\familydefault}{\sfdefault}
 
+\usepackage{pgfplots}
+
+\newcommand{\dx}{\:\mathrm{d}x}
+
+\newenvironment{plot}[1][
+    xmin = -5,
+    xmax = 5,
+    ymin = -5,
+    ymax = 5
+]{
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                #1,
+                samples = 1000,
+                width = 12cm,
+                height = 9cm,
+                xlabel = \(x\),
+                ylabel = \(y\),
+                axis lines = middle,
+                restrict y to domain = -10:10
+            ]
+}{
+            \end{axis}
+        \end{tikzpicture}
+    \end {center}
+}
+
 \begin{document}
+\begin{flushleft}
 
 \section*{Electromagnetism}
 
@@ -95,4 +124,92 @@ can be done in either a single direction or using vector addition in multiple
 directions. If two identical particles interact from opposite sides with a
 particle, their effects will cancel.
 
+\subsubsection*{Electric Fields}
+An application of superposition comes in electric fields, where we can use
+integration to apply the concept of superposition across a continuous field.
+For a linear charge distribution, along a single straight line in the \(x\) 
+direction, this integral looks like  
+\[F_{q_0} = \int_{x_i}^{x_f} \frac{kq_0}{r_{0x}^2}\vec{r}_{0x}\lambda(x)\dx\]
+Here, \(x_i\) through \(x_f\) is the range of charges along the line, \(k\) is
+Coulomb's constant, \(q_0\) is the charge of the particle being considered, 
+\(r_{0x}\) is the distance to the particle from each point \(x\), 
+\(\vec{r}_{0x}\) is the vector between the particle and the point and
+\(\lambda(x)\) is the \textit{linear charge density}, a function defining the
+charge of the line at any point \(x\), measured in \(\mathrm{Cm}^{-1}\). \par
+For a surface charge distribution, for example of a sphere, the integral
+looks like
+\[F_{q_0} = \int_{S} \frac{kq_0}{r_{0\mathrm{d}A}^2}\vec{r}_{0\mathrm{d}A}
+\sigma(\mathrm{d}A)\:\mathrm{d}A\]
+Here, we exchange linear position \(x\) for rate of change of area 
+\(\mathrm{d}A\). We also exchange \(\lambda\) for \(\sigma\), the surface
+charge density function for the body. \par
+Finally, we can consider charge distribution throughout a volume
+\[F_{q_0} = \int_{V} \frac{kq_0}{r_{0\mathrm{d}V}^2}\vec{r}_{0\mathrm{d}V}
+\rho(\mathrm{d}V)\:\mathrm{d}V\]
+In this case, integration across area becomes integration across volume, and
+we exchange rate of change of area for rate of change of volume. \(\sigma\)
+becomes \(\rho\), the volume charge density function.
+
+\bigskip
+We consider electric field lines through the construct of electric field lines.
+These are imaginary lines flowing away from positive charges toward negative
+charges, terminating at infinity or negative charges. The density of these 
+lines is greatest around charges, which is where the electric field is 
+strongest. Field lines are always perpendicular to the surface of a conductor.
+Using this concept, we can define the electric field \(\vec{E}\) for a point
+charge as
+\[\vec{E} = \frac{\vec{F}}{q}\]
+If we use \(\vec{F} = \frac{kq_1q_2}{r^2}\vec{r}\), we can find the value for
+the electric field strength at a distance \(r\) to be
+\[\vec{E} = \frac{kq}{r^2}\vec{r}\]
+This yields a value in units of \(\mathrm{NC}^{-1}\) or equivalently 
+\(\mathrm{Vm}^{-1}\). Here \(q\) is the charge of the particle creating the 
+field. For a system of charges, we can sum across the effects of individual
+charges on a charge in the resultant field.
+
+\bigskip
+For a dipole system, with a positive and negative charge seperated by a 
+distance \(s\), as shown below, a special equation can be used to calculate
+the field strength at a distance \(r\).
+\begin{plot}[
+    xmin = -1,
+    xmax = 4,
+    ymin = -3,
+    ymax = 3,
+    xticklabels = none,
+    yticklabels = none,
+]
+    \addplot[black, dashed] coordinates {(0, 1)(2, 0)};
+    \addplot[black, dashed] coordinates {(0, -1)(2, 0)};
+    \addplot[black, dashed] coordinates {(-0.15, 1)(-0.15, -1)}
+    node[left, pos = 0.4] {\(s\)};
+    \addplot[black, dashed] coordinates {(0.1, 1.15)(2, 1.15)}
+    node[above, pos = 0.5] {\(r\)};
+    \addplot[ultra thick, black, ->] coordinates {(2, 0)(2.5, -0.25)}
+    node[below right] {\(\vec{E}_+\)};
+    \addplot[ultra thick, black, ->] coordinates {(2, 0)(1.5, -0.25)}
+    node[below left, pos = 0.6, yshift = -0.1cm] {\(\vec{E}_-\)};
+    \addplot[ultra thick, black, ->] coordinates {(2, 0)(2, -0.5)}
+    node[below] {\(\vec{E}_\mathrm{dipole}\)};
+
+    \fill[blue] (axis cs: 0, -1) circle[radius = 5pt];
+    \fill[red] (axis cs: 0, 1) circle[radius = 5pt]
+    node[below right, black] {\(\theta\)};
+    \fill[red] (axis cs: 2, 0) circle[radius = 5pt];
+\end{plot}
+Here, \(\vec{E}_\mathrm{dipole}\) can be calculated through
+\[\frac{kqs}{r^3}\]
+
+\bigskip
+Returning again too a linear line of charge, we can consider a case where
+\(\lambda\) is a constant function; that is the charge per unit length of the
+body is constant throughout. In this case, for a point \(p\) at some distance
+\(r\) from the line, the force from two points an equal distance perpendicular
+to \(r\) will cancel in the perpendicular direction, leaving only the force
+in the direction of the radius. The resultant force vector on \(p\) will 
+therefore be directly away from the linear charge line. The magnitude of this
+field can be calculated through
+\[\vec{E} = \frac{2k\lambda}{r}\vec{r}\]
+
+\end{flushleft}
 \end{document}
