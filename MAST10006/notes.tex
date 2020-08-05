@@ -1,6 +1,7 @@
 \documentclass[12pt]{report}
 \renewcommand{\familydefault}{\sfdefault}
 
+\usepackage{amsmath}
 \usepackage{bbold}
 \usepackage{commath}
 
@@ -12,6 +13,8 @@
 
 \newcommand{\dx}{\:\mathrm{d}x}
 \newcommand{\dy}{\:\mathrm{d}y}
+
+\newcommand{\mand}{\:\mathrm{and}\:}
 
 \begin{document}
 \begin{flushleft}
@@ -44,6 +47,99 @@ Some common sets have specific symbols associated with them.
     \item Three dimensional space, 
         \(\R^3 = \set{(x, y, z) \mid x, y, z \in \R}\)
 \end{itemize}
+
+\section*{Limits, Continuity, Sequences, Series}
+\subsection*{Limits}
+Limits form the fundamental concept behind the definition of a derivative;
+the instantaneous rate of change of a function at a point is defined in terms
+of a limit. \par
+A limit is defined as follows. For a function \(f(x)\), the limit of \(f(x)\) 
+as \(x\) approaches \(a\) is \(L\), written as
+\[\lim_{x\rightarrow a}f(x) = L\]
+If \(f(x)\) gets continually closer to \(L\) but \(x \neq a\). If a limit 
+exists, it must be a unique finite real number.
+
+\subsubsection*{Examples}
+If \(f(x)\) is defined as follows 
+\[
+    f(x) =
+    \begin{cases}
+        2x, x \neq 1 \\
+        4, x = 1 \\
+    \end{cases}
+\]
+Evaluate the following
+\[\lim_{x\rightarrow 1} f(x)\]
+As \(f(x)\) gets arbritrarily close to \(2\) whenever \(x\) is close to but not
+equal to \(1\), therefore the limit as \(x\rightarrow1\) is \(2\).
+
+\bigskip\bigskip
+Evaluate the following limit.
+\[\lim_{x\rightarrow0}f(x) = \frac{1}{x^2}\]
+As \(f(x)\) is unbounded as \(x\rightarrow0\). Therefore, \(f(x)\) cannot be 
+made arbritrarily close to any one number and the limit does not exist.
+
+\bigskip\bigskip
+Evaluate the following limit.
+\[
+    \lim_{x\rightarrow0}
+    \begin{cases}
+        1, x < 0 \\
+        2, x \geq 0 \\
+    \end{cases}
+\]
+As \(x\) approaches \(0\) from the right, it grows arbritrarily close to \(2\),
+while as it approaches from the left it grows arbritrarily close to \(1\). As 
+it doesn't grow arbritrarily close to a single value, no limit exists here.
+
+\subsubsection*{Additional Limt Notation}
+In the previous examples, we noticed that a common way to examine limits is by
+considering the values the function approaches from each side. Because this is
+such a common construct, notation exists for the left and right limits
+independently. The right and left limits of the function \(f\) approaching 
+\(0\), examined in the final example above are written as
+\[\lim_{x\rightarrow0^+}f(x) = 2\]
+\[\lim_{x\rightarrow0^-}f(x) = 1\]
+In general, for a limit to exist the following statement must be true
+\[\lim_{x\rightarrow a} = L \Leftrightarrow \lim_{x\rightarrow a^-} = L
+\mand \lim_{x\rightarrow a^+} = L\]
+i.e. for the limit to be \(L\), both the left and right limits must be \(L\).
+
+\subsubsection*{Limit Laws}
+For two real valued functions \(f\) and \(g\), and \(c \in \R\) a constant. If
+the limits \(\lim\limits_{x\rightarrow a} f(x)\) and 
+\(\lim\limits_{x\rightarrow a} g(x)\) exist, then the following limit laws 
+apply.
+
+\begin{center}    
+    \begin{tabular}{||c||}
+        \(\lim\limits_{x\rightarrow a}\left[f(x) + g(x)\right]
+        = \lim\limits_{x\rightarrow a} f(x) 
+        + \lim\limits_{x\rightarrow a} g(x)\) \\ [12pt]
+        \(\lim\limits_{x \rightarrow a}\left[cf(x)\right] 
+        = c\lim\limits_{x \rightarrow a}f(x)\) \\ [12pt]
+        \(\lim\limits_{x \rightarrow a}\left[f(x)g(x)\right] 
+        = \lim\limits_{x \rightarrow a}f(x) \cdot
+        \lim\limits_{x \rightarrow a}g(x)\) \\ [12pt]
+        \(\lim\limits_{x \rightarrow a}\left[\frac{f(x)}{g(x)}\right] 
+        = \frac{\lim\limits_{x \rightarrow a}f(x)}{
+        \lim\limits_{x \rightarrow a}g(x)} 
+        \:\left(\lim\limits_{x \rightarrow a}g(x) \neq 0\right)\) \\ [12pt]
+        \(\lim\limits_{x \rightarrow a} c = c\) \\ [12pt]
+        \(\lim\limits_{x \rightarrow a} x = a\) \\ [12pt]
+    \end{tabular}
+\end{center}
+
+\subsubsection*{Example}
+Using the limit laws, evaluate the limit
+\[\lim_{x\rightarrow2}\frac{x^3 + 2x^2 - 1}{5 - 3x}\]
+\[\lim_{x\rightarrow2}\frac{x^3 + 2x^2 - 1}{5 - 3x} 
+= \frac{\lim\limits_{x\rightarrow2} x^3 + 2x^2 - 1}{
+\lim\limits_{x\rightarrow2} 5 - 3x} = \frac{8 + 8 - 1}{5 - 6} 
+= \frac{15}{-1} = -15\]
+One could use more of the limit laws to break this down further; for instance
+breaking the added terms into individual limits, or breaking the \(x^n\) terms
+down using the product law.
 
 \end{flushleft}
 \end{document}
