@@ -1,13 +1,15 @@
 \documentclass[12pt]{report}
 \renewcommand{\familydefault}{\sfdefault}
 
+\usepackage{commath}
+
 \begin{document}
 \begin{flushleft}
     
 \section*{What is Macroeconomics?}
 Macroeconomics is the study of \textit{aggregate economic fluctuations}. Key
 points of study are features like output, details of the labour market like 
-unemploment and inflation. \par
+unemployment and inflation. \par
 Through studying it, we can examine how governments should respond to 
 recessions why countries are rich or poor and how policy can interact with 
 economic structures. \par
@@ -30,6 +32,174 @@ Understanding the state of an economy relies upon accurate measurement of it,
 and this understanding is essential to effectively regulating and improving an
 economy. Theories with respect to measurement of economies are developed 
 according to the study of data.
+
+\subsection*{GDP}
+GDP or Gross Domestic Product is a measure of the output of an economy over 
+time. The precise definition used in this course is that GDP is the 
+\textit{market value} of the \textit{final goods} produced in a country 
+during a given time period. GDP is a useful measure of market activity, which
+can be used to document change in an economy, compare between economies, and
+evaluate the performance of an economy with respect to assorted variables. GDP
+is a kind of summary of the performance of an economy. \par
+Richard Stone, one of the core forces behind the development of the concept of
+GDP was awarded the 1984 Nobel Prize in economics for his efforts.
+
+\subsubsection*{Market Value}
+Market value is a way to describe the output of an economy across a wide range
+of different goods. The most common form of market value is the financial value
+of goods. While this measure is generally quite good, it ignores household 
+production as well as grey or black market activities. \par
+Because government production has no market price, it is usually valued at
+cost of production. This covers public goods such as education, defence and 
+public health services.
+
+\subsubsection*{Final Goods and Services}
+GDP calculations consider only end products, ignoring constituent goods. For 
+example while the loaf of bread sold by a bakery is counted, the flour 
+purchased by the bakery and the wheat used to produce that flower is not. This
+is done to avoid double counting the contributions of earlier stages. \par
+In addition, resold goods are ignored. Second-hand houses or cars are ignored.
+Financial assets, such as shares are not a good or service, so they are also
+ignored.
+
+\bigskip
+GDP considers production in a region; goods produced by international 
+businesses in Australia are counted toward Australian GDP while goods produced
+internationally by Australian businesses are not.
+
+\subsubsection*{Measurement of GDP}
+There are three methods of calculating GDP. These are
+\begin{itemize}
+    \item Income
+    \item Expenditure
+    \item Production
+\end{itemize}
+They should theoretically be equivalent, but practically vary by small margins
+due to differences in collection methodology and other real world 
+inconveniences.
+
+\subsubsection*{Income}
+Every time a good is purchased, money is transferred from a consumer to a
+producer. This money is transferred to the firm, which distributes it between
+the workers at the firm and the owners of the firm.
+\[Y = wL + rK\]
+Here, \(Y\) is the GDP, \(w\) is the labour income, \(L\) is the hours worked,
+\(r\) is the rental rate and \(K\) is the total capital. Rental rate describes
+the amount a production owner earns per unit capital invested into a business.
+\par
+This method allows examination of the division between capital owners and 
+labour providers (workers). Through this examination, one can observe that over
+time the share of wealth earned by workers has declined.
+
+\subsubsection*{Expenditure}
+The expenditure method examines the amount spent by each group from among four
+sectors in the local economy. Each of these is a subtly different form of 
+spending.
+\begin{itemize}
+    \item Houshold sector, which accounts for everyday purchases.
+    \item Business sector, which covers investment by businesses.
+    \item Government sector, which includes government expenditure less transer
+        payments like pension or unemployment benefits.
+    \item Overseas sector, which totals net exports (exports less imports).
+\end{itemize}
+The equation for this sum is
+\[Y = C + I + G + X - M\]
+Where once again \(Y\) denotes GDP, \(X\) denotes exports, \(M\) is imports and
+the other symbols are the remaining three sectors. \par
+This measure has the benefit of allowing the examination of consumption versus
+investment for instance.
+
+\subsubsection*{Production}
+The production method uses a \textit{value added approach}, examining the 
+amount of value each producer in an economy. For example, considering a \$3 
+loaf of bread.
+\begin{itemize}
+    \item The bread may have been produced from \$2 worth of flour. Therefore
+        the baker add \$1 in value.
+    \item The flour may have been milled from \$1 worth of wheat. Therefore the
+        miller added \$1 in value.
+    \item The farmer, in producing the wheat created \$1 worth of value.
+    \item Thus, the total value added throughout production of the loaf of 
+        bread was \$3.
+\end{itemize}
+This approach allows easy comparison between different industries in an 
+economy, by considering how much value was added by each industry.
+
+\subsubsection*{Equivalence}
+The three methods addressed are in essence equivalent. Value added must be
+equivalent to expenditure because someone had to pay for the goods. Because 
+someone was payed for the goods, the money must have been distributed to the 
+firm, and therefore received as income. \par
+An essential caveat for this equivalence to be true is with respect to the
+treatment of unsold goods; if a car is produced by not sold, it must be valued
+as though it had been purchased in order for the different methods to agree on
+GDP; otherwise the value added approach would consider the value added in the
+production of the car, while the expenditure approach would not see the 
+purchase of the car and would therefore ignore its value, causing a 
+discrepancy.
+
+\subsubsection*{Circular Flow of Income}
+Another way to understand these different methods is through considering a 
+cycle of income between consumers and producers.
+\begin{itemize}
+    \item Households supply labour and capital to firms, who in exchange 
+        provide labour income and payments for capital.
+    \item Firms supply finished goods to households, who in turn provide
+        capital to firms by purchasing these goods.
+\end{itemize}
+
+\subsubsection*{Real GDP}
+Thus far, we have examined nominal GDP. While useful, this measure has some 
+flaws.
+\begin{itemize}
+    \item It isn't very effective for considering changes over time.
+    \item It doesn't offer very good isolation of variables; changes in GDP
+        could be due to change in quantity or price.
+\end{itemize}
+Real GDP attempts to remedy this by calculating change in quantity while 
+disregarding changes in price. The most simple method to do this is to use a
+base year for the value of goods, and calculate the value of outputs in later
+years using the values of goods set in this base year. This method has the 
+benefit of being fairly simple and intuitive, and effectively captures changes
+in economic activity over time, however, it can struggle to function well as
+more drastic changes occur in an economy. For example
+\begin{itemize}
+    \item Changes in product preference altering the composition of an economy,
+        causing valuations to be non-representative of output.
+    \item Proportional changes in pricing between goods causing poor modelling
+        using dated price data.
+    \item Introduction of new goods which cannot be price using old data.
+\end{itemize}
+We can calculate GDP in this way by summing the quantity of each good produced
+in a year multiplied by the value of that good in the starting year. So for
+a year \(t\) and goods \(i\):
+\[\mathrm{Real}\:\mathrm{GDP} 
+    = \frac{\sum_i p_{i,0}q_{i,t}}{\sum_i p_{i,0}q_{i,0}}\]
+Here \(\sum_i\) indicates iteration across all goods \(i\), for each of which
+a \(p_{i,0}\) exists, which is the price of the good in year \(0\) and a 
+\(q_{i,t}\) exists, which is the quantity produced in year \(t\). We divide 
+through by the GDP of year \(0\) to create an \textit{index value}, a ratio
+to the base year i.e. \(1 +\) the percentage change in market value, when 
+valuing at year \(0\) pricing. Another way to consider this is as the 
+cumulative product of these ratios across the years \(\set{0 \ldots t}\).
+If \(t = 3\) for instance,
+\[\mathrm{Real}\:\mathrm{GDP} 
+= \frac{\sum_i p_{i,0}q_{i,3}}{\sum_i p_{i,0}q_{i,0}} = 
+\frac{\sum_i p_{i,0}q_{i,1}}{\sum_i p_{i,0}q_{i,0}} \cdot 
+\frac{\sum_i p_{i,0}q_{i,2}}{\sum_i p_{i,0}q_{i,1}} \cdot
+\frac{\sum_i p_{i,0}q_{i,3}}{\sum_i p_{i,0}q_{i,2}}\]
+The modern approach to calculating real GDP uses \textit{chain weighted prices}
+to compensate for the drift in accuracy caused by outdated pricing data. Rather
+than using \(p_{i,0}\) for the entire calculation, this approach iteratively
+calculates the real GDP based on the previous years GDP according to
+\[\frac{\sum_i p_{i,t - 1}q_{i,t}}{\sum_i p_{i,t - 1}q_{i,t - 1}}\]
+So for the example of \(t = 3\), the full calculation would look like
+\[\mathrm{Real}\:\mathrm{GDP} = 
+\frac{\sum_i p_{i,0}q_{i,1}}{\sum_i p_{i,0}q_{i,0}} \cdot 
+\frac{\sum_i p_{i,1}q_{i,2}}{\sum_i p_{i,1}q_{i,1}} \cdot
+\frac{\sum_i p_{i,2}q_{i,3}}{\sum_i p_{i,2}q_{i,2}}\]
+This approach prevents outdated price data from skewing the GDP figure, while
+still maintaining the measure as relative to changes in production levels.
 
 \end{flushleft}
 \end{document}
