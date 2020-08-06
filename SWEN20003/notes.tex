@@ -123,5 +123,110 @@ Key differences between Java and C
     \item Java has no preprocessor, macros, defines, etc are not available.
 \end{itemize}
 
+\section*{Classes and Objects}
+All programming languages have four fundamental operations
+\begin{itemize}
+    \item Calculation
+    \item Selection
+    \item Iteration
+    \item Abstraction
+\end{itemize}
+The key focus of this subject is in abstraction, the process of creating
+constructs and defining interactions between them to solve a problem. The focus
+of oriented oriented programming is on a specific form of abstraction. In a
+procedural language like C, abstraction is provided largely through functions.
+In Java, abstraction is implemented through classes, which are a form of
+abstract data type. \par
+A class might represent a real world object, a real world concept or a problem
+space object or concept. It has attributes and methods, which define its 
+characteristics and behaviours. This class can then be used as a data type.
+
+\bigskip
+An \textit{object} is an instance of a class. Many objects may be instances of
+the same class, with differing attributes which define their state. An objects
+type is the class of which it is an instance.
+
+\bigskip
+When designing an application in an object oriented way, one should focus 
+initially on nouns; if a concrete concept or object is required for the 
+application, then it should be a strong candidate for a class in the program.
+The properties of this entity should then become attributes; colour, radius, 
+etc. Things that this entity might do should then become methods; move, open,
+save, etc.
+
+\bigskip
+Features of designing in this way include
+\begin{itemize}
+    \item Data Abstraction; through creating data types we can simplify the
+        manipulation and storage of information around an entity. 
+    \item Encapsulation; by creating classes, we group related properties
+        behind a common interface, often simplifying problems.
+    \item Information hiding
+    \item Delegation
+    \item Inheritance
+    \item Polymorphism
+\end{itemize}
+
+\subsection*{Classes}
+\subsubsection*{Defining a Class}
+
+The format for a class definition is as follows. The class must be placed in
+the file \code{Name.java}. In general classes are named in camelcase with a
+leading capital (\code{ClassName}), while attributes and methods are named in 
+conventional camelcase (\code{methodName}).
+\begin{lstlisting}
+    <visibility> class <Name> {
+        <attribute declarations>
+            <visibility> <type> <name>
+        <method declarations>
+            <visibility> <void or type> <name> (<arguments>)
+    }
+\end{lstlisting}
+A simple class example follows.
+\begin{lstlisting}
+    // in Person.java
+    public class Person {
+        public String firstName;
+        public String lastName;
+
+        public String getFullName () {
+            return firstName + lastName;
+        }
+    }
+\end{lstlisting}
+Attributes included as part of a class are instance variables, differentiated
+from local variables defined in the namespace of a method. These variables are
+members of the class.
+
+\subsubsection*{Using a Class}
+
+Once a file with a class has been compiled (with \code{javac Class.java}),
+other files in the same directory as the \code{.class} file can use the type
+without imports. Creating an object reference can then be done with 
+\code{Class obj}. Until this object is \textit{instantiated}, it will simply be
+a \code{null} reference.
+
+\begin{lstlisting}
+    public class Main {
+        public static void main(String args[]) {
+            Class obja, objb; // obja is a null reference
+            obja = new Class(); // now Class instance
+            objb = new Class();
+            obja = objb; // obja is now a reference to objb
+        }
+    }
+\end{lstlisting}
+
+In the above example, two instances of \code{Class} are created, and then one
+is overwritten with another. Because no reference exists to \code{obja}, it 
+will be garbage collected. \par
+Members of classes are accessed with the member accessor, \code{.}. For 
+example, \code{object.attr} or \code{object.method()}. The attributes of an
+object can be assigned in this way, i.e. \code{object.attr = value}.
+
+\bigskip
+The main method, while simply a method of a class like any other, is special, 
+as it and it alone can be the entry point of a program.
+
 \end{flushleft}
 \end{document}
