@@ -2,8 +2,34 @@
 \renewcommand{\familydefault}{\sfdefault}
 
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{bbold}
 \usepackage{commath}
+\usepackage{pgfplots}
+
+\newenvironment{plot}[1][
+    xmin = -5,
+    xmax = 5,
+    ymin = -5,
+    ymax = 5
+]{
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                samples = 1000,
+                #1,
+                width = 12cm,
+                height = 9cm,
+                xlabel = \(x\),
+                ylabel = \(y\),
+                axis lines = middle,
+                restrict y to domain = -10:10
+            ]
+}{
+            \end{axis}
+        \end{tikzpicture}
+    \end {center}
+}
 
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -15,6 +41,10 @@
 \newcommand{\dy}{\:\mathrm{d}y}
 
 \newcommand{\mand}{\:\mathrm{and}\:}
+
+\newcommand{\limit}{\lim\limits}
+
+\pgfplotsset{compat = 1.17}
 
 \begin{document}
 \begin{flushleft}
@@ -107,26 +137,26 @@ i.e. for the limit to be \(L\), both the left and right limits must be \(L\).
 
 \subsubsection*{Limit Laws}
 For two real valued functions \(f\) and \(g\), and \(c \in \R\) a constant. If
-the limits \(\lim\limits_{x\rightarrow a} f(x)\) and 
-\(\lim\limits_{x\rightarrow a} g(x)\) exist, then the following limit laws 
+the limits \(\limit_{x\rightarrow a} f(x)\) and 
+\(\limit_{x\rightarrow a} g(x)\) exist, then the following limit laws 
 apply.
 
 \begin{center}    
     \begin{tabular}{||c||}
-        \(\lim\limits_{x\rightarrow a}\left[f(x) + g(x)\right]
-        = \lim\limits_{x\rightarrow a} f(x) 
-        + \lim\limits_{x\rightarrow a} g(x)\) \\ [12pt]
-        \(\lim\limits_{x \rightarrow a}\left[cf(x)\right] 
-        = c\lim\limits_{x \rightarrow a}f(x)\) \\ [12pt]
-        \(\lim\limits_{x \rightarrow a}\left[f(x)g(x)\right] 
-        = \lim\limits_{x \rightarrow a}f(x) \cdot
-        \lim\limits_{x \rightarrow a}g(x)\) \\ [12pt]
-        \(\lim\limits_{x \rightarrow a}\left[\frac{f(x)}{g(x)}\right] 
-        = \frac{\lim\limits_{x \rightarrow a}f(x)}{
-        \lim\limits_{x \rightarrow a}g(x)} 
-        \:\left(\lim\limits_{x \rightarrow a}g(x) \neq 0\right)\) \\ [12pt]
-        \(\lim\limits_{x \rightarrow a} c = c\) \\ [12pt]
-        \(\lim\limits_{x \rightarrow a} x = a\) \\ [12pt]
+        \(\limit_{x\rightarrow a}\left[f(x) + g(x)\right]
+        = \limit_{x\rightarrow a} f(x) 
+        + \limit_{x\rightarrow a} g(x)\) \\ [12pt]
+        \(\limit_{x \rightarrow a}\left[cf(x)\right] 
+        = c\limit_{x \rightarrow a}f(x)\) \\ [12pt]
+        \(\limit_{x \rightarrow a}\left[f(x)g(x)\right] 
+        = \limit_{x \rightarrow a}f(x) \cdot
+        \limit_{x \rightarrow a}g(x)\) \\ [12pt]
+        \(\limit_{x \rightarrow a}\left[\frac{f(x)}{g(x)}\right] 
+        = \frac{\limit_{x \rightarrow a}f(x)}{
+        \limit_{x \rightarrow a}g(x)} 
+        \:\left(\limit_{x \rightarrow a}g(x) \neq 0\right)\) \\ [12pt]
+        \(\limit_{x \rightarrow a} c = c\) \\ [12pt]
+        \(\limit_{x \rightarrow a} x = a\) \\ [12pt]
     \end{tabular}
 \end{center}
 
@@ -134,12 +164,184 @@ apply.
 Using the limit laws, evaluate the limit
 \[\lim_{x\rightarrow2}\frac{x^3 + 2x^2 - 1}{5 - 3x}\]
 \[\lim_{x\rightarrow2}\frac{x^3 + 2x^2 - 1}{5 - 3x} 
-= \frac{\lim\limits_{x\rightarrow2} x^3 + 2x^2 - 1}{
-\lim\limits_{x\rightarrow2} 5 - 3x} = \frac{8 + 8 - 1}{5 - 6} 
+= \frac{\limit_{x\rightarrow2} x^3 + 2x^2 - 1}{
+\limit_{x\rightarrow2} 5 - 3x} = \frac{8 + 8 - 1}{5 - 6} 
 = \frac{15}{-1} = -15\]
 One could use more of the limit laws to break this down further; for instance
 breaking the added terms into individual limits, or breaking the \(x^n\) terms
 down using the product law.
+
+\subsubsection*{Limits and Infinity}
+We can talk about a limit as \(x\rightarrow\infty\), referring to what happens
+to the limit as \(x\) is made arbritrarily large. So the limit
+\[\lim_{x\rightarrow\infty} f(x) = L\]
+Is stating that as \(x\) is made arbritrarily larger, \(f(x)\) becomes 
+arbritrarily closer to \(L\). \(L\) must be finite for \(f(x)\) to take it's
+value.
+
+\begin{plot}
+    \addplot[blue, thick] {2.71828^(-1*x)}
+    node[above, pos = 0.9] {\(e^{-x}\)};
+\end{plot}
+
+For example, in the above plot we can see that as \(x\) becomes arbritrarily 
+close to infinity, \(e^{-x}\) becomes arbritrarily close to \(0\). Therefore,
+\[\lim_{x\rightarrow\infty} e^{-x} = 0\]
+While this process of examining a graph and noting its convergence is practical
+for certain examples, it is a little laborious in the long term, so we use the 
+constructs of standard limits to solve many problems.
+
+\subsubsection*{Standard Limits}
+The following limits can be used without proof in this subject, with their 
+truth taken as gospel.
+
+\begin{center}    
+    \begin{tabular}{||c||}
+        \(\limit_{x\rightarrow\infty}\frac{1}{x^p} = 0 \:\:\:(p > 0)\) \\[12pt]
+        \(\limit_{x\rightarrow\infty}r^x = 0 \:\:\:(0 \leq r < 1)\) \\[12pt]
+    \end{tabular}
+\end{center}
+
+For example, in the case of \(e^{-x}\), we can use the second limit from above
+by taking \(r = \frac{1}{e}\).
+
+\subsubsection*{Terminology}
+If a limit exists, we can state that \(f(x)\) \textit{converges} as \(x\) 
+approaches \(a\). Inversely, we can state \(f(x)\) \textit{diverges} as \(x\)
+approaches \(a\). \par
+For example, as \(\sin(x)\) oscillates between \(-1\) and \(1\), it cannot 
+approach a single number and therefore diverges as \(x\rightarrow\infty\). \par
+It is important to note that \(\infty\) isn't a number; in general it denotes
+``any arbritrarily large number''. A limit cannot be equal to infinity. Because
+infinity is not a number, certain cases become indeterminate.
+\[\limit_{x\rightarrow\infty} \frac{3x^2 - 2x + 3}{x^2 + 4x + 4}\]
+Here, we can see that both the numerator and the denominator approach infinity
+as \(x\rightarrow\infty\). We cannot therefore divide their individual limits 
+to find the overall limit and must instead alter the form to find the limit. 
+\par
+In this case, we can do this by dividing numerator and denominator by 
+\(\frac{1}{x^2}\).
+\[\frac{\frac{1}{x^2}}{\frac{1}{x^2}} \cdot \frac{3x^2 - 2x + 3}{x^2 + 4x + 4}
+= \frac{3 - \frac{2}{x} + \frac{3}{x^2}}{1 - \frac{4}{x} + \frac{4}{x^2}}\]
+\[\frac{\limit_{x\rightarrow\infty} 3 - \frac{2}{x} + \frac{3}{x^2}}{
+\limit_{x\rightarrow\infty} 1 - \frac{4}{x} + \frac{4}{x^2}} = 
+\frac{3}{1} = 3\]
+By modifying the fraction and then applying limit laws, we can solve this 
+initially indeterminate limit.
+
+\subsubsection*{The Sandwhich Theorem}
+The Sandwhich Theorem states that if \(g(x) \leq f(x) \leq h(x)\) when 
+\(x \approx a\) but \(x \neq a\) and
+\[\limit_{x\rightarrow a}g(x) = \limit_{x\rightarrow a}h(x) = L\]
+Then \(\limit_{x\rightarrow a}f(x) = L\). In essence, it states that if a 
+function lies between two other functions who each converge to \(L\) at \(a\),
+then that function must also converge to \(a\). This theorem can also be used
+to solve functions of the indeterminate form \(\infty - \infty\). For example,
+\(\limit_{x\rightarrow\infty} f(x) = \sqrt{x^2 + 1} - x\) is of this form. We
+can simplify to some degree, but we need the Sandwhich Theorem to finish the 
+problem.
+\[\limit_{x\rightarrow\infty} \left(\sqrt{x^2 + 1} - x\right) \cdot 
+\frac{\sqrt{x^2 + 1} + x}{\sqrt{x^2 + 1 + x}} 
+= \limit_{x\rightarrow\infty} \frac{x^2 + 1 - x^2}{\sqrt{x^2 + 1} + x} 
+= \limit_{x\rightarrow\infty} \frac{1}{\sqrt{x^2 + 1} + x}\]
+Looking at this function, it looks like both \(\sqrt{x^2 + 1}\) and \(x\) 
+become arbritrarily large as \(x\rightarrow\infty\). Thus, we would expect this
+function to converge to \(0\) as it approaches \(\infty\). To prove this with 
+the Sandwhich Theorem, we must find a lower bound and upper bound that each 
+converge to \(0\). \par
+A lower bound for this function is easy; it never drops below \(0\), so 
+\(g(x)\equiv0\) will do nicely. To find an upper bound, we can simply make the 
+denominator smaller, so perhaps \(h(x) = \frac{1}{x}\) is a good fit. As we
+know that both of these functions converge to \(0\) as \(x\rightarrow\infty\)
+through the limit laws and standard limits, we can confidently state per the
+Sandwhich Theorem that \(f\rightarrow0\) as \(x\rightarrow\infty\).
+
+\subsubsection*{Example}
+A function which lends itself to use of the Sandwhich Theorem is 
+\(x^2\sin(\frac{1}{x})\)
+
+\begin{plot}[
+    xmax = 0.5,
+    xmin = -0.5,
+    ymax = 0.2,
+    ymin = -0.2
+]
+    \addplot[blue, thick] {x^2*sin(deg(1/x))} 
+    node[left, pos = 0.48, xshift = -0.2cm] 
+    {\(x^2\sin\left(\frac{1}{x}\right)\)};
+    \addplot[red, thick] {x^2} 
+    node[left, pos = 0.52, xshift = -0.2cm] {\(x^2\)};
+    \addplot[red, thick] {-1*x^2} 
+    node[left, pos = 0.52, xshift = -0.2cm] {\(-x^2\)};
+\end{plot}
+
+As shown on the above plot, the function never strays beyond the bounds of
+two parabolas. We can therefore evaluate its limit through the limits of the
+two bounding functions.
+\[\limit_{x\rightarrow0}x^2 = \limit_{x\rightarrow0} -x^2 = 0
+\Rightarrow \limit_{x\rightarrow0} x^2\sin\left(\frac{1}{x}\right) = 0\]
+
+\subsection*{Continuity}
+Continuity is a property of a function which essentially describes the 
+``smoothness'' of the function. For a function \(f\) to be continuous at a 
+point \(x\), the limit
+\[\limit_{x\rightarrow a}f(x) = f(a)\]
+Must be true; i.e. the value of \(f\) at \(x\) must be the value that \(f\) 
+approaches as it becomes arbritrarily close to \(x\). As a simple example, let
+us check if \(f\) is continuous at \(x = 1\).
+\[f(x) = 
+    \begin{cases}
+        2x, x \neq 1 \\
+        4, x = 1 \\
+    \end{cases}
+\]
+\[\limit_{x\rightarrow1} f(x) = \limit_{x\rightarrow1} 2x = 2\]
+\[f(1) = 4 \neq 2\]
+\[\therefore f \mathrm{\:is\:not\:continuous\:at\:}1\]
+
+\subsubsection*{Continuity Theorems}
+If \(f\) and \(g\) are real valued functions and \(c\) is a constant, then
+assuming \(f\) and \(g\) are continuous at \(x = a\), the following functions
+are additionally continuous at \(x = a\).
+\begin{itemize}
+    \item \(f + g\)
+    \item \(cf\)
+    \item \(fg\)
+    \item \(\frac{f}{g} \mathrm{\:if\:} g(a) \neq 0\)
+\end{itemize}
+If \(f\) is continuous at \(x = a\) and \(g\) is continuous at \(x = f(a)\),
+then \(g \circ f\) is continuous at \(x = a\). Thus if two continuous functions
+are composed, the resultant function will in addition be continuous.
+
+\bigskip
+All of the following function types are continuous across their domain.
+\begin{itemize}
+    \item Polynomials
+    \item Trigonometric functions
+    \item Exponential functions
+    \item Logarithmic functions
+    \item \(n\)th root functions
+    \item Hyperbolic functions
+\end{itemize}
+
+\subsubsection*{Example}
+For which values of \(x\) is \(f\) continuous?
+\[f(x) = \frac{\sin(x^2 + 1)}{\log(x)}\]
+We know that \(\sin\) is continuous across \(\R\), as is \(x^2 + 1\). 
+\(\log(x)\) is defined for \(\R^+\). Using function composition, we
+know that \(\sin(x^2 + 1)\) is continuous on \(\R\), and using division we can
+see that \(f\) will be continuous for all values in the domain of \(\log(x)\) 
+where \(\log(x) \neq 0\), i.e. \(\R^+ \backslash \set{1}\).
+
+\bigskip
+If \(f\) is continuous at \(b\) and \(\limit_{x\rightarrow a} g(x) = b\) then
+\[\limit_{x\rightarrow a} f\left[g(x)\right] 
+= f\left[\limit_{x\rightarrow a}g(x)\right] = f(b)\]
+
+\subsubsection*{Example}
+\[\limit_{x\rightarrow\infty} \sin\left(e^{-x}\right)
+= \sin\left(\limit_{x\rightarrow\infty} e^{-x}\right) = \sin(0) = 0\]
+We can only do this because \(\sin\) is continuous on \(\R\).
 
 \end{flushleft}
 \end{document}
