@@ -61,11 +61,11 @@ Electromagnetism is one of the four fundamental forces of nature.
     \item Weak force
 \end{itemize}
 The gravitational force is often modelled through Newton's law.
-\[F = \frac{Gm_1m_2}{r^2}\vec{r}\]
+\[F = \frac{Gm_1m_2}{r^2}\hat{r}\]
 Electromagnetism mirrors this with Coulomb's Law, dating to 1798.
-\[F = \frac{kq_1q_2}{r^2}\vec{r}\]
+\[F = \frac{kq_1q_2}{r^2}\hat{r}\]
 Where \(k\) is Coulomb's constant and \(q_1\) and \(q_2\) are the two charged
-particles interacting. Here, \(\vec{r}\) is the vectore direction defined by
+particles interacting. Here, \(\hat{r}\) is the vectore direction defined by
 the two charges. \par
 While gravity is only positive, electric charge comes in both positive and
 negative forms. This charge is measured in Coulombs.
@@ -98,10 +98,10 @@ side. If the neutral body is then grounded, it will now be charged.
 
 \subsubsection*{Electric Force}
 Electric force is calculated, as touched on above, through Coulomb's law.
-\[F = \frac{kq_1q_2}{r^2}\vec{r}\]
+\[F = \frac{kq_1q_2}{r^2}\hat{r}\]
 Here, \(F\) is the electric force in Newtons between the two charged bodies,
 \(q_1\) and \(q_2\) are the charges of the two bodies involved, \(r\) is the
-distance between the two, \(\vec{r}\) is a unit vector in the direction
+distance between the two, \(\hat{r}\) is a unit vector in the direction
 between \(q_1\) and \(q_2\) and 
 \(k = 8.988\times10^9\mathrm{Nm}^2\mathrm{C}^{-2}\). If this value \(F\) is
 negative, the two are attracting each other, otherwise they are repelling each
@@ -129,7 +129,7 @@ An application of superposition comes in electric fields, where we can use
 integration to apply the concept of superposition across a continuous field.
 For a linear charge distribution, along a single straight line in the \(x\) 
 direction, this integral looks like  
-\[F_{q_0} = \int_{x_i}^{x_f} \frac{kq_0}{r_{0x}^2}\vec{r}_{0x}\lambda(x)\dx\]
+\[F_{q_0} = \int_{x_i}^{x_f} \frac{kq_0}{r_{0x}^2}\hat{r}_{0x}\lambda(x)\dx\]
 Here, \(x_i\) through \(x_f\) is the range of charges along the line, \(k\) is
 Coulomb's constant, \(q_0\) is the charge of the particle being considered, 
 \(r_{0x}\) is the distance to the particle from each point \(x\), 
@@ -138,13 +138,13 @@ Coulomb's constant, \(q_0\) is the charge of the particle being considered,
 charge of the line at any point \(x\), measured in \(\mathrm{Cm}^{-1}\). \par
 For a surface charge distribution, for example of a sphere, the integral
 looks like
-\[F_{q_0} = \int_{S} \frac{kq_0}{r_{0\mathrm{d}A}^2}\vec{r}_{0\mathrm{d}A}
+\[F_{q_0} = \int_{S} \frac{kq_0}{r_{0\mathrm{d}A}^2}\hat{r}_{0\mathrm{d}A}
 \sigma(\mathrm{d}A)\:\mathrm{d}A\]
 Here, we exchange linear position \(x\) for rate of change of area 
 \(\mathrm{d}A\). We also exchange \(\lambda\) for \(\sigma\), the surface
 charge density function for the body. \par
 Finally, we can consider charge distribution throughout a volume
-\[F_{q_0} = \int_{V} \frac{kq_0}{r_{0\mathrm{d}V}^2}\vec{r}_{0\mathrm{d}V}
+\[F_{q_0} = \int_{V} \frac{kq_0}{r_{0\mathrm{d}V}^2}\hat{r}_{0\mathrm{d}V}
 \rho(\mathrm{d}V)\:\mathrm{d}V\]
 In this case, integration across area becomes integration across volume, and
 we exchange rate of change of area for rate of change of volume. \(\sigma\)
@@ -159,9 +159,9 @@ strongest. Field lines are always perpendicular to the surface of a conductor.
 Using this concept, we can define the electric field \(\vec{E}\) for a point
 charge as
 \[\vec{E} = \frac{\vec{F}}{q}\]
-If we use \(\vec{F} = \frac{kq_1q_2}{r^2}\vec{r}\), we can find the value for
+If we use \(\vec{F} = \frac{kq_1q_2}{r^2}\hat{r}\), we can find the value for
 the electric field strength at a distance \(r\) to be
-\[\vec{E} = \frac{kq}{r^2}\vec{r}\]
+\[\vec{E} = \frac{kq}{r^2}\hat{r}\]
 This yields a value in units of \(\mathrm{NC}^{-1}\) or equivalently 
 \(\mathrm{Vm}^{-1}\). Here \(q\) is the charge of the particle creating the 
 field. For a system of charges, we can sum across the effects of individual
@@ -209,7 +209,53 @@ to \(r\) will cancel in the perpendicular direction, leaving only the force
 in the direction of the radius. The resultant force vector on \(p\) will 
 therefore be directly away from the linear charge line. The magnitude of this
 field can be calculated through
-\[\vec{E} = \frac{2k\lambda}{r}\vec{r}\]
+\[\vec{E} = \frac{2k\lambda}{r}\hat{r}\]
+
+\subsubsection*{Gauss' Law}
+Coulomb's law works best for point charges, and can be generalised through
+integration to a broader range of charges. Gauss' law is another law for force
+due to electric charge, and can be applied to all charge distributions. Gauss'
+law is one of Maxwell's equations; in a way it is a fundamental law of nature.
+\par
+Gauss' law requires the relevant problem to have symmetry, perhaps cartesian or
+cylindrical. The symmetry may be translational, rotational or reflective. For a
+point charge, Gauss' law is the same as Coulomb's law:
+\[\vec{E} = \frac{kQ}{r^2}\hat{r} =\frac{1}{4\pi\epsilon}\frac{Q}{r^2}\hat{r}\]
+This can be equivalently expressed as
+\[\vec{E}4\pi r^2 = \frac{Q}{\epsilon}\]
+Which can be intuitively understood as the surface area of a sphere multiplied
+by the field strength at any point on the surface of the sphere being equal to
+the charge of the particle divided by the permittivity of the material.
+
+\bigskip
+Flux is an important concept in electric fields. In fluid mechanics, flux 
+describes the volume per unit time flowing through an area. If the area 
+described is perpendicular to the flow, flux through it is at maximum. If 
+perpendicular, the flux is \(0\).  If we define the angle of the area to the
+perpendicular direction as \(\theta\), then we can define flux through that 
+area in an electric field as
+\[\Phi = EA\cos(\theta)\]
+Where \(E\) is the field strength. This can be equivalently expressed if we
+define a vector \(\vec{A}\) to be the direction of the area and \(\vec{v}\) to
+be the flow of material as
+\[\Phi = \vec{v} \cdot \vec{A}\]
+With electric field as the flow of material this becomes \(E \cdot \vec{A}\).
+Using Gauss' law, this generalises from simple planar areas to more complex
+\textit{Guassian surfaces}, which are simply surfaces of any three dimensional 
+body. The electric field through these surfaces can then be calculated by 
+integration across the surface, considering the electric field at each 
+infinetismal point by taking the dot product of the surface vector at that
+point and the electric field at that point, yielding
+\[\Phi = \int\vec{E}\cdot\mathrm{d}\vec{A}\]
+The units of electric flux are \(\mathrm{Nm}^2\mathrm{C}^{-1}\). 
+\(\mathrm{d}\vec{A}\) is a vector with direction given by the surface normal 
+and magnitude of the area of the surface. In the case of a closed surface 
+another simplification applies
+\[\Phi = \oint_\mathrm{surface}\vec{E}\cdot\mathrm{d}\vec{A} = 
+\frac{q_\mathrm{enclosed}}{\epsilon_0}\]
+This states that the electric flux through a closed surface is equal to the
+enclosed charge divided by \(\epsilon_0\). Thus we can simply sum the internal
+charges to find the charge through the surface.
 
 \end{flushleft}
 \end{document}
