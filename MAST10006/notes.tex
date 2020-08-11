@@ -31,6 +31,16 @@
     \end {center}
 }
 
+\newenvironment{formulalist}{
+    \renewcommand{\arraystretch}{2}
+    \begin{center}    
+        \begin{tabular}{||c||}
+}{
+        \end{tabular}
+    \end{center}
+    \renewcommand{\arraystretch}{1}
+}
+
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -141,24 +151,22 @@ the limits \(\limit_{x\rightarrow a} f(x)\) and
 \(\limit_{x\rightarrow a} g(x)\) exist, then the following limit laws 
 apply.
 
-\begin{center}    
-    \begin{tabular}{||c||}
-        \(\limit_{x\rightarrow a}\left[f(x) + g(x)\right]
-        = \limit_{x\rightarrow a} f(x) 
-        + \limit_{x\rightarrow a} g(x)\) \\ [12pt]
-        \(\limit_{x \rightarrow a}\left[cf(x)\right] 
-        = c\limit_{x \rightarrow a}f(x)\) \\ [12pt]
-        \(\limit_{x \rightarrow a}\left[f(x)g(x)\right] 
-        = \limit_{x \rightarrow a}f(x) \cdot
-        \limit_{x \rightarrow a}g(x)\) \\ [12pt]
-        \(\limit_{x \rightarrow a}\left[\frac{f(x)}{g(x)}\right] 
-        = \frac{\limit_{x \rightarrow a}f(x)}{
-        \limit_{x \rightarrow a}g(x)} 
-        \:\left(\limit_{x \rightarrow a}g(x) \neq 0\right)\) \\ [12pt]
-        \(\limit_{x \rightarrow a} c = c\) \\ [12pt]
-        \(\limit_{x \rightarrow a} x = a\) \\ [12pt]
-    \end{tabular}
-\end{center}
+\begin{formulalist}
+    \(\limit_{x\rightarrow a}\left[f(x) + g(x)\right]
+    = \limit_{x\rightarrow a} f(x) 
+    + \limit_{x\rightarrow a} g(x)\) \\ 
+    \(\limit_{x \rightarrow a}\left[cf(x)\right] 
+    = c\limit_{x \rightarrow a}f(x)\) \\ 
+    \(\limit_{x \rightarrow a}\left[f(x)g(x)\right] 
+    = \limit_{x \rightarrow a}f(x) \cdot
+    \limit_{x \rightarrow a}g(x)\) \\ 
+    \(\limit_{x \rightarrow a}\left[\frac{f(x)}{g(x)}\right] 
+    = \frac{\limit_{x \rightarrow a}f(x)}{
+    \limit_{x \rightarrow a}g(x)} 
+    \:\left(\limit_{x \rightarrow a}g(x) \neq 0\right)\) \\ 
+    \(\limit_{x \rightarrow a} c = c\) \\ 
+    \(\limit_{x \rightarrow a} x = a\) \\ 
+\end{formulalist}
 
 \subsubsection*{Example}
 Using the limit laws, evaluate the limit
@@ -195,12 +203,19 @@ constructs of standard limits to solve many problems.
 The following limits can be used without proof in this subject, with their 
 truth taken as gospel.
 
-\begin{center}    
-    \begin{tabular}{||c||}
-        \(\limit_{x\rightarrow\infty}\frac{1}{x^p} = 0 \:\:\:(p > 0)\) \\[12pt]
-        \(\limit_{x\rightarrow\infty}r^x = 0 \:\:\:(0 \leq r < 1)\) \\[12pt]
-    \end{tabular}
-\end{center}
+\begin{formulalist}
+    \(\limit_{x\rightarrow\infty}\frac{1}{x^p} = 0 \:\:\:(p > 0)\) \\
+    \(\limit_{x\rightarrow\infty}r^x = 0 \:\:\:(0 \leq r < 1)\) \\
+    \(\limit_{x\rightarrow\infty}\frac{1}{x^p} = 0 \:\:\:(p > 0)\) \\
+    \(\limit_{x\rightarrow\infty} r^x = 0 \:\:\:(0 \leq r < 1)\) \\
+    \(\limit_{x\rightarrow\infty} a^{\frac{1}{x}} = 1 \:\:\:(a > 0)\) \\
+    \(\limit_{x\rightarrow\infty} x^{\frac{1}{x}} = 1\) \\
+    \(\limit_{x\rightarrow\infty} \frac{\log(x)}{x^p} = 0 \:\:\:(p > 0)\) \\
+    \(\limit_{x\rightarrow\infty} \left(1 + \frac{a}{x}\right)^x 
+    = e^a \:\:\:(a \in \R)\) \\
+    \(\limit_{x\rightarrow\infty} \frac{x^p}{a^x} 
+    = 0 \:\:\:(p \in \R, a > 1)\) \\  
+\end{formulalist}
 
 For example, in the case of \(e^{-x}\), we can use the second limit from above
 by taking \(r = \frac{1}{e}\).
@@ -381,5 +396,88 @@ we pick an arbritray positive number \(\epsilon\). When we do this, there is
 another positive number \(\delta\) for which \(\abs{f(x) - L} < \epsilon\) when
 \(0 < \abs{x - a} < \delta\).
 
+\subsection*{Sequences}
+A sequence is a function which maps the natural numbers to \(\R\) i.e. of the
+form \(f: \N \rightarrow \R\). They can be thought of as ordered lists of real
+numbers, or as functions where \(f(n)\) is the \(n\)th number in the sequence.
+A common notation for a sequence \(a\) is \(\set{a_n}\), where \(a_n\) is a 
+function defining the \(n\)th element. \par
+A sequence has the limit \(L\) if \(a_n\) can be made arbritrarily close to 
+\(L\) by making \(n\) sufficiently large. To indicate this, we write
+\[\limit_{n\rightarrow\infty} a_n = L\]
+If a limit \(L\) exists, then the sequence converges, otherwise it diverges.
+The only major difference between limits on sequences and limits on functions
+is that sequences deal with discrete rather than continuous values. This 
+matters significantly in cases like trigonometric functions. If a function
+converges, then a sequence with that function will also converge. \par
+The limit laws and Sandwhich Theorem apply to limits for sequences as well.
+For the Sandwhich Theorem, the sandwhiching sequences can consider only a range
+of \(n\), greater than some value \(N\).
+
+\subsubsection*{Examples}
+For each of the following sequences, determine whether they converge or 
+diverge.
+\begin{itemize}
+    \item \(\set{\frac{1}{n}}\) converges to \(0\).
+    \item \(\set{-1^{n - 1}}\) diverges, oscillating between \(1\) and \(-1\).
+    \item \(\set{n}\) diverges to \(\infty\).
+\end{itemize}
+
+\subsubsection*{Standard Limits of Sequences}
+A set of standard limits of sequences exist, which can be used to solve other
+limits involving sequences.
+
+\begin{formulalist}
+    \(\limit_{n\rightarrow\infty}\frac{1}{n^p} = 0 \:\:\:(p > 0)\) \\
+    \(\limit_{n\rightarrow\infty} r^n = 0 \:\:\:(\abs{r} < 1)\) \\
+    \(\limit_{n\rightarrow\infty} a^{\frac{1}{n}} = 1 \:\:\:(a > 0)\) \\
+    \(\limit_{n\rightarrow\infty} n^{\frac{1}{n}} = 1\) \\
+    \(\limit_{n\rightarrow\infty} \frac{a^n}{n!} = 0 \:\:\:(a \in \R)\) \\
+    \(\limit_{n\rightarrow\infty} \frac{\log(n)}{n^p} = 0 \:\:\:(p > 0)\) \\
+    \(\limit_{n\rightarrow\infty} \left(1 + \frac{a}{n}\right)^n 
+    = e^a \:\:\:(a \in \R)\) \\
+    \(\limit_{n\rightarrow\infty} \frac{n^p}{a^n} 
+    = 0 \:\:\:(p \in \R, a > 1)\) \\  
+\end{formulalist}
+
+\subsubsection*{Examples}
+\[\limit_{n\rightarrow\infty}\left[\left(\frac{n - 2}{n}\right)^n 
++ \frac{4n^2}{3^n}\right] = 
+\limit_{n\rightarrow\infty} \left(\frac{n - 2}{n}\right)^n + 
+\limit_{n\rightarrow\infty} \frac{4n^2}{3^n}\]
+\[\left(\frac{n - 2}{n}\right)^n = \left(1 - \frac{2}{n}\right)^n \Rightarrow
+\limit_{n\Rightarrow\infty} \left(\frac{n - 2}{n}\right)^n = e^{-2} 
+\Rightarrow\]
+\[\limit_{n\rightarrow\infty} \left(\frac{n - 2}{n}\right)^n + 
+\limit_{n\rightarrow\infty} \frac{4n^2}{3^n} = e^{-2} + 0 = e^{-2}\]
+Using standard limits, we can easily find the solution to this fairly 
+complex-looking limit. The key here is recognising that the first term can
+be easily rearranged to the exponential standard limit, with the second term
+fairly naturally simplifying to another standard limit.
+\[a_n = \frac{3^n + 2}{4^n + 2^n}, n \geq 1\]
+\[\frac{3^n + 2}{4^n + 2^n}\cdot\frac{\frac{1}{4^n}}{\frac{1}{4^n}} = 
+\frac{\left(\frac{3}{4}\right)^n + \frac{2}{4^n}}{1 +
+\left(\frac{1}{2}\right)^n}\]
+\[\limit_{n\rightarrow\infty} a_n = \frac{0 + 0}{1 + 0} = 0\]
+By dividing through by the largest term, we find out that it outweighs the 
+terms in the denominator, an that the whole limit collapses to \(0\). A tool
+for doing this is the \textit{order hierachy}, which indicates the growth rate
+of various forms for large \(n\)
+\[\log(n) \ll n^p \ll a^n \ll n!\]
+A situation where the Sandwhich Theorem is very applicable is one where the 
+function in question clearly falls into some well defined range. For example
+\[\limit_{n\rightarrow\infty}\frac{1 + \sin^2\left(\frac{n\pi}{3}\right)}{
+\sqrt{n}}\]
+\[0 \leq \sin^2\left(\frac{n\pi}{3}\right) \leq 1 \Rightarrow 1 \leq 1 + 
+sin^2\left(\frac{n\pi}{3}\right) \leq 2\]
+\[\frac{1}{\sqrt{n}} \leq \frac{\sin^2\left(\frac{n\pi}{3}\right)}{\sqrt{n}} 
+\leq \frac{2}{\sqrt{n}}\]
+\[\limit_{n\rightarrow\infty}\frac{1}{\sqrt{n}} 
+= \limit_{n\rightarrow\infty}\frac{1}{\sqrt{n}} = 0 \Rightarrow\]
+\[\limit_{n\rightarrow\infty}\frac{1 + \sin^2\left(\frac{n\pi}{3}\right)}{
+\sqrt{n}} = 0\]
+Here, we attack the most complex part of the problem and construct two 
+equations which elegantly border it. We then use the limits of these equations
+to solve the overall limit.
 \end{flushleft}
 \end{document}
