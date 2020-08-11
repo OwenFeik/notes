@@ -44,7 +44,7 @@
 
 \newcommand{\limit}{\lim\limits}
 
-\pgfplotsset{compat = 1.17}
+\pgfplotsset{compat = 1.16}
 
 \begin{document}
 \begin{flushleft}
@@ -342,6 +342,44 @@ If \(f\) is continuous at \(b\) and \(\limit_{x\rightarrow a} g(x) = b\) then
 \[\limit_{x\rightarrow\infty} \sin\left(e^{-x}\right)
 = \sin\left(\limit_{x\rightarrow\infty} e^{-x}\right) = \sin(0) = 0\]
 We can only do this because \(\sin\) is continuous on \(\R\).
+
+\subsubsection*{Derivatives}
+The derivative is defined using a limit.
+\[f^\prime(a) = \limit_{h\rightarrow0}\frac{f(a + h) - f(a)}{h}\]
+If this limit exists, the function is differentiable at \(a\). Geometrically,
+this implies that a tangent line can be drawn at \(a\) on the graph with 
+gradient yielded by the above limit.
+
+\begin{plot}
+    \addplot[thick, red] {(x-2)^2};
+    \addplot[thick, blue] {2(x-2)};
+\end{plot}
+
+If a function is differentiable at \(x = a\), the the function is continuous
+at that point.
+
+\subsubsection*{L'H\^{o}pital's Rule}
+Given \(f\) and \(g\) are differentiable functions near some value \(x = a\)
+and \(g^\prime(x) \neq 0\) near \(a\) but \(\neq a\). If the limit
+\[\limit_{x\rightarrow a} \frac{f(x)}{g(x)}\]
+Has an indeterminate form of
+\[\frac{0}{0} \:\mathrm{or}\: \frac{\infty}{\infty}\]
+Then L'H\^{o}pital's Rule is applicable.
+\[\limit_{x\rightarrow a}\frac{f(x)}{g(x)} 
+= \limit_{x\rightarrow a}\frac{f^\prime(x)}{g^\prime(x)}\]
+For example, we can solve limits like the one below much more easily.
+\[\limit_{x\rightarrow0}\frac{\sin(x)}{x} 
+= \limit_{x\rightarrow0}\frac{\cos(x)}{1} = \frac{\cos(0)}{1} = 1\]
+L'H\^{o}pital's Rule can be applied repeatedly to the same function as long
+as its conditions still hold. Sometimes the form of a function must be modified
+to have a quotient before the rule can be applied to it.
+
+\subsubsection*{Rigour}
+Thus far, we have used the phrase \textit{arbritrarily close} without a proper
+definition of what that means. A more formal definition of this exists, where
+we pick an arbritray positive number \(\epsilon\). When we do this, there is
+another positive number \(\delta\) for which \(\abs{f(x) - L} < \epsilon\) when
+\(0 < \abs{x - a} < \delta\).
 
 \end{flushleft}
 \end{document}
