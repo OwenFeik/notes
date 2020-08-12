@@ -201,5 +201,112 @@ So for the example of \(t = 3\), the full calculation would look like
 This approach prevents outdated price data from skewing the GDP figure, while
 still maintaining the measure as relative to changes in production levels.
 
+\subsection*{Inflation}
+
+Inflation is important to consider in macroeconomics, because it has some 
+important implications for the economy. High inflation imposes serious costs
+upon an economy. It provides information about the performance of an economy.
+It also has impacts on the behaviour of price indexes, such as in GDP. Several
+measures for measuring inflation exist, one of which is the Consumer Price
+Index or CPI.
+
+\subsubsection*{Measurement of Inflation}
+
+The CPI measures the cost of purchasing a specific basket of goods and services
+relative to a base year. This entails collecting data on prices of goods over 
+time, collecting data on household expenditure, to figure what a reasonable 
+basket to measure is, and do this regularly; in Australia the CPI is measured
+quarterly. The measurement is performed as follows, similarly to the GDP 
+calculation.
+\[P_t = \sum_i p_{i,t}q_{i,0}\]
+So the total price is given by the sum across the prices of the goods in year
+\(t\) in the quantities defined in the base year, \(0\). These goods \(i\) are
+drawn from a basket of \(I\) items with associated quantities defined in the 
+base year. This can be converted to an index, known as the CPI by dividing by 
+the price in the base year.
+\[\frac{P_t}{P_0} (\times 100)\]
+This values is often multiplied by \(100\) as a matter of preference. The CPI
+calculated this way can then be used to calculate the inflation rate through
+\[100 \times \frac{\mathrm{CPI}_t - 
+\mathrm{CPI}_{t - 4}}{\mathrm{CPI_{t - 4}}}\]
+Where \(t\) is the number of quarters since the base year (or base quarter).
+This calculation yields the annual inflation rate. The quarterly inflation rate
+can be found by simply using the previous quarter instead of the past year.
+\[100 \times \frac{\mathrm{CPI}_t - 
+\mathrm{CPI}_{t - 1}}{\mathrm{CPI_{t - 1}}}\]
+In general the quarterly rate is more relevant for short term considerations,
+as it is more volatile and vulnerable to random fluctuations. The approach of 
+the CPI can be used to examine inflation in a specific good by simply looking 
+at change in price of that good. An example is the education is growing more
+inflated while clothing is largely declining. \par
+Inflation data is very useful for indexing certain government expenditures, 
+like welfare payments. It can be used to compare the value of investments; 
+whether its better to receive \(\$x\) than \(\$y\) in the future.
+Deflation is the term for negative inflation. \par
+Inflation measurement suffers from bias as composition of goods changes over
+time, as cheaper goods are substituted for more expensive goods. This implies
+an exaggerated CPI. It can also be difficult to compare goods which advance
+significantly technically, such as computers.
+
+\subsubsection*{Costs of Inflation}
+
+In general a low rate of inflation (\(\leq 3\%\)) is fairly harmless, but 
+higher rates of inflation (\(\geq 10\%\)) can be quite damaging, causing issues
+including
+\begin{itemize}
+    \item Noise in the price system, where the relative prices of goods change
+        too rapidly for individuals are firms to properly evaluate different 
+        purchases.
+    \item Brack creep in nominal tax systems such as in Australia, where 
+        inflation can cause incomes to rise to higher rates of taxation, 
+        resulting in lower take-home incomes for workers.
+    \item Cash assets will depreciate rapidly under high inflation rates.
+    \item It can be difficult to plan savings for purposes such as retirement.
+    \item Menu costs; costs of updating pricing over time 
+    (such as in a restaurant menu).
+    \item People might hold too little cash, creating inconveniences.
+\end{itemize}
+
+\subsubsection*{Prices and Real and Nominal GDP}
+Nominal and real GDP can be linked with a price index.
+\[\mathrm{Nominal\:GDP} = \mathrm{Price\:Level}\times\mathrm{Real\:GDP}\]
+\[P_tY_t = P_t\times Y_t\]
+This equation also holds for growth rates.
+\[\mathrm{growth}(P_tY_t) = \mathrm{growth}(P_t) + \mathrm{growth}(Y_t)\]
+Here, price level is not the CPI but a slightly different measure known as the
+\textit{GDP deflator}.
+
+\subsection*{Interest Rates}
+
+In general, investment in a financial asset requires a turn on investment, an
+appreciation. This rate of return is generally described by an interest rate.
+This rate affects the decision to invest versus consume or save. \par
+A nominal interest rate \(i\) implies that an investment of \(\$1\) will yield
+a return of \(\$(1 + i)\). However, this nominal interest rate doesn't quite
+provide sufficient information. The real point of interest is not the quantity
+of wealth one possesses, but what one could do with that wealth, i.e. its
+\textit{purchasing power}. \par
+The \textit{real interest rate} reflects the increase in consumption an 
+investment returns. When receiving income, one has two choices; to save and
+consume later, or to consume immediately. If saving, it can be assumed that
+the savings are invested. There is a price level at time of receipt of \(P_0\)
+and a price at later time of \(P_1\). \(\$1\) at time \(0\) purchases 
+\(\frac{1}{P_0}\) units of consumption bundle, while \(\$(1 + i)\) purchases
+\(\frac{1 + i}{P_1}\) units of consumption at a later date. Therefore, the real
+rate of interest is given by
+\[1 + r = \frac{\frac{1 + i}{P_1}}{\frac{1}{P_0}} = \frac{1 + i}{1 + \pi}\]
+Where \(\frac{P_1}{P_0} = 1 + \pi\) and \(\pi\) is the inflation rate.
+Therefore, only when the nominal interest rate is greater than the inflation 
+rate is the investment good. This equation is known as the Fisher equation,
+and can be simplified to
+\[r \approx i - \pi\]
+Which is a good approximation, only as long as \(i\) and \(\pi\) are quite low,
+which will generally be the case in this course. An issue arises when using 
+this as a decision making tool when we consider that we don't have perfect 
+information about the future. For this, we introduce an expected real interest
+rate:
+\[r^e = i - \pi^e\]
+Where \(\pi^e\) is the expected rate of inflation.
+
 \end{flushleft}
 \end{document}
