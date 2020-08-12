@@ -228,5 +228,156 @@ object can be assigned in this way, i.e. \code{object.attr = value}.
 The main method, while simply a method of a class like any other, is special, 
 as it and it alone can be the entry point of a program.
 
+\subsubsection*{Instance Variables}
+
+In general, initialisation, updating and accessing instance variables is done
+through defining \textit{Accessor / Mutator} methods (or 
+\textit{Getter / Setter} methods). This offers benefits when we come to 
+information hiding, visibility control and privacy. Many IDEs will include 
+support for automatic generation of getters and setters. This is a rather 
+different paradigm to something like Python or C. A getter performs a similar
+function to something like a \code{@property} decorated function in python.
+
+\begin{lstlisting}
+    public class Person {
+        public String name;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+    }
+\end{lstlisting}
+
+Notice the use of \code{this}. \code{this} always refers to the class instance
+of which it is used from within. It is more or less equivalent to Python's 
+\code{self}, though it isn't explicitly provided as an argument like 
+\code{self}.
+
+\subsubsection*{Constructors}
+
+A constructor is a method that exists for the purpose of instantiating an 
+instance of a class. If a constructor is not defined, a default constructor
+is called when a \code{new} instance is created. A class can have more than
+one constructor, with different arguments through a process known as 
+overloading. A constructor is always public, and cannot have a return value.
+They always have the same name as the class. A constructor is defined as 
+follows:
+
+\begin{lstlisting}
+    public class Person {
+        public String firstName, lastName;    
+
+        public Person() {
+            firstName = "Owen";
+            lastName = "Feik";
+        }
+
+        public Person(String newFirstName, String newLastName) {
+            firstName = newFirstName;
+            lastName = newLastName;
+        }
+    }
+\end{lstlisting}
+
+Here, two constructors have been defined, one of which uses some default
+values, and another which is \textit{overloaded}, with a different set of
+arguments. Any number of versions of the same constructor can be declared, as
+long as they have different arguments. The usual order for methods inside a
+class is attributes followed by constructors, followed by getters and setters
+and finally other methods.
+
+\subsubsection*{Overloading}
+
+In the section on constructors above, we demonstrated method overloading. This
+is an example of \textit{polymorphism}, where objects are processed differently
+depending on data type or class. Any method can be overloaded, they must simply
+follow the following rules
+
+\begin{itemize}
+    \item They must have the same name
+    \item They must have a different number of arguments or
+    \item A different set of argument types or
+    \item A different positioning of arguments
+    \item To all other methods sharing the same name
+\end{itemize}
+
+\subsubsection*{Static Attributes and Methods}
+Static members are methods or attributes which are not specific to any instance
+of a class. A static variable will be shared among all objects of the class; 
+only one instance exists, to which all class instances have a reference. They
+can therefore be very useful in certain instances where a global count or 
+similar needs to be maintained.
+
+\begin{lstlisting}
+    public class Person {
+        public static int population = 0;
+        public String name;
+
+        public Person(String firstName, String lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+
+            population++;
+        }
+    }
+\end{lstlisting}
+
+In the above example, every time a person is created, the population counter
+will be incremented. It will not be reset to \(0\) on creation of an instance.
+Rather than being accessed through \code{instance.attr}, static members are 
+accessed through \code{Class.attr}, because they are not associated with an
+instance. This is more or less to equivalent to a Python \code{@classmethod}
+decorated member. \par
+A static method cannot access non static methods or attributes, and it
+cannot use the keyword \code{this} or the yet to be introduced \code{super}, 
+because it is not associated with an instance. \code{static} should be used
+sparingly.
+
+\subsubsection*{Standard Methods in Java}
+For all classes in a Java program, there are several standard methods that are
+very useful to define.
+
+\begin{itemize}
+    \item the \code{equals} method, used to determine whether two instances of
+        a class are equivalent. This is distinct from \code{==} which just 
+        checks whether two references are to the same object.
+    \item the \code{toString} method, which returns a string representation of
+        and object, similar to Python's \code{__str__} or \code{__repr__}. Like
+        in Python \code{print}, this is automatically used with using 
+        \code{System.out.println}.
+    \item the \code{copy} constructor, which is a constructor which accepts an
+        instance of the class and creates an instance which is equivalent to
+        the one passed in.
+\end{itemize}
+
+\begin{lstlisting}
+    public class Person {
+        public String firstName, lastName;
+
+        public Person(Person toClone) {
+            if (toClone == null) {
+                System.out.println("Received a null reference.");
+                System.exit(0);
+            }
+
+            this.firstName = toClone.firstName;
+            this.lastName = toClone.lastName;
+        }
+
+        public boolean equals(Person other) {
+            return this.firstName == other.firstName &&
+                this.lastName == other.lastName; 
+        }
+
+        public String toString() {
+            return "Person: " + this.firstName + " " + this.lastName;
+        }
+    }
+\end{lstlisting}
+
 \end{flushleft}
 \end{document}
