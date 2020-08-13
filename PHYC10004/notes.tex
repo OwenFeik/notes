@@ -79,16 +79,16 @@ Charge is quantised; it comes in integer quantities. It can be transferred, but
 it cannot be created or destroyed.
 
 \subsubsection*{Conductors}
-A conducter contains electrons no strongly bound to any particular nucleus 
+A conductor contains electrons no strongly bound to any particular nucleus 
 within the conductor. These \textit{free electrons} can move when under the
 influence of an electric field, creating an electric current. There are huge
-quantities of these free electrons available in an ordinary conducter. For
+quantities of these free electrons available in an ordinary conductor. For
 example, copper contains around \(10^{22}\) free electrons per cubic 
 centimetre. These are initially held by attractive forces with the nuclei, but
 can be moved along by external forces.
 
 \bigskip
-The counterpart to a conducter is an insulator, which have very few free 
+The counterpart to a conductor is an insulator, which have very few free 
 electrons.
 
 \bigskip
@@ -256,6 +256,32 @@ another simplification applies
 This states that the electric flux through a closed surface is equal to the
 enclosed charge divided by \(\epsilon_0\). Thus we can simply sum the internal
 charges to find the charge through the surface.
+
+\bigskip
+For an infinite line of charge, with charge density \(\lambda\), the electric
+field at a distance \(r\) from the line is given by
+\[\vec{E} = \frac{\lambda}{2\pi\epsilon_0}\hat{r}\]
+For an insulating sheet of charge, with charge density \(\sigma\), the electric
+field strength at a distance \(r\) from the sheet has direction normal to the 
+sheet and magnitude given by
+\[E = \frac{\sigma}{2\epsilon_0}\]
+
+\bigskip
+For a charged conductor, the electric field projected will always be normal to
+the surface, and will always be zero internally. This is because the conductor
+will inherently balance internal forces until \(0\) net field exists. Near to
+the surface of such a conductor, the electric field, normal to the surface as
+stated, will have field strength given by
+\[E = \frac{\sigma}{\epsilon_0}\]
+This is applicable on in areas where the conductor is sheet-like; either on a 
+flat area or on a small enough section of a curve to make the curve irrelevant.
+The reason for the behaviour of the conductor in this way is that the like 
+charges repel each other, forcing an even distribution across the outer surface
+of the conductor. \par
+This applies equally to a hollow conductor. For a torus shaped conductor, the
+inner radius will have no charges upon it. For this reason, lightning poses 
+minimal risk to a person inside a conducting vehicle like a car. Here the car
+acts as a \textit{Faraday cage}.
 
 \end{flushleft}
 \end{document}
