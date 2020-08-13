@@ -46,13 +46,11 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
-
 \newcommand{\dx}{\:\mathrm{d}x}
 \newcommand{\dy}{\:\mathrm{d}y}
-
 \newcommand{\mand}{\:\mathrm{and}\:}
-
 \newcommand{\limit}{\lim\limits}
+\newcommand{\sumninf}[1][1]{\sum\limits_{n = #1}^\infty}
 
 \pgfplotsset{compat = 1.16}
 
@@ -479,5 +477,137 @@ sin^2\left(\frac{n\pi}{3}\right) \leq 2\]
 Here, we attack the most complex part of the problem and construct two 
 equations which elegantly border it. We then use the limits of these equations
 to solve the overall limit.
+
+\subsection*{Series}
+A series arises when one attempts to sum up the values in a sequence. For
+a sequence \(\set{a_n}\), if we add each \(a_n\) in order, we create another
+sequence \(\set{s_n}\).
+\[s_1 = a_1\]
+\[s_2 = a_1 + a_2\]
+\[s_3 = a_2 + a_2 + a_2\]
+This \textit{sequence of partial sums} \(\set{s_n}\) may or may not converge.
+In the case that it does, we describe the sum \(S\) as
+\[S = \limit_{n\rightarrow\infty} s_n = \limit_{n\rightarrow\infty} 
+(a_1 + a_2 + \ldots + a_n)\]
+For example, we can find the sum of a sequence like so:
+\[a_n = \left(\frac{1}{2}\right)^n, n\geq 1\]
+\[s_1 = a_2 = \frac{1}{2}\]
+\[s_2 = a_1 + a_2 = \frac{3}{4}\]
+\[s_n = \frac{2^n - 1}{2^n} = 1 - \frac{1}{2^n}\]
+\[\limit_{n\rightarrow\infty}s_n = \limit_{n\rightarrow\infty} 1 - 
+\frac{1}{2^n} = \limit_{n\rightarrow\infty} 1 - \limit_{n\rightarrow\infty} 
+\frac{1}{2^n} = 1 - 0 = 1\]
+This is example is a \textit{geometric series}. More generally, a series with
+terms \(a_n\) is denoted with the sum
+\[s_n = \sumninf a_n\]
+Where the value on the bottom (\(n = 1\)) is the starting value of \(n\) and
+the value on the top is the value we limit towards. If the limit of \(s_n\)
+exists, the series converges. If it does not, the series diverges. For
+the sequence \(\set{n} = 1, 2, 3, 4, \ldots\) we have the series
+\[\sumninf n = 1 + 2 + 3 + 4 + 5 + \ldots\]
+Because the sequence and series both diverge to infinity, the series diverges.
+Decimal representations of numbers can be thought of as a series. If we take
+\[\set{\frac{1}{10^n}} = 0.1, 0.01, 0.001, \ldots\]
+\[\sumninf \frac{1}{10^n} = 0.1 + 0.01 + 0.001 + \ldots = 
+0.1111\ldots\]
+A general case exists, for a number \(x \in (0, 1)\) with the decimal digits
+\(d_1, d_2, \ldots\) then
+\[x = 0.d_1d_2d_3\ldots = \sumninf \frac{d_n}{10^n}\]
+It is important to note that a sequence differs from a sequence of partial sums
+differs from a series. The sequence of partial sums represents a \textit{finite
+approximation} of the sum of the sequence.
+
+\subsubsection*{Properties of Series}
+If \(\sumninf a_n\) and \(\sumninf b_n\) are converging series, and 
+\(c\in\R\backslash\set{0}\) is a constant then
+
+\begin{itemize}
+    \item \(\sumninf (a_n + b_n) = \sumninf a_n + \sumninf b_n\)also converges.
+    \item \(\sumninf (ca_n) = c\sumninf a_n\) and still converges. If 
+        \(\sumninf a_n\) diverges, then \(\sumninf (ca_n)\) also diverges.
+\end{itemize}
+
+\subsubsection*{Geometric Series}
+A geometric series has the form
+\[\sumninf[0] ar^n = \sumninf ar^{n - 1} = a + ar + ar^2 + ar^3 + \ldots\]
+Where \(a\in\R\backslash\set{0}\) and \(r\in\R\). If \(\abs{r} < 1\), the
+series will converge while if \(\abs{r} \geq 1\) the series will diverge.
+In the case that \(\abs{r} < 1\), we have that
+\[\sumninf[0]ar^n = \frac{a}{1 - r}\]
+In addition, there is a general form for a geometric series (though it is 
+somewhat less elegant)
+\[\sum_{k = 0}^n ar^k = \frac{a\left(1 - r^{n + 1}\right)}{1 - r}\]
+Though it must be noted that this formula is only valid for \(r\neq1\).
+
+\subsubsection*{Harmonic \(p\) Series}
+A harmonic \(p\) series has the form
+\[\sumninf\frac{1}{n^p}\]
+These series converge if \(p > 1\) and diverge if \(p \leq 1\). For instance
+\[\sumninf \frac{1}{n^2}\]
+Converges while
+\[\sumninf \frac{1}{n}\]
+Diverges. \par
+It is worth noting that thanks to the previously explored properties of series,
+we know that any multiple of a harmonic \(p\) series has the same divergence
+behaviour as it's base.
+
+\subsubsection*{Divergence Test}
+A test exists to determine whether a series diverges. If the limit of the 
+sequence the series is based on is not zero, then the series diverges. More
+precisely
+\[\limit_{n\rightarrow\infty} a_n \neq 0 \Rightarrow \sumninf a_n 
+\:\mathrm{diverges}\]
+If the limit is exactly \(0\), the series may converge or diverge and another
+test must be used to identify convergence or divergence.
+
+\subsubsection*{Comparison Test}
+For two positive series (all elements non-negative) of the forms
+\[\sumninf a_n \mand \sumninf b_n\]
+\begin{itemize}
+    \item if \(a_n \leq b_n\) for all \(n\) and \(\sumninf b_n\) converges, 
+        then \(\sumninf a_n\) converges.
+    \item if \(a_n \geq b_n\) for all \(n\) and \(\sumninf b_n\) diverges,
+        then \(\sumninf a_n\) diverges.
+\end{itemize}
+In general, we compare a given unknown series (\(a\) above) to a harmonic \(p\)
+series or a geometric series, because we know the behaviour of these in some 
+detail. As an example, we can try and identify the convergence or divergence
+of the following series.
+\[\sumninf \frac{3 + \frac{5}{n}}{2n^2 + n + 2}\]
+\[\frac{3 + \frac{5}{n}}{2n^2 + n + 2} \approx \frac{3}{2n^2}\]
+By identifying the most significant terms in the denominator and the numerator,
+we have identified that we expect the series to converge.
+\[\frac{3 + \frac{5}{n}}{2n^2 + n + 2} \leq \frac{8}{2n^2} = \frac{4}{n^2}\]
+Here, we wanted to simplify the denominator into something that we recognise
+and can deal with while making it larger. To do that, we would ideally like
+to reduce the term to have only a single term in both the numerator and 
+denominator. To simplify and enlarge the denominator, we can simply remove the
+\(n\) denominator of the \(5\), as we know \(n \geq 1\). Removing terms from 
+the denominator inherently makes the fraction larger, so we can just remove the
+\(n + 2\) term, rearranging into a harmonic \(p\) series.
+\[\sumninf \frac{4}{n^2} \:\mathrm{converges} \Rightarrow \sumninf \frac{3 + 
+\frac{5}{n}}{2n^2 + n + 2} \:\mathrm{converges}\]
+
+\subsubsection*{Ratio Test}
+For a positive term series of the form
+\[\sumninf a_n\]
+With the limit
+\[L = \limit_{n\rightarrow\infty} \frac{a_{n + 1}}{a_n}\]
+Then, this series has the following properties.
+\begin{itemize}
+    \item If \(L < 1\), the series converges
+    \item If \(L > 1\), the series diverges
+    \item If \(L = 1\), the ratio test is inconclusive.
+\end{itemize}
+The ratio test is most useful in situations where \(a_n\) contains an 
+exponential or factorial function of \(n\). For instance, we can figure out
+whether the following series converges or diverges.
+\[\sumninf \frac{10^n}{n!}\]
+\[\limit_{n\rightarrow\infty} \frac{10^{n + 1}}{(n + 1)!}\div\frac{10^n}{n!} = 
+\limit_{n\rightarrow\infty} \frac{10^{n + 1}}{(n + 1)!}\times\frac{n!}{10^n}
+= \limit_{n\rightarrow\infty} \frac{10^1}{1} \times \frac{n!}{(n + 1)!}\]
+\[ = \limit_{n\rightarrow\infty} \frac{10}{n + 1} = 0 \Rightarrow 
+\sumninf \frac{10^n}{n!}\:\mathrm{converges}\]
+
 \end{flushleft}
 \end{document}
