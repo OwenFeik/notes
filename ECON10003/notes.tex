@@ -2,6 +2,35 @@
 \renewcommand{\familydefault}{\sfdefault}
 
 \usepackage{commath}
+\usepackage{pgfplots}
+
+\newenvironment{simpleplot}[2]{
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                xmin = 0,
+                xmax = 6,
+                ymin = 0,
+                ymax = 6,
+                width = 12 cm,
+                height = 9 cm,
+                xlabel = #1,
+                xlabel near ticks,
+                xtick style = {draw = none},
+                xticklabels = \empty,
+                axis x line = bottom,
+                ylabel = #2,
+                ylabel near ticks,
+                ytick style = {draw = none},
+                yticklabels = \empty,
+                axis y line = left,
+                samples = 500
+            ]
+}{
+            \end{axis}
+        \end{tikzpicture}
+    \end {center}
+}
 
 \begin{document}
 \begin{flushleft}
@@ -307,6 +336,153 @@ information about the future. For this, we introduce an expected real interest
 rate:
 \[r^e = i - \pi^e\]
 Where \(\pi^e\) is the expected rate of inflation.
+
+\subsubsection*{Saving}
+
+Consumption and savings are two sides of the same coin; they represent the two
+ways one can use their capital. The relevance of this to macroeconomic theory 
+is that consumption makes up the majority of GDP in a modern economy. 
+Investment too contributes to GDP, often being a good indicator of movements in
+productivity over time. In general, savings and investment contribute to future
+productivity. \par
+Saving is specifically described in macroeconomics as holding capital without 
+using it. Investment is described distinctly to this. An individuals wealth is
+the sum of an individual's assets, both financial such as shares or savings and
+real, such as housing or resaleable goods. Saving increases an individuals 
+wealth. If they are consuming more than their income, they are 
+\textit{dis-saving}. Wealth has a significant impact on economic decisions. 
+
+\bigskip
+A distinction can be made between stock variables and flow variables. A stock
+variable describes a level, like a volume in a bath tub while a flow variable
+describes how much of something occurs per unit time (usually a quarter), 
+parallel to the flow rate of water into a bath tub. Wealth is a stock variable.
+Rate of saving is a flow variable. GDP is also a flow variable.
+
+\bigskip
+A variety of incentives exist for saving.
+\begin{itemize}
+    \item Lifecycle saving; people tend to borrow money when their income is
+    low and to save money when their income is high. This results in a flatter
+    consumption curve, maintaining a consistent quality of life despite 
+    changing income.
+    \item Precautionary saving; people save for unexpected events.
+    \item Bequest saving; people save for the next generation.
+\end{itemize}
+Several factors are indicative of saving in a group or time.
+\begin{itemize}
+    \item Real interest rates; opportunity cost of saving. A lower real 
+    interest rate incentivises present consumption.
+    \item Demographics. Age structure, etc are very important to savings 
+    levels.
+    \item Feelings about future events. People who foresee instability may have
+    more precautionary savings.
+\end{itemize}
+
+It is not only households that can save, firms and even the government can save
+for future events.
+
+\subsubsection*{Savings and Investment}
+
+In a closed economy, there is no trade. This is a commonly used model to 
+understand behaviours of an economy in a simpler setting. In this case,
+\[Y = C + I + G\]
+GDP is equal to consumption plus investement plus government expenditure. \(C\)
+and \(G\) are both considered consumption expenditure. This leaves \(I\) as the
+savings in the system, which can then be written as
+\[Y - C - G = I = S\]
+This essentially states that the lvel of production minus the level of
+consumption is equal to the level of savings, which in a closed economy must be
+equal to the level of investment. Savings can also be analysed in terms of 
+public and private savings.
+\[S = Y - C - G - T + T = (Y - C - T) + (T - G)\]
+Here, \(T\) stands for total taxation. \(Y - C - T\) is the total private 
+saving in the economy and \(T - G\) is the public saving in the economy, 
+equivalent to the government surplus.
+
+\subsubsection*{Investment}
+
+\textit{Capital stock} is the stock of durable goods, such as machinery that
+exist at a point in time and can be used as part of the production process.
+\textit{Investment} describes new expenditure on durable goods that increase
+the capital stock. This includes inventory investment such as the production of
+goods to be sold in future periods. Notably, purchasing financial goods such
+as shares is not investment in a macroeconomic sense.
+\[K_{t + 1} = (1 - \delta)K_t + I_t\]
+The above equation describes the relationship between capital and investment 
+for a future period. The total capital for the next period is given by the 
+capital of the present period multiplied by \(1\) minus the depreciation rate
+\(\delta\), plus the capital investment undertaken in the period. \par
+A variety of factors inform the decisions of a firm to invest. A framework for
+this requires several standard assumptions. The first is that capital is costly
+to acquire; that firms must pay an interest rate plus a depreciation cost for
+using capital. However, a trade off exists as increased capital stock increases
+output according to 
+\[y = F(k)\]
+It is assumed that an increase in \(k\) entails an increase in \(y\) i.e. 
+\(F^\prime(k) > 0\). It is also assumed that dimishing returns apply to this
+function, i.e. \(F^{\prime\prime}(k) < 0\). Finally, it is assumed that output
+is sold at a fixed price. To maximise profit in this instance, the following
+equation can be used
+\[\Pi(k) = pF(k) - (r + \delta)k\]
+Here, \(pF(k) = y\), \(r\) describes the interest payed on capital and \(\Pi\)
+describes the total profit for this level of \(k\). To maximise this, we set
+the derivative equal to \(0\) i.e.
+\[pF^\prime(k) - (r + \delta) = 0\]
+Here, the first term is the marginal revenue of capital while the second term
+is the marginal cost of capital. Examining this, we can identify the key
+determinants of investment decisions.
+\begin{itemize}
+    \item The marginal product of capital; a higher marginal product encourages
+        greater capital investment.
+    \item The output price as compared to the capital price; a higher output
+        price encourages higher capital investment.
+    \item The real interest rate; a higher interest rate encourages lower 
+        capital investment.
+    \item The rate of depreciation; a higher rate of depreciation also 
+        encourages lower capital investment.
+\end{itemize}
+
+\begin{simpleplot}{\(k\)}{\(pF^\prime(k)\)}
+    \addplot[ultra thick, red, ->] coordinates {(0, 2)(5, 2)}
+    node [above, pos = 0.8] {\((r + \delta)\)};
+    \addplot[ultra thick, blue, ->] {-2 * (0.5 * x)^(1/2) + 4}
+    node [above right, pos = 0.2] {\(pF^\prime(k)\)};
+    \addplot[thick, black, dashed] coordinates {(2, 0)(2, 2.5)}
+    node [above] {\(k^*\)};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 2, 2) {};
+\end{simpleplot}
+
+In the above plot, a function for marginal revenue of capital is plotted 
+against another for marginal cost of capital. Their intersection is the optimal
+level of capital, \(k^*\). A profit-maximising firm will invest an optimal
+quantity \(i^*\) to increase their level of capital to \(k^*\) at each unit
+time.
+
+\subsubsection*{Market for Loanable Funds}
+In all economies, there are some agents that wish to save and others that wish
+to invest. Interest rate is the price that adjusts to equate this market. With
+higher interest rates, individual saving is more incentivised, and firm 
+investment is disincentivised.
+
+\begin{simpleplot}{\(S(r) / I(r)\)}{\(r\)}
+    \addplot[ultra thick, red, ->] {x}
+    node [above left, pos = 0.9] {\(S_0(r)\)};
+    \addplot[ultra thick, blue, ->] {-1 * x + 5}
+    node [below left, pos = 0.7] {\(I(r)\)};
+    \addplot[ultra thick, red, ->] {x - 1}
+    node [below right, pos = 0.95] {\(S_1(r)\)};
+    \addplot[thick, black, dashed] coordinates {(2.5, 0)(2.5, 3.5)}
+    node [above] {\(t_0^*\)};
+    \addplot[thick, black, dashed] coordinates {(3, 0)(3, 3.5)}
+    node [above] {\(t_1^*\)};
+\end{simpleplot}
+
+The interest rate is determined by the relative attractiveness of saving \(S\)
+and investment \(I\). For example, in the above plot we see that a shock 
+incentivising savings, such as an increase in uncertainty about the future,
+has the effect of reducing the real interest rate. The real interest rate in
+many modern economies, including Australia, is around \(0-1\%\)
 
 \end{flushleft}
 \end{document}
