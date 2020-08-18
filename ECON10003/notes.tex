@@ -4,6 +4,8 @@
 \usepackage{commath}
 \usepackage{pgfplots}
 
+\setlength{\parskip}{.2cm}
+
 \newenvironment{simpleplot}[2]{
     \begin{center}
         \begin{tikzpicture}
@@ -476,6 +478,8 @@ investment is disincentivised.
     node [above] {\(t_0^*\)};
     \addplot[thick, black, dashed] coordinates {(3, 0)(3, 3.5)}
     node [above] {\(t_1^*\)};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 2.5, 2.5) {};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 3, 2) {};
 \end{simpleplot}
 
 The interest rate is determined by the relative attractiveness of saving \(S\)
@@ -483,6 +487,110 @@ and investment \(I\). For example, in the above plot we see that a shock
 incentivising savings, such as an increase in uncertainty about the future,
 has the effect of reducing the real interest rate. The real interest rate in
 many modern economies, including Australia, is around \(0-1\%\)
+
+\subsection*{The Labour Market}
+
+The labour market is an extremely important factor in the success of an 
+economy. It performs the essential task of allocating workers efficiently
+to important or valuable tasks. In addition, unemployment is a strong 
+contributor to long term unhappiness and personal dissatisfaction. \par
+When measuring a labour market, we need to measure both wages, as an indication
+of price, and unemployment as a measure of quantity. \par
+Wages are often measured through surveys of workers, asking for wages, hours
+worked, etc. This yields an hourly wage, the \textit{nominal} wage of the 
+worker, which can be evaluated in terms of purchasing power to find the 
+\textit{real wage}.
+
+\bigskip
+Measurement of employment rates is more complex. They are generally also 
+measured by survey. This process operates as follows.
+\begin{itemize}
+    \item An assessment of working age groups is performed, and a 
+        representative sample selected.
+    \item These people are asked whether they are employed, and then whether
+        they are searching for work. People who aren't employed or searching
+        for work are classified as ``out of the labour force''.
+    \item Labour force is the sum of employed and unemployed people, the total
+        working age group in the population.
+\end{itemize}
+
+It is important to notice the category of people who are out of the labour 
+force. For example, after the GFC, the unemployment rate in the United states
+repaired fairly rapidly, but the group of workers out of the labour force took
+much longer to re-enter the market. The rate of working age people who 
+participate in the labour market is the \textit{participation rate}. \par
+This high rate of non-participance can paint a more attractive picture of
+unemployment statistics. Participation rate is given by
+\[\frac{\mathrm{labour force}}{\mathrm{population}}\]
+
+\subsubsection*{Perfectly Competitive Model}
+
+A perfectly competitive model of the labour market is used to understand it.
+This model assumes that there is a very large number of workers as supply, and
+a very large number of firms demanding workers, therefore no individual workers
+or firms have market power. In addition, it assumes perfect information in the
+labour market; a fact which is a serious idealisation. \par
+In this setting, firms are seeking labourers to produce output. Thus demand for
+labour is pinned to demand for output. Workers seek employment to earn income 
+to increase their welfare. \par
+Here, a firm \(i\) has a production function \(f\) that takes inputs labour 
+\(l\) and capital \(k\), which is a assumed to be fixed in the short term, and
+produces an output quantity \(y\). All terms could be subscripted as e.g. 
+\(y_{i, t}\), indicating this is for firm \(i\) in period \(t\), but this has
+been omitted for clarity.
+\[y = f(k, l)\]
+The output function is assumed to be increasing with respect to both labour and
+capital, and also to have diminishing returns. A profit maximising firm will 
+seek to maximise the profit, given by 
+\[\Pi = pf(k, l) - wl - rk\]
+Here, \(\Pi\) is the total profit, for firm \(i\) in time period \(t\),
+\(p\) is the price payed for its goods, \(w\) is the cost of wages for a single
+worker \(l\) and \(r\) is the rent payed on each unit of capital \(k\). This
+assumes a depreciation rate \(\delta = 0\). If we assume that wages, rents and
+capital are fixed, then profit maximisation is undertaken through
+\[\frac{d \Pi}{d l} = p \frac{d f(k, l)}{d l} - w = 0\]
+i.e. the marginal product of labour is set equal to \(0\). This can be 
+rearranged to
+\[\frac{d f(k, l)}{d l} = \frac{w}{p}\]
+So we set the marginal product of labour equal to the real wage (which is 
+nominal wage divided by price level). This makes sense when we consider that
+while the workers productivity is greater than the cost of paying the worker,
+the firm should continue to hire workers, while when the marginal product is
+less than the real wage, the firm should reduce employment to increase profit. 
+
+\bigskip
+The incentive of a worker to take on labour is the wage. The standard 
+assumption is that an increase in wages results in increased attractiveness of
+labour, i.e. a rise in wages causes a positive supply shock. Demographic 
+changes can also affect supply. An example of this is the increasing 
+participation of women in the labour force over the course of the twentieth
+century. Wealthier individuals are also somewhat less incentivised to work.
+\par
+Age structure of a labour force also has a significant impact on labour supply.
+
+\bigskip
+While this idealised perfect market is useful, it has flaws. For example, it
+can't explain unemployment. In addition, it ignores the presence of real world
+regulation, like minimum wages, union influences, market power or imperfect
+information.
+
+\subsubsection*{Types of Unemployment}
+
+Several types of unemployment exist.
+\begin{itemize}
+    \item Frictional unemployment is the unemployment from people who have left
+        one job and are finding another.
+    \item Structural unemployment is the unemployment caused by a group of 
+        workers who lack skills which align with market demand.
+    \item Cyclical unemployment is caused by the behaviour of the overall 
+        economy, recession or boom, etc.
+\end{itemize}
+
+The natural rate of unemployment is the sum of the frictional and structural
+unemployment, while regulation is more able to address cyclical unemployment. 
+It can be difficult to survey and gather data on which type of unemployment
+individuals are under, which makes addressing different causes more of a 
+regulation challenge.
 
 \end{flushleft}
 \end{document}
