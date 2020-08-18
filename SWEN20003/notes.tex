@@ -3,6 +3,8 @@
 \usepackage{xcolor}
 \usepackage{listings}
 
+\setlength{\parskip}{.2cm}
+
 \lstset{
     frame = tb,
     language = Java,
@@ -378,6 +380,134 @@ very useful to define.
         }
     }
 \end{lstlisting}
+
+\subsection*{Packages}
+
+A package is Java's version of a library in C or module in Python. They allow
+you to group classes to import at a later date. Packages prevent naming 
+conflicts, allowing you to have two classes with the same name in the program
+without issue. Packages also give greater powers of encapsulation, improving
+our ability to control visibility or hide information.
+
+\bigskip
+To declare a package, we must have a \code{package} statement at  the top of
+a file. This statement states the location of the file within the directory
+structure of the package.
+
+\begin{lstlisting}
+    package <..>.<.>;
+
+    // e.g.
+
+    package utilities.shapes;
+
+    public class Circle {
+
+    }
+\end{lstlisting}
+
+We can then reuse the classes from a package with the \code{import} statement.
+One can either import all of the classes from the package, or specific classes.
+
+\begin{lstlisting}
+    import <packageName>.*; // All classes in packageName
+    import <packageName>.<className>; // Just className
+\end{lstlisting}
+
+These classes are sourced from a directory specified via a Java environment 
+variable, \code{CLASSPATH}. All classes in the current directory are included
+in an unnamed package called the \code{default} package. The classes will be
+available as long as \code{.} is included in \code{CLASSPATH}.
+
+\subsection*{Information Hiding}
+
+Through classes, we gain access to power grouping tools which offer us 
+encapsulation. However, thus far we have exclusively used \code{public} 
+methods, losing some of the power available to us in Java's object oriented
+toolkit. Through information hiding tools such as method visibility modifiers,
+we gain the ability to hide information from external methods. \par
+This allows a specific interface with the class (through getters, setters, etc)
+to be defined, which can be maintained while the internal functioning of the
+class can be modified at will. \par
+In Java, we have three visibility modifiers.
+
+\begin{lstlisting}
+    public class Example {
+        public void methodOne {
+            // This method is available in all scopes.
+        }
+
+        protected void methodThree {
+            /*
+             * This method is visible to this class, as well as all
+             * subclasses and other classes in the same package.
+             */
+        }
+
+        void methodFour {
+            /*
+             * If no visibility is specified, the default visibility
+             * is assumed. This is visible within the class and the
+             * package, but not to subclasses or external code.
+             */
+        }
+
+        private void methodTwo {
+            /*
+             * This method is visible only within the scope
+             * of this class. It is not visible to subclasses,
+             * and will not be inherited.
+             */
+        }
+    }
+\end{lstlisting}
+
+General form form a class follows the following guidelines.
+
+\begin{itemize}
+    \item All attributes are \code{private} and are accessed through 
+        \code{public} getter and setter methods.
+    \item Methods which should not be called externally are \code{private},
+        while those that are intended for external use are \code{public}.
+\end{itemize}
+
+\subsubsection*{Mutability}
+
+A class that contains \code{public} mutator methods, methods which alter its
+instance variables is a \textit{mutable class}, and instances of this class
+can be described as \textit{mutable objects}. On the other hand, classes with
+no methods which edit instance variables are \textit{immutable}. \par
+In general, an immutable class will lack setter methods. It may also have 
+\code{final} attributes. All attributes should be set by the constructor.
+
+\subsubsection*{Delegation}
+
+A class can \textit{delegate} responsibilities to other calsses. The object can
+invoke methods of other objects through \textit{containership}. In this case,
+the two classes have an \textit{association} relationship. \par
+This essentially refers to using classes as data types. Rather than have an 
+object store a series of \(x\) and \(y\) coordinates, I might create a point
+class and store an array of points. Now, my parent class contains points and is
+associated with them. It might delegate the function of calculating distance
+between points to the point class. \par
+In doing this, we achieve seperation of concerns, making it easier to test the
+behaviour of isolated components and sub-components rather than having to
+deal with what might be an extremely complex single class.
+
+\subsubsection*{Wrapper Classes}
+
+Wrapper classes in Java are essentially extensions of the primitive data types,
+which add some additional functionality and allow the primitive data types to
+be treated as classes. They are the same as their primitive counterparts, 
+except that they change to the class naming convention. For example, 
+\code{double} has the wrapper class \code{Double}. This convention is broken
+in two instances, with \code{int} becoming \code{Integer} and \code{char} 
+becoming \code{Character}. \par
+The wrapper classes add functionality to their primitives like 
+\code{Integer.parseInt}. Every wrapper has a parse function of this form. \par
+When these wrapper classes were introduced, the concepts of boxing and unboxing
+were introduced, which allow the simply conversion back and forth from 
+primitive to wrapper.
 
 \end{flushleft}
 \end{document}
