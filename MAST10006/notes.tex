@@ -609,5 +609,133 @@ whether the following series converges or diverges.
 \[ = \limit_{n\rightarrow\infty} \frac{10}{n + 1} = 0 \Rightarrow 
 \sumninf \frac{10^n}{n!}\:\mathrm{converges}\]
 
+\section*{Hyperbolic Functions}
+
+To deal with hyperbolic functions, it can help to revise a few function 
+properties. Even functions have the property that
+\[f(-x) = f(x)\]
+For example, \(x^2\) is an even function, as is \(cos(x)\). An odd function
+has the property that
+\[f(-x) = -f(x)\]
+They have a kind of rotational symmetry, where a rotation by \(\pi\) doesn't
+alter the graph. \(sin(x)\) and \(x^3\) are odd functions.
+
+\bigskip
+The first hyperbolic function is the hyperbolic cosine function, \(\cosh\), 
+often pronounced as it's written (``cosh'').
+\[\cosh(x) = \frac{1}{2}(e^x + e^{-x})\]
+\(\cosh\) is an even function. At \(0\), it is equal to one, and the two sides
+rise evenly on each side. It essentially looks like a parabola. 
+The plot of \(\cosh\) is below.
+
+\begin{plot}[
+    xmin = -3,
+    xmax = 3,
+    ymin = -1,
+    ymax = 6
+]
+    \addplot[thick, blue] {cosh(x)} 
+    node[right, pos = 0.6, xshift = 0.2cm] {\(\cosh(x)\)};
+\end{plot}
+
+The second hyperbolic function is hyperbolic sine, \(\sinh\), often read as
+``shine''. It is defined as
+\[\sinh(x) = \frac{1}{2}(e^x - e^{-x})\]
+\(\sinh\) has a \(x\)-intercept at \(0\). It is an odd function. The plot of
+\(\sinh\) is below.
+
+\begin{plot}[
+    xmin = -3,
+    xmax = 3,
+    ymin = -6,
+    ymax = 6
+]
+    \addplot[thick, blue] {sinh(x)} 
+    node[right, pos = 0.6, xshift = 0.2cm] {\(\sinh(x)\)};
+\end{plot}
+
+To complete the set, we have hyperbolic tangent, \(\tanh\), often read as 
+``than''. It is defined as the quotient of \(\sinh\) on \(\cosh\), i.e.
+\[\tanh(x) = \frac{\sinh(x)}{\cosh(x)} = \frac{e^x - e^{-x}}{e^x + e^{-x}}\]
+\(\tanh\) has the range \((-1, 1)\), with an \(x\)-intercept at \(0\). It is an
+odd function, due to the presence of \(\cosh\) in it's definition. The plot of
+\(\tanh\) is below.
+
+\begin{plot}[
+    xmin = -5,
+    xmax = 5,
+    ymin = -2,
+    ymax = 2
+]
+    \addplot[thick, red] {tanh(x)}
+    node[above, pos = 0.8] {\(\tanh(x)\)};
+\end{plot}
+
+The trigonometric functions have the trigonometric identity
+\[\cos^2(\theta) + \sin^2(\theta) = 1\]
+Which mirrors the form of the equation of a circle, \(x^2 + y^2 = r\). This
+tells us that a \((\sin(\theta), \cos(\theta))\) pair encodes a position on
+the unit circle. \par
+The hyperbolic functions mirror this behaviour for a hyperbola 
+(\(x^2 - y^2 = 1)\)), having the property that \(\cosh^2(t) - \sinh^2(t) = 1\).
+i.e. for a pair \((\cosh(t), \sinh(t))\), a point on the hyperbola 
+\(x^2 - y^2 = 1\) is uniquely encoded. Only points on the right hand side of 
+the hyperbola are encoded in this way.
+
+\begin{plot}[
+    xmin = 0,
+    xmax = 3,
+    ymin = -3,
+    ymax = 3
+]
+    \addplot[thick, red] {sqrt(x^2 - 1)};
+    \addplot[thick, red] {-sqrt(x^2 - 1)};
+    \node[above left, red] at (axis cs: 2, 2) {\(x^2 + y^2 = 1\)};
+
+    \node[circle, fill, inner sep = 3pt] at (axis cs: 1, 0) {};
+    \node[above left, yshift = 0.2cm] at (axis cs: 1, 0) 
+    {\(\cosh(0), \sinh(0)\)};
+\end{plot}
+
+\subsubsection*{Hyperbolic Identities}
+
+We can use the relationship between \(\cosh\) and \(\sinh\) to solve equations.
+For example, in the following case we can find \(\sinh\) and \(\tanh\) from the
+value of \(\cosh\) and the fact that \(x < 0\).
+\[\cosh(x) = \frac{13}{12}\]
+\[\cosh^2(x) - \sinh^2(x) = 1 \Rightarrow \sinh^2(x) = 
+\left(\frac{13}{12}\right)^2 - 1 \Rightarrow \]
+\[\sinh(x) = \sqrt{\frac{169}{144} - 1} = \sqrt{\frac{25}{144}} 
+= \pm \frac{5}{12}\]
+\[x < 0 \Rightarrow \sinh(x) = -\frac{5}{12}\]
+\[\tanh(x) = \frac{\sinh(x)}{\cosh(x)} = \frac{-\frac{5}{12}}{\frac{13}{12}} 
+= -\frac{5}{13}\]
+
+The key identity that allowed us to solve this was the fundamental hyperbolic
+identity, that of
+
+\begin{formulalist}
+    \(\cosh^2(x) - \sinh^2(x) = 1\) \\
+\end{formulalist}
+
+A variety of other more specialised identities also exist, beginning with 
+the addition formulae.
+
+\begin{formulalist}
+    \(\sinh(x + y) = \sinh(x)\cosh(y) + \cosh(x)\sinh(y)\) \\
+    \(\cosh(x + y) = \cosh(x)\cosh(y) + \sinh(x)\sinh(y)\) \\
+    \(\sinh(x - y) = \sinh(x)\cosh(y) - \cosh(x)\sinh(y)\) \\
+    \(\sinh(x + y) = \cosh(x)\cosh(y) - \sinh(x)\sinh(y)\) \\
+\end{formulalist}
+
+We also have the double angle formulae, just as with trigonometric functions.
+
+\begin{formulalist}
+    \(\sinh(2x) = 2\sinh(x)\cosh(x)\) \\
+    \(\cosh(2x) = \cosh^2(x) + \sinh^2(x)\) \\
+    \(\cosh(2x) = 2\cosh^2(x) - 1\) \\
+    \(\cosh(2x) = 2\sinh^2(x) + 1\) \\
+\end{formulalist}
+
 \end{flushleft}
 \end{document}
