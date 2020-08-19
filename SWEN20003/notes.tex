@@ -459,6 +459,12 @@ In Java, we have three visibility modifiers.
              * and will not be inherited.
              */
         }
+
+
+        /*
+         * The order for modifiers is
+         * <visibility> <static> <-> <final> <type> 
+         */
     }
 \end{lstlisting}
 
@@ -508,6 +514,101 @@ The wrapper classes add functionality to their primitives like
 When these wrapper classes were introduced, the concepts of boxing and unboxing
 were introduced, which allow the simply conversion back and forth from 
 primitive to wrapper.
+
+\subsection*{Arrays}
+
+Arrays are useful when dealing with a large number of objects of the same type.
+They are declared as follows. 
+
+\begin{lstlisting}
+    <type>[] <name>;
+    <type> <name>[];
+
+    // An array must be initialised.
+    // two methods for this:
+
+    int[] array = {0, 1, 2, 3};
+    int[] array = new int[100];
+\end{lstlisting}
+
+An array is a reference to an object, just like an instance of a class. 
+Assigning one array to another will result in reference equality. \par
+Multi-dimensional arrays (arrays of arrays) are available in Java. For example:
+
+\begin{lstlisting}
+    // 10 arrays of 10 items each
+    int[][] nums = new int[10][10];
+
+    // 10 arrays without defined length
+    int[][] nums = new int[10][];
+\end{lstlisting}
+
+Primitive arrays are initialised to \(0\). Object arrays are initialised to 
+\code{null}. Arrays have an attribute \code{.length} which returns the number
+of objects the array can contain. Array equality is tested as follows, using
+the \code{java.util.Arrays} class.
+
+\begin{lstlisting}
+    import java.util.Arrays;
+
+    int[] arr1 = {1, 2, 3};
+    int[] arr2 = {4, 5, 6};
+
+    Arrays.equals(arr1, arr2);
+\end{lstlisting}
+
+\code{java.util.Arrays} also offers a few other useful methods.
+
+\begin{lstlisting}
+    import java.util.Arrays;
+
+    int[] arr1 = {1, 3, 2};
+
+    Arrays.sort(arr1);
+    System.out.println(Arrays.toString(arr1));
+\end{lstlisting}
+
+A for-each loop is available to arrays.
+
+\begin{lstlisting}
+    int[] arr = {0, 1, 2, 3, 4};
+
+    for (int a: arr) {
+        System.out.println(a);
+    }
+\end{lstlisting}
+
+\subsection*{Strings}
+
+A \code{String} is a class which stores a sequence of characters. They can
+be initialised as literals or manually. Quotes in strings must be escaped.
+
+\begin{lstlisting}
+    "\n" // newline
+    "\t" // tab
+    "\"" // quotation mark
+\end{lstlisting}
+
+\code{+} can be used to concatenate strings, in addition to any other object
+with a \code{toString} method. To get the length of a \code{String}, we have
+\code{String.length()}; note that this is not an attribute as in the array.
+Strings have some other useful methods
+
+\begin{lstlisting}
+    s = "Hello World";
+    s.toUpperCase(); // returns new String
+    s.split(" "); // returns array of Strings
+    s.contains("Hello"); // returns a boolean 
+    s.indexOf("Hello"); // returns an integer
+    s.substring(2, 7); // returns new String
+\end{lstlisting}
+
+Because \code{String} is an immutable class, modifying operations will return
+a new \code{String} rather than modifying the original. Strings with the same
+characters will have the same reference by default, however if one creates an
+indentical string using \code{new}, they will have different references. It is
+therefore better to use \code{.equals()} rather than \code{==} for string 
+comparison.
 
 \end{flushleft}
 \end{document}
