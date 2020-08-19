@@ -1,7 +1,10 @@
 \documentclass[12pt]{report}
 \renewcommand{\familydefault}{\sfdefault}
 
+\usepackage{amssymb}
 \usepackage{pgfplots}
+
+\setlength{\parskip}{.2cm}
 
 \newcommand{\dx}{\:\mathrm{d}x}
 
@@ -306,7 +309,8 @@ in the above equation tells us that force at right angles to the field does
 not entail a loss in potential energy, and also allows us to use the equation
 in the general case through the use of vector arguments.
 
-\bigskip
+\subsubsection*{Electric Potential}
+
 Electric potential energy, \(U\) differs from electric potential \(V\).
 \begin{itemize}
     \item While \(U\) is a property of a system of charges and interacting 
@@ -330,6 +334,40 @@ Potential itself has no meaning; only differences in potential have meaning.
 Therefore, we can define zero according to convenience. Usually this is done
 as either a charge at infinite distance or the charge of the earth. \par
 In general \(E\) points towards regions of low \(V\) and away from high \(V\).
+If one moves perpendicular to a field line through an electric field, one is
+traversing an equipotential line, moving about without changing potential. For
+a point charge, the electric potential at a distance \(r\) is given by
+\[\frac{1}{4\pi\epsilon_0}\frac{Q}{r} = \frac{kQ}{r}\]
+It is directly proportional to distance. For an infinite line of charge, the
+change in potential when moving from position \(r_1\) to position \(r_2\) is
+given by
+\[V_2 - V_1 = \Delta V = -\frac{\lambda}{2\pi\epsilon_0}
+\log\left(\frac{r_2}{r_2}\right)\]
+For a hollow conductor, such as a hollow sphere, the potential inside the 
+conductor must be the same as the potential at the surface. \par
+To find the electric potential at a point \(P\) affected by multiple charges,
+one can simply sum the potential of the individual charges to find the 
+resultant potential at \(P\).
+\[V(P) = V_1(P) + V_2(P) + \ldots + V_n(P) = \frac{U}{q}\]
+This is equivalent to the potential divided by the charge.
+
+\subsubsection*{Pointy Conductors}
+
+Consider a conductor which at one end comes to a point. This can be 
+approximated by considering a large sphere in proximity to a smaller sphere,
+connected by an conductor between the two. In this case, the potential of the
+system must be uniform, and therefore a greater proportion of the system's 
+charge must be distributed around the radius of the larger sphere. In fact,
+the ratio of charges is equivalent to the ratio of the radii, i.e.
+\[\frac{q_1}{q_2} = \frac{r_1}{r_2}\]
+If we then consider the electric field around each sphere, we find that for
+a larger sphere \(1\) and a smaller sphere \(2\)
+\[\frac{E_1}{E_2} = \frac{q_2}{q_2}\frac{r_2^2}{r_1^2} = \frac{r_2}{r_1}\]
+\[\therefore r_2 < r_1 \Rightarrow E_2 > E_1\]
+To summarise, a smaller radius implies a larger electric field. It is for this
+reason that lightning tends to strike sharp points, such as the Eiffel Tower.
+For the same reason it is dangerous to be atop a mountain during a 
+thunderstorm.
 
 \end{flushleft}
 \end{document}
