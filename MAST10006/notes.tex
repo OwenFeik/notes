@@ -31,6 +31,30 @@
     \end {center}
 }
 
+\newenvironment{smallplot}[1][
+    xmin = -5,
+    xmax = 5,
+    ymin = -5,
+    ymax = 5
+]{
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                samples = 1000,
+                #1,
+                width = 8cm,
+                height = 6cm,
+                xlabel = \(x\),
+                ylabel = \(y\),
+                axis lines = middle,
+                restrict y to domain = -10:10
+            ]
+}{
+            \end{axis}
+        \end{tikzpicture}
+    \end {center}
+}
+
 \newenvironment{formulalist}{
     \renewcommand{\arraystretch}{2}
     \begin{center}    
@@ -51,6 +75,10 @@
 \newcommand{\mand}{\:\mathrm{and}\:}
 \newcommand{\limit}{\lim\limits}
 \newcommand{\sumninf}[1][1]{\sum\limits_{n = #1}^\infty}
+\newcommand{\derivx}[1]{\frac{d}{dx}\left[#1\right]}
+
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\cosech}{cosech}
 
 \pgfplotsset{compat = 1.16}
 
@@ -736,6 +764,66 @@ We also have the double angle formulae, just as with trigonometric functions.
     \(\cosh(2x) = 2\cosh^2(x) - 1\) \\
     \(\cosh(2x) = 2\sinh^2(x) + 1\) \\
 \end{formulalist}
+
+\subsubsection*{Reciprocal Hyperbolic Functions}
+
+Three reciprocal hyperbolic functions exist. These are
+\[\sech(x) = \frac{1}{\cosh(x)}\]
+\[\cosech(x) = \frac{1}{\sinh}(x)\]
+\[\coth(x) = \frac{1}{\tanh(x)} = \frac{\cosh(x)}{\sinh(x)}\]
+The plots of these functions are below.
+
+\bigskip
+\begin{figure}[h!]
+    \makebox[\textwidth]{
+        \hspace{-2.5cm}
+        \begin{minipage}{.3\textwidth}
+            \begin{smallplot}
+                \addplot[thick, blue] {1/cosh(x)}
+                node[above right, pos = 0.6] {\(\sech(x)\)};
+            \end{smallplot}
+        \end{minipage}
+        \hspace{2.5cm}
+        \begin{minipage}{.3\textwidth}
+            \begin{smallplot}
+                \addplot[thick, blue] {1/sinh(x)}
+                node[above right, pos = 0.8] {\(\sinh(x)\)};
+            \end{smallplot}
+        \end{minipage}
+        \hspace{2.5cm}
+        \begin{minipage}{.3\textwidth}
+            \begin{smallplot}
+                \addplot[thick, red] {1/tanh(x)}
+                node[above right, pos = 0.8] {\(\coth(x)\)};
+            \end{smallplot}
+        \end{minipage}
+    }
+\end{figure}
+\bigskip
+
+These functions have the associated identities
+
+\begin{formulalist}
+    \(\cosh^2(x) - \sinh^2(x) = 1\) \\
+    \(\coth^2(x) - 1 = \cosech^2(x)\) \\
+    \(1 - \tanh^2(x) = \sech^2(x)\) \\
+\end{formulalist}
+
+\subsubsection*{Derivatives of Hyperbolic Functions}
+
+\begin{formulalist}
+    \(\derivx{\cosh(x)} = \sinh(x)\) \\
+    \(\derivx{\sinh(x)} = \cosh(x)\) \\
+    \(\derivx{\tanh(x)} = \sech^2(x)\) \\
+    \(\derivx{\sech(x)} = -\sech(x)\tanh(x)\) \\
+    \(\derivx{\cosech(x)} = -\cosech(x)\coth(x) \:(x \neq 0)\) \\
+    \(\derivx{\coth(x)} = -\cosech^2(x) \:(x \neq 0\) \\ 
+\end{formulalist}
+
+These derivatives bear some resemblance to trigonometric derivatives,
+however it is worth noting that no negative signs appear when taking
+derivatives of \(\sinh\) and \(\cosh\) as they do with trigonometric
+functions.
 
 \end{flushleft}
 \end{document}
