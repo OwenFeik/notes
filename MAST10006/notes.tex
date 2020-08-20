@@ -5,9 +5,14 @@
 \usepackage{amssymb}
 \usepackage{bbold}
 \usepackage{commath}
+\usepackage{environ}
 \usepackage{pgfplots}
+\usepackage{placeins}
 
-\newenvironment{plot}[1][
+\usetikzlibrary{external}
+\tikzexternalize
+
+\NewEnviron{plot}[1][
     xmin = -5,
     xmax = 5,
     ymin = -5,
@@ -25,13 +30,13 @@
                 axis lines = middle,
                 restrict y to domain = -10:10
             ]
-}{
+            \BODY\                
             \end{axis}
         \end{tikzpicture}
     \end {center}
 }
 
-\newenvironment{smallplot}[1][
+\NewEnviron{smallplot}[1][
     xmin = -5,
     xmax = 5,
     ymin = -5,
@@ -49,7 +54,7 @@
                 axis lines = middle,
                 restrict y to domain = -10:10
             ]
-}{
+            \BODY\
             \end{axis}
         \end{tikzpicture}
     \end {center}
@@ -79,6 +84,9 @@
 
 \DeclareMathOperator{\sech}{sech}
 \DeclareMathOperator{\cosech}{cosech}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arctanh}{arctanh}
 
 \pgfplotsset{compat = 1.16}
 
@@ -773,7 +781,7 @@ Three reciprocal hyperbolic functions exist. These are
 \[\coth(x) = \frac{1}{\tanh(x)} = \frac{\cosh(x)}{\sinh(x)}\]
 The plots of these functions are below.
 
-\bigskip
+\FloatBarrier
 \begin{figure}[h!]
     \makebox[\textwidth]{
         \hspace{-2.5cm}
@@ -799,7 +807,7 @@ The plots of these functions are below.
         \end{minipage}
     }
 \end{figure}
-\bigskip
+\FloatBarrier
 
 These functions have the associated identities
 
@@ -824,6 +832,63 @@ These derivatives bear some resemblance to trigonometric derivatives,
 however it is worth noting that no negative signs appear when taking
 derivatives of \(\sinh\) and \(\cosh\) as they do with trigonometric
 functions.
+
+\subsubsection*{Inverse Hyperbolic Functions}
+
+Finally, inverses of some of the hyperbolic functions exist. For
+\(\sinh(x)\), we have the inverse function \(\arcsinh\). This function can
+also be written in terms of a logarithm, which makes sense as it is the inverse
+of an exponential function.
+\[\arcsinh = \log(x + \sqrt{x^2 + 1})\]
+Because \(\sinh\) is a nice one-to-one function, it has a simple inversion 
+function, pictured below.
+
+\begin{plot}
+    \addplot[thick, blue, dashed, <->] {sinh(x)}
+    node[left, pos = 0.3] {\(\sinh(x)\)};
+    \addplot[thick, blue, <->] {ln(x + sqrt(x^2 + 1))}
+    node[above left, pos = 0.9] {\(\arcsinh(x)\)};
+\end{plot}
+
+For \(\cosh\), the domain of \(\cosh\) must be restricted to yield a one-to-one
+function. The domain is therefore restricted to \([0, \infty)\). Because the 
+range of \(\cosh\) is \([1, \infty)\), this is the domain of \(\arccosh\).
+\[\arccosh = \log(x + \sqrt{x^2 - 1}), \:(x \geq 1)\]
+The plot of \(\arccosh\) is below.
+
+\begin{plot}
+    \addplot[thick, blue, dashed, <->] {cosh(x)}
+    node[left, pos = 0.4, xshift = -0.2cm] {\(\cosh(x)\)};
+    \addplot[thick, blue, ->] {ln(x + sqrt(x^2 - 1))}
+    node[below right, pos = 0.6] {\(\arccosh(x)\)};
+\end{plot}
+
+This means that \(\arccosh(\cosh(x)) = \abs{x}\) rather than \(x\). The final
+inverse is \(\arctanh\). As \(\tanh\) is one-to-one, this function is a perfect
+inverse.
+\[\frac{1}{2}\log\left(\frac{1 + x}{1 - x}\right), \:(-1 < x < 1)\]
+The range of \(\tanh\) because the domain of \(\arctanh\), so \(\arctanh\)
+accepts values in the range \((-1, 1)\) and spits out values in \(\R\).
+
+\begin{plot}
+    \addplot[thick, red, dashed, <->] {tanh(x)}
+    node[above, pos = 0.8] {\(\tanh(x)\)};
+    \addplot[thick, red, <->] {0.5*ln((1 + x)/(1 - x))}
+    node[left, pos = 0.1] {\(\arctanh(x)\)};
+\end{plot}
+
+The inverse reciprocal hyperbolic functions are also defined, though they are 
+seldom used. The formulas for the inverse functions are obtained in the usual
+way of obtaining inverse functions, by taking \(y = \arcsinh(x)\) and then 
+solving for \(x\) in terms of \(y\).
+
+\subsubsection*{Derivatives of Inverse Hyperbolic Functions}
+
+\begin{formulalist}
+    \(\derivx{\arcsinh(x)} = \frac{1}{\sqrt{x^2 + 1}}\) \\
+    \(\derivx{\arccosh(x)} = \frac{1}{\sqrt{x^2 - 1}}, \:(x > 1)\) \\
+    \(\derivx{\arctanh(x)} = \frac{1}{1 - x^2}, \:(-1 < x < 1)\) \\
+\end{formulalist}
 
 \end{flushleft}
 \end{document}
