@@ -5,3 +5,5 @@
 *.pdf
 *.synctex.gz
 *.auxlock
+*.md5
+*.dpth
