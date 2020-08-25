@@ -480,7 +480,7 @@ limits involving sequences.
 \limit_{n\rightarrow\infty} \left(\frac{n - 2}{n}\right)^n + 
 \limit_{n\rightarrow\infty} \frac{4n^2}{3^n}\]
 \[\left(\frac{n - 2}{n}\right)^n = \left(1 - \frac{2}{n}\right)^n \Rightarrow
-\limit_{n\Rightarrow\infty} \left(\frac{n - 2}{n}\right)^n = e^{-2} 
+\limit_{n\rightarrow\infty} \left(\frac{n - 2}{n}\right)^n = e^{-2} 
 \Rightarrow\]
 \[\limit_{n\rightarrow\infty} \left(\frac{n - 2}{n}\right)^n + 
 \limit_{n\rightarrow\infty} \frac{4n^2}{3^n} = e^{-2} + 0 = e^{-2}\]
@@ -889,6 +889,34 @@ solving for \(x\) in terms of \(y\).
     \(\derivx{\arccosh(x)} = \frac{1}{\sqrt{x^2 - 1}}, \:(x > 1)\) \\
     \(\derivx{\arctanh(x)} = \frac{1}{1 - x^2}, \:(-1 < x < 1)\) \\
 \end{formulalist}
+
+\section*{Complex Numbers}
+
+Complex numbers extend the natural, integer, rational and real numbers. By 
+introducing the number \(i\) with the property that \(i^2 = -1\), we gain
+access to another set of numbers of the form
+\[\C = \set{x + yi | x, y \in \R}\]
+This allows us to do some powerful things, like to solve any polynomial
+function with complex coeffecients. Their basic operations follow. The most
+basic is of course addition, where one just adds the relevant terms.
+\[(2 + 3i) + (4 + i) = 6 + 4i\]
+Multiplication is performed piecewise in F.O.I.L. style.
+\[(1 + i)(2 + i) = 2 + i + 2i + i^2 = 1 + 3i\]
+The complex conjugate of a complex number is found by multiplying the imaginary
+part (the multiple of \(i\)) by \(-1\).
+\[z = x + iy \Rightarrow \bar{z} = x - iy\]
+The modulus of a complex number can be thought of as the vector norm of the
+number and is calculated as
+\[z = x + iy \Rightarrow \abs{z} = \sqrt{x^2 + y^2}\]
+The argument of a complex number is the angle it forms with the positive real
+axis (usually the \(x\)-axis). This argument \(\theta\) has the property that
+\[\tan(\theta) = \frac{y}{x}\]
+Using this argument we can write a complex number in trigonometric polar form,
+so where \(r\) is the norm of the complex number it can be written as
+\[z = r(\cos(\theta) + i\sin(\theta))\]
+The argument \(\theta\) is non-unique, and so the concept of the principal 
+argument as the single possible \(\theta\) which lies in the interval 
+\((-\pi, \pi]\) is called the \textit{principal argument} and is unique.
 
 \end{flushleft}
 \end{document}
