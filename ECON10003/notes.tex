@@ -685,8 +685,118 @@ struggled to explain prolonged severe unemployment. \par
 Keynes' submission was that the government should attempt to increase spending
 to stimulate a deflationary and underactive economy. Some economists attribute
 the relatively minor effect of the GFC as compared to the Great Depression
-to application of macroeconomic theory.
+to application of macroeconomic theory. \par
+Keynes' model had some key assumptions. He assumed that prices are static in
+the short term, and that expenditure plans are realised, with the exclusion of
+investments by firms. \par
+His model introduced the idea that expenditure or demand is the key 
+variable in terms of output. He also emphasised the importance of expectations
+and certainty for decision making. His findings had important implications,
+suggesting that government policy can help stabilise the economy.
 
+\subsubsection*{Assumptions of the Model}
+
+Aggregate expenditure is the total expenditure in the economy, effectively
+equivalent to GDP.
+\[AE = C + I + G + X - M\]
+In this course, it is assumed that all imports are for consumption. In addition
+\(C^d\) is defiend as the consumption demand for domestic output. This tells
+us that the total consumption is given by \(C^d + M\).
+\[C = C^d + M\]
+\[AE = C^d + I + G + X\]
+It is assumed that if they so desire, any group may purchase goods. Firms can
+always invest to the level they desire. They need to make expenditure decisions
+as to their capital investment, and their desired change in inventory. While we
+assume they can invest as much as they like, we assume they cannot perfectly 
+control the inventory investment. If we take \(I^P\) as planned investment, the
+actualy investment \(I\) may be more or less than this amount dependent on
+sales figures. Using this value, we can introduce planned aggregate expenditure
+as
+\[PAE = C^d + I^P + G + X\]
+
+\subsubsection*{Consumption}
+
+To model consumption in a Keynesian model, we use a Keynesian consumption 
+function.
+\[C^d = \bar{C} + c(Y - T)\]
+Here, \(c\) is a coefficient known as the marginal propensity to consume, in
+the range \((0, 1)\). \(\bar{C}\) is the necessary consumption expenditure, the
+subsistence expenditure. \(Y\) is the nominal income and \(T\) the taxation on
+that income. This modelling assumes that an increase in take home pay implies
+an increase in consumption.
+
+\subsubsection*{Government}
+
+It is assumed that government spending is exogenous; that it is simply an input
+to the model. This is useful because it can be used to model policy decisions.
+\par
+A simple taxation function is used of the form
+\[T = \bar{T} + tY\]
+Here, \(\bar{T}\) is a taxation lump sum while \(tY\) is a term with a 
+coefficient \(t\) known as the marginal rate of tax on income multiplied by the
+total income \(Y\). \par
+Exports are taken to be exogenous, dependent on global demand on which 
+Australia has little impact.
+
+\subsubsection*{Investment}
+
+Planned investment is taken to be exogenous, with the level of capital
+investment they would like to achieve a constant to a firm. Firms want to 
+maintain some static level of inventory, independent of their income. In 
+reality investment depends upon the real interest rate, and the ``animal 
+spirit'' of the investor; what they believe about the value of investments 
+moving into the future (bull, bear, etc).
+
+\subsubsection*{Equilibrium}
+
+In a Keynesian model, we take \(Y = PAE\) i.e. output is equal to planned
+aggregate investment to be an equilibrium condition. Therefore, because 
+the only way \(PAE\) can exceed or fail to meet \(Y\), as all other values
+are given, is through deviations of \(I\) from \(I^P\), \(I > I^P\) implies
+\(Y > PAE\), so in a situation where the aggregate expenditure is lower than
+the gross output, firms must have produced excess inventory and so will reduce
+product. Conversely,
+\[Y < PAE \Rightarrow I < I^P\]
+i.e. when production is less than aggregate expenditure firms must have run
+down their inventories, and will seek to increase production to refill them.
+When trying to find the equilibrium, it is useful to observe that most of the
+inputs to the model are considered exogenous. These are \(\bar{C}\), \(I^P\),
+\(G\) and \(X\). The only moving part in the model is \(cY\), the expenditure
+of consumers.
+
+\begin{simpleplot}{\(Y\)}{\(Y / PAE\)}
+    \addplot[ultra thick, blue, ->] {x}
+    node[below right, pos = 0.65] {\(Y\)};
+    \addplot[ultra thick, red, ->] {0.4*x + 2}
+    node[above left, pos = 0.8, xshift = -0.2cm] { 
+        \begin{tabular}{c}
+            \(PAE\) \\   
+            \(cY + \bar{C} + I^P + G + X\) \\
+        \end{tabular}
+    };
+    \addplot[black, dashed] coordinates {(0, 2)(4, 2)}
+    node[right] {\(\bar{C} + I^P + G + X\)};
+    \addplot[black, dashed] coordinates {(3.33, 0)(3.33, 5)}
+    node[above] {\(Y = PAE\)};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 0, 2) {};
+    \node[below right] at (axis cs: 3.33, 3.33) {\(A\)};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 3.33, 3.33) {};
+\end{simpleplot}
+
+In the case that \(Y < PAE\), this tells us that \(I^P > I\), which implies
+that an increase in \(I^P\) will occur, while if \(Y > PAE\), \(I^P < I\),
+which implies a decrease in \(I^P\) will occur. The above plot assumes 
+\(T = 0\). We can described the same system algebraically.
+\[Y = \bar{C} + cY + I^P + G + X \Rightarrow (1 - c)Y = \bar{C} + I^P + G + X\]
+\[Y = \frac{\bar{C} + I^P + G + X}{1 - c}\]
+Several simplified versions of this model exist.
+\begin{itemize}
+    \item A two sector economy looks at only household and firm spending.
+        \(Y = C + I\).
+    \item A three sector economy introduces the government. \(Y = C + I + G\).
+    \item Finally a four sector economy includes exports less imports to round
+        out the production formula. \(Y = C + I + G + X - M\).
+\end{itemize}
 
 \end{flushleft}
 \end{document}
