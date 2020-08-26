@@ -918,5 +918,49 @@ The argument \(\theta\) is non-unique, and so the concept of the principal
 argument as the single possible \(\theta\) which lies in the interval 
 \((-\pi, \pi]\) is called the \textit{principal argument} and is unique.
 
+\subsection*{The Complex Exponential}
+
+The complex exponential is an alternate way of representing a complex number.
+According to Euler's formula, a complex number has the following property.
+\[re^{i\theta} = r(\cos(\theta) + i\sin(\theta))\]
+According to this formula, we can see Euler's identity.
+\[e^{i\pi} = -1\]
+Multiplication of the complex exponential results in addition of angles.
+\[r_1e^{i\theta}r_2e^{i\phi} = r_1r_2e^{i(\theta + \phi)}\]
+Likewise division results in subtraction.
+\[\frac{z}{w} = \frac{r_1}{r_2}e^{i(\theta - \phi)}\]
+To raise a complex exponential to a positive power, we can use De Moivre's
+theorem, which states.
+\[z^n = \left(re^{i\theta}\right)^n = r^ne^{in\theta}\]
+
+\subsubsection*{Exponential Form of \(\sin\) and \(\cos\)}
+
+The real and imaginary parts of complex numbers have certain interesting 
+interactions with the conjugate operation.
+\[z + \bar{z} = (x + iy) + (x - iy) = 2x = 2 \mathrm{Re}(z) \Rightarrow 
+\mathrm{Re}(z) = \frac{1}{2}(z + \bar{z})\]
+\[z - \bar{z} = (x + iy) - (x - iy) = 2iy = 2i\mathrm{Im}(z) \Rightarrow
+\mathrm{Im}(z) = \frac{1}{2i}(z - \bar{z})\]
+Applying this to the exponential form, we can find some interesting 
+representations of \(\sin\) and \(\cos\)
+\[e^{i\theta} = \cos(\theta) + i\sin(\theta) \Rightarrow \cos(-\theta) + 
+i\sin(\theta) \Rightarrow e^{-i\theta} = \cos(\theta) - i\sin(\theta)\]
+This tells us that
+\[e^{i\theta} + e^{-i\theta} = 2\cos(\theta) \Rightarrow \cos(\theta) = 
+\frac{1}{2}\left(e^{i\theta} + e^{-i\theta}\right)\]
+Applying the same working to \(\sin\) we find
+\[\sin(\theta) = \frac{1}{2i}\left(e^{i\theta} - e^{-i\theta}\right)\]
+Referring back to our imaginary and real part representations earlier, we
+see that this tells us what we already knew in a different way; \(\cos\) is
+the real part of a complex number and \(\sin\) is the imaginary part. \par
+These formulas bear an interesting resemblance to the hyperbolic functions
+we explored earlier. Plugging \(i\theta\) into \(\cosh\) and \(\sinh\) one 
+finds
+\[\cosh(i\theta) = \frac{1}{2}\left(e^{i\theta} + e^{-i\theta}\right) =
+\cos(\theta)\]
+\[\sinh(i\theta) = \frac{1}{2}\left(e^{i\theta} - e^{-i\theta}\right) =
+\sin(\theta)\]
+
+
 \end{flushleft}
 \end{document}
