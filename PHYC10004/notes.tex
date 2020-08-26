@@ -393,7 +393,7 @@ work is given by
 The potential energy of the system at any angle is given by the dot product
 \[U = -\vec{p} \cdot \vec{E}\]
 
-\subsubsection*{Capacitors}
+\subsection*{Capacitors}
 
 A capacitor stores the energy of an electric field. It does this by separating
 positive and negative electric charges within itself. Generally, capacitors use
@@ -415,6 +415,44 @@ shapes may have subtly different expressions. To create capacitors with high
 capacitance, it is common to use a material with a different \(\epsilon\) 
 rather than change the seperation or area. \(d\) can be extremely small; in 
 applications like DRAM it is often as little as \(50\mathrm{nm}\).
+
+\subsubsection{Energy Storage in Capacitors}
+
+Charging a capacitor requries energy, as electrons are forced onto the plates.
+The internal energy of a capacitor is given by
+\[U = \frac{1}{2}\frac{q^2}{C} = \frac{1}{2}CV^2\]
+If potential is fixed, say by a battery, the energy stored can be increased
+through higher capacitance. If the charge is fixed, increasing the capacitance
+decreases the potential energy. Increasing voltage is a very effective way to
+increase the energy stored of a capacitor. It is useful to be able to talk 
+about energy density of a capacitor, the formula for which is
+\[\frac{1}{2}\epsilon_0E^2\]
+Assuming a vacuum, otherwise an appropriate \(\epsilon\) must be used. 
+Interestingly, this formula can be used for \textit{all} electric fields, with
+units of \(\mathrm{Jm}^{-3}\). When changing capacitance by using a non-vacuum
+filling material, we use the formula
+\[C = \frac{\kappa\epsilon_0A}{d} = \frac{\epsilon A}{d}\]
+Where \(\kappa\) is the \textit{dielectric constant}, a coefficient to 
+\(\epsilon_0\) which relates the permittivity of the material to that of free 
+space. This higher \(\epsilon\) allows for a significantly higher storage of
+energy. However, if the field becomes too strong, the dielectric will fail.
+We therefore have a concept of dielectric strength, which informs of the 
+maximum field which can be created across the material without destruction. 
+\par
+A defibrillator is an example of a very high capacitance application, where a
+material boasting a very high \(\kappa\) is utilised.
+
+\subsubsection*{Capacitance in Circuits}
+
+Capacitors in parallel add their capacitance. Effectively, the surface areas of
+the individual capacitors add.
+\[C_T = \sum_{i\rightarrow n} C_i\]
+For capacitors in series, the capacitance adds similarly to resistors in 
+parallel. 
+\[\frac{1}{C_T} = \sum_{i\rightarrow n} \frac{1}{C_i}\]
+This is because the charge between the negative terminal of one must be 
+adjacent to the positive terminal of another, and the charge between the two
+must be neutral.
 
 \end{flushleft}
 \end{document}
