@@ -961,6 +961,40 @@ finds
 \[\sinh(i\theta) = \frac{1}{2}\left(e^{i\theta} - e^{-i\theta}\right) =
 \sin(\theta)\]
 
+\subsubsection*{Differentiation via the Complex Exponential}
+
+For a complex number \(z = x + iy, x, y \in \R\), we have
+\[e^z = e^{x + iy} = e^xe^{iy} = e^x(\cos(y) + i\sin(y))\]
+To take a derivative of a complex number, we take the derivative of real parts
+and imaginary parts seperately. For example.
+\[\derivx{\cos(x) + (x^2 + 1)i} = -\sin(x) + 2xi\]
+For a complex exponential function of the form \(e^{zx}\) where \(z\) the 
+derivative is
+\[\derivx{e^{zx}} = ze^{zx}\]
+This can be proven by splitting the function as follows
+\[e^{(a + ib)x} = e^{ax}e^{ibx} = e^{ax}(\cos(bx) + i\sin(bx))\]
+And using the product rule to solve the derivative. This can be used to solve
+some fairly complex derivatives quite efficiently.
+\[\frac{d^{56}}{dt^{56}}\left[e^{-t}\cos(t)\right]\]
+\[e^{-t}\cos(t) = e^{-t}\mathrm{Re}\left(e^{it}\right) = 
+\mathrm{Re}\left(e^{-t}e^{it}\right) = \mathrm{Re}\left(e^{(-1 + i)t}\right)\]
+\[\frac{d^{56}}{dt^{56}}\left[\mathrm{Re}\left(e^{(-1 + i)t}\right)\right] = 
+\mathrm{Re}\left((-1 + i)^{56}e^{(-1 + i)t}\right)\]
+\[\left(-1 + i\right)^{56} = \left(\sqrt{2}e^{\frac{3\pi}{4}i}\right)^{56}
+= \sqrt{2}^{56}e^{56\frac{3\pi}{4}i} = 2^{28}e^{0} = 2^{28}\]
+\[\frac{d^{56}}{dt^{56}}\left[e^{-t}\cos(t)\right] = 
+\mathrm{Re}\left(2^{28}e^{-(1 + i)t}\right) = 
+\mathrm{Re}\left(2^{28}e^{-t}(\cos(t) + i\sin(t))\right) \]
+\[= 2^{28}e^{-t}\cos(t)\]
+Here, we used the fact that taking a complex derivative simply entails doing
+the real and imaginary parts seperately, in combination with the fact that the
+form of the original term was the real part of a complex number to perform the
+derivative much more rapidly than would ordinarily be possible. \par
+Knowledge of this deriavtive makes simple the inverse; it's integral.
+\[\int e^{kx} \dx = \frac{1}{k}e^{kx} + D\]
+Where \(k\) is a complex number and \(x\) is the real input to the function.
+\(D\) may be a complex number. Like in the previous example, the real and 
+imaginary parts of complex numbers can be considered distinctly.
 
 \end{flushleft}
 \end{document}
