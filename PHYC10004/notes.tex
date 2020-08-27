@@ -499,5 +499,36 @@ It is for this reason that power lines are run at very high voltages like
 running at a high voltage allows the same delivery of power with a much lower
 power loss.
 
+\subsection*{Circuits}
+
+A battery in a circuit is a source of electromotive force, electric potential.
+It drives current around a circuit. The electric potential in the circuit is
+dissipated across the components of the circuit according to their resistances.
+In the case of the resistor, the potential is converted to heat.
+\[\epsilon - IR = 0\]
+\[I = \frac{\epsilon}{R}\]
+Here, \(\epsilon\) is electromotive, equivalent to \(V\). To understand complex
+circuits, we use Kirchhoff's Rules for Circuit Analysis. These rules 
+essentially dictate conservation of charge and conservation of energy within
+circuits. This states that any current within a circuit must be going 
+somewhere; it must traverse from one end of potential back to the same. \par
+Mathematically, at any node, any combination of path, the sum of currenst must
+be \(0\). This applies along a straight line; if the current all passes through
+one point, the outflow equals the inflow so the sum is \(0\).
+\[\sum I = 0\]
+Around any loop, the following statement must be true.
+\[\pm\sum\epsilon\pm\sum IR\pm\sum\frac{q}{C} = 0\]
+So if we add up all of the voltage input (say batterys), voltage loss 
+(say resistors) and capacitors, the sum must be \(0\), i.e. the circuit is
+conservative; any gain in charge is matched by an equivalent loss. This
+allows us to, for example figure out how to calculate cumulative resistors in
+series as
+\[R_T = \sum_{i\rightarrow n}R_i\]
+It can also be used to solve for resistors in parallel, yielding the equation
+\[\frac{1}{R_T} = \sum_{i\rightarrow n}\frac{1}{R_i}\]
+These equations are determined by tracing the paths and considering the 
+splitting of current that must occur for the circuit to obey the two 
+conservations.
+
 \end{flushleft}
 \end{document}
