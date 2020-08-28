@@ -2,11 +2,17 @@
 \renewcommand{\familydefault}{\sfdefault}
 
 \usepackage{commath}
+\usepackage{environ}
 \usepackage{pgfplots}
+
+\usetikzlibrary{external}
+\tikzexternalize
+
+\usepgfplotslibrary{fillbetween}
 
 \setlength{\parskip}{.2cm}
 
-\newenvironment{simpleplot}[2]{
+\NewEnviron{simpleplot}[2]{
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
@@ -28,10 +34,10 @@
                 axis y line = left,
                 samples = 500
             ]
-}{
+                \BODY\
             \end{axis}
         \end{tikzpicture}
-    \end {center}
+    \end{center}
 }
 
 \begin{document}
@@ -797,6 +803,131 @@ Several simplified versions of this model exist.
     \item Finally a four sector economy includes exports less imports to round
         out the production formula. \(Y = C + I + G + X - M\).
 \end{itemize}
+
+Because we know that output must be equivalent to income, we can state that
+\[Y = C^d + S + T + M\]
+i.e. total output is equal to household consumption plus savings plus taxation
+plus imports. If we plug this in to a previous equation, we find that
+\[S + T + M = I^P + G + X\]
+The left side of this equation is described as leakages; referring to income
+which is not used for local consumption, while the right hand side is referred
+to as planned injections; the total exogenous expenditure in the system. For a
+two sector system, this implies that
+\[S = I^P\]
+\[\Rightarrow S = Y - C  = (1 - c)Y - \bar{C}\]
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+            xmin = 0,
+            xmax = 6,
+            ymin = -3,
+            ymax = 6,
+            width = 12 cm,
+            height = 9 cm,
+            xlabel = \(Y\),
+            xlabel near ticks,
+            xtick style = {draw = none},
+            xticklabels = \empty,
+            axis x line = middle,
+            ylabel = \(S / I\),
+            ylabel near ticks,
+            ytick style = {draw = none},
+            yticklabels = \empty,
+            axis y line = left,
+            samples = 500
+        ]
+
+            \addplot[ultra thick, red, ->] coordinates {(0, 2)(5, 2)}
+            node[above, pos = 0.2] {\(I^P\)};
+            \addplot[ultra thick, blue, ->] {x-2} 
+            node[below right, pos = 0.6] {\(S_0\)};
+            \addplot[ultra thick, blue, ->] {x-1}
+            node[above left, pos = 0.65] {\(S_1\)};
+            \addplot[black, dashed] coordinates {(3, 0)(3, 3.5)}
+            node[above] {\(Y_1\)};
+            \addplot[black, dashed] coordinates {(4, 0)(4, 3.5)}
+            node[above] {\(Y_0\)};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+Here, \(S_0\) has a higher \(\bar{C}\) value than \(S_1\), and therefore has a
+lower rate of saving. Because we know that \(S = I^P\), we know that the 
+intercept of this saving function with the exogenous firm investment must be at
+the output level of the economy, and we can therefore see that a higher rate of
+saving implies a lower total output. However the amount of saving undertaken at
+each point is the same. \par
+This is known as the \textit{paradox of thrift}; it is
+an observation that when increased saving is desireable, the real world result
+is that no real increase to saving occurs and therefore output falls. This is
+to some degree likely a result of the simplicity of the model; it doesn't 
+consider supply side factors or changing prices.
+
+\subsubsection*{The Multiplier}
+
+Returning once again to our two sector economy, we have the equation
+\[Y = \bar{C} + cY + I^P\]
+Which implies that \(Y\) can be calculated as
+\[Y = \frac{\bar{C} + I^P}{1 - c}\]
+\[\frac{\mathrm{d}Y}{\mathrm{d}I^P} = \frac{1}{1 - c}\]
+This implies that an increase in \(\bar{C}\) or \(I^P\) leads to an increase in
+output. More generally it is taken that a change in an exogenous expenditure in
+an economy results in an increase in income, results in an increase in 
+consumption, results in a significant increase in total output. The fact of
+this increase being larger than the initial change in expenditure is known as
+the multiplier. This applies both ways; a reduction is exogenous expenditure is
+worse than it would suggest at face value. \par
+The magnitude of this multiplier is given by the derivative of \(Y\) with
+respect to \(I^P\) shown below the equation; because \(0 < c < 1\) this value
+is greater than \(1\) and acts as a multiplier for the increased investment.
+
+\begin{simpleplot}{\(Y\)}{\(Y / PAE\)}
+    \addplot[ultra thick, red, ->, name path = y] {x}
+    node[below right, pos = 0.6] {\(Y\)};
+    \addplot[ultra thick, blue, ->, name path = lo] {0.5*x+1}
+    node[below right, pos = 0.8] {\(\bar{C} + cY + I^P_0\)};
+    \addplot[ultra thick, blue, ->, name path = hi] {0.5*x+2}
+    node[above left, pos = 0.7] {\(\bar{C} + cY + I^P_1\)};
+    \addplot[black, dashed, name path = steps] coordinates 
+    {(2, 2)(2, 3)(3, 3)(3, 3.5)(3.5, 3.5)(3.5, 3.75)(3.75, 3.75)(3.75, 3.875)
+    (3.875, 3.875)};
+
+    \path[name path = step1] (axis cs: 2, 3) -- (axis cs: 3, 3);
+
+    \node[left] at (axis cs: 2, 2.5) {\(\Delta I^P\)};
+
+    \addplot[fill = red, opacity = 0.3] fill between [
+        of = step1 and y,
+        soft clip = {domain = 2:3}
+    ];
+    \addplot[fill = red, opacity = 0.1] fill between [
+        of = hi and step1,
+        soft clip = {domain = 2:3}
+    ];
+    \addplot[fill = red, opacity = 0.1] fill between [
+        of = hi and y,
+        soft clip = {domain = 3:4}
+    ];
+\end{simpleplot}
+
+This plot showcases the multiplier effect in response to a change in planned
+investment \(\Delta I^P\) from \(I^P_0\) to \(I^P_1\). The dark red shaded 
+area is the initial effect of the increased investment, while the light red 
+shaded area is the multiplier benefit from the increase. Each ``step'' 
+represents the effect of a calculation cycle of increased income implying 
+increased consumption implying increased output. \par
+This model can be extended to include all of the components of an economy, 
+yielding the equation that
+\[Y  = \frac{\bar{C} + I^P + G + X - cT}{1  - c(1 - t)}\]
+\[\frac{\mathrm{d}Y}{\mathrm{d}I^P} = \frac{1}{1 - c(1 - t)}\]
+It should be noted that this applies equivalently to all terms in the 
+numerator; not just \(I^P\) but also \(\bar{C}\), \(G\), etc. Thus, the 
+multiplier is affected by the marginal taxation rate. The taxed income doesn't
+go towards an increase in output. The taxation rate can be thought of as a 
+dampener on the multiplier. \par
+An increase in \(c\) implies an increase in the multiplier, while an increase
+in \(t\) implies a fall in the multiplier.
 
 \end{flushleft}
 \end{document}
