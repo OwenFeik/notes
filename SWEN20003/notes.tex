@@ -704,5 +704,53 @@ which implements the same interface as \code{System.out}.
     }
 \end{lstlisting}
 
+\subsubsection*{Build Management}
+
+Buil management and automation tools such as \code{make} or the one used in
+this subject, Maven are useful because they allow rapid building of large and
+complex projects. When using Maven, the structure and contents of a project are
+declared in a file \code{pom.xml}, the project object model file. 
+
+\subsection*{Bagel}
+
+Bagel, Basic Academical Graphical Engine Library is a graphics package for
+SWEN20003. Developed by Eleanor McMurtry is uses an existing library
+\code{LWJGL}.
+
+\begin{lstlisting}
+    import bagel.*;
+
+    public class BagelTest extends AbstractGame {
+        public BagelTest() {
+            super(800, 600, "Window Title");
+        }
+
+        public static void main(Sting[] args) {
+            BagelTest game = new BagelTest();
+            game.run();    
+        }
+
+        @Override
+        public void update(Input input) {
+            // update method called each tick
+        
+            Image bagel = new Image('resources/bagel.png');
+            bagel.draw(Window.getWidth() / 2.0, Window.getHeight() / 2.0);
+
+            if (input.isDown(Keys.DOWN)) {
+                doAThing();
+            }
+
+            if (input.wasPressed(Keys.ESCAPE)) {
+                Window.close();
+            }
+        }
+    }
+\end{lstlisting}
+
+Bagel provides a framework which one can extend to create a graphical program.
+Bagel automatically clears the screen, checks input and calls the user defined
+update method every tick. Documentation is available through Canvas.
+
 \end{flushleft}
 \end{document}
