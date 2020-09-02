@@ -610,5 +610,147 @@ indentical string using \code{new}, they will have different references. It is
 therefore better to use \code{.equals()} rather than \code{==} for string 
 comparison.
 
+\subsection*{Input and Output}
+
+Input can be provided to programs through command line arguments, user input
+and through files. Programs can output data to \code{stdout}, the terminal or
+files.
+
+\subsubsection*{Input}
+
+Command line arguments are received directly by the main function through its
+argument \code{String[] args}. This is an array of strings corresponding to the
+arguments provided when the program is run. When using an IDE, one usually has
+to configure the command line arguments to be passed to the program at 
+execution. \par
+To take input from a user interactively, we use the \code{Scanner} class 
+provided by \code{java.util.Scanner}. \code{Scanner} is used as follows.
+
+\begin{lstlisting}
+    import java.util.Scanner;
+
+
+    Scanner scanner = new Scanner(System.in);
+    String s = scanner.nextLine(); // read chars until a newline.
+    boolean b = scanner.nextBoolean(); // read until a boolean.
+    int i = scanner.nextInt(); // read in an integer.
+    String s = scanner.next(); // reads one word (space delimited).
+
+    if (scanner.hasNext()) {
+        s = scanner.next();
+    }
+
+    if (scanner.hasNextDouble()) {
+        double d = scanner.nextDouble();
+    }
+\end{lstlisting}
+
+Note that we provide \code{System.in}, which is a static reference to
+\code{stdin}. Note that \code{Scanner.nextInt()} will error on \code{6.2}; it
+is quite fussy. \code{Scanner.nextLine()} is the only method that will consume
+a newline character, so it can be useful to call it to chunk up data
+appropriately. \code{Scanner.hasNext()} can be useful to check whether input is
+available. \par
+File input and output are performed with the \code{java.io} package. It is
+important when working with files to use error handling.
+
+\begin{lstlisting}
+    import java.io.FileReader;
+    import java.io.BufferedReader;
+    import java.io.IOException;
+
+    try (BufferedReader br = new BufferedReader(new FileReader("text.txt"))) {
+        String text = null;
+
+        while ((text = br.readLine()) != null) {
+            System.out.println(text);
+        }
+    }
+    catch (IOException e) {
+        e.printStackTrace();
+    }
+\end{lstlisting}
+
+Here, we use a \code{try} with resources block, which creates a
+\code{FileReader} object, upgrades this into a \code{BufferedReader} object and
+then reads an prints out the lines of the file one by one. In the event that
+the block runs into an error, it prints the stack trace. One can also use a
+\code{Scanner} to read a file by passing the \code{FileReader} to the 
+\code{Scanner} object.
+
+\subsubsection*{Output}
+
+The simplest form of output is through \code{System.out}, through the terminal.
+
+\begin{lstlisting}
+    System.out.println("Hello World");
+    System.out.format("%3.2f", 3.14159");
+\end{lstlisting}
+
+For file writing, we also use \code{java.io}. We can use a \code{PrintWriter},
+which implements the same interface as \code{System.out}.
+
+\begin{lstlisting}
+    import java.io.FileWriter;
+    import java.io.PrintWriter;
+    import java.io.IOException;
+
+    try (PrintWriter pw = new PrintWriter(new FileWriter("text.txt"))) {
+        pw.println("Hello World");
+        pw.format("%3.2f", 3.14159);
+    }
+    catch (IOException e) {
+        e.printStackTrace();
+    }
+\end{lstlisting}
+
+\subsubsection*{Build Management}
+
+Buil management and automation tools such as \code{make} or the one used in
+this subject, Maven are useful because they allow rapid building of large and
+complex projects. When using Maven, the structure and contents of a project are
+declared in a file \code{pom.xml}, the project object model file. 
+
+\subsection*{Bagel}
+
+Bagel, Basic Academical Graphical Engine Library is a graphics package for
+SWEN20003. Developed by Eleanor McMurtry is uses an existing library
+\code{LWJGL}.
+
+\begin{lstlisting}
+    import bagel.*;
+
+    public class BagelTest extends AbstractGame {
+        public BagelTest() {
+            super(800, 600, "Window Title");
+        }
+
+        public static void main(Sting[] args) {
+            BagelTest game = new BagelTest();
+            game.run();    
+        }
+
+        @Override
+        public void update(Input input) {
+            // update method called each tick
+        
+            Image bagel = new Image('resources/bagel.png');
+            bagel.draw(Window.getWidth() / 2.0, Window.getHeight() / 2.0);
+
+            if (input.isDown(Keys.DOWN)) {
+                doAThing();
+            }
+
+            if (input.wasPressed(Keys.ESCAPE)) {
+                Window.close();
+            }
+        }
+    }
+\end{lstlisting}
+
+Bagel provides a framework which one can extend to create a graphical program.
+Bagel automatically clears the screen, checks input and calls the user defined
+update method every tick. Documentation is available through Canvas.
+
 \end{flushleft}
 \end{document}
