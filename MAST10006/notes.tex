@@ -78,6 +78,7 @@
 \newcommand{\dx}{\:\mathrm{d}x}
 \newcommand{\dy}{\:\mathrm{d}y}
 \newcommand{\mand}{\:\mathrm{and}\:}
+\newcommand{\mor}{\:\mathrm{or}\:}
 \newcommand{\limit}{\lim\limits}
 \newcommand{\sumninf}[1][1]{\sum\limits_{n = #1}^\infty}
 \newcommand{\derivx}[1]{\frac{d}{dx}\left[#1\right]}
@@ -990,11 +991,141 @@ Here, we used the fact that taking a complex derivative simply entails doing
 the real and imaginary parts seperately, in combination with the fact that the
 form of the original term was the real part of a complex number to perform the
 derivative much more rapidly than would ordinarily be possible. \par
-Knowledge of this deriavtive makes simple the inverse; it's integral.
+Knowledge of this derivative makes simple the inverse; it's integral.
 \[\int e^{kx} \dx = \frac{1}{k}e^{kx} + D\]
 Where \(k\) is a complex number and \(x\) is the real input to the function.
 \(D\) may be a complex number. Like in the previous example, the real and 
 imaginary parts of complex numbers can be considered distinctly.
+
+\section*{Integral Calculus}
+
+\subsubsection*{Derivative Substitution}
+
+For a function \(F^\prime(x)\) we may know \(f(x) = F^\prime(x)\). We then know
+that
+\[\int f(x) \dx = F(t) + C\]
+Applying the chain rule, we also know that
+\[\derivx{F(g(x))} = F^\prime(g(x))g^\prime(x)\]
+In reverse, this means that
+\[\int f(g(x))g^\prime(x) \dx = F(g(x)) + C\]
+\[\int f(u)\frac{du}{dx}\dx = F(u) + c\]
+This fact is known as \textit{derivative substitution}, and is a useful
+technique for calculating integrals. The general process for using derivative
+substitution is
+\[\int f(g(x))g^\prime(x)\dx = \int f(u)\frac{du}{dx}\dx 
+= \int f(u) \:\mathrm{d}u\]
+An example
+\[\int (6x^2 + 10)\sinh(x^3 + 5x - 2)\dx\]
+\[u = x^3 + 5x - 2, \:\:\: u^\prime = 3x^2 + 5\]
+\[\int 2(3x^2 + 5)\sinh(x^3 + 5x - 2)\dx = \int 2u^\prime\sinh(x)\dx
+= 2\int\sinh(u) \:\mathrm{d}u = \]
+\[2\cosh(u) + C = 2\cosh(x^3 + 5x - 2) + C\]
+So with the key observation that \(6x^2 + 10\) is twice the derivative of the
+\(\sinh\) term, we can rewrite the integal in terms of \(u\) and integrate the
+simpler resultant function using a standard integral. Another example
+\[\int\frac{\sech^2(3x)}{10 + 2\tanh(3x)}\dx\]
+\[u = 10 + 2\tanh(3x), \:\:\: u^\prime = 12\sech^2(3x)\]
+\[\int\frac{\sech^2(3x)}{10 + 2\tanh(3x)}\dx 
+= \frac{1}{12}\int\frac{u^\prime}{u}\dx = \frac{1}{12}\int\frac{1}{u}
+\:\mathrm{d}u\]
+\[= \frac{1}{12}\log(\abs{u}) + C 
+= \frac{1}{12}\log\left(\abs{12\sech^2(3x)}\right) + C\]
+
+\subsubsection*{Trigonometric and Hyperbolic Substitution}
+
+For expressions of the form
+\[\sqrt{a^2 - x^2}, \:\:\: \sqrt{a^2 + x^2}, \:\:\: \sqrt{x^2 - a^2}\]
+We can use a trick where we substitute \(x\) for a function \(g(\theta)\).
+\[\int f(x)\dx = \int f(g(\theta))g^\prime(\theta) \:\mathrm{d}\theta\]
+This entails replace \(x\) and then using derivative substitution to simplify
+the resultant expression. The appropriate substitution in a few cases is
+contained in the below table.
+
+\renewcommand{\arraystretch}{2}
+\begin{center}    
+    \begin{tabular}{||c|c||}
+        \(\sqrt{a^2 - x^2}, \:\:\: \frac{1}{\sqrt{a^2 - x^2}},
+        \:\:\: (a^2 - x^2)^\frac{3}{2}, \:\:\: \mathrm{etc}\) &
+        \(x = a\sin(\theta) \mor x = a\cos(\theta)\) \\
+        \(\sqrt{a^2 + x^2}, \:\:\: \frac{1}{\sqrt{a^2 + x^2}},
+        \:\:\: (a^2 + x^2)^{-\frac{3}{2}}, \:\:\: \mathrm{etc}\) &
+        \(x = a\sinh(\theta)\) \\
+        \(\sqrt{x^2 - a^2}, \:\:\: \frac{1}{\sqrt{x^2 - a^2}},
+        \:\:\: (x^2 - a^2)^\frac{5}{2}, \:\:\: \mathrm{etc}\) &
+        \(x = a\cosh(\theta)\) \\
+        \(\frac{1}{a^2 + x^2}, \:\:\: \frac{1}{(a^2 + x^2)^2}, \:\:\:
+        \mathrm{etc}\) &
+        \(x = a\tan(\theta)\) \\
+    \end{tabular}
+\end{center}
+\renewcommand{\arraystretch}{1}
+
+This is useful because these functions have useful identities when squared. An
+example
+
+\[\int\frac{1}{\sqrt{x^2 - 25}}\dx\]
+\[x = 5\cosh(\theta) \Rightarrow \theta = \arccosh\left(\frac{x}{5}\right)
+\Rightarrow x \geq 5\]
+\begin{center}
+Because we are rewriting \(x\) as a hyperbolic function, we must be careful
+that the values of \(x\) are valid for the function. Here, for 
+\(g(\theta)\) to output \(x\), \(x\geq5\) must be true. In addition, for
+the overall function to be valid we need \(\sqrt(x^2 - 25) \neq 0\), thus
+\(x > 5 \Rightarrow \theta > 0\).
+\[x = 5\cosh(\theta) \Rightarrow \frac{dx}{d\theta} = 5\sinh(\theta)\]
+\[\frac{1}{\sqrt{x^2 - 25}} = \frac{1}{\sqrt{25\cosh^2(\theta) - 25}} =
+\frac{1}{\sqrt{25(\cosh^2(\theta) - 1)}} = \frac{1}{5\sqrt{\sinh^2(\theta)}}\] 
+\[= \frac{1}{5\abs{\sinh(\theta)}}, \:\:\: \theta > 0 \Rightarrow
+\frac{1}{5\sinh(\theta)}\]
+Here, we were able to use the identity 
+\(\cosh^2(\theta) - \sinh^2(\theta) = 1\) to simplify the denominator. We
+then used the established fact of \(\theta > 0\) to remove the absolute
+value from the denominator.
+\[\int\frac{1}{\sqrt{x^2 - 25}}\dx 
+= \frac{1}{5\sinh(\theta)}5\sinh(\theta)\:\mathrm{d}\theta
+= \int 1 \:\mathrm{d}\theta = \theta + C 
+= \arccosh\left(\frac{x}{5}\right) + C\]
+Here we see the result of the derivative substitution, as we multiply by
+\(5\sinh(\theta)\). We use the value of \(\theta\) we calculated earlier to
+put the final answer back in terms of \(x\).        
+\end{center}
+
+Another example
+
+\begin{center}
+\[\int\sqrt{9 - 4x^2}\dx, \:\:\: \abs{x} \leq \frac{3}{2}\]
+\[\int\sqrt{9 - 4x^2}\dx = 2\int\sqrt{\frac{9}{4} - x^2}\]
+\[x = \frac{3}{2}\sin^2(\theta) \Rightarrow \theta = 
+\arcsin\left(\frac{2x}{3}\right)\] 
+\[\frac{-\pi}{2} \leq \theta \leq \frac{\pi}{2} \Rightarrow \frac{-3}{2} \leq
+x \leq \frac{3}{2}\]
+\[\frac{dx}{d\theta} = \frac{3}{2}\cos(\theta)\]
+\[\sqrt{\frac{9}{4} - x^2} = \sqrt{\frac{9}{4} - \frac{9}{4}\sin^2(\theta)} =
+\sqrt{\frac{9}{4}\cos^2(\theta)} = \frac{3}{2}\abs{\cos(\theta)} 
+= \frac{3}{2}\cos(\theta)\]
+Because we know the range of \(\theta\) is restricted, we can know that
+\(\cos\) will always be positive here, which allows us to remove the absolute
+value.
+\[2\int\sqrt{\frac{9}{4} - x^2} = 2\int\frac{3}{2}\cos(\theta)\cdot\frac{3}{2}
+\cos(\theta)\:\mathrm{d}\theta 
+= \frac{9}{2}\int\cos^2(\theta)\:\mathrm{d}\theta\]
+\[\frac{9}{2}\int\cos^2(\theta)\:\mathrm{d}\theta = \frac{9}{2}\frac{1}{2}
+\int\cos(2\theta) + 1\:\mathrm{d}\theta = \frac{9}{4}\frac{1}{2}\sin(2\theta)
++ \theta + C\]
+\[= \frac{9}{4}\left(\sin(\theta)\cos(\theta) + \theta\right) + C = \frac{9}{4}
+\left(\sin(\theta)\sqrt{1 - \sin^2(\theta)} + \theta\right) + C\]
+\[= \frac{9}{4}\left(\frac{2x}{3}\sqrt{1 - \frac{4x^2}{9}} + 
+\arcsin\left(\frac{2x}{3}\right)\right) + C = x\sqrt{\frac{9}{4} - x^2} 
++ \frac{9}{4}\arcsin\left(\frac{2x}{3}\right) + C\]
+A lot going on here, some of which is explained by the application of a couple
+of double angle formulae. The first instance is where we use the double angle
+formula \(\cos(2x) = 2\cos^2(x) - 1\) to remove the \(\cos^2\) term and enable
+integration. Later, the formula \(\sin(2x) = 2\sin(x)\cos(x)\) is used to
+remove the \(\sin(2\theta)\) term. The \(\cos\) is then replaced according to
+\(\sin^2 + \cos^2 = 1\) to enable substitution with the value for \(\theta\)
+determined earlier, the \(\arcsin\) term of which annihilates with the 
+\(\sin\) in the \(\sin(\theta)\) expressions to yield \(\frac{2x}{3}\).
+\end{center}
 
 \end{flushleft}
 \end{document}
