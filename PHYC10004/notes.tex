@@ -530,5 +530,54 @@ These equations are determined by tracing the paths and considering the
 splitting of current that must occur for the circuit to obey the two 
 conservations.
 
+\subsection*{Magnetic Fields}
+
+In electric fields, electric monopoles exert forces on each other. Magnetic
+fields behave differently, as all magnetic fields are dipoles. No ``magnet
+charge'' exists, instead moving charges create magnetic fields. The simplest
+example of a magnet is a bar magnet. A bar magnet is a magnetic dipole, with a 
+north and south pole. \par
+Field lines are drawn from the north pole to the south pole, and the density of
+these field lines is known as magnetic flux. This density is highest at either
+of these poles. \par
+The idea of all magnetic fields being dipoles can be expressed through the
+previously explored idea of a closed surface integral. This is Gauss' Law of
+magnetism, and is one of Maxwell's equations.
+\[\oint \vec{B}\cdot\mathrm{d}\vec{A} = 0\]
+This states thates that the magnetic flux through any given three dimensional
+surface must be \(0\), which can be understood as the fact that any field lines
+which emerge from the surface must also return through the sphere to the 
+opposite pole. \par
+An electric charge moving through a magnetic field will tend to move
+perpendicular to that field, in an arc. This is because it has a certain force
+acting on it which causes in to move in a parabola as it accelerates. The
+magnitude and direction of this force is given by
+\[\vec{F} = q\vec{v}\times\vec{B}\]
+Where \(\vec{F}\) is the force vector on the particle with charge \(q\) moving
+with velocity vector \(\vec{v}\) through electric field with strength and
+direction defined by \(\vec{B}\). The units of \(\vec{B}\) are \(T\), Tesla.
+Interestingly a faster moving charge will have a greater force exerted on it.
+The magnitude of this force can be calcualted through
+\[F = qvB\sin(\phi)\]
+Where \(\phi\) is the angle between \(v\) and \(B\). This force will always be
+perpendicular to the plane defined by the velocity and magnetic field
+directions. This can be simulated with the right hand rule; if one curls their
+fingers from \(v\) to \(B\) and extends the thumb, it will be in the direction
+of the force. \par
+The Lorentz Force Law tells us how to combine the effects of magnet and
+electric fields on a moving charge. Intuitively enough, it essentially just
+says "add them you Drongo"
+\[\vec{F} = q\vec{E} + q\vec{v}\times\vec{B}\]
+Because a charge in a field will tend to move in an arc, it is clear that if
+the area the charge is in is large enough, it will eventually trace out a
+circle. If we want to find the radius of that circle, perhaps for desigining
+a Cyclotron or similar, we can use the equation
+\[r = \frac{mv}{qB}\]
+This assumes a charge of mass \(m\) with velocity \(v\) moving in a field
+at right angles to its velocity plane. The period of this rotation is given
+by
+\[T = \frac{1}{f} = \frac{2\pi m}{qB}\]
+Interestingly enough, independent of \(v\).
+
 \end{flushleft}
 \end{document}
