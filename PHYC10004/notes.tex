@@ -579,5 +579,59 @@ by
 \[T = \frac{1}{f} = \frac{2\pi m}{qB}\]
 Interestingly enough, independent of \(v\).
 
+\subsubsection*{Lorentz Force}
+
+When working with both an electric field and a magnetic field, it is often
+useful to have the two perpendicular, such as in the case of a cathode ray
+tube. \par
+Another application of these perpendicular fields is an ion velocity filter,
+where one uses the fact that magnetic force is proportional to velocity to
+filter out charged particles of other velocities. This is done by balancing the
+electrical and magnetic fields such that ions of the desired velocity will have
+balanced forces from the two, while other velocities will have larger or
+smaller forces, causing them to crash into the side of the chamber. To balance
+in this way, one simply needs to solve the equality
+\[qE = qvB \Rightarrow v = \frac{E}{B}\]
+This same process can be used to construct a simple mass spectrometer, a device
+which measures the charge to mass ratio of ions. By accelerating charges in an
+electric field, they will end up with
+\[v \propto \sqrt{\frac{q}{m}}\]
+And can then be passed through an ion filter to measure velocity.
+
+\subsubsection*{The Hall Effect}
+
+If a magnetic field is running through a wire with a current, the deflection
+caused by the magnetic field will result in a build up of negative charges on
+one side, creating a potential difference between the two sides of the wire.
+This is known as the Hall Effect. The magnitude of this effect continues to
+increase until the force exerted by the created electric field is equivalent to
+the external magnetic field within the wire, i.e.
+\[F_E = F_B\]
+is the condition for the process to end. This can be used to measure the drift
+velocity within the material because the force due to the magnetic field is
+proportional to the velocity of the electrons. The final voltage across the
+wire is known as the Hall Voltage for the material.
+
+\subsubsection*{Origin of a Magnetic Field}
+
+Magnetic fields can be created in two ways. The first of these is by magnetic
+materials, and the second is by currents. A current produces a magnetic field
+according to the Biot-Savart Law, which takes the form
+\[\mathrm{d}\vec{B} 
+= \frac{\mu_0}{4\pi}\frac{I\mathrm{d}\vec{s}\times\hat{r}}{r^2}\]
+Where \(\mathrm{d}\vec{B}\) is the section of magnetic field at a distance
+\(r\) in a direction \(\hat{r}\) from the current carrier, \(\mu_0\) is the
+vacuum permeability and \(\mathrm{d}\vec{s}\) is the rate of change of the
+current carrying surface at the relevant point. \par
+\(\mu_0\), the vacuum permeability is rather like the vacuum permittivity we
+use for electric fields. Like permittivity, we can replace \(\mu_0\) with a
+determined \(\mu\) for a non-vacuum material. \par
+This law gives us the right hand rule for a wire. If one places their thumb
+along the direction of current in a wire, and wraps their fingers around, the
+fingers will indicate the direction of magnetic field. \par
+Much as we try to use Gauss' Law rather than Coulomb's law in electrostatics,
+the complexity of the Biot-Savart law means it is often better to use Ampere's
+law when dealing with magnetic fields.
+
 \end{flushleft}
 \end{document}
