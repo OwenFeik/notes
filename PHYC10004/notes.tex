@@ -633,5 +633,27 @@ Much as we try to use Gauss' Law rather than Coulomb's law in electrostatics,
 the complexity of the Biot-Savart law means it is often better to use Ampere's
 law when dealing with magnetic fields.
 
+\subsubsection*{Ampere's Law}
+
+Ampere's law states that
+\[\oint B\cdot\mathrm{d}s = \mu_0I\]
+i.e. for a closed loop around a current carrying path \(s\), the sum of the
+magnetic field \(B\) dotted with the rate of change of the path \(\mathrm{d}s\)
+will be equal to the vacuum permeability multiplied by the enclosed current.
+For the magnetic field around a wire, this yields
+\[B = \frac{\mu_0I}{2\pi r}\]
+For an internal section of radius \(r\) within a larger wire of radius \(R\),
+Ampere's law tells us that the magnetic field enclosed will be
+\[\abs{B} = \frac{\mu_0Ir}{2\pi R^2}\]
+When working with Ampere's law it is important to consider net current; if one
+wire carrying \(3\mathrm{A}\) in one direction is enclosed alongside another
+carrying \(1\mathrm{A}\) in the opposite direction, the total current is
+\(2\mathrm{A}\) in the first direction. \par
+For a long solenoid, with \(n\) turns per metre, we can find the internal
+magnetic field using Ampere's law.
+\[B = \mu_0nI\]
+This is independent of the diameter of the solenoid. For a real solenoid, this
+only applies near the centre.
+
 \end{flushleft}
 \end{document}
