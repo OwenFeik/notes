@@ -80,6 +80,7 @@
 \newcommand{\dd}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
 \newcommand{\mand}{\:\mathrm{and}\:}
 \newcommand{\mor}{\:\mathrm{or}\:}
+\newcommand{\mcom}{, \:\:\:}
 \newcommand{\limit}{\lim\limits}
 \newcommand{\sumninf}[1][1]{\sum\limits_{n = #1}^\infty}
 \newcommand{\derivx}[1]{\frac{\mathrm{d}}{\mathrm{d}x}\left[#1\right]}
@@ -899,7 +900,7 @@ introducing the number \(i\) with the property that \(i^2 = -1\), we gain
 access to another set of numbers of the form
 \[\C = \set{x + yi | x, y \in \R}\]
 This allows us to do some powerful things, like to solve any polynomial
-function with complex coeffecients. Their basic operations follow. The most
+function with complex coefficients. Their basic operations follow. The most
 basic is of course addition, where one just adds the relevant terms.
 \[(2 + 3i) + (4 + i) = 6 + 4i\]
 Multiplication is performed piecewise in F.O.I.L. style.
@@ -1018,7 +1019,7 @@ substitution is
 = \int f(u) \:\mathrm{d}u\]
 An example
 \[\int (6x^2 + 10)\sinh(x^3 + 5x - 2)\dx\]
-\[u = x^3 + 5x - 2, \:\:\: u^\prime = 3x^2 + 5\]
+\[u = x^3 + 5x - 2\mcom u^\prime = 3x^2 + 5\]
 \[\int 2(3x^2 + 5)\sinh(x^3 + 5x - 2)\dx = \int 2u^\prime\sinh(x)\dx
 = 2\int\sinh(u) \:\mathrm{d}u = \]
 \[2\cosh(u) + C = 2\cosh(x^3 + 5x - 2) + C\]
@@ -1026,7 +1027,7 @@ So with the key observation that \(6x^2 + 10\) is twice the derivative of the
 \(\sinh\) term, we can rewrite the integal in terms of \(u\) and integrate the
 simpler resultant function using a standard integral. Another example
 \[\int\frac{\sech^2(3x)}{10 + 2\tanh(3x)}\dx\]
-\[u = 10 + 2\tanh(3x), \:\:\: u^\prime = 12\sech^2(3x)\]
+\[u = 10 + 2\tanh(3x)\mcom u^\prime = 12\sech^2(3x)\]
 \[\int\frac{\sech^2(3x)}{10 + 2\tanh(3x)}\dx 
 = \frac{1}{12}\int\frac{u^\prime}{u}\dx = \frac{1}{12}\int\frac{1}{u}
 \:\mathrm{d}u\]
@@ -1036,7 +1037,7 @@ simpler resultant function using a standard integral. Another example
 \subsubsection*{Trigonometric and Hyperbolic Substitution}
 
 For expressions of the form
-\[\sqrt{a^2 - x^2}, \:\:\: \sqrt{a^2 + x^2}, \:\:\: \sqrt{x^2 - a^2}\]
+\[\sqrt{a^2 - x^2}\mcom \sqrt{a^2 + x^2}\mcom \sqrt{x^2 - a^2}\]
 We can use a trick where we substitute \(x\) for a function \(g(\theta)\).
 \[\int f(x)\dx = \int f(g(\theta))g^\prime(\theta) \:\mathrm{d}\theta\]
 This entails replace \(x\) and then using derivative substitution to simplify
@@ -1046,16 +1047,16 @@ contained in the below table.
 \renewcommand{\arraystretch}{2}
 \begin{center}    
     \begin{tabular}{||c|c||}
-        \(\sqrt{a^2 - x^2}, \:\:\: \frac{1}{\sqrt{a^2 - x^2}},
-        \:\:\: (a^2 - x^2)^\frac{3}{2}, \:\:\: \mathrm{etc}\) &
+        \(\sqrt{a^2 - x^2}\mcom \frac{1}{\sqrt{a^2 - x^2}},
+        \:\:\: (a^2 - x^2)^\frac{3}{2}\mcom \mathrm{etc}\) &
         \(x = a\sin(\theta) \mor x = a\cos(\theta)\) \\
-        \(\sqrt{a^2 + x^2}, \:\:\: \frac{1}{\sqrt{a^2 + x^2}},
-        \:\:\: (a^2 + x^2)^{-\frac{3}{2}}, \:\:\: \mathrm{etc}\) &
+        \(\sqrt{a^2 + x^2}\mcom \frac{1}{\sqrt{a^2 + x^2}},
+        \:\:\: (a^2 + x^2)^{-\frac{3}{2}}\mcom \mathrm{etc}\) &
         \(x = a\sinh(\theta)\) \\
-        \(\sqrt{x^2 - a^2}, \:\:\: \frac{1}{\sqrt{x^2 - a^2}},
-        \:\:\: (x^2 - a^2)^\frac{5}{2}, \:\:\: \mathrm{etc}\) &
+        \(\sqrt{x^2 - a^2}\mcom \frac{1}{\sqrt{x^2 - a^2}},
+        \:\:\: (x^2 - a^2)^\frac{5}{2}\mcom \mathrm{etc}\) &
         \(x = a\cosh(\theta)\) \\
-        \(\frac{1}{a^2 + x^2}, \:\:\: \frac{1}{(a^2 + x^2)^2}, \:\:\:
+        \(\frac{1}{a^2 + x^2}\mcom \frac{1}{(a^2 + x^2)^2}\mcom
         \mathrm{etc}\) &
         \(x = a\tan(\theta)\) \\
     \end{tabular}
@@ -1077,7 +1078,7 @@ the overall function to be valid we need \(\sqrt(x^2 - 25) \neq 0\), thus
 \[x = 5\cosh(\theta) \Rightarrow \dd{x}{\theta} = 5\sinh(\theta)\]
 \[\frac{1}{\sqrt{x^2 - 25}} = \frac{1}{\sqrt{25\cosh^2(\theta) - 25}} =
 \frac{1}{\sqrt{25(\cosh^2(\theta) - 1)}} = \frac{1}{5\sqrt{\sinh^2(\theta)}}\] 
-\[= \frac{1}{5\abs{\sinh(\theta)}}, \:\:\: \theta > 0 \Rightarrow
+\[= \frac{1}{5\abs{\sinh(\theta)}}\mcom \theta > 0 \Rightarrow
 \frac{1}{5\sinh(\theta)}\]
 Here, we were able to use the identity 
 \(\cosh^2(\theta) - \sinh^2(\theta) = 1\) to simplify the denominator. We
@@ -1095,7 +1096,7 @@ put the final answer back in terms of \(x\).
 Another example
 
 \begin{center}
-\[\int\sqrt{9 - 4x^2}\dx, \:\:\: \abs{x} \leq \frac{3}{2}\]
+\[\int\sqrt{9 - 4x^2}\dx\mcom \abs{x} \leq \frac{3}{2}\]
 \[\int\sqrt{9 - 4x^2}\dx = 2\int\sqrt{\frac{9}{4} - x^2}\]
 \[x = \frac{3}{2}\sin^2(\theta) \Rightarrow \theta = 
 \arcsin\left(\frac{2x}{3}\right)\] 
@@ -1174,7 +1175,7 @@ To perform integration by parts, this experssion is integrated to yield the
 rule
 \[\int u\dd{v}{x} \dx = uv - \int v\dd{u}{x} \dx\]
 An example
-\[\int x^2\log(x)\dx, \:\:\: (x > 0)\]
+\[\int x^2\log(x)\dx\mcom (x > 0)\]
 \[u = \log(x) \Rightarrow \dd{u}{x} = \frac{1}{x}\]
 \[\dd{v}{x} = x^2 \Rightarrow v = \frac{x^3}{3}\]
 \[\int x^2\log(x) \dx = \frac{x^3}{3}\log(x) -\int\frac{x^3}{3}\frac{1}{x}\dx\]
@@ -1186,6 +1187,46 @@ doesn't know how to solve.
 \[\dd{v}{x} = 1 \Rightarrow v = x\]
 \[\int\log(x)\dx = x\log(x) - \int \frac{x}{x} \dx = x\log(x) - \int 1 
 = x\log(x) - x + C\]
+
+\subsubsection*{Partial Fractions}
+
+For two polynomials \(f(x)\), of degree \(n\) and \(g(x)\), of degree \(d\),
+\[\frac{f(x)}{g(x)}\]
+can be written as the sum of partial fractions. In the case that \(n < d\), the
+process for this is to factorise \(g\), write down the partial fraction
+expansion and finally to find unknown coefficients. To write down the partial
+fraction expansion for a denominator \(g\), we use the expansions from the
+below table.
+
+\renewcommand{\arraystretch}{2}
+\begin{center}    
+    \begin{tabular}{||c|c||}
+        Denominator Factor & Partial Fraction Expansion \\
+        \hline
+        \hline
+        \((x - a)\) & \(\frac{A}{x - a}\) \\
+        \((x - a)^r\) & \(\frac{A_1}{x - a} + \frac{A_2}{(x - a)^2} + \ldots +
+        \frac{A_r}{(x - a)^r}\) \\
+        \(x^2 + bx + c\) & \(\frac{Ax + B}{x^2 + bx + c}\) \\
+        \((x^2 + bx + c)^r\) & \(\frac{A_1x + B_1}{x^2 + bx + c} +
+        \frac{A_2x + B_2}{(x^2 + bx + c)^2} + \ldots 
+        + \frac{A_rx + B_r}{(x^2 + bx + c)^r}\) \\
+    \end{tabular}
+\end{center}
+\renewcommand{\arraystretch}{1}
+
+As an example of using this process, let us attempt to integrate.
+\[\int \frac{4}{x^2(x + 2)} \dx\mcom (x\neq0, -2)\]
+\[\frac{4}{x^2(x + 2)} = \frac{A}{x} + \frac{B}{x^2} + \frac{C}{x + 2} = \]
+\[\frac{Ax(x + 2) + B(x + 2) + Cx^2}{x^2(x + 2)}
+= \frac{(A + C)x^2 + (2A + B)x + 2B}{x^2(x + 2)} \Rightarrow\]
+\[A + C = 0 \mcom 2A + B = 0 \mcom 4 = 2B \Rightarrow\]
+\[A = -1 \mcom B = 2 \mcom C = 1 \Rightarrow\]
+\[\int \frac{4}{x^2(x + 2)} \dx = \int \frac{-1}{x} + \frac{2}{x^2} + 
+\frac{1}{x + 2} \dx = \log(\abs{x}) - \frac{2}{x} + \log(\abs{x + 2}) + C\]
+
+In the case that \(n \geq d\), we must first use polynomial long division to
+reduce the degree of the denominator.
 
 \end{flushleft}
 \end{document}
