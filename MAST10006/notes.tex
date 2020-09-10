@@ -1265,5 +1265,98 @@ If for instance we knew that our previous example had \(y(0) = 2\) we could
 solve to find
 \[y(0) = \frac{0^4}{4} + c = 2 \Rightarrow c = 2\]
 
+\subsubsection*{Seperable First Order}
+
+A seperable first order differential equation has the form
+\[\dd{y}{x} = M(x)N(y) \mcom (M(x)\neq0, N(y)\neq0)\]
+To solve, we seperate our variables like so
+\[\dd{y}{x} = M(x)N(y) \Rightarrow \frac{1}{N(y)}\dd{y}{x} 
+= M(x)\mcom N(Y\neq0) \Rightarrow\]
+\[\int \frac{1}{N(y)}\dd{y}{x}\dx = \int M(x)\dx \Rightarrow 
+\int \frac{1}{N(y)}\dy = \int M(x)\dx\]
+This is essentially an application of derivative substitution to clean up the
+equation and seperate the two variables.
+
+\subsubsection*{Examples}
+\[\dd{y}{x} = \frac{y}{1 + x}\mcom(x\neq -1)\]
+\[\frac{1}{y}\dd{y}{x} = \frac{1}{1 + x} \Rightarrow
+\int\frac{1}{y}\dd{y}{x}\dx = \int\frac{1}{1 + x}\dx = \int\frac{1}{y}\dy
+\Rightarrow\]
+\[\log(\abs{1 + x}) + c = \log(\abs{y}) + c \Rightarrow 
+e^{\log(\abs{1 + x}) + c} = e^{\log(\abs{y})} \Rightarrow\]
+\[\abs{y} = e^c\abs{1 + x} \Rightarrow y = \pm A(1 + x)\]
+In this example we made the assumption that \(y\) was non-zero when we divided
+by \(y\) initially. This works out in the end because we know\(A=\pm e^c\neq0\)
+so our solution covers us, however we should also check whether \(y(x)\equiv0\)
+is a solution, which in this case it is. We can incorporate this into our
+previous solution by allowing \(A\) to be \(0\).
+\[\dd{y}{x} = \frac{1}{2y\sqrt{1 - x^2}}\mcom(-1 < x < 1,y\neq 0)\mcom y(0)=3\]
+\[2y\dd{y}{x} = \frac{1}{\sqrt{1 - x^2}} \Rightarrow\int2y\dy 
+= \int\frac{1}{\sqrt{1 - x^2}}\dx \Rightarrow\]
+\[x = \cos(\theta) \Rightarrow \theta = \arccos(x)\]
+\[\dd{x}{\theta} = -\sin(\theta) \Rightarrow \int\frac{1}{\sqrt{1 - x^2}}\dx
+= \int\frac{1}{\sqrt{1-\cos^2(\theta)}}\times-\sin(\theta)\:\mathrm{d}\theta\]
+\[\frac{1}{\sqrt{1 - \cos^2(\theta)}} = \frac{1}{\sqrt{\sin^2(\theta)}} 
+= \frac{1}{\sin(\theta)} \Rightarrow\]
+\[\int2y\dy = \int\frac{1}{\sin(\theta)}\times-\sin(\theta)\:\mathrm{d}\theta
+= \int -\frac{\sin(\theta)}{\sin(\theta)}\:\mathrm{d}\theta 
+= \int-1\:\mathrm{d}\theta \Rightarrow\]
+\[y^2 = -\theta + c = -\arccos(x) + c \Rightarrow \abs{y} 
+= \sqrt{-\arccos(x) + c} \Rightarrow\]
+\[y = \pm\sqrt{-\arccos(x) + c}\]
+\[y(0) = 3 \Rightarrow 3 = \pm\sqrt{-\arccos(0) + c} 
+= \pm\sqrt{-\frac{\pi}{2} + c} \Rightarrow\]
+\[9 = -\frac{\pi}{2} + c \Rightarrow c = 9 + \frac{\pi}{2}\]
+This is actually the wrong way to do it. The correct way to do it is to realise
+that the right hand side is a standard integral of \(\arcsin\) and use that to
+find \(c = 9\) for the solution
+\[y = \pm\sqrt{\arcsin(x) + 9}\]
+The two solutions are however equivalent so either works. \(y(0) = 3\) tells
+us that the positive side of each of these two solutions are the correct one.
+
+\subsubsection*{Integrating Factor and Linear First Order}
+
+By working through the following differential equation, we can make an
+observation which will be useful in solving a certain form of differential
+equations.
+\[x\dd{y}{x} + y = e^x\]
+\[x\dd{y}{x} + y = \derivx{xy} \Rightarrow \derivx{xy} = e^x \Rightarrow\]
+\[\int\derivx{xy}\dx = \int e^x\dx \Rightarrow xy = e^x + c \Rightarrow\]
+\[y = \frac{e^x + c}{x}\mcom x\neq0\]
+By obsering that \(x\dd{y}{x} + y\) is the result of the application of the
+product rule in finding a derivative of \(xy\), we were able dramatically
+simplify the solving of this equation. This process can be made more general
+as well. \par
+For an ordinary differential equation to be linear it must be of the form
+\[f_1(x)\dd{y}{x} + f_0(x)y + q(x) = 0\]
+for example, the equation solved at the start of this section was linear,
+which becomes more clear when one rearranges it. 
+\[x\dd{y}{x} + y = e^x \Rightarrow x\dd{y}{x} + y - e^x = 0\]
+This is important, because it is the first step in solving differential
+equations using the product rule. We start by arranging our differential
+equation into the standrad form
+\[\dd{y}{x} + P(x)y = Q(x)\]
+To solve it, we then multiply by our integrating factor \(I(x)\), a function
+which we don't yet know.
+\[I(x)\dd{y}{x} + I(x)P(x)y = I(x)Q(x)\]
+We want \(I\) to cause our equation to satisfy the condition
+\[\derivx{y(x)I(x)} = Q(x)I(x)\]
+To find an \(I\) with this property we need to solve such that
+\[\dd{I}{x} = P(x)I \Rightarrow I = \pm e^{\int P(x) \dx}\]
+We have observed that this condition yields a seperable differential equation
+solved it for the general form and used this to generate our \(I\). Because
+we need only a single integrating factor \(I\), we can discard the negative
+solutions to yield
+\[I(x) = e^{\int P(x) \dx}\]
+For the same reason, we can ignore any absolute values or constants of
+integration in the integral as well. Applying this to our first example:
+\[x\dd{y}{x} + y = e^x \Rightarrow \dd{y}{x} + \frac{y}{x} = \frac{e^x}{x}
+\Rightarrow P(x) = \frac{1}{x}\]
+\[I(x) = e^{\int \frac{1}{x} \dx} = e^{\log(x)} = x\]
+\[I(x)\dd{y}{x} + I(x)\frac{y}{x} + I(x)\frac{e^x}{x} = x\dd{y}{x} + y + e^x
+\Rightarrow \derivx{xy} = e^x\]
+Through our general formula, we found our way to the same solution we arrived
+at through a leap of intuition in the initial example.
+
 \end{flushleft}
 \end{document}
