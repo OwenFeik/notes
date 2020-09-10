@@ -1228,5 +1228,42 @@ As an example of using this process, let us attempt to integrate.
 In the case that \(n \geq d\), we must first use polynomial long division to
 reduce the degree of the denominator.
 
+\section*{Differential Equations}
+
+\subsection*{Ordinary Differential Equations}
+
+An ordinary differential equation or ODE is an equation of the form
+\[f\left(x, y \dd{y}{x} \dd{^2y}{x^2}, \ldots \dd{^ny}{x^n}\right) = 0\]
+Here, there is only one independent variable \(x\), and one dependent variable
+\(y\). The equation is then expressed in terms of functions and derivatives of
+these two functions. The \textit{order} of a differential equation is the
+highest derivative that appears in the equation (second, third, etc). \par
+A solution of this equation is a function \(y(x)\) which satisfies the equation
+for all \(x\) in some interval. For example
+\[y(x) = x^2 + \frac{2}{x}\]
+Is a solution for all \(x\in\R\backslash\set{0}\) to
+\[\dd{y}{x} + \frac{y}{x} = 3x\]
+Which can be shown via substitution, replacing all \(y\) with \(y(x)\).
+\[\derivx{x^2 + \frac{2}{x}} + \frac{x^2 + \frac{2}{x}}{x} = 3x\]
+\[2x - \frac{2}{x^2} + x + \frac{2}{x^2} = 3x\]
+\[2x + x = 3x\]
+
+\subsubsection*{First Order}
+
+A first order differential equation is a differential equation containing only
+at most first derivatives such as
+\[\dd{y}{x} = x^3\]
+This example can be easily solved through integration.
+\[y = \int x^3 \dx = \frac{x^4}{4} + c\]
+These solutions usually contain an arbritray constant \(c\in\R\), and the
+solutions represented by various values of \(c\) are known as the family of
+solutions to this differential equation. It is interesting to note that these
+solutions can never intersect, as the differ by some value at all \(x\). \par
+To find a \textit{particular solution}, we need some starting conditions for
+our differential equation, and we can then solve to find the value of \(c\).
+If for instance we knew that our previous example had \(y(0) = 2\) we could
+solve to find
+\[y(0) = \frac{0^4}{4} + c = 2 \Rightarrow c = 2\]
+
 \end{flushleft}
 \end{document}
