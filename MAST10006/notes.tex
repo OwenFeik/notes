@@ -1357,6 +1357,60 @@ integration in the integral as well. Applying this to our first example:
 \Rightarrow \derivx{xy} = e^x\]
 Through our general formula, we found our way to the same solution we arrived
 at through a leap of intuition in the initial example.
+\[\dd{y}{x} + \frac{y}{x} = \sin(x)\mcom (x\neq 0)\]
+\[I(x) = e^{\int P(x) \dx} = e^{\int \frac{1}{x} \dx} = e^{\log(x)} = x\]
+\[x\dd{y}{x} + y = x\sin(x) = \derivx{xy} \Rightarrow\]
+\[\int \derivx{xy} \dx = \int x\sin(x) \dx \Rightarrow xy 
+= -x\cos(x) + \int\cos(x) \dx \Rightarrow\]
+\[xy = -x\cos(x) + \sin(x) + c \Rightarrow y 
+= -\cos(x) + \frac{\sin(x)}{x} + \frac{c}{x}\]
+Here we used an integrating factor to solve the left side, and then integrated
+the right side through derivative substitution.
+
+\subsubsection*{Other First Order}
+
+It is sometimes possible to apply a substitution to simplify a differential
+equation down to a seperable or linear differential equation. A differentiable
+equation of a \textit{homogenous type} has the form
+\[\dd{y}{x} = f\left(\frac{y}{x}\right)\]
+In this case, we can substitute \(y = \frac{y}{x}\) to reduce to a seperable
+differential equation. Another case is differential equations with the form
+of Bernoulli's equation, that is
+\[\dd{y}{x} + P(x)y = Q(x)y^n\]
+In this case, a substitution of \(u = y^{1 - n}\) reduces the equation to 
+linear.
+
+\subsubsection*{Homogenous Example}
+
+\[\dd{y}{x} = \frac{y}{x} + \cos^2\left(\frac{y}{x}\right)
+\mcom (-\frac{\pi}{2} < \frac{y}{x} < \frac{\pi}{2})\]
+\[u = \frac{y}{x} \Rightarrow \dd{y}{x} = x\dd{y}{x} + u\]
+\[x\dd{u}{x} + u = u + \cos^2(u) \Rightarrow \dd{u}{x} = \frac{\cos^2(u)}{x}
+\Rightarrow\]
+\[\sec^2(u)\dd{u}{x} = \frac{1}{x} \Rightarrow \int\sec^2\dd{u}{x}\dx 
+= \int\frac{1}{x}\dx \Rightarrow \int\sec^2\dx = \int\frac{1}{x}\dx
+\Rightarrow\]
+\[\tan(u) = \log(\abs{x}) + C \Rightarrow \tan\left(\frac{y}{x}\right) 
+= \log(\abs{x}) + C \Rightarrow\]
+\[y = x\arctan(\log(\abs{x} + C))\]
+
+\subsubsection*{Bernoulli Example}
+
+\begin{center}
+    \[\dd{y}{x} + y = e^{3x}y^4\mcom (y\neq0)\]
+    \[u = y^{-3}\]
+    We want to express \(y\) and \(\dd{y}{x}\) in terms of \(u\), \(x\) and 
+    \(\dd{u}{x}\).
+    \[\dd{u}{x} = \derivx{y^{-3}} \Rightarrow \dd{u}{x} = -3y^{-4}\dd{y}{x}\]
+    Because we are diffentiating an equation of \(y\), we need to use implicit
+    differentiation, hence the \(\dd{y}{x}\) term. Now that we have this
+    equation, we can multiply our other equation by the coefficient to replace.
+    \[-3y^{-4}\left(\dd{y}{x} + y\right) = -3y^{-4}\left(e^{3x}y^4\right)
+    \Rightarrow\]
+    \[\dd{u}{x} - 3y^{-3} = -3e^{3x} = \dd{u}{x} -3u\]
+    At this stage we simple have a linear differential equation, and the
+    solution is fairly easy to find.
+\end{center}
 
 \end{flushleft}
 \end{document}
