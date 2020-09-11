@@ -2,6 +2,7 @@
 \renewcommand{\familydefault}{\sfdefault}
 
 \usepackage{amssymb}
+\usepackage{commath}
 \usepackage{pgfplots}
 
 \setlength{\parskip}{.2cm}
@@ -654,6 +655,53 @@ magnetic field using Ampere's law.
 \[B = \mu_0nI\]
 This is independent of the diameter of the solenoid. For a real solenoid, this
 only applies near the centre.
+
+\bigskip
+Two adjacent current carrying wires will exert a force on each other due to
+their induced magnetic fields. The magnitude of this force by one of these
+wires \(b\) on the other \(a\) is given by
+\[F_{ba} = \frac{\mu_0I_aI_bL_b}{2\pi d}\]
+Where \(d\) is the distance between the two. If the two currents are in the
+same direction they will attract each other, while if they are opposite they
+will repel. This is the result of the more general equations
+\[\vec{F} = q\vec{v}\times\vec{B}\]
+\[\vec{F} = i\vec{L}\times\vec{B}\]
+For the magnetic force on a moving charge and the magnetic force on a current
+respectively.
+
+\subsubsection*{Faraday's Law}
+
+Faraday's Law of induction is one of Maxwell's equations. The law states that
+a change in magnetic flux causes a potential difference. In practice, this
+means that moving a magnet towards or away from a loop of wire causes a current
+and voltage to appear in the loop. The direct of this current is such that the
+magnetic field induced by it opposes the change in flux. \par
+Magnetic flux through an area is defined as
+\[\Phi_B = \int_\mathrm{surface} \vec{B}\cdot\mathrm{d}\vec{A}\]
+The magnetic flux is the product of the normal area with magnetic field. In
+the case that \(B\) and \(A\) are parallel, this is simply
+\[\Phi_B = BA\]
+
+\bigskip
+Faraday's law can be intuited by considering a metal bar being moved at some
+velocity \(v\) through a constant magnetic field of strength \(B\). The effect
+of this magnetic field will be to induce a Hall effect within the bar, creating
+a potential difference between its two ends. If one then adds a circuit
+connecting the ends of the bar, it acts like a battery, dissipating its voltage
+across the wire. Thus a current is created. This current induces a magnetic
+field, which opposes the direction of motion. This system can be described
+by
+\[IR = LBv\]
+Where \(I\) is the current created by the Hall effect, \(R\) is the resistance
+of the external circuit and \(L\) is the length of the metal bar. Thus we see
+the power induced is dependent on the velocity. The induced EMF is given by
+\[V = -IR = -LBv\]
+More generally this can be expressed as
+\[V = -\frac{\mathrm{d}BA}{\mathrm{d}t}\]
+Where \(A = L\mathrm{d}x\). Thus the potential difference induced by this
+system will be \(V\). It turns out we have a definition for \(BA\).
+\[\epsilon = -\frac{\mathrm{d}\Phi_B}{\mathrm{d}t}\]
+\(\epsilon\) is conventionall used rather than \(V\) for this induced EMF.
 
 \end{flushleft}
 \end{document}
