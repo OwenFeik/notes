@@ -752,5 +752,71 @@ Bagel provides a framework which one can extend to create a graphical program.
 Bagel automatically clears the screen, checks input and calls the user defined
 update method every tick. Documentation is available through Canvas.
 
+\section*{Inheritance and Polymorphism}
+
+The best way to learn the motivation for these concepts is by considering a
+case where they haven't been applied. Let us consider for this purpose a chess
+game. This game needs a board to manage the game state, as well as
+implementations of various pieces. \par
+We might reasonably suggest then that classes for a board, a pawn, a rook, a
+knight, a bishop, a queen and a king would be required. While the board would
+be more or less unique, the other pieces would be quite similar, needing to
+store their colour, position and implement movement and capture logic. The
+solution to the duplication inherent in these classes is inheritance. \par
+Rather than have a class for each of these pieces, we can create a ``piece''
+super class and instead subclass from this to reduce code duplication.
+
+\begin{lstlisting}
+    public abstract class Piece {
+        private boolean colour;
+        protected int x, y;
+
+        public Piece(boolean colour, int x, int y) {
+            this.colour = colour;
+            this.x = x;
+            this.y = y;
+        }
+
+        public abstract void move();
+    }
+
+    public class Pawn extends Piece {
+        public Pawn(boolean colour, int x, int y) {
+            super(colour, x, y);
+        }
+    
+        @Override    
+        public void move() {
+            // move
+        }
+    }
+\end{lstlisting}
+
+Here, our super class is \code{Piece} and it is subclassed or extended by
+\code{Pawn}. By marking our parent (super) class as \code{abstract}, we tell
+the compiler that objects of this class should not be directly instantiated,
+and instead only subclasses of \code{Piece} should be created. When we declare
+the \code{abstract} method \code{move()}, we provide no function body; this is
+instead an indication that all subclasses of \code{Piece} should define
+\code{move()}. \par
+All instances of \code{Pawn} will have the attributes defined in \code{Piece},
+though they will only be able to directly access \code{public} or
+\code{protected} members; subclasses will not be able to directly access their
+own colour. When we call \code{super()}, we are running the constructor of
+\code{Piece} to set up these attributes for its child class \code{Pawn}.
+\code{super()} can only be called within the constructor of a subclass, and
+should be called as the first thing in that constructor. \par
+The \code{@Override} annotation in \code{Pawn} is used to indicate that this
+method is being overridden from the super class. It has no function and is a
+purely aesthetic inclusion, but can improve code clarity. Overridden methods
+must share parent return types or have the same parent type. Parent class 
+functionality can be accessed through \code{super.<method>}; super is always
+a reference to the parent class. \par
+By setting up our pieces in this way, we avoid the duplication inherent in
+defining similar constructors and other methods like getters and setters in
+each different piece. The subclass \code{Pawn} can be thought of as a more
+specialised or specific version of \code{Piece}; all \code{Pawn}s are
+\code{Piece}s, but not vice versa.
+
 \end{flushleft}
 \end{document}
