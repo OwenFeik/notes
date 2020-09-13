@@ -867,5 +867,109 @@ applications.
         properties.
 \end{itemize}
 
+\subsubsection*{Interfaces}
+
+Interfaces are in some ways similar to \code{abstract} classes. They also model
+concepts or ideas and cannot be themselves instantiated. They may contain only
+constans and abstract methods, and are used primarily to define behaviours of
+classes which can \textit{implement} the interface. \par
+A class which implements an interface ``can do'' all of the things the
+interface defines. Interfaces are often named according to the \code{<...>able}
+convention implying all of their members are e.g. \code{Driveable}. One might
+use an interface rather than a class for things that happen to share behaviour
+but which are not logically connected, for example a seatbelt and a hat might
+both be wearable, but wouldn't share a common super class.
+
+\begin{lstlisting}
+    public interface Printable {
+        int MAXIMUM_PIXEL_DENSITY = 1000;
+
+        void print();
+    }
+\end{lstlisting}
+
+Notice that despite not being explicitly abstract, the method \code{print()}
+has no body; the \code{abstract} is implicit. Again despite not explicitly
+stating as such, all attributes are \code{static} and \code{final}. All of an
+interfaces members are \code{public}.
+
+\begin{lstlisting}
+    public class Image implements Printable {
+        public void print() {
+            doThing();
+        }
+    }
+\end{lstlisting}
+
+The \code{Image} class \code{implements} the \code{Printable} \code{interface},
+and must therefore implement all methods defined by \code{Printable}. If a
+class wants to implement and interface without defining all of its methods, it
+must be \code{abstract}. \par
+If one wants to have a method be optional in implementing classes, one can use
+\code{default}.
+
+\begin{lstlisting}
+    public interface Digitisable extends Printable {
+        int MAXIMUM_PIXEL_DENSITY = 1000;
+
+        default void digitise() {
+            doThing();
+        }
+    }
+\end{lstlisting}
+
+Here, \code{digitise()} is a standard implementation of the method, which can
+be overridden by classes which need different behaviour. As shown here,
+interfaces can extend other interfaces just as classes do, to allow greater
+specialisation.
+
+\subsubsection*{Comparable}
+
+A useful interface in the standard library is \code{Comparable<Class>}, where
+class is the class to which the class implementing might be compared to. For
+instance, \code{String} implements comparable, allowing it to be compared to
+other strings. To implement comparable, a class must have the method
+\code{compareTo}.
+
+\begin{lstlisting}
+    public class Person implements Comparable<Person> {
+        private String firstName, lastName;
+
+        public String getFirstName() {
+            return this.firstName;
+        }
+
+        public String getLastName() {
+            return this.lastName;
+        }
+
+        public int compareTo(Person other) {
+            int first = this.firstName.compareTo(other.getFirstName());
+            if (first) {
+                return first;
+            }
+            return this.lastName.compareTo(other.getLastName());
+        }
+    
+    } 
+\end{lstlisting}
+
+\code{compareTo} must return a negative integer if the object is less than,
+zero if it is equal to and a positive integer if it is greater than the other
+object. This is used by \code{Arrays.sort} among other methods to generalise
+comparison behaviour. The behaviour of \code{compareTo} can be whatever the
+developer deems useful; in the above example, the two will be compared
+alphabetically.
+
+\subsubsection*{Inheritance and Implementation}
+
+While a class can only extend a single parent class, it can implement any
+number of interfaces. In general, where inheritance is for generalising
+share properties, implementation is for generalising shared behaviour. \par
+Inheritance is more of a ``is a'' relationship; all children \textit{are}
+parents. \par
+Implementation is more of a ``can do'' relationship; all implementors
+\textit{can do} the thing.
+
 \end{flushleft}
 \end{document}
