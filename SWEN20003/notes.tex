@@ -488,7 +488,7 @@ In general, an immutable class will lack setter methods. It may also have
 
 \subsubsection*{Delegation}
 
-A class can \textit{delegate} responsibilities to other calsses. The object can
+A class can \textit{delegate} responsibilities to other classes. The object can
 invoke methods of other objects through \textit{containership}. In this case,
 the two classes have an \textit{association} relationship. \par
 This essentially refers to using classes as data types. Rather than have an 
@@ -805,18 +805,67 @@ though they will only be able to directly access \code{public} or
 own colour. When we call \code{super()}, we are running the constructor of
 \code{Piece} to set up these attributes for its child class \code{Pawn}.
 \code{super()} can only be called within the constructor of a subclass, and
-should be called as the first thing in that constructor. \par
+should be called as the first thing in that constructor. Parent class 
+functionality can be accessed through \code{super.<method>}; super is always
+a reference to the parent class. \par
 The \code{@Override} annotation in \code{Pawn} is used to indicate that this
 method is being overridden from the super class. It has no function and is a
 purely aesthetic inclusion, but can improve code clarity. Overridden methods
-must share parent return types or have the same parent type. Parent class 
-functionality can be accessed through \code{super.<method>}; super is always
-a reference to the parent class. \par
+must share parent return types or have the same parent type. \code{private}
+methods of the parent class cannot be overridden as they are out of scope.
+\code{final} methods are in scope, but cannot be overridden. \par
+Although attributes of a parent class can be accessed by a child class if they
+are defined as \code{protected}, this is considered bad practice and they
+should instead be accessed through public or protected getters and setters.
+Privacy level must be maintained when overriding methods. \par
 By setting up our pieces in this way, we avoid the duplication inherent in
 defining similar constructors and other methods like getters and setters in
 each different piece. The subclass \code{Pawn} can be thought of as a more
 specialised or specific version of \code{Piece}; all \code{Pawn}s are
 \code{Piece}s, but not vice versa.
+
+\subsubsection*{\code{Object}}
+
+All classes in Java (implicitly) inherit from \code{Object}. Therefore all
+objects are of the type \code{Object} and if not defined elsewhere they also
+have the \code{toString}, \code{equals}, etc methods of the \code{Object}
+class. \par
+When comparing objects it can be useful to know a few concepts.
+
+\begin{lstlisting}
+    boolean sameClass(Object a, Object b) {
+        return a.getClass() == b.getClass();
+    }
+
+    boolean isSubClass(Object a, Object b) {
+        return b instanceof a && !sameClass(a, b);
+    }
+
+    Piece p = new Pawn(); // here I assign a Pawn to a Piece
+    Pawn p = (Pawn) p; // here I downcast the Piece to a Pawn
+\end{lstlisting}
+
+The \code{Object} method \code{getClass} and the operator \code{instanceof} can
+be useful for type checking. It is important to note that a subclass can be
+stored in a variable of its parent type, and that typecasts can be used to
+convert between the two.
+
+\subsubsection*{Types of Inheritance}
+
+A variety of different types of inheritance exist, which have various different
+applications.
+
+\begin{itemize}
+    \item Single inheritance describes a subclass with a single super class.
+    \item Multiple inheritance describes a situation with several super
+        classes.
+    \item Hierarchical inheritance exists when a single super class has many
+        subclasses.
+    \item Multi-Level inheritance implies subclasses of subclasses.
+    \item Hybrid inheritance implies some combination of other types.
+    \item Multi-path inheritance implies multiple sources of different
+        properties.
+\end{itemize}
 
 \end{flushleft}
 \end{document}
