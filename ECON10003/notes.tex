@@ -395,7 +395,7 @@ for future events.
 In a closed economy, there is no trade. This is a commonly used model to 
 understand behaviours of an economy in a simpler setting. In this case,
 \[Y = C + I + G\]
-GDP is equal to consumption plus investement plus government expenditure. \(C\)
+GDP is equal to consumption plus investment plus government expenditure. \(C\)
 and \(G\) are both considered consumption expenditure. This leaves \(I\) as the
 savings in the system, which can then be written as
 \[Y - C - G = I = S\]
@@ -1164,6 +1164,99 @@ This description is approximate; the reserve bank still has plent of leeway
 for human intuition. Interestingly, \(0\) is not a lower bound for the interest
 rate. Economists tend to think that a slightly negative interest rate is
 acceptable due to the utility inherent in storage of wealth in a bank.
+
+\subsection*{Aggregate Demand and Supply}
+
+The Keynesian model makes the assumption that prices in an economy are fixed in
+the short run. The model of aggregate supply and demand allows us to consider
+situations with high inflation or other price changing factors. Aggregate
+demand and supply is essential to understanding evens like the GFC.
+
+\subsubsection*{Aggregate Demand}
+
+The model of aggregate demand assumes that
+\begin{itemize}
+    \item Household consumption is given by 
+        \(C^d = \bar{C} + c(Y - T) - \gamma_cr\)
+    \item Firm investment is given by \(I^P = \bar{I} - \gamma_Ir\)
+    \item Government, export and import spending is exogenous
+    \item The monetary policy of the system is defined by the policy reaction
+        function.
+    \item Prices are set by the aggregate of firms in the economy.
+\end{itemize}
+The model has implications for the level of output of the economy, as well as
+the level of inflation implied by the model. It therefore has implications for
+the real interest rate as well as consumption. \par
+The aggregate demand curve exists with one axis showing output and another
+showing inflation. It maps the set of points where \(PAE = Y\), points in
+Keynesian equilibrium; no unwanted change to inventory occurs. \par
+The plot will
+take the form of a downward curve. A high level of inflation implies a low
+level of output, a fact largely due to the effects of monetary policy from the
+reserve bank. The reserve bank will respond to high inflation by attempting to
+lower output, resulting in a lower level of output at higher levels of
+inflation. \par
+On an individual level, it is intuitive that inflation coincides with erosion
+of wealth, reducing people's ability to consume. In addition, generally those
+that are wealthy are able to make intelligent investment decisions that protect
+them from inflation, while the poor are less able to do this. This, combined
+with the fact that the consumption of wealthier people tends to be less tied
+to increases in their wealth explains a fall in output.
+
+\subsubsection*{Shocks to the Aggregate Demand Curve}
+
+Causes of shifts to the aggregate demand curve include
+\begin{itemize}
+    \item Shifts to the planned aggregate expenditure curve, excluding those
+        caused by inflation. These include changes in household behaviour, firm
+        behaviour or exogenouse variables. Changes inflation cause a move along
+        the same curve.
+    \item Exogenouse changes to the policy reaction function of the central
+        bank. If the relationship between the real interest rate and inflation
+        changes, so too will the aggregate demand curve.
+\end{itemize}
+
+We can examine the effect of a change in exogenous expenditure through a case
+study.
+
+\begin{simpleplot}{\(Y\)}{\(Y/PAE\)}
+    \addplot[red, ultra thick, ->] {x}
+    node[above left, pos = 0.95] {\(Y\)};
+    \addplot[blue, ultra thick, ->] {0.4*x + 2}
+    node[above left, pos = 0.7] {\(PAE(G_1, \pi)\)};
+    \addplot[blue, ultra thick, ->] {0.4*x + 1}
+    node[below right, pos = 0.85] {\(PAE(G_0, \pi)\)};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 1.67, 1.67) {};
+    \node[below right] at (axis cs: 1.67, 1.67) {\(Y_0\)};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 3.33, 3.33) {};
+    \node[above left] at (axis cs: 3.33, 3.33) {\(Y_1\)};
+\end{simpleplot}
+
+Here, government expenditure has increased from a level \(G_0\) to a level
+\(G_1\), causing an increase of output from level \(Y_0\) to \(Y_1\). This all
+occurs at a constant inflation rate \(\pi\). The below plot shows the impact of
+this change in \(PAE\) in the aggregate demand curve.
+
+\begin{simpleplot}{\(Y\)}{\(\pi\)}
+    \addplot[blue, ultra thick, domain = 1.25:5, <->] {0.1*(x - 9)^2};
+    \addplot[blue, ultra thick, domain = 1:5, <->] {0.1*(x - 8)^2};
+    \addplot[black, ultra thick, dashed] coordinates {(0, 2.5)(5, 2.5)};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 3, 2.5) {};
+    \node[below left] at (axis cs: 3, 2.5) {\((Y_0, \pi)\)};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 4, 2.5) {};
+    \node[above right] at (axis cs: 4, 2.5) {\((Y_1, \pi)\)};
+    \addplot[black, thick, ->] coordinates {(2.2, 3.5)(2.9, 3.5)};
+\end{simpleplot}
+
+We can see that because the inflation rate \(\pi\) has remained constant while
+the level of output increases, the curve has moved to the right, to a higher
+level of output. Generally a rise in \(PAE\) implies a shift outward of
+aggregate demand while a fall in \(PAE\) implies a shift inward. \par
+Another way the curve can be affected is through changes in the policy reaction
+function of the central bank. This can be considered by thinking about what the
+new function entails for saving and expenditure behaviours. For example a
+decrease in real interest rate implies an increase in \(PAE\) implying a
+rightward shift of the demand curve.
 
 \end{flushleft}
 \end{document}
