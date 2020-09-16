@@ -9,6 +9,8 @@
 \usepackage{pgfplots}
 \usepackage{placeins}
 
+\setlength{\parskip}{.2cm}
+
 \usetikzlibrary{external}
 \tikzexternalize
 
@@ -1411,6 +1413,86 @@ linear.
     At this stage we simple have a linear differential equation, and the
     solution is fairly easy to find.
 \end{center}
+
+\subsection*{Population Models}
+
+\subsubsection*{Malthus (Doomsday) Model}
+
+The Malthus or Doomsday model for population growth states that rate of growth
+at a time \(t\) of a population \(p\) is proportional to the population.
+\[\dd{p}{t}\propto p \Rightarrow \dd{p}{t} = kp\]
+Here, \(k\) is a proportionality constant which corresponds to net births per
+unit population per unit time. If we take \(p(0) = p_0\) we find that
+\[p(t) = p_0e^{kt}\]
+Thus, the model is clearly an exponential relationship. Obviously this model is
+somewhat unrealistic; for a \(k > 0\) it implies unending exponential growth.
+
+\subsubsection*{Equilibrium Solutions}
+
+An equilibrium solution to a differential equation is a constant solution. For
+example, in the Malthusian example \(p_0 = 0\) is an equilibrium solution of
+\(p(t) \equiv 0\). For these to exist, we must have
+\[\dd{x}{t} = 0\]
+For a differential equation with variables \(x\) and \(t\). For example
+\[\dd{x}{t} = 3x - 2\]
+\[\dd{x}{t} = 0 \Rightarrow x = \frac{2}{3}\]
+The equilibrium solution is \(x(t) \equiv \frac{2}{3}\). A \textit{phase plot}
+is a plot of the derivative of a function against the value of the function. On
+these plots, the equilibria are the horizontal axis intercepts. These plots are
+generally only useful for differential equations of the form
+\[\dd{x}{t} = f(x)\]
+This is known as an \textit{autonomous} differential equation, because the
+right hand side is independent of \(t\).
+
+\begin{plot}[
+    xmin = -0.5,
+    xmax = 2,
+    ymin = -2.5,
+    ymax = 2.5
+]
+    \addplot[thick, blue, <->] {3*x - 2}
+    node[below, right, pos = 0.6] {\(y(x) = \dd{x}{t}\)};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 0.667, 0) {};
+    \node[above left, yshift = 0.2cm] at (axis cs: 0.667, 0) {\(\frac{2}{3}\)};
+    \addplot[thick, black, dashed] coordinates {(0.667, 2.5)(0.667, -2.5)};
+    \node[right] at (axis cs: 0.667, 2) {\(\dd{x}{t} > 0\)};
+    \node[left] at (axis cs: 0.667, -2) {\(\dd{x}{t} < 0\)};
+\end{plot}
+
+Examining this plot, we can see that the derivative of \(x\) will be
+positive for all values of \(x > \frac{2}{3}\) while it will be negative
+for values less than \(\frac{2}{3}\). We can also see that as \(x\) increases,
+the gradient of the function increases, as well as the inverse. Using this
+information, in combination with the constant solution learned from the
+intercet, and the fact that no solution may cross any other solution,
+we can plot the family of solutions to this differential equation.
+
+\begin{plot}[
+    xmin = -1,
+    xmax = 0.5,
+    ymin = -0.5,
+    ymax = 2
+]
+    \addplot[thick, red, <->] {e^x + 2/3};
+    \addplot[thick, red, <->] {0.5*e^x + 2/3};
+    \addplot[thick, red, <->] {2/3}
+    node[above, pos = 0.52] {\(x(t)\equiv\frac{2}{3}\)};
+    \addplot[thick, red, <->] {-0.5*e^x + 2/3};
+    \addplot[thick, red, <->] {-e^x + 2/3};
+\end{plot}
+
+We can see that for the initial condition of \(x(0) = \frac{2}{3}\), the value
+will be constant, while for initial conditions greater than this value the
+equation diverges to infinity and for values less, it diverges to negative
+infinity. \par
+It can be useful to examine if an equilibrium is stable. An equilibrium is
+\textit{stable} if nearby solutions grow closer with increasing \(t\), while
+it is unstable if solutions diverge, as they do in the above example. On a
+phase plot, a stable equilibrium will have a negative slope passing through it.
+On a phase plot, an unstable equilibrium has a positive slope through it,
+as in the example. \par
+A semistable equilibrium occurs when one side of solutions approach the
+equilibrium. This occurs at a touching point in a phase plot.
 
 \end{flushleft}
 \end{document}
