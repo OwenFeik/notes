@@ -1258,5 +1258,88 @@ new function entails for saving and expenditure behaviours. For example a
 decrease in real interest rate implies an increase in \(PAE\) implying a
 rightward shift of the demand curve.
 
+\subsubsection*{Aggregate Supply}
+
+The aggregate supply curve maps out a set of points \((Y, \pi)\) where firms
+production decisions are consistent with price changes. The prices set by firms
+are determined by costs of production, particularly labour costs. They are also
+influenced by demand for their products. \par
+In general, inflation will tend to behave as though it has inertia; it will
+be slow to change naturally. \par
+The primary determinant of production costs is the cost of labour.
+\[Y = wL + rK\]
+Tells us that total output is made up of wages paid for labour and interest
+paid on capital, with \(55-60\%\) of this made up by the labour term. These
+wages are generally negotiated between businesses and workers, and tend to
+be inflexible in the short term. \par
+The \textit{real wage} describes the distribution of gains from trade between
+workers and employers. If we assume that the two can agree on a fair real wage
+(which assumes that workers will have some insight into the future, considering
+inflation, etc for calculation of nominal wage.). This implies that high
+inflation needs high nominal wage increases to compensate, while low inflation
+implies low nominal wage increases. \par
+This forms a kind of self-fulfilling
+prophecy; an expectation of high prices results in higher wages and higher
+costs of production implying high prices. Thus the expectation of inflation in
+some way dictates the rate of inflation. \par
+But what determines this expectation? Considering inflation inertia, one would
+expect the present rate of inflation to reflect future inflation. Thus if
+inflation inertia is the main factor, we can calculate inflation through
+\[\pi^e_t = \pi_{t - 1}\]
+\[\pi_t = \pi^e_t + \epsilon_t\]
+\[\pi_t = \pi_{t - 1} + \epsilon_t\]
+Here, \(\pi^e_t\) is the expected rate of inflation during time period \(t\),
+set equal to the rate of inflation in period \(t - 1\). We then set \(\pi_t\)
+equal to this value plus some exogenous constant \(\epsilon_t\), which
+represents external shocks to the system. \par
+\(\epsilon_t\) could be made up of oil price shocks, natural disasters or
+surprising wage bargaining outcomes. \par
+In addition to labour considerations, the desired output level of firms is
+dependent on product market conditions. If firms have lower demand they will
+tend to lower prices to try and drive demand and thus lower inflation. Thus
+when output is equal to potential or desired output inflation will be
+unaffected by the product market. However if output is above potential, firms
+will raise prices resulting in increased inflation. Inversely, lower output 
+will result in lower prices and lower inflation. \par
+Considering this, we can develop an equation for the inflation rate with
+respect to expectations and the product market.
+\[\pi_t = \pi_{t - 1} + \gamma\left(\frac{Y_t - Y^*}{Y^*}\right) + \epsilon_t\]
+Where \(\gamma\) describes the responsiveness of inflation to deviations in the
+output gap.
+
+\begin{simpleplot}{\(Y\)}{\(\pi\)}
+    \addplot[red, ultra thick, ->] {x}
+    node[below right, pos = 0.9] {\(\pi(\gamma_0)\)};
+    \addplot[red, ultra thick, ->, domain = 0:4] {3*x/2 - 1}
+    node[above left, pos = 0.8] {\(\pi(\gamma_1)\)};
+    \addplot[black, ultra thick, dashed] coordinates {(0, 2)(4, 2)}
+    node[right] {\(\pi_{t - 1} = \pi^e_t\)};
+    \addplot[black, ultra thick, dashed] coordinates {(2, 0)(2, 3)}
+    node[above] {\(Y^*\)};
+\end{simpleplot}
+
+Here \(\gamma_0 < \gamma_1\), so the \(\gamma_0\) curve is less responsive to
+changes in \(Y\) and thus has a lower gradient. The two intersect at \(Y^*\).
+The gradient of each curve is not exactly \(\gamma\) but rather some function
+of \(\gamma\). At the output level \(Y^*\) the output dependent term is \(0\)
+so \(\gamma\) has no effect. At this level, it is exclusively \(\pi^e_t\) and
+\(\epsilon_t\) which determine the inflation level. Because \(\epsilon_t\) is
+taken to be \(0\) for the above plot, the two are simply equal.
+
+\subsubsection*{Shocks to the Aggregate Supply Curve}
+Shocks to this curve might happen for a variety of reasons. These include
+supply side changes, like new resources or improved technology or changes to
+regulation. For example immigrant labour might increase potential output or 
+Covid-19 lockdown regulations migth reduce potential output. Changes to
+inflation expectations in addition to exogenous inflation shocks have
+significant effects. \par
+When potential output increases, the supply curve is directly shifted to the
+right; this can be easily understood by understanding that the potential output
+\(Y^*\) pegs the curve, and so moving it shifts the curve. \par
+If expected inflation \(\pi^e_t\) increases, the curve will shift upward or
+equivalently left. It will move up by exactly \(\Delta\pi^e\), again because
+the point \((\pi^e_t, Y^*)\) always lies on the curve. \par
+An inflation shock to \(\epsilon_t\) will have the same behaviour.
+
 \end{flushleft}
 \end{document}
