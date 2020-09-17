@@ -827,11 +827,63 @@ The above equation describes the pressure within a liquid with surface pressure
 holds for any incompressible fluid. It is worth noting that is not dependent on
 area in any way; due to the pressure from the walls, a higher or lower area
 does not effect the pressure. \par
+\[\Delta p = \rho gh\]
+Because of this, pressure is directly related to depth \(h\) by the above
+equation. \par
 The density of air above the earth is higher near the surface, due to gravity.
 Most of the variation in air pressure is due to whether events. \par
 Gauge pressure is the pressure measured by a tyre gauge, i.e. measured with
 respect to atmospheric pressure. Thus
 \[p_\mathrm{gauge} = p - 1\mathrm{Atm}\]
+
+\subsubsection*{Hydraulics}
+
+A hydraulic mechanism like a car jack works because, given a system where one
+can pressurise water from one point to increase pressure below another point,
+we can modify the ratio of the areas of the two ends of the system to create a
+mechanical advantage.
+\[p_1 = \frac{F_1}{A_1} = p_2 = \frac{F_2}{A_2} + \rho gh\]
+\[\Rightarrow F_2 = \frac{A_2}{A_1}F_1 - \rho gh A_2\]
+The above equation relate the force exerted by the person operating a hydraulic
+jack, \(F_1\) on an area \(A_1\) to the force exerted on the other end \(F_1\)
+across area \(A_2\). Thus, for a small \(h\), the mechanical advantage is given
+by
+\[F_2 \approx \frac{A_2}{A_1}F_1\]
+The force exerted by the jack on the vehicle it lifts is increased by factor
+\(\frac{A_2}{A_1}\) as compared to the force \(F_1\) input by the user.
+
+\subsubsection*{Barometer}
+
+A barometer is a device for measuring pressure. It works by using an inverted
+tube filled with water, and upending this tube into a basin which is partially
+filled with water. Due to gravity the water in the tube will press down into
+the basin, causing a rise the the water level, creating a vacuum at the top of
+the tube. The height of the water above the basin level, i.e. from the basin
+level to the beginning of the vacuum, will be dependent on atmospheric
+pressure.
+\[p_\mathrm{atm} = \rho gh\]
+
+\subsubsection*{Pascal's Principle}
+
+Pascal's Principle states that a change in pressure applied to an enclosed
+incompressible fluid is transmitted undiminished to every portion of the fluid,
+and to the walls of the containing vessel.
+
+\subsubsection*{Buoyancy and Archimede's Principle}
+
+Archimede's Principle states that a body wholly or partially immersed in a
+fluid will be buoyed upward by a force equal to the weight of the fluid
+displaced by the body. Thus for a body of mass \(m\)
+\[F_b = mg = \rho Vg\]
+\[F_b = \rho_\mathrm{fluid}V_\mathrm{submerged}g\]
+Essentially a body can float as long as it has a lower density (or effective
+density) than the liquid it is immersed in. For example, given a floating cube
+of ice, it has a buoyancy force given by
+\[F_b = \rho_\mathrm{water}L^3g\]
+When fully submerged, assuming a sidelength \(L\), we can then find the
+carrying capacity of this cube through
+\[\rho_\mathrm{ice}L^3g + C = F_b\]
+Where \(C\) is the carrying capacity.
 
 \end{flushleft}
 \end{document}
