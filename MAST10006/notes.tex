@@ -24,13 +24,13 @@
         \begin{tikzpicture}
             \begin{axis}[
                 samples = 1000,
-                #1,
                 width = 12cm,
                 height = 9cm,
                 xlabel = \(x\),
                 ylabel = \(y\),
                 axis lines = middle,
-                restrict y to domain = -10:10
+                restrict y to domain = -10:10,
+                #1
             ]
             \BODY\                
             \end{axis}
@@ -1493,6 +1493,81 @@ On a phase plot, an unstable equilibrium has a positive slope through it,
 as in the example. \par
 A semistable equilibrium occurs when one side of solutions approach the
 equilibrium. This occurs at a touching point in a phase plot.
+
+\subsubsection*{Extending the Doomsday Model}
+
+To extend the Malthusian Doomsday model explored earlier, we can add a notion
+of ``harvesting'', the process of some quantity of the population being lost
+every unit time.
+\[\dd{p}{t} = kp - h \mcom h > 0\]
+This has little effect on the exponential curve; because the curve is
+exponential, we can subtract \(h\) without changing its behaviour in the long
+term. \par
+Another alteration we could make would be to add a ``competition'' term,
+creating a logistic model. This added term accounts for competition for
+resources by adding a negative term dependent on the population size.
+\[\dd{p}{t} = kp - \frac{k}{a}p^2 = kp\left(1 - \frac{p}{a}\right)\]
+Here, \(a\) is the \textit{carrying capacity}, the capacity for population in
+the environment. In the case that \(p > a\), this yields a negative derivative
+i.e. a decreasing population, steadily approaching \(a\). For example, a
+logistic model with \(k = 1\) and \(a = 4\) looks like
+\[\dd{p}{t} = p\left(1 - \frac{p}{4}\right)\]
+\[\Rightarrow p(t) \equiv 0, p(t) \equiv 4\]
+We can immediately see two equilibrium solutions thanks to the factorised form.
+We know that other solutions may never cross these, therefore all other
+solutions must be strictly less than \(0\), between \(0\) and \(4\) or strictly
+greater than \(4\). \par
+Drawing a phase plot, one finds that the derivative is positive for all values
+between \(0\) and \(4\), and negative for outside values. It is at a maximum at
+\(2\); this can all be derived from the parabolic shape of the derivative. This
+showcases the classic logistic behaviour of an exponential curve tapering off
+as the population nears capacity. For values above \(a\), the population decays
+rapidly to \(a\). \par
+In this case, \(0\) is an unstable equilibrium while \(4\) is a stable
+equilibrium. The point of inflection of the plot is when the gradient is at a
+maximum, i.e. at \(p = 2\). \par
+We can combine the logistic model with harvesting to produce a combined model.
+\[\dd{p}{t} = kp\left(1 - \frac{p}{a}\right) - h\]
+As an example we can take
+\[\dd{p}{t} = p\left(1 - \frac{p}{4}\right) - \frac{3}{4}\]
+Solving the quadratic we find equilibria of \(p(t) \equiv 3, p(t) \equiv = 1\).
+
+\begin{plot}[
+    xmin = -0.5,
+    xmax = 5,
+    ymin = -1,
+    ymax = 0.5,
+    ylabel = \(\dd{p}{t}\),
+    xlabel = \(p\)
+]
+    \addplot[blue, thick, ->, domain = 0:4] {(-1/4)*(x-3)*(x-1)};
+\end{plot}
+
+Examining the phase plot we once again find that population will increase while
+between these equilibria, with the upper equilibrium being a stable equilibrium
+and the lower unstable. The main difference is the narrowed bounds; because of
+the harvesting term a starting population of \(1\) or less will die out and a
+population will never grow beyond \(3\). \par
+While this phase plot analysis is useful, it is of course much more useful to
+actually solve the differential equation. We can take \(N(t) = 1\) to make this
+a seperable integral.
+\[\dd{p}{t} = -\frac{1}{4}(p - 3)(p - 1)\]
+\[\int \frac{1}{-\frac{1}{4}(p - 3)(p - 1)} \dd{p}{t} \:\mathrm{d}t = \int        
+1 \:\mathrm{d}t \Rightarrow \int \frac{4}{(p - 3)(p - 1)} \:\mathrm{d}p 
+= \int 1 \:\mathrm{d}t\]
+\[\frac{4}{(p - 3)(p - 1)} = \frac{A}{p - 3} + \frac{B}{p - 1} = \]
+\[\frac{A(p - 1)}{(p - 3)(p - 1)} + \frac{B(p - 3)}{(p - 3)(p - 1)}
+= \frac{A(p - 1) + B(p - 3)}{(p - 3)(p - 1)} = \]
+\[\frac{Ap - A + Bp - 3B}{(p - 3)(p - 1)} \Rightarrow -A - 3B = 4
+\mcom A + B = 0\]
+\[A = -B \Rightarrow -A - 3B = 4 = B - 3B \Rightarrow B = 2 \Rightarrow A =-2
+\Rightarrow\]
+\[\int \frac{4}{(p - 3)(p - 1)} \:\mathrm{d}p = \int \frac{2}{(p - 1)} 
+- \frac{2}{(p - 3)} \:\mathrm{d}p = \int 1 \:\mathrm{d}t \Rightarrow\]
+\[2\log(\abs{p - 1}) - 2\log(\abs{p - 3}) = t + C\]
+\[\log(\abs{p - 1}) - \log(\abs{p - 3}) = \frac{t}{2} + C\]
+\[\log\left(\frac{\abs{p - 1}}{\abs{p - 3}}\right) = \frac{t}{2} + C\Rightarrow
+\frac{p - 1}{p - 3} = \pm e^{\frac{t}{2} + C} =\pm Ae^\frac{t}{2}\]
 
 \end{flushleft}
 \end{document}
