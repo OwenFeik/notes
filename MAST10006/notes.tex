@@ -1569,5 +1569,52 @@ a seperable integral.
 \[\log\left(\frac{\abs{p - 1}}{\abs{p - 3}}\right) = \frac{t}{2} + C\Rightarrow
 \frac{p - 1}{p - 3} = \pm e^{\frac{t}{2} + C} =\pm Ae^\frac{t}{2}\]
 
+\subsubsection*{Mixing Problems}
+
+Differential equations can be used to consider the combination of liquids, for
+example considering a pollutant entering a pond. If \(x\) represents the total
+quantity of pollutant in the pool at time \(t\), then we can take
+\(C = \frac{x}{V}\) where \(C\) is the concentration of pollutant in the pool
+of volume \(V\) at time \(t\). We have \(\dd{x}{t}\) is equal rate of inflow
+minus rate of outflow.
+\[\mathrm{inflow} = C_\mathrm{in}\times F_\mathrm{in}\]
+Where \(F_\mathrm{in}\) is the flow rate of liquid into the pool with pollutant
+at concentration \(C_\mathrm{in}\) in that liquid.
+\[\mathrm{outflow} = C\times F_\mathrm{out} =\frac{x}{V}\times F_\mathrm{out}\]
+Here, because we have defined \(C\) in terms of \(x\) and \(V\) we can replace
+it. For values \(V = 1000\mathrm{m^3}\), \(x_0 = 100\mathrm{g}\), 
+\(F_\mathrm{in} = F_\mathrm{out} = 10\mathrm{m^3min^{-1}}\), 
+\(C_\mathrm{in} = 2\mathrm{g\;m}^{-3}\) we find
+\[\dd{x}{t} = 2\mathrm{g\;m}^{-3}\times10\mathrm{m^3min^{-1}} 
+- \frac{x}{1000\mathrm{m}^3}\times10\mathrm{m^3min^{-1}}\]
+\[\dd{x}{t} = 20\mathrm{g\;min}^{-1} - \frac{x}{100}\mathrm{min}\]
+So if we say \(t\) is in terms of minutes and \(x\) in terms of grams we have
+\[\dd{x}{t} = 20 - \frac{x}{100}\]
+Solving this, one finds
+\[x(t) = 2000 + ce^{\frac{-t}{100}}\]
+\[x(0) = 100 \Rightarrow c = -1900\]
+To find the concentration at a given time, we can use \(c(t) = \frac{x(t)}{V}\)
+to find
+\[c(t) = 2 - \frac{19}{10}e^{\frac{-t}{100}}\]
+As \(t\) increases, the right hand term approaches \(0\), so we can say that in
+the long term the concentration will be \(2\). We could describe this right
+hand term as a \textit{transient term} and the left hand (constant) term as a
+\textit{steady state term}. \par
+What does the equation look like if the inflow rate is instead
+\(5\mathrm{m^3min^{-1}}\)? Inflow will now be
+\[C_\mathrm{in} \times F_\mathrm{in} 
+= 2\mathrm{g\;m^{-3}}\times5\mathrm{m^3min^{-1}} = 10\mathrm{g\;min^{-1}}\]
+We now have a changing rather than constant volume. The volume at time
+\(t\) can be expressed as
+\[V(t) = 1000 + 5t - 10t = 1000 - 5t\]
+Thus the outflow is given by
+\[\frac{x}{V} \times F_\mathrm{out} = \frac{x}{1000 - 5t}\times10 
+= \frac{x}{100 - \frac{t}{5}}\]
+And the overall equation is
+\[\dd{x}{t} = 10 - \frac{x}{100 - \frac{t}{5}}\]
+If \(t > 200\), \(V < 0\) which doesn't make much sense, so we can restrict the
+domain. This is a linear equation, so it can be solved through the integrating
+factor method.
+
 \end{flushleft}
 \end{document}
