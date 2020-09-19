@@ -1327,6 +1327,7 @@ so \(\gamma\) has no effect. At this level, it is exclusively \(\pi^e_t\) and
 taken to be \(0\) for the above plot, the two are simply equal.
 
 \subsubsection*{Shocks to the Aggregate Supply Curve}
+
 Shocks to this curve might happen for a variety of reasons. These include
 supply side changes, like new resources or improved technology or changes to
 regulation. For example immigrant labour might increase potential output or 
@@ -1340,6 +1341,83 @@ If expected inflation \(\pi^e_t\) increases, the curve will shift upward or
 equivalently left. It will move up by exactly \(\Delta\pi^e\), again because
 the point \((\pi^e_t, Y^*)\) always lies on the curve. \par
 An inflation shock to \(\epsilon_t\) will have the same behaviour.
+
+\subsection*{Equilibrium of Aggregate Supply and Demand Curves}
+
+The goal of a theory of business cycles is to be able to describe the causes of
+output fluctuations. This can be explained through shifts in the aggregate
+demand and supply curves. \par
+For the two curves to be in equilibrium, output must equal planned aggregate
+expenditure and firms pricing structures must be consistent with their desires.
+For a long run equilibrium, these must be satisfied however additionally there
+must also be a consistent trend of expected levels of inflation
+(\(\pi = \pi^e\)), Adjustment from a short run equilibrium to a long run
+equilibrium is undertaken by moderation of inflation. \par
+We can consider as an example a drop in consumer spending.
+\[C^d = \bar{C} + c(Y - T) - \gamma_cr\]
+i.e. a reduction in \(\bar{C}\). This will have the effect of a reduction in
+aggregate demand. This will imply a build up of inventories for firms,
+resulting in a drop in rate of increase of prices (i.e. inflation). This
+decline will be mitigated by the policy reaction function, causing the real
+interest rate to drop and thus investment to increase.
+
+\tikzexternaldisable
+
+\begin{simpleplot}{\(Y\)}{\(\pi\)}
+    \addplot[blue, ultra thick, domain = 1.25:5, <->] {0.1*(x - 9)^2 - 1}
+    node[above right, pos = 0.9] {\(AD(\bar{C}_0)\)};
+    \addplot[blue, ultra thick, domain = 1:4.5, <->] {0.1*(x - 8)^2 - 1}
+    node[below left, pos = 0.8] {\(AD(\bar{C}_1)\)};
+    \addplot[red, ultra thick, ->, domain = 0:4.5] {x + 1}
+    node[above left, pos = 0.8] {\(AS\)};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 2.38, 3.38) {};
+    \node[right, xshift = 0.2cm] at (axis cs: 2.38, 3.38) {\((Y^*, \pi_0)\)};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 1.82, 2.82) {};
+    \node[left, xshift = -0.2cm] at (axis cs: 1.82, 2.82) {\((Y_1, \pi_1)\)};
+    \addplot[black, thick, <-] coordinates {(1.25, 3.75)(2, 3.75)};
+    \addplot[black, thick, <-] coordinates {(2.7, 2)(3.4, 2)};
+\end{simpleplot}
+
+The above plot depicts the changes as the curve shifts from output level
+\(Y^*\) to \(Y_1\). The end result is a fall in aggregate demand cause a fall
+in output and inflation level. This is a short-run result; because
+\(\pi_1 < \pi^e\) this cannot be a long term equilibrium. \par
+In general, we expect inflation and inflationary expectations to return the
+economy to long run equilibrium. In the case that \(Y < Y^*\) as above, the
+economy will tend to have a falling inflation and inflationary expectations
+and thus the economy will return to a long-term equilibrium. When \(Y > Y^*\)
+inflationary expectations will tend to increase, and the economy will once
+again self correct. \par
+So essentially what happens is that the supply curve responds to a change in
+inflationary expectations by falling, which eventually leads to a new long term
+equilibrium when \(AS = AD = \pi^e\). \par
+In general, the key adjustment in the system is the change of expected
+inflation over time resulting in a return to long term equilibrium.
+
+\subsubsection*{Implications}
+
+Changes in aggregate demand will generally cause output and inflation to move
+in the same direction. Changes in aggregate supply will tend to cause output
+and inflation to move in opposite directions. The overall impact of an shock to
+supply or demand is dependent largely on the size of the shock, as well as the
+relative slopes of aggregate supply and demand. \par
+This makes sense; a steeper sloped curve will result in a larger shock
+comparative to a flatter curve, all else equal. \par
+Keynesian policy is relevant to this process because generally the adaptation
+back to a long term equilibrium is quite slow, due to long term contracts and
+other factors. In this situation, we may have \(u > u^*\), which is unpleasant.
+Through Keynesian policy, we can try to reduce \(u\) or moderate \(Y\) while
+the economy returns to equilibrium. \par
+If however we accept that rapid price adjustment is the major factor in
+equilibrium, government intervention is less important and can indeed be seen
+to be undesireable. Which of these two takes is correct is an important issue
+in macroeconomics. Most economists tend to agree that intervention is
+productive however.
+
+\subsubsection*{Phillips Curve}
+
+The Phillips curve shows a relationship between a low level of unemployment and
+a high level of inflation. This relationship has grown weaker over time.
 
 \end{flushleft}
 \end{document}
