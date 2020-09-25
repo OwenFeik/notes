@@ -971,6 +971,76 @@ parents. \par
 Implementation is more of a ``can do'' relationship; all implementors
 \textit{can do} the thing.
 
+\subsection*{Representation of Relationships (i.e. UML)}
+
+When designing a Java or other object-oriented application, one should work
+through the process of identifying classes or knowns, followed by relationships
+between these nouns (has-a, is-a, can-do, etc) and refine these properties.
+It can then be useful to produce a diagram summarising this information. A
+standard way to do this is with a Unified Modeling Langauge (UML) diagram. \par
+In UML classes are represented as boxes, with a title, a section for attributes
+and a section for methods. An abstract class depicted this way has its name
+italicised. An interface has its name (somewhat less elegantly) preceded by
+\code{<<interface>>} \par
+An attribute is represented with some combination of the following qualities,
+in the listed order.
+
+\begin{itemize}
+    \item Privacy (required); one of \code{+}, representing \code{public},
+        \code{\~} i.e. package, \code{#} (\code{protected}), \code{-}
+        (\code{private}).
+    \item Name (required).
+    \item Multiplicity, or quantity. This can be an array specifier like
+        \code{[10]}, a range like \code{[1..10]}. It can also be open ended
+        such as \code{[1..*]} or \code{[*]}. This does not specify the type
+        of collection; a finite multiplicity might use an array while an
+        open ended one might use a list. If omitted, a single item is assumed.
+    \item Type (required), preceded by a colon.
+    \item Default value, shown as an assignment like \code{= 10}.
+\end{itemize}
+
+For example \code{-name: String = ""} or \code{+values[*]: int}
+are valid attribute representations. A static attribute is underlined. \par
+A method is represented similarly.
+
+\begin{itemize}
+    \item Privacy (required), same as with attributes.
+    \item Name (required).
+    \item Arguments (required), shown as a parameter list of the form
+        \code{(arg1: int, arg2: String)}. Can be empty, i.e. \code{()}.
+    \item Return type (required), preceded by a colon. Like \code{: int}, or
+        \code{: void}.
+\end{itemize}
+
+Some valid specifications include \code{+render(x: int, y: int): void} and
+\code{-reload(): void}. In the same way that an abstract class has its name
+italicised, the name of an abstract method is italicised. \par
+Using these principles, we can now describe a single
+class in UML. To extend this, we need a way to describe relationships between
+classes. There are four main relationships in Java projects.
+
+\bigskip
+Association, which represents containment; objects which hold other
+objects internally. To represent this, rather than list other classes
+as attributes, we use an arrow from the containing object to the
+contained object. A unidirectional relationship is represented by an
+arrow, however if two classes contain each other, a line is used. \par
+This line can have a name which defines what the relationship is, and can have
+multiplicity numbers at either end. The number defining how many of the object
+are held goes on the side of the object. A class may have association with
+itself. \par
+If two objects are associated without one being dependent on the other (i.e. if
+either is held seperately to the attribute), this is represented with an
+unfilled diamond. A filled diamond implies that the class exists exclusively as
+an attribute.
+
+\bigskip
+Inheritance is represented with unfilled arrow heads from subclass to
+super-class. Implementation is represented through dashed arrows with unfilled
+heads. Depedency is a non-concrete relationship which suggests that a change to
+one class may affect another. It is represented through a dotted line from one
+class to another, with a chevron arrow head.
+
 \subsection*{Generics}
 
 If one were to look at the comparable interface discussed earlier, the
