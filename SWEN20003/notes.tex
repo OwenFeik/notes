@@ -971,5 +971,83 @@ parents. \par
 Implementation is more of a ``can do'' relationship; all implementors
 \textit{can do} the thing.
 
+\subsection*{Generics}
+
+If one were to look at the comparable interface discussed earlier, the
+definition would look something like
+
+\begin{lstlisting}
+    public interface Comparable<T> {
+        public int compareTo(T other);
+    }
+\end{lstlisting}
+
+Here, \code{T} is a \textit{type parameter}. When one implements
+\code{Comparable<String>}, all instances of \code{T} in this implementation
+are now \code{String}. The benefit of defining classes or interfaces this way
+is that it allows one to write very generalisable classes which can work with
+a wide variety of objects. \par
+A useful generic in the standard library is \code{java.util.ArrayList}, a
+generic list implementation.
+
+\begin{lstlisting}
+    import java.util.ArrayList;
+
+    public static void main(String[] args) {
+        ArrayList<String> strings = new ArrayList<String>;
+        strings.add("string one");
+        strings.add("string two");
+
+        for (String s: strings) {
+            System.out.println(s);
+        }
+    }
+\end{lstlisting}
+
+\code{ArrayList}s do not automatically release memory when they are shrunk;
+instead \code{trimToSize()} must be called to shrink them down to size. \par
+To write a generic class, one does essentially what was shown in the interface
+example; include a type argument through \code{<T>}.
+
+\begin{lstlisting}
+    public class Wrapper<Type> {
+        private Type obj;
+
+        public Wrapper(Type obj) {
+            this.obj = obj;
+        }
+
+        public Type getObj {
+            return this.obj;
+        }
+    }
+\end{lstlisting}
+
+Conventionally, \code{T} or another single character is used as the type
+argument. Multiple type arguments can be accepted, in the form
+\code{<T1, T2>}. If one wants to gaurantee some behaviour of the class, one can
+use the form
+
+\begin{lstlisting}
+    public class Generic<T extends Comparable<T>>
+    public class Generic<T extends SomeClass>
+    public class Generic<T extends SomeClass & Comparable<T> & List<T>>
+\end{lstlisting}
+
+To ensure the class fits a given model. A method with an argument of a generic
+type is known as a \textit{generic method} and can be implemented like so
+
+\begin{lstlisting}
+    public <T> int genericMethod(T arg)
+    public <T> T genericMethod(String name)
+    public <T> T genericMethod(T arg)
+\end{lstlisting}
+
+Here, the first example is a generic method which accepts an argument of
+generic type and returns an integer, the second is a generic method which
+accepts a string and returns an object of a specified type and the third does
+both. The type passed to a generic method is inferred by context; either it
+will be the typed passed in or the variable in which the output is stored.
+
 \end{flushleft}
 \end{document}
