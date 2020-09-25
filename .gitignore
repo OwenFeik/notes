@@ -7,3 +7,4 @@
 *.auxlock
 *.md5
 *.dpth
+!/_pdfs/*pdf
