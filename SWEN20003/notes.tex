@@ -238,7 +238,7 @@ through defining \textit{Accessor / Mutator} methods (or
 information hiding, visibility control and privacy. Many IDEs will include 
 support for automatic generation of getters and setters. This is a rather 
 different paradigm to something like Python or C. A getter performs a similar
-function to something like a \code{@property} decorated function in python.
+function to something like a \code{@property} decorated function in Python.
 
 \begin{lstlisting}
     public class Person {
@@ -1048,6 +1048,115 @@ generic type and returns an integer, the second is a generic method which
 accepts a string and returns an object of a specified type and the third does
 both. The type passed to a generic method is inferred by context; either it
 will be the typed passed in or the variable in which the output is stored.
+
+\subsection*{Collections and Maps}
+
+\subsubsection*{Collections}
+
+Java has two main constructs for storing data. These are collections and maps.
+Collections like \code{ArrayList} store ordered lists of objects while maps
+store key-value pairs. \par
+If an \code{ArrayList} has a type which implements \code{Comparable}, it can
+be easily sorted through \code{java.util.Collections}' \code{sort} method.
+It is as simple as \code{Collections.sort(list)}. \par
+If one wants to create a variety of comparison types, one can use the
+\code{java.util.Comparator} class. \code{Comparator} is a generic interface
+which is implemented with a \code{compare(T obj1, T obj2)} method. One can then
+use \code{Collections.sort(list, comparator)} to sort according to a different
+metric. If one doesn't want to create a full class as a comparator, they can
+instead use an \textit{anonymous inner class}.
+
+\begin{lstlisting}
+    import java.util.ArrayList;
+    import java.util.Collections;
+    import java.util.Comparator;
+    
+    public static void main(String[] args) {
+        ArrayList<String> strings = new ArrayList<String>;
+        strings.add("AAAAAAAAAAAHHH");
+        strings.add("AAAAAAAAHHH");
+        strings.add("AAAHHHAAAAHH");
+
+        Collections.sort(strings, new Comparator<String>() {
+            @Override
+            public int compare(String s1, String s2) {
+
+                asInS1 = s1.length() - s1.replace("H", "").length();
+                asInS2 = s2.lenght() - s2.replace("H", "").length();
+
+                return asInS1 - asInS2;
+            }
+        });
+    }
+\end{lstlisting}
+
+Here, we used a similar principle to a Python \code{lambda} sorting key, except
+we instead used a class because of course we did, its Java.
+
+\bigskip
+Collections in Java implement the following methods
+
+\begin{itemize}
+    \item \code{int size()} which returns the number of elements in the
+        collection.
+    \item \code{boolean contains(Object element)} which checks if
+        \code{element} is in the collection; this relies on
+        \code{element.equals}.
+    \item \code{boolean add(T obj)} which adds an element to the collection.
+    \item \code{Iterator<T> iterator()} which returns an iterator for the
+        collection.
+    \item \code{for (T t: Collection<T>)} i.e. \code{for} loop iteration.
+    \item \code{Object get(int index)} is not available in all collections, but
+        is available in those that inherit from \code{AbstractList} such as
+        \code{ArrayList} or \code{Vector}.
+\end{itemize}
+
+Several useful collections are
+
+\begin{itemize}
+    \item \code{ArrayList} as seen, \code{ArrayList}s are like more flexible
+        arrays.
+    \item \code{HashSet}, which ensures uniqueness of elements, much like
+        Python's \code{set}.
+    \item \code{PriorityQueue} which allows ordering of elements in useful
+        ways.
+    \item \code{TreeSet} which offers very rapid lookups of unique elements.
+\end{itemize}
+
+\subsubsection*{Maps}
+
+Maps implement the methods
+
+\begin{itemize}
+    \item \code{int size()}
+    \item \code{boolean containKey(Object key)}
+    \item \code{boolean containValue(Object value)}
+    \item \code{boolean put(K key, V value)} which updates the value held under
+        \code{key}.
+    \item \code{boolean remove(Object key)}
+    \item \code{Set<K> keySeta()} which returns a set of the keys in the map
+        iteration.
+    \item \code{Set<Map.Entry<K, V>> entrySet()} which returns a set of
+        key-value pairs for iteration.
+    \item \code{V get(Object key)}
+\end{itemize}
+
+As is evident from these methods, maps require two classes, \code{<K, V>},
+which define the type of their keys and values respectively. For example
+
+\begin{lstlisting}
+    import java.util.HashMap;
+
+    public static void main(String[] args) {
+        HashMap<String,Person> nameMapping = new HashMap<>();
+
+        Person p1 = new Person("John Smith");
+        Person p2 = new Person("Susan Wills");
+
+        nameMapping.put(p1.name, p1);
+        nameMapping.put(p2.name, p2);
+    }
+\end{lstlisting}
 
 \end{flushleft}
 \end{document}
