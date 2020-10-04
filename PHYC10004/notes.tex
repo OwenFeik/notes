@@ -3,6 +3,7 @@
 
 \usepackage{amssymb}
 \usepackage{commath}
+\usepackage{gensymb}
 \usepackage{pgfplots}
 
 \setlength{\parskip}{.2cm}
@@ -921,6 +922,96 @@ stationary at the surface we can find
 \[p_0 + \frac{1}{2}\rho0^2 + \rho gh = p_0 + \frac{1}{2}\rho v^2 + 0\]
 \[v = \sqrt{2gh}\]
 Curiously this is the same as for water free-falling a vertical distance \(h\).
+
+\section*{Thermal Physics}
+
+\subsection*{Thermal Properties of Matter}
+
+There are three phases of matter; solid, liquid and gas. The major difference
+between these states is in the bonds between the atoms in the matter. They are
+never totally stationary, but they are relatively fixed in solids, somewhat
+more free in liquids and utterly independent in gases. \par
+A state variable tells us about the state of a system (such as pressure,
+volume, etc). One of these is that we talk about the number density of atoms
+\[\eta = \frac{N}{V}\]
+\(\eta\) is the number of atoms (or molecules or particles) per unit volume.
+\par
+The atomic mass number \(A\) is given by the number of protons added to the
+number of neutrons. The atomic mass unit \(\mathrm{u}\) is given by
+\[1\mathrm{u} = \frac{m\left(^{12}C\right)}{12}
+= 1.66\times10^{-27}\mathrm{kg}\]
+and is sometimes known as the Dalton. This is one twelfth of the mass of a
+carbon-12 atom. \par
+Avogadro's number \(N_A\) is
+\[N_A = 6.02\times10^23\]
+And this referes to the number of ``elementary units'' per mole. These units
+could be atoms, molecules, etc. Thus one mole of carbon twelve is \(N_A\)
+carbon atoms. The molar mass of a substance is the mass in grams of one mole of
+a substance. \par
+Temperature is measured in Kelvin (\(\mathrm{K}\)), which is measured in units
+of the same size as Celsius, starting from \(-273.15\degree\mathrm{C}\),
+absolute \(0\). \par
+
+\subsubsection*{Phases of Matter}
+
+We can think about the bonds between atoms as a kind of spring system. When
+atoms are pushed close together, a strong repulsive force repels them, while
+when they are further apart a weaker attractive force draws them together.
+If one increases the energy of the system, perhaps in the form of an increase
+in temperature, it becomes easier for atoms to break these bonds and change
+phase. \par
+Within a gas, the temperature tells us something about the behaviour of the
+particles. At \(0\mathrm{K}\), the particles are stationary. \par
+When heating a liquid, the temperature will be unchanged as the phase change
+occurs. Temperature and pressure have a relationship for matter; higher
+pressures imply more solid matter, while higher temperature implies less solid
+matter. We can therefore find a point, the ``triple point'' on a plot of
+temperature against pressure where the matter could change to any phase. \par
+Another consequence of this relationship is sublimation; when at very low
+pressure, matter will simply turn into a gas. \par
+The critical point occurs are high pressure and high temperature, and at this
+point a material can be both liquid and gaseous. For most materials, the shape
+of the pressure versus temperature plot is similar, with the left hand side at
+low temperature solid, the bottom part a wedge of gas and liquid a wedge driven
+between the two at relatively high temperature and pressure.
+
+\subsubsection*{Ideal Gas Equation}
+
+An ideal gas obeys the \textit{Ideal Gas Equation}
+\[pV = Nk_BT\]
+Where \(p\) is pressure, \(V\) is volume, \(N\) is the number of particles,
+\(T\) is temperature and \(k_B\) is \textit{Boltzmann's constant}. Most
+``ideal'' gases in the real world approximate this equation. This relationship
+between \(p\) and \(T\) when all other variables are held constant allows for
+the development of some very accurate thermometers. \par
+Boltzmann's constant is given by
+\[k_B = 1.38\times10^{-23}\mathrm{J\;K}^{-1}\]
+Using the \textit{universal gas constant}
+\(R = 8.31 \mathrm{J\;K^{-1}mol^{-1}}\) we can rewrite this as
+\[pV = nRT\]
+Where \(n\) is the number of moles of the gas.
+
+\subsubsection*{Example}
+What is the volume occupied by \(1\mathrm{mol}\) of helium attoms at a
+temperature of \(20\degree\mathrm{C}\) at a pressure of \(1\mathrm{atm}\)?
+\[pV = nRT \Rightarrow V = \frac{nRT}{p} 
+= \frac{1\times8.31\times(273 + 20)}{1.013\times10^5} = 0.024\mathrm{m}^3\]
+
+\bigskip
+Using this equation, we can find a variety of equilibria for a gas at different
+intersections of variables. For instance we can find that
+\[\frac{p}{T} = \frac{nR}{V}\]
+Implying that if the right hand side is a constant, a change in pressure must
+effect a change in temperature. We know about these through
+\textit{quasi-static processes}, where we consider the effect of a tiny change
+in one variable. Three main types are talked about
+
+\begin{itemize}
+    \item The example given above, with constant volume is an
+        \textit{isochoric process}
+    \item A constant temperature implies an \textit{isothermal process}
+    \item A constant pressure implies an \textit{isobaric process}
+\end{itemize}
 
 \end{flushleft}
 \end{document}
