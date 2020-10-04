@@ -1013,5 +1013,54 @@ in one variable. Three main types are talked about
     \item A constant pressure implies an \textit{isobaric process}
 \end{itemize}
 
+\subsection*{First Law of Thermodynamics}
+
+The work-kinetic energy theorem states
+\[\Delta K = W_c + W_\mathrm{diss} + W_\mathrm{ext}\]
+i.e. the change in kinetic energy is the sum of work done by conservative
+forces (i.e. \(-\Delta U\)) plus the work done by dissipative forces, such as
+friction plus the work done by external forces. \par
+We define mechanical energy as the \textit{macroscopic} energy of the system.
+\[E_\mathrm{mech} = K + U\]
+We define thermal energy as the \textit{microscopic} energy of the system.
+\[E_\mathrm{th} = K_\mu + U_\mu\]
+The total energy of the system is then the sum of the mechanical and thermal
+energy of the system. There are multiple forms of microscopic energy; thermal
+energy, chemical energy, which is the energy stored in bonds between molecules
+and nuclear energy, the energy stored in an atomic nucleus. \par
+The internal or microscopic energy is then given by
+\[E_\mathrm{int} = E_\mathrm{th} + E_\mathrm{chem} + E_\mathrm{nuc} + \ldots\]
+While the overall system energy is giveny by
+\[E_\mathrm{sys} = E_\mathrm{mech} + E_\mathrm{int}\]
+We often simplify and assume \(E_\mathrm{int} = E_\mathrm{th}\). We can
+consider an increase in energy of a system through
+\[\Delta E_\mathrm{sys} = \Delta E_\mathrm{mech} + \Delta E_\mathrm{th}
+= W + Q\]
+Where \(W\) is external work on the system and \(Q\) is external heat transfer
+to the system. An example of this can be seen in a diesel engine, where air is
+compressed on an upward stroke to a high pressure, at which stage fuel is
+injected, immediately igniting due to the high temperature, expanding downward
+and pushing the piston, doing work on the engine. \par
+When the gas expands in this way, the work done is given by the area under the
+\(pV\) curve, from \(V_\mathrm{initial}\) to \(V_\mathrm{final}\).
+\[W = -\int_{V_i}^{V_f} p\mathrm{d}V\]
+For an expanding gas, one where \(V_f > V_i\), negative work is done on the
+gas. This is an isothermal process. This integral comes out to be
+\[-nRT\log\left(\frac{V_f}{V_i}\right)\]
+In an isochoric process,
+\(\mathrm{d}V = 0 \Rightarrow W = 0\). For an isobaric (constant pressure)
+proces, the work is simply given by \(-p\Delta V\). Finally, we come to the
+First Law of Thermodynamics, that
+\[\Delta E_\mathrm{th} = W + G\]
+In an isothermal process,
+\[\Delta T = 0 \Rightarrow \Delta E_\mathrm{th} = 0 \Rightarrow Q = -W\]
+In an isochoric process
+\[\Delta V = 0 \Rightarrow W = 0 \Rightarrow \Delta E_\mathrm{th} = Q 
+= nc_V\Delta T\]
+An adiabatic process is one in which \(Q = 0 \Rightarrow \Delta 
+E_\mathrm{th} = W\) thus there is no transfer of heat, and energy is
+transferred exclusively as work. This is a desireable property in engines and
+similar mechanisms.
+
 \end{flushleft}
 \end{document}
