@@ -1361,8 +1361,6 @@ resulting in a drop in rate of increase of prices (i.e. inflation). This
 decline will be mitigated by the policy reaction function, causing the real
 interest rate to drop and thus investment to increase.
 
-\tikzexternaldisable
-
 \begin{simpleplot}{\(Y\)}{\(\pi\)}
     \addplot[blue, ultra thick, domain = 1.25:5, <->] {0.1*(x - 9)^2 - 1}
     node[above right, pos = 0.9] {\(AD(\bar{C}_0)\)};
@@ -1487,6 +1485,101 @@ the size of the economy. In the Cobb-Douglas function we find that
 Once again, it is evident that the size of output per capita is dependent on
 capital to worker ratio. If we plot output per worker against capital per
 worker, the curve will have an increase value with a decreasing slope.
+
+\subsubsection*{Solow-Swan Model}
+
+The Solow-Swan model examines the relationship between variables like output
+per capita, savings rate, population growth and productivity. It highlights
+the importance of productivity growth for living standards. \par
+The model begins with an initial capital stock \(K_0\) and a level of labour
+\(L_0\) and attempts to describe how these values change over time. To explain
+this it makes assumptions with respect to the production function and behaviour
+of households within the economy. \par
+The model uses the aggregate production function approach of
+\[Y_t = Af(K_tL_t)\]
+Where \(A\) is \textit{total factor productivity} a coefficient describing the
+overall productivity due to factors like technology and regulations. This
+displays the behaviour previously highlighted; positive first derivative and
+negative second derivative, in a addition to constant returns to scale. \par
+The model describes a capital accumulation function of
+\[K_{t + 1} = (1 - d)K_t + I_t\]
+Where \(d\) is the depreciation rate and \(I_t\) is the amount invested in
+period \(t\). Finally, the model uses a labour growth model with a function
+\[L_{t + 1} = (1 + n)L_t\]
+Where \(n\) is the growth rate of labour. The model assumes a constant saving
+rate given by \(\theta\), the marginal propensity for saving. This means that
+\(c\), the marginal propensity for consumption is given by \(1 - \theta\). It
+additionally assumes full employment of capital and labour. It finally assumes
+that saving is equal to investment, that is
+\[\theta Y_t = I_t\]
+If we take our equation for capital growth and divide through by labour force,
+we can find the growth in capital per labour.
+\[K_{t + 1} = (1 - d)K_t + I_t\]
+\[\frac{K_{t + 1}}{L_{t + 1}} = \frac{(1 - d)K_t + I_t}{L_{t + 1}} 
+= \frac{(1 - d)K_t + \theta Y_t}{(1 + n)L_t}
+= \frac{1 - d}{1 + n}\frac{K_t}{L_t} + \frac{\theta}{1 + n}\frac{Y_t}{L_t}\]
+\[\Rightarrow \Delta\frac{K_t}{L_t} = \frac{K_t + 1}{L_t + 1} - \frac{K_t}{L_t}
+= \left(\frac{1 - d}{1 + n} - 1\right) \frac{K_t}{L_t}
++ \frac{\theta}{1 + n}\frac{Y_t}{L_t}\]
+If we observe that \(n\) is generally quite small, being the population growth
+rate, then \(1 + n \approx n\) means that we can rewrite the above as
+\[\Delta \frac{K_t}{L_t} = \theta\frac{Y_t}{L_t} - (d + n)\frac{K_t}{L_t}\]
+Where the left term on the right side is savings per worker, and the right term
+is \textit{replacement investment}. This replacement investment is the amount
+of investment required to keep the capital to labour ratio a constant. The
+Solow-Swan model looks for a situation where this change in the capital to
+labour ratio is \(0\).
+
+\begin{simpleplot}{\(\frac{K}{L}\)}{\(\frac{Y}{L}\)}
+    \addplot[red, ultra thick, ->, domain = {0:3.9}] {3*x^0.5}
+    node[below right, pos = 0.95]
+    {\(\frac{Y}{L} = Af\left(\frac{K}{L}, 1\right)\)};
+    \addplot[blue, ultra thick, ->] {x^0.5}
+    node[below, pos = 0.95] {\(\theta\frac{Y}{L}\)};
+    \addplot[red, ultra thick, ->] {0.75*x}
+    node[below right, pos = 0.95] {\((n + d)\frac{K}{L}\)};
+    \addplot[black, ultra thick, dashed]
+    coordinates {(1.78, 0)(1.78, 4)(0, 4)};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 1.78, 4) {};
+    \node[above left] at (axis cs: 1.78, 4)
+    {\(\left(\frac{Y}{L}\right)^*, \left(\frac{K}{L}\right)^*\)};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 1.78, 1.33) {};
+\end{simpleplot}
+
+By plotting replacement investment, saving per working and output per worker
+we can find the equilibrium outcome of this system. At the intersection of
+saving per worker and replacement investment we find the equilibrium level
+of capital per worker. A the same capital per worker value, we find the
+equilibrium level of output per worker. The output per worker level of the
+equilibrium point is the level of savings per worker, while the distance
+between the two marked points is the level of consumption per worker. \par
+In the case that savings per worker is more than replacement investment (i.e.
+a point on the savings curve left of the equilibrium), quantity of capital will
+increase, resulting in a shift into equilibrium. In the case that it is less
+than replacement (i.e. to the right of equilibrium), level of capital per
+worker will decrease to equilibrium. \par
+We can use this plot to perform comparative statics; for instance we can see
+that an increase in the saving rate \(\theta\) will effect a shift up in the
+saving curve resulting in a higher level of capital to labour and a higher
+level of output per worker.
+
+\subsubsection*{Implications}
+
+We have seen that the Solow-Swan model implies a steady-state level of capital
+per worker, which the economy will tend to return to. It also implies that
+output per worker depends upon capital per worker. \par
+We can use the model iteratively to determine values for capital per worker,
+output per worker and consumption per worker to describe the economy at each
+point of time. \par
+The implication of the steady state of the system implies that for output
+per worker to change, some exogenous factor like \(\theta\), \(A\) etc must
+change. Holding these other variables equal, this implies that the rate of
+growth of output is dependent simply on rate of growth of labour
+(\(Y^\prime = n\)). \par
+The model can be extended by including growth in productivity and output per
+worker, which explains how countries can grow richer. The current model only
+shows us that capital per labour is less a driver of increased welfare than is
+productivity growth.
 
 \end{flushleft}
 \end{document}
