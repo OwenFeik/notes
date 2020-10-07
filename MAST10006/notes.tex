@@ -1671,12 +1671,85 @@ solution is
 \[y(x) = Ae^{\lambda_1 x} + Be^{\lambda_2 x}\]
 
 \subsubsection*{Example}
+
 \[y^{\prime\prime} + 7y^\prime + 12y = 0\]
 \[\Rightarrow a = 1, b = 7, c = 12\]
 \[\Rightarrow \lambda = \frac{-7 \pm \sqrt{(-7)^2 -4\times1\times12}}{2}
 = \frac{-7 \pm \sqrt{49 - 48}}{2} = \frac{-7 \pm 1}{2}\]
 \[\Rightarrow \lambda = -4\mcom\lambda = -3\]
 \[\Rightarrow y(x) = Ae^{-4x} + Be^{-3x}\]
+
+\subsubsection*{Zero Discriminant}
+
+If \(b^2 - 4ac = 0\), we will find a single real solution
+\[\lambda = \frac{-b}{2a}\]
+In this case, there is a second solution of \(xe^{\lambda x}\) as the second
+solution (to be accepted as gospel; determined through ``variation of
+parameters.'').
+\[y(x) = Ae^{\lambda x} + Bxe^{\lambda x}\]
+The reason this works is that we end up with a solution looking like
+\[xe^{\lambda x}(a\lambda^2 + b\lambda + c) + (2\lambda a + b)e^{\lambda x}\]
+Which is a solution because we know that \(2\lambda a + b = 0\).
+
+\subsubsection*{Example}
+
+\[y^{\prime\prime} + 2y^\prime + y = 0\]
+\[\Rightarrow a = 1, b = 2, c = 1\]
+\[\Rightarrow \lambda = \frac{-2 \prime \sqrt{(-2)^2 + 4\times1\times1}}{2}
+= \frac{-2}{2} = -1\]
+\[\Rightarrow y(x) = Ae^{-x} + Bxe^{-x}\]
+
+\subsubsection*{Negative Discriminant}
+
+Finally, we come to \(b^2 - 4ac < 0\). In this case, we will end up with two
+complex conjugate values of \(\lambda\).
+\[\lambda_1 = \alpha + i\beta\mcom \lambda_2 = \alpha - i\beta\]
+This yields two complex linearly independent solutions
+\[e^{(\alpha + i\beta)x}\mcom e^{(\alpha - i\beta)x}\]
+And a general solution of 
+\[y(x) = c_1e^{(\alpha + i\beta)x} + c_2e^{(\alpha - i\beta)x}\]
+This can then be rewritten as
+\[y(x) = c_1e^{\alpha x}(\cos(\beta x) + i\sin(\beta x))
++ c_2e^{\alpha x}(\cos(\beta x) - i\sin(\beta x))\]
+\[y(x) = (c_1 + c_2)e^{\alpha x}\cos(\beta x) + (c_1i - c_2i)e^{\alpha x}
+\sin(\beta x)\]
+If we then take \(A = c_1 + c_2\) and \(B = (c_1 - c_2)i\), and assume that
+\(A\) and \(B\) are real, then we will find two real and linearly independent
+solutions of 
+\[e^{\alpha x}\cos(\beta x)\mcom e^{\alpha x}\sin(\beta x)\]
+\[y(x) = Ae^{\alpha x}\cos(\beta x) + Be^{\alpha x}\sin(\beta x)\]
+This only works as long as \(c_1\) and \(c_2\) are complex conjugates, because
+it relies on the identities \(\bar{z} + z = 2\mathrm{Re}(z)\) and 
+\(\bar{z} - z = 2\mathrm{Im}(z)i\).
+
+\subsubsection*{Example}
+
+\begin{center}
+    \[y^{\prime\prime} - 4y^\prime + 13y = 0\]
+    \[\Rightarrow a = 1, b = -4, c = 13\]
+    \[\Rightarrow \lambda = \frac{4 \pm \sqrt{(-4)^2 - 4\times1\times13}}{2}
+    = \frac{4 \pm \sqrt{16 - 52}}{2} = \frac{4 \pm 6i}{2}\]
+    \[\Rightarrow \lambda = 2 + 3i\mcom \lambda = 2 - 3i\]
+    \[\Rightarrow \alpha = 2\mcom \beta = 3\]
+    \[\Rightarrow y(x) = Ae^{2x}\cos(3x) + Be^{2x}\sin(3x)\]
+    Given the initial values of \(y(0) = 1\) and \(y^\prime(0) = 6\) we can
+    find
+    \[1 = Ae^{2\times0}\cos(3\times0) + Be^{2\times0}\sin(3\times0) = A\]
+    \[y^\prime = A\derivx{e^{2x}\cos(3x)} + B\derivx{e^{2x}\sin(3x)}\]
+    \[= A(2e^{2x}\cos(3x) - 3\sin(3x)e^{2x}) + B(2e^{2x}\sin(3x) 
+    + 3\cos(3x)e^{2x})\]
+    \[y^\prime(0) = 2e^{2\times0}\cos(3\times0) - 3\sin(3\times0)e^{2\times0}
+    + B(2e^{2\times0}\sin(3\times0) + 3\cos(3\times0)e^{2\times0})\]
+    \[= 2 + B(3) = 6 \Rightarrow B = \frac{4}{3}\]
+\end{center}
+
+\bigskip
+We can rewrite a solution of this form in terms of a single trigonometric
+function using the fact that it has an equivalent form to
+\(e^{2x}(a\cos(\theta) + b\sin(\theta))\) as
+\[\sqrt{a^2 + b^2}\cos(\theta - \phi)\]
+Where \(\phi = \arctan\left(\frac{b}{a}\right)\). This can be useful for
+graphing or further manipulation.
 
 \end{flushleft}
 \end{document}
