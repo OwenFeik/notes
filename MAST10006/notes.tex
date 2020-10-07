@@ -431,7 +431,7 @@ to have a quotient before the rule can be applied to it.
 \subsubsection*{Rigour}
 Thus far, we have used the phrase \textit{arbritrarily close} without a proper
 definition of what that means. A more formal definition of this exists, where
-we pick an arbritray positive number \(\epsilon\). When we do this, there is
+we pick an arbritrary positive number \(\epsilon\). When we do this, there is
 another positive number \(\delta\) for which \(\abs{f(x) - L} < \epsilon\) when
 \(0 < \abs{x - a} < \delta\).
 
@@ -1257,7 +1257,7 @@ at most first derivatives such as
 \[\dd{y}{x} = x^3\]
 This example can be easily solved through integration.
 \[y = \int x^3 \dx = \frac{x^4}{4} + c\]
-These solutions usually contain an arbritray constant \(c\in\R\), and the
+These solutions usually contain an arbritrary constant \(c\in\R\), and the
 solutions represented by various values of \(c\) are known as the family of
 solutions to this differential equation. It is interesting to note that these
 solutions can never intersect, as the differ by some value at all \(x\). \par
@@ -1615,6 +1615,68 @@ And the overall equation is
 If \(t > 200\), \(V < 0\) which doesn't make much sense, so we can restrict the
 domain. This is a linear equation, so it can be solved through the integrating
 factor method.
+
+\subsection*{Second Order Ordinary Differential Equations}
+
+A second order differential equation is of the form
+\[F\left(x, y, \dd{y}{x}, \dd{^2y}{x^2}\right) = 0\]
+Generally a second order differential equation will have two arbritrary
+constants. Therefore, a second piece of information is necessary to solve an
+initial value problem. For example, \(y(x_0) = y_0\) and
+\(y^\prime(x_0) = y_1\). By adding this second variable, we could instead have
+two values for \(y\); if we have \(y(a) = y_0\) and \(y(b) = y_1\), we have a
+boundary value problem; two points through which the solution passes.
+
+\subsubsection*{Linear Second Order}
+
+The general form of a linear second order ordinary differential equation is
+\[\dd{^2y}{x^2} + P(x)\dd{y}{x} + Q(x)y = R(x)\]
+If \(R(x) = 0\), the equation is homogenous. If \(R(x) \neq 0\) the equation is
+inhomogenous. The general solution to a homogenous equation of this form is
+\[y(x) = c_1y_1(x) + c_2y_2(x)\]
+Here, \(y_1\) and \(y_2\) are \textit{linearly independent solutions} of the
+equation and \(c_2\) and \(c_2\) are arbritrary constants. The term ``linearly
+independent'' implies that
+\[c_1y_1(x) + c_2y_2(x) = 0 \Rightarrow c_2 = c_2 = 0\]
+Another way of stating this is that neither function is a non-zero constant
+multiple of the other function. For instance, while \(e^{2x}\) and \(xe^{2x}\)
+are linearly independent, \(x^2\) and \(2x^2\) are not. \par
+The reason this works is that both solutions can be understood to exist in the
+same space of solutions to the equation, and as linear solutions, they can be
+added while still being a solution to the equation.
+
+\subsubsection*{Homogenous Second Order Linear}
+
+Equations of this form look like
+\[ay^{\prime\prime} + by^\prime + cy = 0\]
+Where \(a, b, c\) are constants. To find \(y(x)\), we need to find two linearly
+independent solutions. Once we have these, we can use our theorem for the
+general solution. \par
+The best way to start out this process is by considering exponential solutions.
+If we first try \(y(x) = e^{\lambda x}\), we find
+\[y^\prime = \lambda e^{\lambda x}\mcom y^{\prime\prime} 
+= \lambda^2e^{\lambda x}\]
+Substituting into the equation, we find
+\[a\lambda^2e^{\lambda x} + b\lambda e^{\lambda x} + ce^{\lambda x} = 0\]
+\[\Rightarrow e^{\lambda x}(a\lambda^2 + b\lambda + c) = 0\]
+Because \(e^{\lambda x} \neq 0\), we need the term in brackets (known as the
+\textit{characteristic equation} of the differential equation) to equal \(0\)
+and thus be a solution. To find \(\lambda\) we can simply use the quadratic
+formula, which conveniently yields a positive and negative value; i.e. two
+linearly independent solutions.
+\[\lambda = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]
+In the case that the discriminant, \(b^2 - 4ac > 0\), this formula yields two
+distinct real values, each of which is a solution. Thus, the overall general
+solution is
+\[y(x) = Ae^{\lambda_1 x} + Be^{\lambda_2 x}\]
+
+\subsubsection*{Example}
+\[y^{\prime\prime} + 7y^\prime + 12y = 0\]
+\[\Rightarrow a = 1, b = 7, c = 12\]
+\[\Rightarrow \lambda = \frac{-7 \pm \sqrt{(-7)^2 -4\times1\times12}}{2}
+= \frac{-7 \pm \sqrt{49 - 48}}{2} = \frac{-7 \pm 1}{2}\]
+\[\Rightarrow \lambda = -4\mcom\lambda = -3\]
+\[\Rightarrow y(x) = Ae^{-4x} + Be^{-3x}\]
 
 \end{flushleft}
 \end{document}
