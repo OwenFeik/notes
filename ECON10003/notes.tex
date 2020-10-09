@@ -40,6 +40,8 @@
     \end{center}
 }
 
+\newcommand{\dd}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+
 \begin{document}
 \begin{flushleft}
     
@@ -870,7 +872,7 @@ Returning once again to our two sector economy, we have the equation
 \[Y = \bar{C} + cY + I^P\]
 Which implies that \(Y\) can be calculated as
 \[Y = \frac{\bar{C} + I^P}{1 - c}\]
-\[\frac{\mathrm{d}Y}{\mathrm{d}I^P} = \frac{1}{1 - c}\]
+\[\dd{Y}{I^P} = \frac{1}{1 - c}\]
 This implies that an increase in \(\bar{C}\) or \(I^P\) leads to an increase in
 output. More generally it is taken that a change in an exogenous expenditure in
 an economy results in an increase in income, results in an increase in 
@@ -920,7 +922,7 @@ increased consumption implying increased output. \par
 This model can be extended to include all of the components of an economy, 
 yielding the equation that
 \[Y  = \frac{\bar{C} + I^P + G + X - cT}{1  - c(1 - t)}\]
-\[\frac{\mathrm{d}Y}{\mathrm{d}I^P} = \frac{1}{1 - c(1 - t)}\]
+\[\dd{Y}{I^P} = \frac{1}{1 - c(1 - t)}\]
 It should be noted that this applies equivalently to all terms in the 
 numerator; not just \(I^P\) but also \(\bar{C}\), \(G\), etc. Thus, the 
 multiplier is affected by the marginal taxation rate. The taxed income doesn't
@@ -1580,6 +1582,91 @@ The model can be extended by including growth in productivity and output per
 worker, which explains how countries can grow richer. The current model only
 shows us that capital per labour is less a driver of increased welfare than is
 productivity growth.
+
+\subsection*{Empirics of Economic Growth}
+
+The Solow-Swan model suggested that an economy tends toward a steady-state
+capital to labour ratio, and indicated that long run growth occurs due to
+growth in productivity.
+
+\subsubsection*{Convergence}
+
+Convergence is the idea that countries might become more similar over time.
+Absolute convergence suggests that all economies should converge to be more
+like each other; in some way, this is a test of the Solow-Swan model; countries
+with similar characteristics should tend to similarity. \par
+It suggests an inverse relationship between output per worker and growth rate
+in similar countries. Statistics from the real world do not support this
+outcome; either because the model does not reflect the world very well, or
+because countries are not in reality similar in the real world. \par
+This leads to the conditional convergence hypothesis; that all economies should
+converge to some value, while similar countries should converge to roughly
+the same value. When restricting the hypothesis in this way, such as by looking
+at ``open economies'', there is more support for it.
+
+\subsubsection*{Growth Accounting}
+
+Growth accounting is a way of splitting output growth into productivity,
+capital stock, and labour growth. It is useful because it allows us to gain
+insight into what is driving output growth in an economy. It doesn't necessary
+account for what is driving these factors; e.g. if an institution has effected
+some regulation resulting in improved productivity or some technology has done
+so. \par
+We begin this analysis with the production function
+\[Y_t = A_tf(K_t, L_t)\]
+We then take the logarithm of each size, and then differentiate with respect to
+time this equation.
+\[\log(Y_t) = \log(A_t) + \log(f(K_t, L_t))\]
+\[\frac{1}{Y}\dd{Y}{t} = \frac{1}{A}\dd{A}{t} 
++ \frac{1}{f(K, L)}\dd{f(K, L)}{K}\dd{K}{t} 
++ \frac{1}{f(K, L)}\dd{f(K, L)}{L}\dd{L}{t}\]
+Here, the terms from left to right are the growth rate of output, the growth
+rate of productivity, with the last two terms representing the growth rate of
+capital with respect to labour and the growth rate of labour with respect to
+capital. In general,
+\[\frac{1}{z(t)} \dd{z}{t} = \hat{z}\]
+Where \(\hat{z}\) is the growth rate of \(z\) (growth with respect to time).
+Using this, and some other manipulations of our original equations we can
+rearrange to find the equation
+\[\hat{Y} = \hat{A} + \frac{rK}{Af(K, L)}\hat{K} + \frac{wL}{Af(K, L)}\hat{L}\]
+To do this, we multiply the two labour and capital terms by \(\frac{A}{A}\) and
+use the expressions for the value of \(w\) and \(r\) in a competitive market
+given by the marginal products of labour and capital
+\[w = A \dd{f}{L}\:\:\:r = A \dd{f}{k}\]
+to replace the relevant terms.
+\par
+We then use the equation \(Y = wL + rK\), divided through by 
+\(Y\) (\(= Af(K, L)\)) to
+understand \(\frac{wL}{Y}\) as the labour share of output and \(\frac{rK}{Y}\)
+as the capital share of output. \par
+We can then understand the above equation as stating that the growth rate of
+output \(\hat{Y}\) is given by the growth rate of productivity \(\hat{A}\)
+multiplied by the capital share, multiplied by growth rate of capita
+\(\hat{K}\) multiplied by labour share, multiplied by growth rate of labour,
+\(\hat{L}\). \par
+Given that we have access to data on output \(Y\) and output growth
+\(\hat{Y}\), including labour share and capital share, interest rates \(r\)
+and capital stock \(K\), wages \(w\), employment \(L\) and employment growth
+\(\hat{L}\), and investment (which implies) \(\hat{K}\), there is only one
+unknown \(\hat{A}\), sometimes known as the Solow residual. Thus, this equation
+is useful for finding growth in total factor productivity in an economy. \par
+Essentially, the equation says all growth in an economy not due to increases
+in capital or labour are due to increases in productivity, due to technology,
+regulation, etc. \par
+One can calculate using margin of error to avoid bias in the estimate of
+productivity growth.
+
+\subsubsection*{Applications}
+
+An application of these principles was in the study of the East Asian Tigers;
+successful East Asian countries undergoing rapid growth. Much of the success of
+these countries could be attributed to increases in capital stock and labour,
+with less influence from increases in total factor productivity. The high
+saving rates motivated by government policy effected high rates of growth in
+capital stock resulting in rapid economic growth. \par
+An idea that arises from this result is that increases in savings, while
+motivating increases in output per worker in the short term, has long-term
+implications that are less favourable.
 
 \end{flushleft}
 \end{document}
