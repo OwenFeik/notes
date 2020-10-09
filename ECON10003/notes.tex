@@ -1,46 +1,7 @@
 \documentclass[12pt]{report}
-\renewcommand{\familydefault}{\sfdefault}
 
-\usepackage{commath}
-\usepackage{environ}
-\usepackage{pgfplots}
-
-\usetikzlibrary{external}
-\tikzexternalize
-
-\usepgfplotslibrary{fillbetween}
-
-\setlength{\parskip}{.2cm}
-
-\NewEnviron{simpleplot}[2]{
-    \begin{center}
-        \begin{tikzpicture}
-            \begin{axis}[
-                xmin = 0,
-                xmax = 6,
-                ymin = 0,
-                ymax = 6,
-                width = 12 cm,
-                height = 9 cm,
-                xlabel = #1,
-                xlabel near ticks,
-                xtick style = {draw = none},
-                xticklabels = \empty,
-                axis x line = bottom,
-                ylabel = #2,
-                ylabel near ticks,
-                ytick style = {draw = none},
-                yticklabels = \empty,
-                axis y line = left,
-                samples = 500
-            ]
-                \BODY\
-            \end{axis}
-        \end{tikzpicture}
-    \end{center}
-}
-
-\newcommand{\dd}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+\usepackage{import}
+\import{../}{preamble.tex}
 
 \begin{document}
 \begin{flushleft}
@@ -453,7 +414,7 @@ determinants of investment decisions.
         encourages lower capital investment.
 \end{itemize}
 
-\begin{simpleplot}{\(k\)}{\(pF^\prime(k)\)}
+\begin{econplot}{\(k\)}{\(pF^\prime(k)\)}
     \addplot[ultra thick, red, ->] coordinates {(0, 2)(5, 2)}
     node [above, pos = 0.8] {\((r + \delta)\)};
     \addplot[ultra thick, blue, ->] {-2 * (0.5 * x)^(1/2) + 4}
@@ -461,7 +422,7 @@ determinants of investment decisions.
     \addplot[thick, black, dashed] coordinates {(2, 0)(2, 2.5)}
     node [above] {\(k^*\)};
     \node[circle, fill, inner sep = 2pt] at (axis cs: 2, 2) {};
-\end{simpleplot}
+\end{econplot}
 
 In the above plot, a function for marginal revenue of capital is plotted 
 against another for marginal cost of capital. Their intersection is the optimal
@@ -475,7 +436,7 @@ to invest. Interest rate is the price that adjusts to equate this market. With
 higher interest rates, individual saving is more incentivised, and firm 
 investment is disincentivised.
 
-\begin{simpleplot}{\(S(r) / I(r)\)}{\(r\)}
+\begin{econplot}{\(S(r) / I(r)\)}{\(r\)}
     \addplot[ultra thick, red, ->] {x}
     node [above left, pos = 0.9] {\(S_0(r)\)};
     \addplot[ultra thick, blue, ->] {-1 * x + 5}
@@ -488,7 +449,7 @@ investment is disincentivised.
     node [above] {\(t_1^*\)};
     \node[circle, fill, inner sep = 2pt] at (axis cs: 2.5, 2.5) {};
     \node[circle, fill, inner sep = 2pt] at (axis cs: 3, 2) {};
-\end{simpleplot}
+\end{econplot}
 
 The interest rate is determined by the relative attractiveness of saving \(S\)
 and investment \(I\). For example, in the above plot we see that a shock 
@@ -772,7 +733,7 @@ inputs to the model are considered exogenous. These are \(\bar{C}\), \(I^P\),
 \(G\) and \(X\). The only moving part in the model is \(cY\), the expenditure
 of consumers.
 
-\begin{simpleplot}{\(Y\)}{\(Y / PAE\)}
+\begin{econplot}{\(Y\)}{\(Y / PAE\)}
     \addplot[ultra thick, blue, ->] {x}
     node[below right, pos = 0.65] {\(Y\)};
     \addplot[ultra thick, red, ->] {0.4*x + 2}
@@ -789,7 +750,7 @@ of consumers.
     \node[circle, fill, inner sep = 2pt] at (axis cs: 0, 2) {};
     \node[below right] at (axis cs: 3.33, 3.33) {\(A\)};
     \node[circle, fill, inner sep = 2pt] at (axis cs: 3.33, 3.33) {};
-\end{simpleplot}
+\end{econplot}
 
 In the case that \(Y < PAE\), this tells us that \(I^P > I\), which implies
 that an increase in \(I^P\) will occur, while if \(Y > PAE\), \(I^P < I\),
@@ -884,7 +845,7 @@ The magnitude of this multiplier is given by the derivative of \(Y\) with
 respect to \(I^P\) shown below the equation; because \(0 < c < 1\) this value
 is greater than \(1\) and acts as a multiplier for the increased investment.
 
-\begin{simpleplot}{\(Y\)}{\(Y / PAE\)}
+\begin{econplot}{\(Y\)}{\(Y / PAE\)}
     \addplot[ultra thick, red, ->, name path = y] {x}
     node[below right, pos = 0.6] {\(Y\)};
     \addplot[ultra thick, blue, ->, name path = lo] {0.5*x+1}
@@ -911,7 +872,7 @@ is greater than \(1\) and acts as a multiplier for the increased investment.
         of = hi and y,
         soft clip = {domain = 3:4}
     ];
-\end{simpleplot}
+\end{econplot}
 
 This plot showcases the multiplier effect in response to a change in planned
 investment \(\Delta I^P\) from \(I^P_0\) to \(I^P_1\). The dark red shaded 
@@ -1221,7 +1182,7 @@ Causes of shifts to the aggregate demand curve include
 We can examine the effect of a change in exogenous expenditure through a case
 study.
 
-\begin{simpleplot}{\(Y\)}{\(Y/PAE\)}
+\begin{econplot}{\(Y\)}{\(Y/PAE\)}
     \addplot[red, ultra thick, ->] {x}
     node[above left, pos = 0.95] {\(Y\)};
     \addplot[blue, ultra thick, ->] {0.4*x + 2}
@@ -1232,14 +1193,14 @@ study.
     \node[below right] at (axis cs: 1.67, 1.67) {\(Y_0\)};
     \node[circle, fill, inner sep = 2pt] at (axis cs: 3.33, 3.33) {};
     \node[above left] at (axis cs: 3.33, 3.33) {\(Y_1\)};
-\end{simpleplot}
+\end{econplot}
 
 Here, government expenditure has increased from a level \(G_0\) to a level
 \(G_1\), causing an increase of output from level \(Y_0\) to \(Y_1\). This all
 occurs at a constant inflation rate \(\pi\). The below plot shows the impact of
 this change in \(PAE\) in the aggregate demand curve.
 
-\begin{simpleplot}{\(Y\)}{\(\pi\)}
+\begin{econplot}{\(Y\)}{\(\pi\)}
     \addplot[blue, ultra thick, domain = 1.25:5, <->] {0.1*(x - 9)^2};
     \addplot[blue, ultra thick, domain = 1:5, <->] {0.1*(x - 8)^2};
     \addplot[black, ultra thick, dashed] coordinates {(0, 2.5)(5, 2.5)};
@@ -1248,7 +1209,7 @@ this change in \(PAE\) in the aggregate demand curve.
     \node[circle, fill, inner sep = 2pt] at (axis cs: 4, 2.5) {};
     \node[above right] at (axis cs: 4, 2.5) {\((Y_1, \pi)\)};
     \addplot[black, thick, ->] coordinates {(2.2, 3.5)(2.9, 3.5)};
-\end{simpleplot}
+\end{econplot}
 
 We can see that because the inflation rate \(\pi\) has remained constant while
 the level of output increases, the curve has moved to the right, to a higher
@@ -1309,7 +1270,7 @@ respect to expectations and the product market.
 Where \(\gamma\) describes the responsiveness of inflation to deviations in the
 output gap.
 
-\begin{simpleplot}{\(Y\)}{\(\pi\)}
+\begin{econplot}{\(Y\)}{\(\pi\)}
     \addplot[red, ultra thick, ->] {x}
     node[below right, pos = 0.9] {\(\pi(\gamma_0)\)};
     \addplot[red, ultra thick, ->, domain = 0:4] {3*x/2 - 1}
@@ -1318,7 +1279,7 @@ output gap.
     node[right] {\(\pi_{t - 1} = \pi^e_t\)};
     \addplot[black, ultra thick, dashed] coordinates {(2, 0)(2, 3)}
     node[above] {\(Y^*\)};
-\end{simpleplot}
+\end{econplot}
 
 Here \(\gamma_0 < \gamma_1\), so the \(\gamma_0\) curve is less responsive to
 changes in \(Y\) and thus has a lower gradient. The two intersect at \(Y^*\).
@@ -1363,7 +1324,7 @@ resulting in a drop in rate of increase of prices (i.e. inflation). This
 decline will be mitigated by the policy reaction function, causing the real
 interest rate to drop and thus investment to increase.
 
-\begin{simpleplot}{\(Y\)}{\(\pi\)}
+\begin{econplot}{\(Y\)}{\(\pi\)}
     \addplot[blue, ultra thick, domain = 1.25:5, <->] {0.1*(x - 9)^2 - 1}
     node[above right, pos = 0.9] {\(AD(\bar{C}_0)\)};
     \addplot[blue, ultra thick, domain = 1:4.5, <->] {0.1*(x - 8)^2 - 1}
@@ -1376,7 +1337,7 @@ interest rate to drop and thus investment to increase.
     \node[left, xshift = -0.2cm] at (axis cs: 1.82, 2.82) {\((Y_1, \pi_1)\)};
     \addplot[black, thick, <-] coordinates {(1.25, 3.75)(2, 3.75)};
     \addplot[black, thick, <-] coordinates {(2.7, 2)(3.4, 2)};
-\end{simpleplot}
+\end{econplot}
 
 The above plot depicts the changes as the curve shifts from output level
 \(Y^*\) to \(Y_1\). The end result is a fall in aggregate demand cause a fall
@@ -1532,7 +1493,7 @@ of investment required to keep the capital to labour ratio a constant. The
 Solow-Swan model looks for a situation where this change in the capital to
 labour ratio is \(0\).
 
-\begin{simpleplot}{\(\frac{K}{L}\)}{\(\frac{Y}{L}\)}
+\begin{econplot}{\(\frac{K}{L}\)}{\(\frac{Y}{L}\)}
     \addplot[red, ultra thick, ->, domain = {0:3.9}] {3*x^0.5}
     node[below right, pos = 0.95]
     {\(\frac{Y}{L} = Af\left(\frac{K}{L}, 1\right)\)};
@@ -1546,7 +1507,7 @@ labour ratio is \(0\).
     \node[above left] at (axis cs: 1.78, 4)
     {\(\left(\frac{Y}{L}\right)^*, \left(\frac{K}{L}\right)^*\)};
     \node[circle, fill, inner sep = 2pt] at (axis cs: 1.78, 1.33) {};
-\end{simpleplot}
+\end{econplot}
 
 By plotting replacement investment, saving per working and output per worker
 we can find the equilibrium outcome of this system. At the intersection of
