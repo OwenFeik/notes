@@ -86,6 +86,7 @@
 \newcommand{\limit}{\lim\limits}
 \newcommand{\sumninf}[1][1]{\sum\limits_{n = #1}^\infty}
 \newcommand{\derivx}[1]{\frac{\mathrm{d}}{\mathrm{d}x}\left[#1\right]}
+\newcommand{\pp}{{\prime\prime}}
 
 \DeclareMathOperator{\sech}{sech}
 \DeclareMathOperator{\cosech}{cosech}
@@ -1648,13 +1649,13 @@ added while still being a solution to the equation.
 \subsubsection*{Homogenous Second Order Linear}
 
 Equations of this form look like
-\[ay^{\prime\prime} + by^\prime + cy = 0\]
+\[ay^\pp + by^\prime + cy = 0\]
 Where \(a, b, c\) are constants. To find \(y(x)\), we need to find two linearly
 independent solutions. Once we have these, we can use our theorem for the
 general solution. \par
 The best way to start out this process is by considering exponential solutions.
 If we first try \(y(x) = e^{\lambda x}\), we find
-\[y^\prime = \lambda e^{\lambda x}\mcom y^{\prime\prime} 
+\[y^\prime = \lambda e^{\lambda x}\mcom y^\pp 
 = \lambda^2e^{\lambda x}\]
 Substituting into the equation, we find
 \[a\lambda^2e^{\lambda x} + b\lambda e^{\lambda x} + ce^{\lambda x} = 0\]
@@ -1672,7 +1673,7 @@ solution is
 
 \subsubsection*{Example}
 
-\[y^{\prime\prime} + 7y^\prime + 12y = 0\]
+\[y^\pp + 7y^\prime + 12y = 0\]
 \[\Rightarrow a = 1, b = 7, c = 12\]
 \[\Rightarrow \lambda = \frac{-7 \pm \sqrt{(-7)^2 -4\times1\times12}}{2}
 = \frac{-7 \pm \sqrt{49 - 48}}{2} = \frac{-7 \pm 1}{2}\]
@@ -1693,7 +1694,7 @@ Which is a solution because we know that \(2\lambda a + b = 0\).
 
 \subsubsection*{Example}
 
-\[y^{\prime\prime} + 2y^\prime + y = 0\]
+\[y^\pp + 2y^\prime + y = 0\]
 \[\Rightarrow a = 1, b = 2, c = 1\]
 \[\Rightarrow \lambda = \frac{-2 \prime \sqrt{(-2)^2 + 4\times1\times1}}{2}
 = \frac{-2}{2} = -1\]
@@ -1725,7 +1726,7 @@ it relies on the identities \(\bar{z} + z = 2\mathrm{Re}(z)\) and
 \subsubsection*{Example}
 
 \begin{center}
-    \[y^{\prime\prime} - 4y^\prime + 13y = 0\]
+    \[y^\pp - 4y^\prime + 13y = 0\]
     \[\Rightarrow a = 1, b = -4, c = 13\]
     \[\Rightarrow \lambda = \frac{4 \pm \sqrt{(-4)^2 - 4\times1\times13}}{2}
     = \frac{4 \pm \sqrt{16 - 52}}{2} = \frac{4 \pm 6i}{2}\]
@@ -1750,6 +1751,144 @@ function using the fact that it has an equivalent form to
 \[\sqrt{a^2 + b^2}\cos(\theta - \phi)\]
 Where \(\phi = \arctan\left(\frac{b}{a}\right)\). This can be useful for
 graphing or further manipulation.
+
+\subsubsection*{Inhomogenous Second Order Linear}
+
+To solve these differential equations, we have a theorem
+\[y^\pp + P(x)y^\prime + Q(x)y = R(x)\]
+\[\Rightarrow y(x) = y_H(x) + y_P(x)\]
+Where \(y_H(x) = c_1y_1(x) + c_2y_2(x)\) is the general solution of the
+homogenous differential equation, the left hand side, as examined previously,
+and \(y_P(x)\) is a particular solution of the inhomogenous equation. \par
+We know this works because \(y_H(x)\) must solve the homogenous solution, while
+\(y_P(x)\) must solve the inhomogenous siutation. \par
+The general form of these inhomogenous equations is 
+\[ay^\pp + by^\prime + cy = R(x)\]
+
+\subsubsection*{Examples}
+
+\begin{center}
+    \[y^\pp + 2y^\prime - 8y = 1 - 8x^2\]
+    We begin by finding the general solution of the homogenous equation.
+    \[y^\pp + 2y^\prime - 8y = 0\]
+    \[\Rightarrow a = 1, b = 2, c = -8\]
+    \[\Rightarrow \lambda
+    = \frac{-2 \pm \sqrt{2^2 - 4\times1\times-8}}{2\times1}
+    = \frac{-2\pm6}{2}\]
+    \[\Rightarrow \lambda = -4\mcom \lambda = 2\]
+    \[\Rightarrow y_H(x) = Ae^{-4x} + Be^{2x}\]
+    We then find a particular solution to the equation. Here, we are trying
+    to find a \(y_P(x)\) for which the left hand side will work out to a
+    quadratic, such that it matches the right hand side. Thus, we can try
+    a general quadratic solution.
+    \[y_P = ax^2 + bx + c\]
+    \[y_P^\prime = 2ax + b\]
+    \[y_P^\pp = 2a\]
+    \[2a + 2(2ax + b) - 8(ax^2 + bx + c) = 1 - 8x^2\]
+    \[2a + 2b - 8c + (4a - 8b)x - 8ax^2 = 1 - 8x^2\]
+    \[\Rightarrow 2a + 2b - 8c = 1\mcom 4a - 8b = 0\mcom 8a = 8\]
+    \[\Rightarrow a = 1 \Rightarrow b = \frac{1}{2} \Rightarrow
+    c = \frac{1}{4}\]
+    \[y_P = x^2 + \frac{1}{2}x + \frac{1}{4}\]
+    \[\Rightarrow y(x) = Ae^{-4x} + Be^{2x} + x^2 + \frac{1}{2}x +\frac{1}{4}\]
+\end{center}
+
+In this question, we noticed that the right hand side was a quadratic, so after
+solving for the homogenous solution, we simply needed to find a fitting
+quadratic as our particular solution.
+
+\begin{center}
+    \[y^\pp + 2y^\prime - 8y = e^{3x}\]
+    This is the same homogenous equation as before, so we have our \(y_H\).
+    \[y_H(x) = Ae^{-4x} + Be^{2x}\]
+    Because we have an exponential on the left hand side, and we know that
+    exponentials have exponential derivatives, so we want to try exponential
+    \(y_P\)s. Because the equation needs to look like \(e^{3x}\), we need an
+    exponential with \(3x\) as the exponent.
+    \[y_P = \alpha e^{3x}\]
+    \[y_P^\prime = 3\alpha e^{3x}\]
+    \[y_P^\pp = 9\alpha e^{3x}\]
+    \[9\alpha e^{3x} + 6\alpha e^{3x} - 8\alpha e^{3x} = 7\alpha e^{3x}\]
+    \[7\alpha e^{3x} = e^{3x} \Rightarrow \alpha = \frac{1}{7}\]
+    \[\Rightarrow y(x) = Ae^{-4x} + Be^{2x} + \frac{1}{7}e^{3x}\]
+\end{center}
+
+Here, we saw an exponential on the right hand side, so we knew an exponential
+was needed on the left. By using a constant \(\alpha\), we were able to find a
+particular solution which fit the equation.
+
+\begin{center}
+    \[y^\pp + 2y^\prime - 8y = 85\cos(x)\]
+    Once again, this is the same \(y_H\). To find a solution for the left hand
+    side here, we have a slightly more complex process. Because \(\cos\)
+    differentiates to \(-\sin\), we use a general trigonometric equation of the
+    form
+    \[y_P(x) = \alpha\cos(x) + \beta\sin(x)\]
+    \[y_P^\prime(x) = -\alpha\sin(x) + \beta\cos(x)\]
+    \[y_P^\pp = -\alpha\cos(x) - \beta\sin(x)\]
+    \[(-\alpha\cos(x) - \beta\sin(x)) + 2(-\alpha\sin(x) + \beta\cos(x))
+    -  8(\alpha\cos(x) + \beta\sin(x))\]
+    \[2\beta\cos(x) - 9\alpha\cos(x) - 9\beta\sin(x) - 2\alpha\sin(x)
+    = 85\cos(x)\]
+    \[\Rightarrow 2\beta - 9\alpha = 85\mcom -9\beta - 2\alpha = 0\]
+    \[\Rightarrow \beta = \frac{-2}{9}\alpha 
+    \Rightarrow \frac{-4}{9}\alpha - 9\alpha 
+    = 85 \Rightarrow \frac{-85}{9}\alpha = 85 \Rightarrow \alpha = -9\]
+    \[\Rightarrow \beta = 2 \Rightarrow y_P(x) = -9\cos(x) + 2\sin(x)\]
+    \[\Rightarrow y(x) = Ae^{-4x} + Be^{2x} - 9\cos(x) + 2\sin(x)\]
+\end{center}
+
+For a trigonometric function, one must use a trigonometric function. Using
+unknown coefficients allows us to find out particular solution once again.
+
+\subsubsection*{Superposition of Solutions}
+
+Thus far we have looked at how to solve three types of \(R(x)\) functions, we
+now look at ``superimposing'' these solutions to find a solution for a
+combination of \(R(x)\)s.
+\[ay^\pp + by^\prime + cy = \alpha R_1(x) + \beta R_2(x)\]
+\[\Rightarrow y_P(x) = \alpha y_1(x) + \beta y_2(x)\]
+Where \(y_1(x)\) is an inhomogenous particular solution of the left side to
+\(R_1(x)\) and \(y_2(x)\) is the same for \(R_2(x)\). Using the example from
+above:
+
+\begin{center}
+    \[y^\pp + 2y^\prime - 8y = 3 - 24x^2 + 7e^{3x}\]
+    We have already found a \(y_H(x)\) for this equation, in addition we have
+    solved the following two \(R(x)\) functions:
+    \[R_1(x) = 1 - 8x^2 \Rightarrow y_P(x) = x^2 + \frac{1}{2}x + \frac{1}{4}\]
+    \[R_2(x) = e^{3x} \Rightarrow y_P(x) = \frac{1}{7}e^{3x}\]
+    We can now \textit{superimpose} these to find a solution to the new
+    \(R(x)\).
+    \[R(x) = 3R_1(x) + 7R_2(x)\]
+    \[y_P(x) = 3(x^2 + \frac{x}{2} + \frac{1}{4}) + 7(\frac{1}{7}e^{3x})\]
+    \[y(x) = Ae^{-4x} + Be^{2x} + 3x^2 + \frac{3}{2}x + \frac{3}{4} + e^{3x}\]
+\end{center}
+We simply find the values of \(\alpha\) and \(\beta\), and multiply the \(y_P\)
+solutions assocaited with thesse to find the general solution to the new
+equation.
+
+\subsubsection*{\(R(x)\) in the General Solution}
+
+In an equation like \(y^\pp - y = e^x\), a \(y_P = \alpha e^x\) will result in
+a left hand side equal to \(0\), which \(e^x\) can never equal. Therefore we
+need another approach for this case. Therefore, we instead try \(\alpha xe^x\)
+\[y_P = axe^x\]
+\[y_P^\prime = \alpha x^e + \alpha xe^x\]
+\[y_P^\pp = 2\alpha e^x + \alpha xe^x\]
+\[\Rightarrow 2\alpha e^x + \alpha xe^x - \alpha xe^x = \alpha e^x\]
+\[\Rightarrow y_P = \frac{1}{2}xe^x\]
+\[\Rightarrow y(x) = Ae^x + Be^{-x} + \frac{1}{2}xe^x\]
+Despite the fact the right hand side was part of the homogenous solution, we
+are able to find a general solution. When there is only one solution to the
+homogenous solution, like in the case \(y^\pp + 2y^\prime + y = e^{-x}\), we
+instead try \(y_P = ax^2e^{-x}\). \par
+Finally, in the case that there is no real
+solution, we need to read for trigonometric functions. For example in
+\(y^\pp + 49y = 28\sin(7t)\), we have the general solution
+\(A\cos(7t) + B\sin(7t)\), which is a no-go. Intead we try 
+\(y_P(t) = at\cos(7t) + bt\sin(7t)\), adding a \(t\) factor which cancels out
+as the equation gets solved.
 
 \end{flushleft}
 \end{document}
