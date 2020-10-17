@@ -1797,5 +1797,57 @@ solution, we need to read for trigonometric functions. For example in
 \(y_P(t) = at\cos(7t) + bt\sin(7t)\), adding a \(t\) factor which cancels out
 as the equation gets solved.
 
+\subsection*{Applications of Second Order Linear}
+
+A spring has a natural length which it wants to return to when stretched. In an
+ideal scenario, a stretched spring under a gravitational force will oscillate
+sinusoidally up and down. If we include damping due to effects like friction
+and air resistance, the sinusoidal motion will converge to \(0\). Systems like
+this can be effectively modelled using second order linear ordinary
+differential equations. \par
+To consider these systems we take an object of mass \(m\mathrm{kg}\) attached
+to a spring hanging from a fixed support. The spring has natural length
+\(L\mathrm{m}\), and is stretched downward by \(s\mathrm{m}\) due to the weight
+force \(W = mg\) of the mass. Opposing the weight force is the restorative
+force of the spring \(T = -ks\), given by Hooke's law. \par
+At the state described, the equilibrium, the net force is \(0\).
+\[W + T = 0 = mg - ks \Rightarrow mg = ks\]
+To model the motion of the mass around the equilibrium, we can define a
+distance \(y(t)\), the distance of the mass from the equilibrium at time
+\(t\mathrm{s}\). Thus, we can rewrite \(T\) as \(-k(s + y)\). This is an
+opportune time to introduce damping forces as well, as \(R = -\beta \dot{y}\)
+where \(\dot{y}\) means ``the time derivative of \(y\)'' i.e. \(y^\prime\).
+This is essentially stating that damping is proportional to velocity. \par
+We also have Newton's second law \(F = ma\), which can be equivalently
+expressed as \(F = m\ddot{y}\). Applying this to the object, we find
+\[m\ddot{y} = W + T + R = mg - k(s + y) - \beta\dot{y}
+= mg - ks - y - \beta \dot{y}\]
+\[mg - ks = 0 \Rightarrow mg - ks - y - \beta \dot{y} = -y - \beta \dot{y}\]
+\[\Rightarrow m\ddot{y} + \beta\dot{y} + ky = 0\]
+Conveniently, this is a homogenous second order linear differential equation
+with constant coefficients. Thus to solve it, we can simply use the process
+explored above trying equations of the form \(y(t) = e^{\lambda t}\).
+\[\lambda = \frac{-\beta \pm \sqrt{\beta^2 -4mk}}{2m}\]
+Because we have related the coefficients to real world values, we can use the
+outcome of our equation to describe the real world situation.
+
+\begin{itemize}
+    \item When \(\beta = 0\) we find \(\lambda = \pm ib\). In this case, the
+        system is undergoing simple harmonic motion of the form
+        \(y = A\cos(bt) + B\sin(bt)\).
+    \item When \(0 < \beta < 2\sqrt{mk}\) we find \(\lambda = a \pm ib\), a
+        situation where the spring is underdamped or shows weak damping. In
+        this case, the motion will take the form
+        \(y = e^{at}(A\cos(bt) + B\sin(bt))\), with \(a < 0\). The spring will
+        oscillate with decreasing amplitude, slowly returning to equilibrium.
+    \item When \(\beta = 2\sqrt{mk}\) i.e. the discriminant is \(0\), we find
+        \(\lambda = a, a\) yielding \(y = Ae^{at} + Bte^{at}\) a situation
+        where the system undergoes critical damping and approaches equilibrium
+        without oscillation.
+    \item In the final case of \(\beta > 2\sqrt{mk}\) we have two real routes,
+        \(\lambda = a, b\) and find a solution of \(y = Ae^{at} + Be^{bt}\),
+        resulting in a slow approach to the equilibrium position. 
+\end{itemize}
+
 \end{flushleft}
 \end{document}
