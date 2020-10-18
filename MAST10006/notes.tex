@@ -1849,5 +1849,85 @@ outcome of our equation to describe the real world situation.
         resulting in a slow approach to the equilibrium position. 
 \end{itemize}
 
+\subsubsection*{Example}
+
+A \(\frac{40}{49}\mathrm{kg}\) mass stretches a spring hanging from a fixed
+support by \(0.2\mathrm{m}\). The mass is released from the equilibrium
+position with a downward velocity of \(3\mathrm{ms}^{-1}\). Find the position
+\(y\) below equilibrium at a time \(t\) for the damping constant \(\beta\)
+equal to each of \(0\), \(\frac{160}{49}\).
+
+\begin{center}
+    \[m = \frac{40}{49}, s = 0.2, y(0) = 0, \dot{y}(0) = 3\]
+    \[mg = ks \Rightarrow k = \frac{mg}{s} 
+    = \frac{\frac{40}{49} \times 9.8}{0.2} = 40\]
+    \[\Rightarrow \frac{40}{49}\ddot{y} + \beta\dot{y} + 40y = 0\]
+    To clean this up a little, we can multiply by \(\frac{49}{40}\).
+    \[\ddot{y} + \frac{40}{49}\beta\dot{y} + 49y = 0\]
+    \[\beta = 0 \Rightarrow \ddot{y} + 49y = 0\]
+    We will try solutions of the form \(e^{\lambda t}\)
+    \[y = e^{\lambda t} \Rightarrow \dot{y} = \lambda e^{\lambda t}
+    \Rightarrow \ddot{y} = \lambda^2e^{\lambda t}\]
+    \[\lambda^2e^{\lambda t} + 49e^{\lambda t} = 0 \Rightarrow
+    e^{\lambda t}(\lambda^2 + 49) = 0\]
+    \[e^{\lambda t} > 0 \Rightarrow \lambda^2 + 49 = 0 \Rightarrow \lambda
+    = \pm 7i\]
+    \[\Rightarrow y = A\cos(7t) + B\sin(7t)\]
+    \[\Rightarrow \dot{y} = -7A\sin(7t) + 7B\cos(7t)\]
+    \[y(0) = 0 \Rightarrow 0 = A\cos(0) + B\sin(0) \Rightarrow A = 0\]
+    \[\dot{y}(0) = 3 \Rightarrow 7B\cos(0) = 3 \Rightarrow B = \frac{3}{7}\]
+    \[y(t) = \frac{3}{7}\sin(7t)\]
+    Now for the next value of \(\beta\)
+    \[\beta = \frac{160}{49} \Rightarrow \ddot{y} + 4\dot{y} + 49y = 0\]
+    \[\lambda^2e^{\lambda t} + 4\lambda e^{\lambda t} + 49e^{\lambda t} = 0
+    = e^{\lambda t}(\lambda^2 + 4\lambda + 49) = 0\]
+    We can solve this quadratic with the quadratic formula.
+    \[\lambda = \frac{-4 \pm \sqrt{4^2 - 4\times 1 \times49}}{2}
+    = -2 \pm \frac{\sqrt{-180}}{2} = -2 \pm 3\sqrt{5}i\]
+    \[\Rightarrow y(t) = Ae^{-2t}\cos(3\sqrt{5}t) + Be^{-2t}\sin(3\sqrt{5}t)\]
+    \[\Rightarrow \dot{y} = -2Ae^{-2t}\cos(3\sqrt{5}t) 
+    - 3\sqrt{5}Ae^{-2t}\sin(3\sqrt{5}t)\]
+    \[- 2Be^{-2t}\sin(3\sqrt{5}t) + 3\sqrt{5}Be^{-2t}\cos(3\sqrt{5}t)\]
+    \[\Rightarrow A = 0, B = \frac{1}{\sqrt{5}}\]
+    This is a system with weak damping or underdamping.
+\end{center}
+
+\subsubsection*{Downward External Force}
+
+What happens if we apply an external force \(f\), dependent on \(t\) to the
+spring-mass system? We now have another force on the spring, making the total
+force on the object
+\[m\ddot{y} = W + T + R + f(t) = mg -k(s + y) -\beta\dot{y} + f(t)\]
+\[m\ddot{y} + \beta\dot{y} + ky = f(t)\]
+We now have an inhomogenous equation rather than a homogenous one.
+
+\subsubsection*{Example}
+
+We can consider a system similar to that of the above example, with an external
+force applied.
+\begin{center}    
+    \[f(t) = \frac{160}{7}\sin(7t)\]
+    \[\frac{40}{49}\ddot{y} + \beta\dot{y} + 40y = \frac{160}{7}\sin(t)
+    \Rightarrow \ddot{y} + \frac{49}{40}\beta\dot{y} + 49y = 28\sin(t)\]
+    \[y(0) = 0\mcom \dot{y}(0) = 3\]
+    We will use a value \(\beta = \frac{80}{7}\), which corresponds to critical
+    damping, and yields a general solution of the homogenous equation of
+    \[y(t) = (A + Bt)e^{-7t}\]
+    We then find a particular solution by finding solutions of the form
+    \(y_p = \alpha\cos(7t) + \beta\sin(7t)\) which yields
+    \[y_p(t) = -\frac{2}{7}\cos(7t)\]
+    Solving this we find
+    \[A = \frac{2}{7}\mcom B = 5\]
+    \[\Rightarrow y(t) = \left(\frac{2}{7} + 5t\right)e^{-7t} 
+    - \frac{2}{7}\cos(7t)\]
+\end{center}
+In this, we have the left term as transient; due to the negative
+exponential it rapidly approaches \(0\), while the right hand term is a
+steady state term, which defines most of the motion of the system in the
+long term. From this we can deduce that the external force is more significant
+than the force due to gravity and the spring in the long term. \par
+In the case were the particular solution has a factor of \(t\), we have a
+situation where the system is undergoing resonance.
+
 \end{flushleft}
 \end{document}
