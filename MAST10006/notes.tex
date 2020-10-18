@@ -1905,6 +1905,7 @@ We now have an inhomogenous equation rather than a homogenous one.
 
 We can consider a system similar to that of the above example, with an external
 force applied.
+
 \begin{center}    
     \[f(t) = \frac{160}{7}\sin(7t)\]
     \[\frac{40}{49}\ddot{y} + \beta\dot{y} + 40y = \frac{160}{7}\sin(t)
@@ -1921,6 +1922,7 @@ force applied.
     \[\Rightarrow y(t) = \left(\frac{2}{7} + 5t\right)e^{-7t} 
     - \frac{2}{7}\cos(7t)\]
 \end{center}
+
 In this, we have the left term as transient; due to the negative
 exponential it rapidly approaches \(0\), while the right hand term is a
 steady state term, which defines most of the motion of the system in the
@@ -1928,6 +1930,37 @@ long term. From this we can deduce that the external force is more significant
 than the force due to gravity and the spring in the long term. \par
 In the case were the particular solution has a factor of \(t\), we have a
 situation where the system is undergoing resonance.
+
+\subsubsection*{RLC Series Circuits}
+
+An RLC series ciruit is a ciruit with \(4\) components connected in series.
+These are a resistor, an inductor, a battery and a capacitor. The analogue to
+displacement in this example is \(q\), the charge on the capacitor. The
+analogue to velocity is \(I\), the current. The resistor has resistance of
+\(R\Omega\), the inductor has inductance \(L\) Henrys, the capacitor has
+capacitance \(C\mathrm{F}\) and the battery has voltage \(V\mathrm{V}\). \par
+The voltage drops across the components are given by
+\[IR = R\dd{q}{t}\]
+\[L\dd{I}{t} = L\dd{^2q}{t^2}\]
+\[\frac{q}{C}\]
+We thus have a differential equation for the charge on the capacitor of
+\[L\dd{^2q}{t^2} + R\dd{q}{t} + \frac{q}{C} = V\]
+Using Kirchoff's Voltage Law. This can be solved in essentially the same
+way as a spring problem.
+
+\subsubsection*{Example}
+
+Let us consider a capacitance of \(C = \frac{1}{30}\) a resistance of
+\(R = 10\) an inductance of \(L = \frac{5}{3}\) and a voltage of \(V = 300\).
+
+\begin{center}    
+Thus we have voltage drops across the resistor, capacitor and inductor of
+\[IR = 10I\mcom \frac{q}{C} = 30q\mcom L\dd{i}{t} = \frac{5}{3}\dd{i}{t}\]
+Yielding an equation of
+\[\frac{5}{3}\dd{i}{t} + 10i + 30q = 300 \Rightarrow
+\frac{5}{3}\dd{^2q}{t^2} + 10\dd{q}{t} + 30q = 300\]
+\[\Rightarrow \dd{^2q}{t^2} + 6\dd{q}{t} + 18q = 180\]
+\end{center}
 
 \end{flushleft}
 \end{document}
