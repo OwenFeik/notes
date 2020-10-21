@@ -1618,7 +1618,7 @@ One can calculate using margin of error to avoid bias in the estimate of
 productivity growth. \par
 This expression can be expressed in terms of the \(\alpha\) of the Cobb-Douglas
 production function
-\[\hat{Y} = \hat{A} + \alpha\hat{K} + (1 - \alpha)\ha{L}\]
+\[\hat{Y} = \hat{A} + \alpha\hat{K} + (1 - \alpha)\hat{L}\]
 Our labour share is expressed in terms of \(\alpha\) rather than as the
 function which yields alpha.
 
@@ -1681,6 +1681,77 @@ economy to produce the maximum total value of goods with prices taken as
 exogenous, with little regard for what these goods are, as they can then be
 traded for other goods. The price information here will perform the allocation
 task of determining opportunity cost.
+
+\subsubsection*{Direction of Trade}
+
+The direction of trade, i.e. who trades what to who, depends almost wholly on
+comparative advantage. Countries will generally export goods in which they have
+a comparative advantage; these will be goods for which the world price exceeds
+the domestic autarky price. They will import goods for which they have a
+comparative disadvantage; goods for which the world price is lower that the
+autarky price.
+
+\begin{econplot}{\(Q\)}{\(P\)}
+    \addplot[blue, ultra thick] {5-x} node[above right, pos = 0.6] {\(QD\)};
+    \addplot[red, ultra thick, ->] {x} node[above left, pos = 0.9] {\(QS\)};
+    \addplot[black, ultra thick, dashed] coordinates {(0, 2)(5, 2)}
+    node[right] {\(P_W\)};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 2, 2) {};
+    \node[below right] at (axis cs: 2, 2) {\(Q_d\)};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 3, 2) {};
+    \node[below left] at (axis cs: 3, 2) {\(Q_t\)};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 2.5, 2.5) {};
+    \node[above, yshift = 0.3cm] at (axis cs: 2.5, 2.5) {\(Q_a\)};
+\end{econplot}
+
+The above plot demonstrates the market for a good where the world price is
+lower than the autarky price. While in autarky the economy would produce
+\(Q_a\) which would be sold at the corresponding price, when there is world
+trade available at a price \(P_W < P_a\) the local producers (modelled by the
+supply curve \(QS\)) instead produce a quantity \(Q_d\) while a quantity
+\(Q_t\), the demand at this price point is consumed. The difference
+\(Q_t - Q_d\) is made up by some quantity of imported goods. \par
+In the opposite case, the price will be above the natural level in the country
+and so the local level of consumption will decrease, while local production
+increases, with these goods being exported. In the aggregate, the world price
+will be found by finding an equilibrium where total imports are equal to total
+exports. \par
+Difficulties in applying this information arise in that it is very difficult to
+identify the autarky price in a different country, etc.
+
+\subsubsection*{Benefits of Trade}
+
+Prices in an economy play an allocative role. They rise and fall managing the
+efficient consumption of goods, tending to encourage people to produce what
+they have a comparative advantage in producing. \par
+On a production possibility frontier, the slope describes the opportunity cost
+of the good on the \(x\)-axis. In a competitive economy, the price at which
+trade occurs will always to be tangential to this curve. \par
+A country which engages in trade is better able to engage in specialisation
+improving efficiency of production of a wide variety of goods. A world economy
+with each country specialising thus operates with greater efficiency. \par
+In addition to optimising production, trade optimises consumption. For goods
+like seafood where certain areas, like Japan, value them very highly while
+others value them lower, the higher price paid for them in these areas will
+draw the goods to them, increasing the efficiency of consumption. Thus trade is
+not zero-sum; all parties can benefit from trade by increasing production and
+consumption efficiency. However, not every individual within a country will
+necessarily benefit from trade.
+
+\subsubsection*{Distributional Aspects of Trade}
+
+Within a society, it is common that while some segments of an economy gain from
+trade, other sectors lose. When a country engages in trade, the market in the
+economy is subject to the world price; thus the country will shift away from
+production of goods for which it has a comparative disadvantage. This will mean
+loss of jobs and livelihoods for those who operate in those industries. \par
+Generally those involved in an export sector will benefit, while those in an
+import sector will be worse off. We can examine an example of this in the US,
+where we have seen significant increases in the real wage of highly payed
+workers and little or no increases in the real wage of low payed workers. This
+can be explained through trade giving the US access to pools of lower payed
+workers overseas or through improving technology, such as in the digital space
+favour more skilled and thus higher payed workers.
 
 \end{flushleft}
 \end{document}
