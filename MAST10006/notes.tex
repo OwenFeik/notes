@@ -2064,7 +2064,47 @@ of radii between \(0\) and \(1\) with centre \((0, 0)\).
 We can also tell that the two cross sections (\(x\)-\(z\) and
 \(z\)-\(y\)) will be hemispheres. Knowing thanks to our level curves that as
 \(z\) gets larger the radius will grow smaller, and that \(z\) is never
-negative we can tell that this is a hemisphere of radius \(1\).
+negative we can tell that this is a hemisphere of radius \(1\). \par
+In similar functions
+one might find that the cross-sections look like parabolas, indicating
+something like parabolic bowl or absolute value functions, indicating
+a cone. If \(x\) or \(y\) has a coefficient, the level curves will be
+elliptical rather than circular.
+
+\subsection*{Limits of Two Variable Functions}
+
+If \(f: \R^2 \rightarrow \R\) we say that \(f\) has a limit \(L\) as \(x, y\)
+approaches \(x_0, y_0\).
+\[\limit_{(x, y) \rightarrow (x_0, y_0)} f(x, y) = L\]
+If when \((x, y)\) approaches \((x_0, y_0)\) along any path in the domain
+\(f(x, y)\) grows arbritrarily close to \(L\). This is in contrast to a single
+variable limit, where it can only approach from left or right rather than from
+any direction. All of the usual conditions and laws around limits apply. \par
+Thus a two variable function is continuous at \((x, y) = (x_0, y_0)\) if
+\[\limit_{(x, y) \rightarrow (x_0, y_0)} f(x, y) = f(x_0, y_0)\]
+
+\subsubsection*{Example}
+
+\begin{center}
+    \[\limit_{(x, y) \rightarrow (2, 1)} \log(1 + 2x^2 + 3y^2)\]
+    \(\log\) is continuous, so we can bring the limit inside.
+    \[\log\left(\limit_{(x, y) \rightarrow (2, 1)} 1 + 2x^2 + 3y^2\right)\]
+    \[= \log(12)\]
+\end{center}
+
+\subsection*{First Order Partial Derivatives}
+
+For a function \(f: \R^2 \rightarrow \R\) the first order partial derivatives
+are defined as the limits
+\[f_x = \ddel{f}{x} = \limit_{h \rightarrow 0}\frac{f(x + h, y) - f(x, y)}{h}\]
+\[f_y = \ddel{f}{y} = \limit_{h \rightarrow 0}\frac{f(x, y + h) - f(x, y)}{h}\]
+Here \(f_x\) measures the rate of change of \(f\) with respect to \(x\) when
+\(y\) is held constant, while \(f_y\) does the inverse.
+
+\subsubsection*{Example}
+\[f(x, y) = 3x^3y^2 + 3xy^4\]
+\[\ddel{f}{x} = 9x^2y^2 + 3y^4\]
+\[\ddel{f}{y} = 6x^3y + 12xy^3\]
 
 \end{flushleft}
 \end{document}
