@@ -2106,5 +2106,62 @@ Here \(f_x\) measures the rate of change of \(f\) with respect to \(x\) when
 \[\ddel{f}{x} = 9x^2y^2 + 3y^4\]
 \[\ddel{f}{y} = 6x^3y + 12xy^3\]
 
+\subsubsection*{Tangent Planes and Differentiability}
+
+A single variable function exists if the fundamental limit exists for that
+function at the point of differentiation. This is essentially equivalent to
+requiring that a tangent line must exist on the function at the point of
+differentiation. This tangent line has the function
+\(y = f(a) + f^\prime(a)(x - a)\) for a function differentiated at \(x = a\).
+\par
+To extend this to two variable functions we can introduce the notion of a
+tangent plane. This essentially asks that each of the partial derivatives
+at the point exists and is continuous near the point of differentiation.
+\[z - z_0 = \ddelat{f}{x}{(x_0, y_0)}(x - x_0)\]
+Is the equation for a line with gradient \(f_x(x_0, y_0)\). The \(y\) variant
+is similar and combining them we find 
+\[z - z_0 = \ddelat{f}{x}{(x_0, y_0)}(x - x_0) 
++ \ddelat{f}{y}{(x_0, y_0)}(y - y_0)\]
+Where the vertical bar notation indicates that these derivatives are calculated
+at \((x_0, y_0)\). This is a specification of the general form of a plane
+passing through the point \((x_0, y_0, z_0)\)
+\[z - z_0 = \alpha(x - x_0) + \beta(y - y_0)\]
+
+\subsubsection*{Example}
+
+\begin{center}
+    Find the equation of the tangent plane to the surface
+    \(z = f(x, y) = 2x^2 + y^2\) at the point \((1, 1, 3)\).
+    \[(x_0, y_0, z_0) = (1, 1, 3)\]
+    \[\ddel{f}{x} = 4x\mcom \ddel{f}{y} = 2y \Rightarrow
+    \ddelat{f}{x}{(x_0, y_0)} = 4\mcom \ddelat{f}{y}{(x_0, y_0)} = 2\]
+    \[z - 3 = 4(x - 1) + 2(y - 1) \Rightarrow z = 4x + 2y - 3\]
+\end{center}
+
+The tangent plane is simply found by calculating the two partial derivatives,
+calculating their values at the point and finding the resultant plane.
+
+\subsubsection*{Linear Approximations}
+
+With single variable functions we can approximate the behaviour of a function
+over a small area using the tangent line to the function at that point.
+\[f(a + \Delta x) \approx f(a) + f^\prime(a)(\Delta x)\]
+For two variable functions, we can use the tangent plane function as our
+linear approximation. If we take \(\Delta x = x - x_0\) and likewise for the
+other variables we can find
+\[\Delta f \approx \ddelat{f}{x}{(x_0, y_0)}\Delta x
++ \ddelat{f}{y}{(x_0, y_0)}\Delta y\]
+
+\subsubsection*{Example}
+
+\begin{center}
+    \(z = f(x, y) = x^2 + 3xy - y^2\). If \(x\) changes from \(2\) to \(2.05\)
+    and \(y\) from \(3\) to \(2.96\), estimate the change in \(z\).
+    \[z_0 = f(2, 3) \Rightarrow (x_0, y_0, z_0) = (2, 3, 9)\]
+    \[\ddel{f}{x} = 2x + 3y\mcom \ddel{f}{y} = 3x - 2y \Rightarrow
+    \ddelat{f}{x}{(x_0, y_0)} = 13\mcom \ddelat{f}{y}{(x_0, y_0)} = 0\]
+    \[\Delta f \approx 13 \times 0.05 + 0 \times -0.04 = 0.65\]
+\end{center}
+
 \end{flushleft}
 \end{document}
