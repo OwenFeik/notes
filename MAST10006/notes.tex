@@ -1954,13 +1954,117 @@ Let us consider a capacitance of \(C = \frac{1}{30}\) a resistance of
 \(R = 10\) an inductance of \(L = \frac{5}{3}\) and a voltage of \(V = 300\).
 
 \begin{center}    
-Thus we have voltage drops across the resistor, capacitor and inductor of
-\[IR = 10I\mcom \frac{q}{C} = 30q\mcom L\dd{i}{t} = \frac{5}{3}\dd{i}{t}\]
-Yielding an equation of
-\[\frac{5}{3}\dd{i}{t} + 10i + 30q = 300 \Rightarrow
-\frac{5}{3}\dd{^2q}{t^2} + 10\dd{q}{t} + 30q = 300\]
-\[\Rightarrow \dd{^2q}{t^2} + 6\dd{q}{t} + 18q = 180\]
+    Thus we have voltage drops across the resistor, capacitor and inductor of
+    \[IR = 10I\mcom \frac{q}{C} = 30q\mcom L\dd{i}{t} = \frac{5}{3}\dd{i}{t}\]
+    Yielding an equation of
+    \[\frac{5}{3}\dd{i}{t} + 10i + 30q = 300 \Rightarrow
+    \frac{5}{3}\dd{^2q}{t^2} + 10\dd{q}{t} + 30q = 300\]
+    \[\Rightarrow \dd{^2q}{t^2} + 6\dd{q}{t} + 18q = 180\]
 \end{center}
+
+\section*{Functions of Two Variables}
+
+A function of two variables defines a mapping of two real numbers to a single
+real number, i.e.
+\[z = f(x, y)\]
+For functions of two variables, the domain can be thought of as a subset of the
+real plane \(\R^2\), while the range is \(\R\). \par
+To plot a function of two inputs we need a three dimensional plot to plot the
+inputs \(x\) and \(y\) and the output \(z\).
+\[\set{(x, y, z) \in \R^3 : (x, y) \in D \mand z = f(x, y)}\]
+For a continuous function, this graph will be a surface lying directly above or
+below the area mapped by the domain. The right-hand coordinate system used in
+this subject dictates that the \(xy\) plane will be on the flat plane surface
+with \(x\) pointing out of the page and the \(z\) axis pointing vertically
+upward from this plane.
+
+\subsection*{Equation of a Plane}
+
+The Cartesian equation for a plane in \(\R^3\) is
+\[ax + by + cz = d\]
+Where \(a, b, c, d\) are real constants. The vector \(n = (a, b, c)\) is at
+a normal to the plane. This equation comes from the fact that if \((a, b, c)\)
+is perpendicular to the plane then \((a, b, c)\) must be perpendicular to all
+vectors internal to the plane. So if we take \((x_0, y_0, z_0)\) as the point
+at which the normal vector intersects the plane, all internal vectors to the
+plane must satisfy
+\[(a, b, c)\cdot(x - x_0, y - y_0, x - z_0) = 0\]
+\[\Rightarrow a(x - x_0) + b(y - y_0) + c(z - z_0) = 0\]
+\[\Rightarrow ax + by + cz = ax_0 + by_0 + cz_0 = d\]
+So this essentially uses the properties of the normal vector to define the
+rest of the plane. \par
+To sketch a line in two dimensions, we would find two points (probably the
+\(x\) and \(y\) intercepts) and draw a line between them. Likewise to sketch
+a plane, we find three points, often the intercepts and plot them. For
+example for \(f(x, y) = 2 - 4x - 3y\) we can find \(x\)-intercept of
+\(\frac{1}{2}, 0, 0\), \(y\)-intercept \(0, \frac{2}{3}, 0\) and \(z\)
+-intercept \(0, 0, 2\) yielding something like
+
+\begin{plot3}[
+    xmin = 0,
+    xmax = 10,
+    ymin = 0,
+    ymax = 10,
+    zmin = 0,
+    zmax = 10,
+    view = {115}{80},
+    samples = 50
+]
+    \addplot3[surf] {2 - 4*x - 3*y};
+\end{plot3}
+
+\subsection*{Level Curves}
+
+A curve on a surface defined by \(z = f(x, y)\) where \(z\) is constant is a
+contour; this can be thought of like a contour line on a map, a region of
+constant altitude. A level curve is a region of the \(xy\) plane which
+represents a projection of a contour of a function. \par
+To sketch a function of two variables we first draw the three axes. We could
+then draw cross sections and level curves. We can then label intercepts and
+other key points. \par
+For example, for the function \(z = \sqrt{1 - x^2 - y^2}\) we can find its
+level curves by taking \(z = c\).
+\[\Rightarrow c = \sqrt{1 - x^2 - y^2}\]
+Because the right hand side is a square root, we know \(c \geq 0\).
+\[c^2 = 1 - x^2 - y^2 \Rightarrow x^2 + y^2 = 1 - c^2\]
+\[1 - c^2 \geq 0 \Rightarrow c^2 \leq 1 \Rightarrow \abs{c} \leq 1\]
+\[\Rightarrow 0 \leq c \leq 1\]
+Here we can see that the level curves of this function are a variety of circles
+of radii between \(0\) and \(1\) with centre \((0, 0)\).
+
+\begin{plot}[
+    xmin = -2,
+    xmax = 2,
+    ymin = -2,
+    ymax = 2,
+    width = 9cm,
+    samples = 1000
+]
+    \addplot[blue, thick] {-(1 - x^2)^0.5};
+    \addplot[blue, thick] {(1 - x^2)^0.5};
+    \addplot[blue, thick] {-(0.5 - x^2)^0.5};
+    \addplot[blue, thick] {(0.5 - x^2)^0.5};
+    \addplot[blue, thick] {-(0.25 - x^2)^0.5};
+    \addplot[blue, thick] {(0.25 - x^2)^0.5};
+    \addplot[blue, thick] {-(0.1 - x^2)^0.5};
+    \addplot[blue, thick] {(0.1 - x^2)^0.5};
+    \addplot[blue, thick] {-(0.02 - x^2)^0.5};
+    \addplot[blue, thick] {(0.02 - x^2)^0.5};
+
+    \node[circle, fill, inner sep = 2pt] at (axis cs: -1, 0) {};
+    \node[above left] at (axis cs: -1, 0) {\((-1, 0)\)};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 0, 1) {};
+    \node[above right] at (axis cs: 0, 1) {\((0, 1)\)};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 1, 0) {};
+    \node[above right] at (axis cs: 1, 0) {\((1, 0)\)};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 0, -1) {};
+    \node[below right] at (axis cs: 0, -1) {\((0, -1)\)};
+\end{plot}
+
+We can also tell that the two cross sections (\(x\)-\(z\) and
+\(z\)-\(y\)) will be hemispheres. Knowing thanks to our level curves that as
+\(z\) gets larger the radius will grow smaller, and that \(z\) is never
+negative we can tell that this is a hemisphere of radius \(1\).
 
 \end{flushleft}
 \end{document}
