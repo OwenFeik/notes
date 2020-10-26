@@ -1216,8 +1216,15 @@ use the Rydberg formula
 Where \(R\) is the Rydberg constant \(1.097\times10^7\mathrm{m}^{-1}\), \(m\)
 is the series; \(1\) for the ultraviolet series, \(2\) for the visible series
 and \(3\) for the infrared series and \(n\) is the index within that series.
-The pattern these follow is of initially quite discrete bands gradually growing
-tighter and tighter together. \par
+To find the index of a given energy state in a hydrogen atom we can use the
+formula
+\[\sqrt{\frac{-13.6\mathrm{eV}}{E\mathrm{eV}}} = n\]
+Where \(E\) is the energy of the energy state one wants to find the index of.
+For example, if we wanted to find which energy state corresponds to a binding
+energy of \(-3.4\mathrm{eV}\) we would use
+\[n = \sqrt{\frac{-13.6\mathrm{eV}}{-3.4\mathrm{eV}}} = 2\]
+The pattern these energy states follow is of initially quite discrete bands
+gradually growing tighter and tighter together.
 The reason for this pattern must the the only force that an electron really
 feels; the electrostatic force between the electron and it's nucleus. Niels
 Bohr tried to apply classical mechanics to solve this problem and found that
@@ -1255,6 +1262,49 @@ can find the wavelengths absorbed using the photon energy relations.
 = 414\mathrm{nm}\]
 \[f = \frac{5}{h} = 1.21\times10^{15}\mathrm{Hz} \Rightarrow \lambda
 = 248\mathrm{nm}\]
+An electron moving in an orbit either as a wave function or as a particle must
+have some angular momentum. This angular momentum is given by the equation
+\[AM = \sqrt{\ell(\ell + 1)}\hbar\]
+Where \(\ell\) is the angular momentum quantum number, a value in the range
+\([0, n)\) where \(n\) is the \textit{principle quantum number} of the given
+atom. From \(\ell\) we come to \(m_\ell\) which can take integer values in the
+range \([-\ell, \ell]\). This is the magnetic quantum number. \par
+Thus for an energy state \(n\) there are \(n\) angular momentum states \(\ell\)
+for which there are \(n^2\) magnetic quantum states \(m_\ell\). This yields far
+more possible quantised states than simply the energy states of the atom. \par
+Continuing the earlier example of a \(-3.40\mathrm{eV}\) energy hydrogen atom
+we can find that for \(n = 2\), \(\ell\) can be \(0\) in which case \(m_\ell\)
+must be \(0\) or \(\ell\) can be \(1\), in which case we have
+\(m \in \set{1, 0, -1}\). Thus there are four possible quantum states that the
+atom could be in, each with energy \(-3.40\mathrm{eV}\). \par
+When trying to extend this system to multi-electron atoms, physicists initially
+considered atoms with electrons all in the lowest energy state. However, while
+this worked well for hydrogen and helium, at lithium they found that the
+binding energy observed experimentally was much lower than what this model
+predicted. This is due to the phenomenon of electron shells; with room for only
+two electrons in the first shell, the third must move to a lower level of
+binding energy. \par
+This is explained by the \textit{Pauli exclusion principle} which elegantly
+states that qauntum states must be unique within an atom. Thus for two
+electrons we can have \(\ell = 0 = m_\ell\). However this is only a single
+unique electron; a problem as helium manages to maintain two in low energy
+state. Thus he introduced the concept of spin; all electrons have a spin of
+clockwise or anticlockwise. This finally allows for two states in the first
+shell
+\[\ell = 0, m_\ell = 0, s = \frac{1}{2}\mcom
+\ell = 0, m_\ell = 0, s = -\frac{1}{2}\]
+Pauli designated spin up as \(frac{1}{2}\) and spin down as \(-\frac{1}{2}\).
+This system explains the electron shells we observe in various atoms, lithium
+and higher. The system explains the \(8\) electrons in the second shell, the
+\(18\) in the third, etc. \par
+Because an electron alone in an outer shell feels a weaker charge than a full
+shell, it is easier for atoms to lose these electrons. The energy required to
+removed an electron from an atom is dependent on \(z\), the positive charge of
+the nucleus. We can use xrays to interrogate atoms to find these charges. When
+we fire xray beams at an atom, when these xrays collide with an electron in the
+inner shell, they will cause an electron from the next shell up to move down,
+causing a photon emission with energy given by the difference in binding energy
+between the two shells.
 
 \end{flushleft}
 \end{document}
