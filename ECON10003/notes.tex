@@ -2040,5 +2040,70 @@ foreign investment; i.e. capital inflow. \par
 So the benefits of capital flow are in increased efficiency in meeting market
 desires, while the detriments come in market instability.
 
+\subsubsection*{Saving, Investment and Capital Flow}
+
+In a closed economy, we find that \(S = I\). In an open economy, rather than
+\(X = M = 0\) we have an economy defined by
+\[Y = C + I + G + (X - M)\]
+If we continue to define saving as income less consumption we find that
+\[Y - C - G = I + (X - M) \Rightarrow S - I = X - M\]
+Thus in an open economy, savings less investment is given by exports less
+imports. Equally we might state
+\[S - I = NX\]
+Where \(NX\) is net exports, the negative of capital inflow \(KI\). This
+definition, given to us by the fact that the current and capital account sum
+to \(0\), gives us
+\[S + KI = I\]
+This also tells us that the current account is given by \(X - M\) and the
+capital account is given by the negative of this value. \par
+Ben Bernanke gives us that the sum of the two accounts is \(0\) and interprets
+this to mean that a large current account deficit is acceptable as they imply
+large capital inflow, a sign of confidence from other economies in the local
+economy. \par
+In general, an increase in real interest rates will engender an increase of
+capital inflow. Similarly, an increase in risk will cause a movement upward of
+a \(r\) against capital inflow curve, signifying a decreased level of capital
+inflow at all interest rates.
+
+\subsubsection*{Intertemporal Approach to the Current Account}
+
+In some sense, the current account is a way of nations trading across time.
+Countries are able to lend when they are willing to consume less to save more
+and to receive investment when they desire higher consumption. \par
+Countries with a capital inflow will gain a higher level of investment, while
+countries with capital outflow sacrifice investment for savings. Due to market
+factors, the allocation of investment will be more efficient. There are of
+course distributional effects leading to some individuals being worse of than
+they would be under autarky.
+
+\begin{econplot}{\(I/S\)}{\(r\)}
+    \addplot[blue, ultra thick, ->, domain = {0:3}] {5 * ((x + 1)^0.5 - 1)};
+    \addplot[red, ultra thick] {5 - 0.2 * (x + 1)^2};
+    \addplot[black, ultra thick, dashed] coordinates {(0, 2)(4, 2)}
+    node[right] {\(r_W\)};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 1.825, 3.404) {};
+    \node[right, xshift = 0.2cm] at (axis cs: 1.825, 3.404) {\(I_A = S_A\)};
+    \node[left, xshift = -0.2cm] at (axis cs: 1.825, 3.404) {\(r_A\)};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 0.96, 2) {};
+    \node[above left] at (axis cs: 0.96, 2) {\(S_W\)};
+    \node[circle, fill, inner sep = 2pt] at (axis cs: 2.873, 2) {};
+    \node[above right] at (axis cs: 2.873, 2) {\(I_W\)};
+\end{econplot}
+
+The above plot shows the effect of a world real interest rate \(r_W\) on an
+economy otherwise in autarky. In autarky the economy has interest rate \(r_A\)
+and savings equal to investment. When a lower world interest rate \(r_W\) is
+introduced, the level of saving drops significantly, while the level of
+investment increases substantially. The distance \(I_W - S_W\) is the capital
+inflow into the country. In the case that the world interest rate is above
+the local interest rate, \(I_W - S_W\) will be negative, implying a capital
+outflow. \par
+An example of the effect of the intertemporal approach is in Norway. After
+Norway's discovery of oil reserves in the 1970s, it was desireable to increase
+investment dramatically to develop these resources without decreasing
+consumption. Thus the country ran a current account deficit, increasing capital
+inflow for an extended period, while in the current day it generally runs a
+current account surplus, repaying these investments. 
+
 \end{flushleft}
 \end{document}
