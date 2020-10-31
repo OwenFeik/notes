@@ -1228,5 +1228,44 @@ which define the type of their keys and values respectively. For example
     }
 \end{lstlisting}
 
+\section*{Design Patterns}
+
+A design pattern is a solution to a recurrent problem in software development.
+Some of these include
+
+\begin{itemize}
+    \item The singleton pattern involves having a class with a single instance
+        which can be accessed globally. This is useful for situations when you
+        need access to a given object from a variety of places in your program.
+    \item The factory pattern defines a class or method which is used to create
+        other objects with certain properties. This allows more flexible
+        creation of objects. It can reduce code duplication, avoid issues with
+        information access and improve abstraction.
+    \item The template method pattern describes an implementation through an
+        abstract class, leaving method implementation to subclasses. For
+        example \code{AbstractSort} might have \code{abstract void swap} and
+        \code{abstract void compare} left to subclasses. This pattern allows
+        easy one-time definition of an algorithm, making it easily extensible
+        to other types or objects.
+    \item The strategy pattern is similar to the template method pattern but
+        instead defines a class which accepts a ``handle''.  This handle
+        implements an interface which defines the behaviours requried by the
+        class accepting the handle.
+    \item The observer pattern allows multiple objects to subscribe to events
+        ocurring in another object. A subject class will store a collection of
+        observer objects which it will notify when a relevant event occurs. It
+        often makes sense for a subject of be an interface like
+        \code{Observable}.
+\end{itemize}
+
+In a general sense, the following classes of problems are more or less solved.
+
+\begin{itemize}
+    \item Solutions for creating objects, such as the singleton or factory
+        approaches.
+    \item Solutions for dealing with how classes are structured and related.
+    \item Solutions for handling interaction between classes.
+\end{itemize}
+
 \end{flushleft}
 \end{document}
