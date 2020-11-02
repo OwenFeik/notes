@@ -2284,5 +2284,43 @@ is \(0\) and this defines a level curve of the surface. \par
 Thus moving perpendicular to a level curve implies increasing or decreasing the
 function most rapidly.
 
+\subsubsection*{Stationary Points}
+
+For a function of two variables, a stationary point is one for which
+\[\nabla f = 0\]
+i.e. both partial derivatives are \(0\). This occurs at points where the
+tangent plane is flat. Just like in single input functions, we have local
+minima and local maxima. However by adding another variable which introduce
+saddle points, where the function increases with respect to one variable
+and decreases with respect to the other as you move away from the stationary
+point. \par
+A critical point is a point that is either a stationary point or a point where
+one of the partial derivatives does not exist, such as the point of a cone.
+
+\subsubsection*{Second Derivative Test}
+
+For single variable functions, a positive second derivative implies upward
+concavity or convex, a negative second derivative implies downward concavity,
+and a \(0\) second derivative tells us little. For two variable functions there
+are four possible second derivatives, so we use the Hessian function instead.
+\[H(x, y) = f_{xx}f_{yy} - (f_{xy})^2\]
+We use this function for a point where \(\nabla f(x_0, y_0) = 0\). Depending
+on the value of \(H(x_0, y_0)\) we can make some statements about the behaviour
+of the function
+
+\begin{itemize}
+    \item If \(H(x_0, y_0) > 0\) and \(f_{xx}(x_0, y_0) > 0\), the point is a
+        local maximum, because for the
+        function to be positive the first term must be positive and if both
+        \(f_{xx}\) and \(H\) are positive then \(f_{yy}\) must be positive.
+    \item If \(H(x_0, y_0) > 0\) and \(f_{xx}(x_0, y_0) < 0\), the point is a
+        local minimum, because for the function to be positive both \(f_{xx}\)
+        and \(f_{yy}\) must be negative.
+    \item If \(H(x_0, y_0) < 0\) the point is a saddle point, as one of
+        \(f_{xx}\) or \(f_{yy}\) are mathematically guaranteed to be positive
+        while the other is negative.
+    \item If \(H(x_0, y_0) = 0\) the test is inconclusive.
+\end{itemize}
+
 \end{flushleft}
 \end{document}
