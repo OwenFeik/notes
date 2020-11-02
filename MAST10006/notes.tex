@@ -2163,5 +2163,61 @@ other variables we can find
     \[\Delta f \approx 13 \times 0.05 + 0 \times -0.04 = 0.65\]
 \end{center}
 
+\subsection*{Second Order Partial Derivatives}
+
+For a given function \(f : \R^2 \rightarrow \R\) there are four possible second
+partial derivatives.
+
+\[f_{xx} = (f_x)_x = \ddel{}{x}\left(\ddel{f}{x}\right) = \ddel{^2f}{x^2}\]
+\[f_{yy} = (f_y)_x = \ddel{}{y}\left(\ddel{f}{y}\right) = \ddel{^2f}{y^2}\]
+\[f_{xy} = (f_x)_y = \ddel{}{y}\left(\ddel{f}{x}\right)
+= \ddel{^2f}{y\partial x}\]
+\[f_{yx} = (f_y)_x = \ddel{}{x}\left(\ddel{f}{y}\right)
+= \ddel{^2f}{x\partial y}\]
+
+While \(f_{xy}\) and \(f_{yx}\) are not necessarily equal, we have a theorem
+which states that \(f_{xy} = f_{yx}\) when both exist and are continuous.
+
+\subsubsection*{Example}
+
+\[\ddel{^2}{x^2}\left[x\sin(x + 2y)\right]\]
+\[f_x = \sin(x + 2y) + x\cos(x + 2y)\]
+\[f_{xx} = \cos(x + 2y) + cos(x + 2y) - x\sin(x + 2y)\]
+
+\subsubsection*{Two Variable Chain Rule}
+
+For a function \(z = f(x, y)\) with \(x = g(t)\) and \(y = h(t)\) where \(x\)
+and \(y\) are differentiable functions, then \(z = f(g(t), h(t))\) is a
+function of \(t\) and we have
+\[\dd{z}{t} = \ddel{z}{x}\dd{x}{t} + \ddel{z}{y}\dd{y}{t}\]
+i.e. because \(x\) and \(y\) are solely dependent on \(t\) and \(z\) is a
+composition of these two, \(z\) is solely dependent on \(y\). The rate of
+change of \(z\) is given by the change in \(x\) plus the change in \(y\).
+
+\subsubsection*{Example}
+
+\[z = x^2 - y^2\mcom x = \sin(t)\mcom y = \cos(t)\]
+\[\dd{z}{t}\left(\frac{\pi}{6}\right) = ?\]
+\[\dd{z}{t} = \ddel{z}{x}\dd{x}{t} + \ddel{z}{y}\dd{y}{t}\]
+\[\dd{x}{t} = \cos(t)\mcom \dd{y}{t} = -\sin(t)\]
+\[\ddel{z}{x} = 2x\mcom \ddel{z}{y} = -2y\]
+\[\dd{z}{t} = 2x\cos(t) + 2y\sin(t) = 2\sin(t)\cos(t) + 2\cos(t)\sin(t)
+= 4\sin(t)\cos(t)\]
+\[\dd{z}{t}\left(\frac{\pi}{6}\right) =
+4\sin\left(\frac{\pi}{6}\right)\cos\left(\frac{\pi}{6}\right)
+= 4\times\frac{1}{2}\times\frac{\sqrt{3}}{2} = \sqrt{3}\]
+
+\bigskip
+
+In the case that \(z = f(x, y)\) and \(x = g(s, t), y = h(s, t)\) then \(z\) is
+a function of both \(s\) and \(t\), with partial derivatives given by
+
+\[\ddel{z}{s} = \ddel{z}{x}\ddel{x}{s} + \ddel{z}{y}\ddel{y}{s}\mcom
+\ddel{z}{t} = \ddel{z}{x}\ddel{x}{t} + \ddel{z}{y}\ddel{y}{t}\]
+
+So the change is \(z\) with respect to \(s\) is given by the sum of changes in
+\(x\) and \(y\) with respect to \(s\) multiplied by the change in \(z\) with
+respect to these functions.
+
 \end{flushleft}
 \end{document}
