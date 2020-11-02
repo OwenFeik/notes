@@ -2219,5 +2219,70 @@ So the change is \(z\) with respect to \(s\) is given by the sum of changes in
 \(x\) and \(y\) with respect to \(s\) multiplied by the change in \(z\) with
 respect to these functions.
 
+\subsection*{Directional Derivatives}
+
+Thus far we have looked at partial derivatives in the \(x\) and \(y\)
+directions, but as we are now in three-dimensional space, we can consider a
+derivative in any direction. To do this we take a unit vector \(\hat{u}\) and
+then derfine the directional derivative of \(f\) to be
+\[D_{\hat{u}}f\at{P_0}\]
+Where \(D\) signifies that this is a directional derivative of \(f\) at the
+point \(P\). With this definition of \(P_0 = (x_0, y_0)\) and
+\(\hat{u} = (u_1, u_2)\) we can define parametric equations for \(x\) and \(y\)
+at a ``time'' \(t\)
+\[x = x_0 + tu_1\mcom y = y_0 + tu_2\]
+We can then find \(D_{\hat{u}}f\at{P_0}\) as the rate of change of \(f\)
+travelling along the line at time \(t = 0\).
+\[\dd{}{t}f(x_0 + tu_1, y_0 + tu_2)(0)\]
+\[= f_x(x_0, y_0)x^\prime(0) + f_y(x_0, y_0)y^\prime(0)\]
+\[= f_x(x_0, y_0)u_1 + f_y(x_0, y_0)u_2\]
+Rearranging this into a dot product it can be expressed as
+\[D_{\hat{u}}f\at{P_0} = \left(\ddelat{f}{x}{P_0}, \ddelat{f}{y}{P_0}\right)
+\cdot(u_1, u_2)\]
+The partial derivative in this expression has a special name; the gradient
+vector of \(f\), sometimes known as \(\mathrm{grad}f\). The notation for this
+is \(\nabla f\).
+\[\nabla f = \left(\ddel{f}{x}, \ddel{f}{y}\right)\]
+Using this notation we can express the directional derivative at \(P_0\) as
+\[D_{\hat{u}}f\at{P_0} = \nabla f\at{P_0}\cdot\hat{u}\]
+
+\subsubsection*{Example}
+
+Find the directional derivative of \(f(x, y) = xe^y\) at \((2, 0)\) pointing
+towards \(\left(\frac{1}{2}, 2\right)\).
+
+\begin{center}
+    To start, we need to find our direction vector \(\hat{u}\).
+    \[\left(\frac{1}{2}, 2\right) - (2, 0) = \left(-\frac{3}{2}, 2\right) = u\]
+    \[\norm{u} = \sqrt{\left(-\frac{3}{2}\right)^2 + 2^2}
+    = \sqrt{\frac{25}{4}} = \frac{5}{2}\]
+    \[\hat{u} = \left(-\frac{3}{5}, \frac{4}{5}\right)\]
+    \[\ddel{f}{x} = e^y\mcom \ddel{f}{y} = xe^y\]
+    \[\Rightarrow D_{\left(-\frac{3}{5}, \frac{4}{5}\right)}f = 
+    -\frac{3}{5}e^y + \frac{4}{5}xe^y\]
+    \[D_{\left(-\frac{3}{5}, \frac{4}{5}\right)}f\at{(2, 0)} = 
+    -\frac{3}{5}e^0 + \frac{4}{5}2e^0 = 1\]
+\end{center}
+
+\subsubsection*{Properties of Dierctional Derivatives}
+
+A consequence of the definition of these directional derivatives is that
+\[D_{\hat{i}}f = \ddel{f}{x}\mcom D_{\hat{j}} = \ddel{f}{y}\]
+i.e. the directional derivative in the \(x\) direction is simply the partial
+derivative with respect to \(x\), with the same true of \(y\). Some formulas
+related to the directional derivative are
+\[D_{\hat{u}}f = \nabla f\cdot\hat{u}
+= \norm{\nabla f}\norm{\hat{u}}\cos(\theta) = \norm{\nabla f}\cos(\theta)\]
+i.e. the directional derivative in direction \(\hat{u}\) of \(f\) is given by
+the length of \(\nabla f\) (the vector gradient of \(f\)) multiplied by the
+cosine of the angle between \(\nabla f\) and \(\hat{u}\). \par
+This tells us that the directional derivative is at a maximum when
+\(\cos(\theta) = 1\), which occurs when \(\theta = 0\) or when the direction
+is parallel to the gradient vector. \(f\) decreases most rapidly when the two
+are anti-parallel. When the two are perpendicular the directional derivative
+is \(0\) and this defines a level curve of the surface. \par
+Thus moving perpendicular to a level curve implies increasing or decreasing the
+function most rapidly.
+
 \end{flushleft}
 \end{document}
