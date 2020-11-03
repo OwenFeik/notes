@@ -1267,5 +1267,54 @@ In a general sense, the following classes of problems are more or less solved.
     \item Solutions for handling interaction between classes.
 \end{itemize}
 
+\section*{Exceptions}
+
+Errors in Java (or any programming language) can be broken down into syntax,
+semantic and runtime errors. Of these, syntax errors prevent compilation, being
+errors in the way code is written resulting in an illegal program, semantic
+errors describe logical errors precluding correct output and runtime errors
+resulting in illegal states and crashes. \par
+Runtime errors include division by zero, index errors, IO errors and similar.
+While syntax and semantic errors cannot be effectively guarded against, we have
+tools in our arsenal to deal with runtime errors, through exception handling.
+\par
+In Java a runtime error is modelled as an \code{Exception} object. Exceptions
+are handled through \code{try}-\code{catch}-\code{finally} blocks.
+
+\begin{lstlisting}
+    try {
+        // execute code block which may throw Exception
+    }
+    catch (<ExceptionClass> e) {
+        // code to execute if the exception is thrown
+    }
+    finally {
+        // code that is always executed irrespective of any exception
+    }
+\end{lstlisting}
+
+We can also include multiple \code{catch} blocks to catch multiple exception
+types. To create exceptions to be caught, we use the
+\code{throw new Exception()} statement. Methods which throw unhandled
+exceptions should have the \code{throws <ExceptionClass>} descriptor to
+indicate this.
+
+\begin{lstlisting}
+    public int method(String input) throws NullPointerException {
+        if (input == null) {
+            throw new NullPointerException();
+        }
+
+        return input.length();
+    }
+\end{lstlisting}
+
+New exceptions can also be defined by extending another \code{Exception} class.
+When catching an \code{Exception}, all subclasses of that exception will also
+be caught. Thus \code{catch (Exception e)} will catch all exceptions. If an
+unhandled exception could arise, the compiler will not allow the program.
+\code{Error} and it's subclasses are the exception to this as these conditions
+will be allowed to compile and will cause a program exit.
+
 \end{flushleft}
 \end{document}
