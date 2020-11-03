@@ -1228,7 +1228,9 @@ which define the type of their keys and values respectively. For example
     }
 \end{lstlisting}
 
-\section*{Design Patterns}
+\section*{Software Design}
+
+\subsection*{Design Patterns}
 
 A design pattern is a solution to a recurrent problem in software development.
 Some of these include
@@ -1265,6 +1267,73 @@ In a general sense, the following classes of problems are more or less solved.
         approaches.
     \item Solutions for dealing with how classes are structured and related.
     \item Solutions for handling interaction between classes.
+\end{itemize}
+
+\subsection*{Design Principles}
+
+\subsubsection*{Modularity}
+
+Designing code with modularity in mind means decomposing problems into smaller
+units or modules which are easier to understand, develop, manager, re-use and
+test. \par
+In object oriented programming, classes are the main modules.
+
+\subsubsection*{Cohesion}
+
+Cohesive designs have very clear focusses for each module. Each class has a
+strongly defined purpose which all of its methods and attributes help with.
+
+\subsubsection*{Coupling}
+
+Coupling points between classes are points where two classes interact with each
+other. In ideal designs, coupling is minimised. Interfaces support this, as can
+the passing of objects as arguments to methods.
+
+\subsubsection*{Open-Closed Principle}
+
+This dictates that modules should be easily extensible, through inheritance or
+polymorphism, but should not be directly modified.
+
+\subsubsection*{Abstraction}
+
+Abstraction suggests that we should solve problems by creating classes or other
+objects which model data-flow and actions to solve problems.
+
+\subsubsection*{Encapsulation}
+
+By keeping the implementation details of a class hidden (or in Java
+\code{private}) and exposing only certain methods we make our programs easier
+to work with. This is encapsulation, also known as data or information hiding.
+
+\subsubsection*{Polymorphism}
+
+Polymorphism is the capacity to use an object (or method) in a wide variety of
+ways. In Java this takes the form of overloading, subtyping through overriding
+or similar or generics.
+
+\subsubsection*{Delegation}
+
+Ideally, a necessary computation should be performed by the class with the
+greatest amount of relevant information, to minimise gathering before the
+computation. Thus we \textit{delegate} this task to the relevant task.
+
+\subsection*{Symptoms of Poor Design}
+
+\begin{itemize}
+    \item The overall application is difficult to modify; it displays
+        \textit{rigidity}
+    \item Changing a single component causes the whole application to break;
+        it displays \textit{fragility}
+    \item The application cannot be broken down into reusable modules; it is
+        \textit{immobile}
+    \item The code contains ``hacks'' and workarounds; compromises which exist
+        to preserve the initial design; \textit{viscosity}
+    \item The application contains lots of overly clever or unnecessarily
+        highly optimised code that reduces clarity; it displays excessive
+        \textit{complexity}
+    \item Lots of \textit{repetition} of code occurs
+    \item The application has a large amount of complex flow of data and
+        convoluted logic; it displays \textit{opacity}
 \end{itemize}
 
 \section*{Exceptions}
@@ -1315,6 +1384,83 @@ be caught. Thus \code{catch (Exception e)} will catch all exceptions. If an
 unhandled exception could arise, the compiler will not allow the program.
 \code{Error} and it's subclasses are the exception to this as these conditions
 will be allowed to compile and will cause a program exit.
+
+\section*{Good Coding Practice}
+
+It is important to observe good coding practices including
+
+\begin{itemize}
+    \item Consistent layout
+    \item Avoidance of long lines
+    \item Consistent use of tabs or spaces
+    \item Neat arrangement
+    \item Good variable, method and class naming
+    \item Minimal code duplication
+    \item Constant commenting
+\end{itemize}
+
+Comments should be used to document the code for future maintainers of the
+code. Ideally, code should be readable without comments. If all code were
+removed, good comments should allow a program to be reconstructed. Comments
+should be associated with a block of code associated with a step in an
+algorithm. \par
+Comments should appear before code, representing a kind of primer for it. \par
+\code{javadoc} is a tool provided with the JDK to allow compilation of
+specially formatted comments into html documentation.
+
+\begin{lstlisting}
+    /**
+     * Adds two to the input value.
+     *
+     * @param addTo the value to add two to
+     * @return the value with two added to it
+     */
+    public int addTwo(int addTo) {
+        return addTo + 2;
+    }
+\end{lstlisting}
+
+\section*{Testing}
+
+Bugs and other errors in software are generally discovered through testing.
+Conventionally testing is performed in three stages; unit testing, where
+minimal sections of a program are tested; integration and systems testings
+where already unit tested sections are tested to ensure properly functioning
+integration between them and finally acceptance testing where the overarching
+system is verified to work per requirements. \par
+Code can be made more testable by breaking it down as much as possible into the
+most minimal units.
+
+\subsection*{JUnit}
+
+JUnit is a Java utility used to test Java code. Tests are written in Java 
+
+\begin{lstlisting}
+    import static org.junit.Assert.*;
+    import org.junit.Test;
+    
+    public class PersonTest {
+        @Test
+        public void testPersonInstantiation() {
+            Person person = new Person("Owen", "Feik");
+            assertEquals(person.getFullName(), "Owen Feik");
+        }
+
+        @Test
+        public void testEquality() {
+            Person person0 = new Person("Owen", "Feik");
+            Person person1 = new Person("Joe", "Bloggs");
+            Person person2 = new Person("Joe", "Bloggs");
+
+            assertNotEquals(person0, person1);
+            assertEquals(person1, person2);
+        }
+    }
+\end{lstlisting}
+
+Automated testing tools like JUnit are very useful for large projects as they
+are fairly easily to set up, well scaleable, easily to run repeatedly and
+effective at finding introduced bugs.
 
 \end{flushleft}
 \end{document}
