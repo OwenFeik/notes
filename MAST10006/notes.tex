@@ -2322,5 +2322,71 @@ of the function
     \item If \(H(x_0, y_0) = 0\) the test is inconclusive.
 \end{itemize}
 
+\subsection*{Partial Integration}
+
+Just as we can take a derivative of a two-variable function with respect to one
+input, we can take an integral of aa function of two variables with respect to
+one input.
+\[\int f(x, y) \dx\mand \int f(x, y) \dy\]
+The partial integral should undo the partial derivative.
+
+\subsubsection*{Example}
+
+\[\int (3x^2y + 12y^2x^3) \dx\]
+\[= x^3y + 3y^2x^4 + c(y)\]
+
+We are able to simply use the power rule while treating \(y\) as a constant to
+solve this. The key difference here is that the constant of integration \(c\)
+is a function of \(y\). This is because all \(y\) terms from \(f\) will have
+been lost through integration \(\dx\).
+
+\subsubsection*{Example}
+
+\[\int_0^1 (3x^2y + 12y^2x^3) \dy\]
+\[= \left[\frac{3x^2y^2}{2} + 4y^3x^3\right]_{y = 0}^{y = 1}
+= \left(\frac{3x^2\times1^2}{2} + 4\times1^3\times x^3\right) - (0)
+= \frac{3x^2}{2} + 4x^3\]
+
+Because we are treating \(x\) as a constant, we end up with a function of \(x\)
+as our definite integral.
+
+\subsection*{Double Integrals}
+
+For a single variable function, the first definite integral describes the
+signed area inside the bounds of integration. Moving up to two variable
+functions, the double integral can describe the volume in an area.
+\[\iint_D f(x, y) \dA = \iint_D f(x, y) \dx\dy\]
+This will calculate the volume under the surface described by \(f\) that lies
+above the domain \(D\) in the \(xy\) plane. It will return signed volume, so if
+the surface dips below \(0\) that volume will be negative. \par
+As a counterpart to the sums of arbritrarily thin rectangles in \(2\)
+dimensions, we can consider the sums of arbritrarily thin rods in \(3\)
+dimensions.
+\[\limit_{\Delta x \rightarrow 0}\limit_{\Delta y \rightarrow 0}
+\sum_{i = 1}^n \left[f(x, y)\Delta x\Delta y\right]_i\]
+In calculus 2, we only integrate over rectangular regions. We describe these
+regions as \([a, b]\times[c, d]\) which describes the set of points
+\[R = \set{(x, y) | x \in [a, b], y \in [c, d]}\]
+We use Fubini's theorem to calculate these integrals. For a function
+\(f: \R^2 \rightarrow \R\) which is continuous on the rectangular domain
+\(R = [a, b]\times[c, d]\). Then we have
+\[\iint_R f(x, y) \dA = \int_c^d\int_a^b f(x, y)\dx\dy
+= \int_a^b\int_c^d f(x, y)\dy\dx\]
+So the expression can be equivalently integrated in either order.
+
+\subsubsection*{Example}
+
+\begin{center}
+    \[\iint_R(x^2 + y^2)\dx\dy\mcom R = [-1, 1]\times[0, 1]\]
+    Because \(x^2 + y^2\), as a polynomial, is continuous, we can use Fubini's
+    theorem.
+    \[\int_0^1\int_{-1}^1(x^2 + y^2)\dx\dy
+    = \int_0^1\left[\frac{x^3}{3} + y^2x\right]_{x = -1}^{x = 1}\dy\]
+    \[= \int_0^1\left(\frac{1}{3} + y^2\right)
+    - \left(-\frac{1}{3} - y^2\right)\dy = \int_0^1 \left(\frac{2}{3}
+    + 2y^2\right) \dy\]
+    \[= \left[\frac{2}{3}y + \frac{2y^3}{3}\right]_0^1 = \frac{4}{3}\]
+\end{center}
+
 \end{flushleft}
 \end{document}
