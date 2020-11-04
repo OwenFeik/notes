@@ -1262,6 +1262,11 @@ can find the wavelengths absorbed using the photon energy relations.
 = 414\mathrm{nm}\]
 \[f = \frac{5}{h} = 1.21\times10^{15}\mathrm{Hz} \Rightarrow \lambda
 = 248\mathrm{nm}\]
+
+\subsection*{Quantum Numbers}
+
+\subsubsection*{Quantum Angular Momentum}
+
 An electron moving in an orbit either as a wave function or as a particle must
 have some angular momentum. This angular momentum is given by the equation
 \[AM = \sqrt{\ell(\ell + 1)}\hbar\]
@@ -1283,7 +1288,10 @@ this worked well for hydrogen and helium, at lithium they found that the
 binding energy observed experimentally was much lower than what this model
 predicted. This is due to the phenomenon of electron shells; with room for only
 two electrons in the first shell, the third must move to a lower level of
-binding energy. \par
+binding energy. 
+
+\subsubsection*{Pauli Exclusion Principle}
+
 This is explained by the \textit{Pauli exclusion principle} which elegantly
 states that qauntum states must be unique within an atom. Thus for two
 electrons we can have \(\ell = 0 = m_\ell\). However this is only a single
@@ -1293,7 +1301,7 @@ clockwise or anticlockwise. This finally allows for two states in the first
 shell
 \[\ell = 0, m_\ell = 0, s = \frac{1}{2}\mcom
 \ell = 0, m_\ell = 0, s = -\frac{1}{2}\]
-Pauli designated spin up as \(frac{1}{2}\) and spin down as \(-\frac{1}{2}\).
+Pauli designated spin up as \(\frac{1}{2}\) and spin down as \(-\frac{1}{2}\).
 This system explains the electron shells we observe in various atoms, lithium
 and higher. The system explains the \(8\) electrons in the second shell, the
 \(18\) in the third, etc. \par
@@ -1305,6 +1313,69 @@ we fire xray beams at an atom, when these xrays collide with an electron in the
 inner shell, they will cause an electron from the next shell up to move down,
 causing a photon emission with energy given by the difference in binding energy
 between the two shells.
+
+\begin{center}    
+    \begin{tabular}{|c|c|c|c|}
+        Name & Symbol & Values & Possible \\
+        Principal & \(n\) & \(1, 2, 3, ...\) & \(\infty\) \\
+        Orbital & \(\ell\) & \([0, n - 1]\) & \(n\) \\
+        Magnetic & \(m_\ell\) & \([-\ell, \ell]\) & \(2\ell + 1\) \\
+        Spin & \(m_s\) & \(\pm\frac{1}{2}\) & \(2\) \\
+    \end{tabular}
+\end{center}
+
+The above table summarises the quantum numbers possible in a hydrogen atom.
+These four quantum numbers can alse be used to identify the states of
+individual electrons in atoms with more than a single electron. \par
+The noble gases occur at a maximum number of electrons for a given \(n\).
+For \(n = 1\) this is \(2\), \(n = 2 \Rightarrow 8\) etc. Interestingly, if
+we look at the spins of these, we will find that they cancel out; the net
+angular momentum due to these electrons is \(0\) for noble gases (or any atom
+with a full outer shell). \par
+For an atom with an atomic number \(z\) we can find the energy of an energy
+state \(n\) through
+\[E_n = -13.6\frac{z^2}{n^2}\mathrm{eV}\]
+Where \(13.6\mathrm{eV}\) is the ground state energy of a hydrogen atom.
+
+\subsubsection*{Characteristic Xrays}
+
+When examining emission spectra from atoms bombarded with photons, a certain
+notation is used to discuss the emitted photons and the actions that caused
+them. We name the first three shells and transitions between them according to
+
+\begin{figure}[!htb]
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \begin{tabular}{c|c|c|c|}
+            & \(K\) & \(L\) & \(M\) \\
+            \(n = \) & \(1\) & \(2\) & \(3\) \\
+        \end{tabular}
+    \end{minipage}
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \begin{tabular}{c|c|c|c|}
+            & \(\alpha\) & \(\beta\) & \(\gamma\) \\
+            \(\Delta n =\) & \(1\) & \(2\) & \(3\) \\
+        \end{tabular}
+    \end{minipage}
+\end{figure}
+
+Thus, if we knocked an electron out of the \(K\) (\(n = 1\)) shell and the
+vacancy was filled by an electron from the \(L\) shell, we would have a
+\(K_\alpha\) transition implying a photon emission with energy given by the
+difference between the binding energy fo the \(K\) and \(L\) shells. If the
+vacancy was instead filled by an electron from the \(M\) shell, we would have
+a \(K_\beta\) transition.
+
+\subsubsection*{Electron Shielding}
+
+Because the charge of an electron can ``cancel out'' that of a proton, an
+electron in the shell of a nucleus has the effect of reducing the overall
+charge of the atom. Thus, rather than being proportional to \(Z^2\) the
+characteristic may instead me proportional to \((Z - 1)^2\). We can adapt
+our equation to yield
+\[\frac{3}{4}13.6(Z - 1)^2\mathrm{eV}\]
 
 \end{flushleft}
 \end{document}
