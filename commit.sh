@@ -1,6 +1,12 @@
 #!/bin/bash
 
-changes=$(git status | awk '/notes.tex/ {print $2}') # Get changed note document
+# Usage:
+#   ./commit.sh (commit one or more lectures, incrementing counter)
+#   ./commit.sh -m (commit updates to a single with default message)
+#   ./commit.sh -m "my commit message" (commit update with custom message)
+# All commits will automatically build document and include pdfs.
+
+changes=$(git status | awk '/notes.tex/ {print $2}')
 len=${#changes}
 
 if [ $len -ge 20 ]; then
@@ -28,13 +34,21 @@ cp "$subj/notes.pdf" "_pdfs/$subj.pdf"
 git add $file
 git add "_pdfs/$subj.pdf"
 
-prev_lec_no=$(awk "/$subj/ {print \$2}" lecture.txt)
-this_lec_no=$((prev_lec_no+1))
+if [ "$1" == "-m" ]; then
+    if [ -z "$2" ]; then
+        commit_msg="update $subj notes"
+    else
+        commit_msg="$2"
+    fi
+else
+    prev_lec_no=$(awk "/$subj/ {print \$2}" lecture.txt)
+    this_lec_no=$((prev_lec_no+1))
 
-sed -i "s/$subj $prev_lec_no/$subj $this_lec_no/" lecture.txt # Update lecture no counter 
-git add "lecture.txt"
+    sed -i "s/$subj $prev_lec_no/$subj $this_lec_no/" lecture.txt
+    git add "lecture.txt"
 
-commit_msg="$subj lecture $this_lec_no"
+    commit_msg="$subj lecture $this_lec_no"
+fi
 
 git commit -m "$commit_msg"
 
