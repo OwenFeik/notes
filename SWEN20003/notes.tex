@@ -1152,7 +1152,7 @@ instead use an \textit{anonymous inner class}.
             public int compare(String s1, String s2) {
 
                 asInS1 = s1.length() - s1.replace("H", "").length();
-                asInS2 = s2.lenght() - s2.replace("H", "").length();
+                asInS2 = s2.length() - s2.replace("H", "").length();
 
                 return asInS1 - asInS2;
             }
@@ -1227,6 +1227,155 @@ which define the type of their keys and values respectively. For example
         nameMapping.put(p2.name, p2);
     }
 \end{lstlisting}
+
+\subsection*{Enumerations}
+
+Sometimes we want to define highly specific pieces of data as useful constructs
+for object oriented programming. The classical solution to this is the
+enumeration or \code{enum}.
+
+\begin{lstlisting}
+    public enum Rank {
+        ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN,
+        EIGHT, NINE, TEN, JACK, QUEEN, KING;
+
+        private boolean isFaceCard() {
+            return this.ordinal() > Rank.TEN.ordinal();
+        }
+    }
+
+    public enum Colour {
+        RED, BLACK
+    }
+
+    public enum Suit {
+        SPADES, CLUBS, DIAMONDS, HEARTS
+    }
+
+    public class Card {
+        private Rank rank;
+        private Suit suit;
+        private Colour colour;
+
+        public Card(Rank rank, Suit suit, Colour colour) {
+            this.rank = rank;
+            this.suit = suit;
+            this.colour = colour;
+        }
+    }
+\end{lstlisting}
+
+By declaring enumerations rather than simply hardcoding strings or other
+constants, we keep our code cleaner. Java \code{enum}s can include methods
+or attributes like any other class. They provide the methods \code{toString},
+\code{compareTo} and \code{ordinal}
+
+\subsection*{Variadic Parameters}
+
+Like Python's \code{*args}, Java has a facility for creating methods with an
+arbritrary number of parameters.
+
+\begin{lstlisting}
+    public int countThrees(int... numbers) {
+        int count = 0;
+        for (int num: numbers) {
+            if (num == 3) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    countThrees(1, 2, 3, 4, 5); // => 1
+    countThrees(3, 3, 3); // => 3
+\end{lstlisting}
+
+The arguments will be passed in as an array of the specified type.
+
+\subsection*{Method Manipulation}
+
+\subsubsection*{Functional Interfaces}
+
+A functional interface is an interface which contains only a single non-static
+method.
+
+\begin{lstlisting}
+    @FunctionalInterface
+    public interface Predicate<T> {
+        public boolean test(T obj);
+    }
+\end{lstlisting}
+
+Some examples include
+
+\begin{itemize}
+    \item \code{Predicate<T>}, a functional interface which represents a
+        predicate, a single argument function which returns \code{true} or
+        \code{false}.
+    \item \code{UnaryOperator<T>}, a functional interface which represents a
+        single argument function which returns an object of the same type. An
+        example might be negation.
+\end{itemize}
+
+\subsubsection*{Lambdas}
+
+The primary purpose of functional interfaces is for use with lambda
+expressions. Lambda expressions allow us to ``treat code as data''; in the
+example of functional interfaces, it allows us to instantiate them without
+implementing them.
+
+\begin{lstlisting}
+    Predicate<Integer> p = i -> i > 0;
+
+    p.test(10) // => true
+    p.test(-10) // => false
+\end{lstlisting}
+
+The syntax for a lambda, visible above is
+\code{<Type> <name> = <arg> -> <body>}. Lambda expressions are often useful as
+somewhat less clunky anonymous classes. They are fundamentally instances of 
+functional interfaces.
+
+\subsubsection*{Method References}
+
+While lambdas are useful for many settings, we have a facility to pass existing
+methods to functions directly when that is needed. This facility is the method
+reference.
+
+\begin{lstlisting}
+    List<String> names = Arrays.asList("Joe", "Margaret", "Steve");
+    names.replaceAll(name -> name.toLowerCase());
+    names.replaceAll(String::toUpperCase);
+
+
+    // methods can also be stored as functional interfaces
+    UnaryOperator<String> operator = String::toLowerCase;
+\end{lstlisting}
+
+\subsubsection*{Streams}
+
+A \textit{stream} is a way to apply a series of methods to a collection of
+elements.
+
+\begin{lstlisting}
+    // Create a list of all elements in the list which are longer than 5
+    // characters and start with a "C", shifted to uppercase.
+    list = list.stream()
+        .filter(s -> s.length() > 5)
+        .filter(s -> s.startsWith("C"))
+        .map(String::toUpperCase)
+        .collect(Collectors.toList())
+\end{lstlisting}
+
+Streams are a very useful technique. The fundamental operations on streams are
+
+\begin{itemize}
+    \item \code{map}; apply a function to each element
+    \item \code{filter}; select a subset of elements with a predicate
+    \item \code{limit}; perform a maximum number of iterations
+    \item \code{collect}; combine all elements into some output format
+    \item \code{reduce}; aggregate a stream into a final value
+\end{itemize}
 
 \section*{Software Design}
 
