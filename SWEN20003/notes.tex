@@ -1336,6 +1336,49 @@ computation. Thus we \textit{delegate} this task to the relevant task.
         convoluted logic; it displays \textit{opacity}
 \end{itemize}
 
+\subsection*{Event Driven Programming}
+
+The general form of a program is sequential; programs run through from top to
+bottom, taking actions according the evaluation of logical statements. This
+form is useful for a very many applications, where the purpose is
+straightforward and largely static. \par
+If, however, we want to create an application which responds dynamically to
+changes in the state of the program, the \textit{event-driven programming}
+paradigm can be useful. \par
+Event driven programming involves using events and callbacks to allow the
+program to respond to changes in state, such as user input. Applications of
+this include the observer pattern explored earlier, and exception handling.
+Event driven programming is most commonly used for the development of graphical
+user interface (GUI) programs. In this setting, one generally uses a framework,
+providing their own functions to undertake specific functionality in response
+to predefined events. \par
+Event driven programming is generally (at least practically)
+\textit{asynchronous}; there is little gaurantee as to the order that functions
+will be called in. The key words associated with this paradigm are
+
+\begin{itemize}
+    \item State; the properties of a given object in the system; whether it is
+        actived, focussed, hidden, etc.
+    \item Event; a flag which responds to a change in state. When some aspect
+        of state changes, the event is fired and related functions are called.
+    \item Callback; also known as a listener, a callback is a method
+        triggered by an event.
+\end{itemize}
+
+Event driven programming can allow for better encapsulation and information
+hiding, can make things more consistent in structure, making it easier to
+maintain a cohesive codebase. It can also allow very easy addition or removal
+of behaviour from a program.
+
+\subsubsection*{On Frameworks}
+
+A software framework will often take care of the core execution loop for the
+programmer, doing things like rendering the application and firing events.
+Frameworks generally consist of a set of abstract classes and interfaces, as
+well as a core which knows how to use these components. The programmer uses
+these tools to allow them to remove much of the busy-work of application
+development.
+
 \section*{Exceptions}
 
 Errors in Java (or any programming language) can be broken down into syntax,
