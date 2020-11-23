@@ -589,7 +589,7 @@ Magnetic fields can be created in two ways. The first of these is by magnetic
 materials, and the second is by currents. A current produces a magnetic field
 according to the Biot-Savart Law, which takes the form
 \[\mathrm{d}\vec{B} 
-= \frac{\mu_0}{4\pi}\frac{I\mathrm{d}\vec{s}\times\hat{r}}{r^2}\]
+= \frac{\mu_0}{4\pi}\frac{I\mathrm{d}\vec{s}\times\hat{r}}{r^3}\]
 Where \(\mathrm{d}\vec{B}\) is the section of magnetic field at a distance
 \(r\) in a direction \(\hat{r}\) from the current carrier, \(\mu_0\) is the
 vacuum permeability and \(\mathrm{d}\vec{s}\) is the rate of change of the
@@ -1049,7 +1049,17 @@ Thus, the thermal energy of a system is dependent only on the temperature and
 quantity of particles in the system. We can also find that
 \[\Delta E_\mathrm{th} = \frac{3}{2}nR\Delta T\]
 \[\Delta E_\mathrm{th} = nc_V\delta T \Rightarrow c_V = \frac{3}{2}R\]
-Where \(c_V\) is the heat capacity of the gas. \par
+Where \(c_V\) is the heat capacity of the gas. This is equivalently expressed
+as
+\[Q = mc\Delta T\]
+Where \(Q\) is the change in energy of a mass \(m\) of a substance with
+specific heat \(c\) resulting from a change in temperature \(\Delta T\). \par
+In general, to determine the energy required for a given change of state, one
+can use this formula to calculate the energy required to change temperature
+without changing phase, while using the formula
+\[Q = mL\]
+To find the energy required for the material to undergo a phase change with
+latent heat \(L\). \par
 We can consider the \textit{mean free path} of a molecule in a gas as the
 distance the particle can travel without colliding with another particle or a
 side of the container. This yields an equation of
@@ -1146,8 +1156,8 @@ When we observe these collisions, we often use the Compton effect to understand
 how the photon and electron scatter apart. The equations for this are
 \[\lambda_f - \lambda_i = \frac{h}{mc}(1 - \cos(\theta))\]
 Here, \(\frac{h}{mc}\) is the \textit{compton wavelength} of the particle.
-\(\theta\) is the angle of the photo relative to the original direction of
-travel.
+\(\theta\) is the angle of the photon relative to the original direction of
+travel, also known as the backscattering angle.
 
 \bigskip
 The wave nature of light observed by Young's double slit experiment was also
@@ -1215,9 +1225,9 @@ use the Rydberg formula
 \[\frac{1}{\lambda} = R\left(\frac{1}{m^2} - \frac{1}{n^2}\right)\]
 Where \(R\) is the Rydberg constant \(1.097\times10^7\mathrm{m}^{-1}\), \(m\)
 is the series; \(1\) for the ultraviolet series, \(2\) for the visible series
-and \(3\) for the infrared series and \(n\) is the index within that series.
-To find the index of a given energy state in a hydrogen atom we can use the
-formula
+and \(3\) for the infrared series and \(n\geq m\) is the index within that
+series. To find the index of a given energy state in a hydrogen atom we can use
+the formula
 \[\sqrt{\frac{-13.6\mathrm{eV}}{E\mathrm{eV}}} = n\]
 Where \(E\) is the energy of the energy state one wants to find the index of.
 For example, if we wanted to find which energy state corresponds to a binding
@@ -1483,6 +1493,21 @@ large angles. \par
 This led to Rutherford's explanation of the atom; largely empty space, with
 a very high concentration of positive charge at the centre and a cloud of
 negatively charged electrons around the core. \par
+Rutherford's model had a major issue however; it predicted that electrons in
+an atom would rapidly spiral towards the centre causing the atoms to be
+unstable and decay on very short time frames. As the electron spiralled into
+the centre of an atom, the atom should emit light according to
+\[f = \frac{1}{T} = \frac{v}{2\pi r}\]
+\[F = \frac{m_ev^2}{r} = \frac{kZe^2}{r^2}
+\Rightarrow v = \sqrt{\frac{kZe^2}{m_er}}\]
+\[\Rightarrow f = \sqrt{\frac{1}{16\pi^3\epsilon_0}\frac{Ze^2}{m_er^3}}\]
+Thus an electron orbiting an atom of atomic number \(Z\) at a distance \(r\)
+should emit photons with frequency \(f\) given by the above formula. Inversely,
+if one has a frequency \(f\) and would like to find the relevant \(r\) for this
+frequency to be emitted by a death-spiralling electron, one should use the
+formula
+\[r = \left(\frac{Ze^2}{16\pi^3\epsilon_0m_ef^2}\right)^\frac{1}{3}\]
+
 It took until 1932 for the neutron to be discovered and the more modern
 understanding of the mass of an atom emerged.
 
