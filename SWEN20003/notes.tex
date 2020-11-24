@@ -1268,7 +1268,7 @@ enumeration or \code{enum}.
 By declaring enumerations rather than simply hardcoding strings or other
 constants, we keep our code cleaner. Java \code{enum}s can include methods
 or attributes like any other class. They provide the methods \code{toString},
-\code{compareTo} and \code{ordinal}
+\code{compareTo} and \code{ordinal}.
 
 \subsection*{Variadic Parameters}
 
@@ -1358,8 +1358,8 @@ A \textit{stream} is a way to apply a series of methods to a collection of
 elements.
 
 \begin{lstlisting}
-    // Create a list of all elements in the list which are longer than 5
-    // characters and start with a "C", shifted to uppercase.
+    // Create a list of all elements in the list which are longer
+    // than 5 characters and start with a "C", shifted to uppercase.
     list = list.stream()
         .filter(s -> s.length() > 5)
         .filter(s -> s.startsWith("C"))
