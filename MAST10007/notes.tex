@@ -1,0 +1,101 @@
+\documentclass[12pt]{report}
+
+\usepackage{import}
+\import{../}{preamble.tex}
+
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+\begin{document}
+\begin{flushleft}
+
+\section*{Linear Equations}
+
+\subsection*{Systems of Linear Equations}
+Systems of equations and row operations.
+
+For example, consider a network of flows; nodes with a given
+inflow and outflow. To compute flows in this network we can use a
+system linear equations.
+
+Data fitting using a polynomial. Sometimes, we want to find a
+function of a certain form which fits to a set of data points. To
+find the relevant coefficients, we can use a system of linear
+equations.
+
+In general, we will take the variables in a linear equation to
+be \(x_1, x_2, \ldots, x_n\) and the coefficients to be
+\(a_1, \ldots, a_n\).
+
+A finite collection of linear equations of a given set of variables
+is called a \textit{system of linear equations} or a \textit{linear system}.
+\[x_1 + 5x_2 + 6x_3 = 100\]
+\[x_2 - x_3 = -1\]
+\[-x_1 + x_3 = 11\]
+Here, despite missing \(x_1\) and \(x_2\) respectively, the second and third
+equations are still part of the same system as they implicitly have a term
+with a \(0\) coefficient. \par
+The organisation of the above system, with all variables on the right and
+constants at left is the standard form of presenting a system.
+
+A \textit{homogenous} linear system is one where all of the constants at right
+are \(0\). These systems are easier to solve, and by solving a homogenous
+version of a non-homogenous system, we can find a solution to the non-homogenous
+variant.
+
+A solution to a linear system is a set of values for variables that cause all
+equations in the system to be true.
+
+\subsubsection*{Solving by Elimination}
+
+\[(1):\: 2x - y = 3\]
+\[(2):\: x + y = 0\]
+
+\[(2) \Rightarrow y = -x\]
+\[(2) \& (1) \Rightarrow 2x - (-x) = 3 \Rightarrow 3x = 3\]
+\[x = 1 \Rightarrow y = -1\]
+
+A key to the applicability of this method is that we can divide by the
+coefficients, which will not always be a valid assumption. This method can
+be implemented algorithmically and will always either yield a solution or tell
+you there is none.
+
+\subsubsection*{Matrices}
+
+Really, the variables in a linear system aren't really important; it is simply
+the coefficients which define their relations. A matrix, a rectangular array of
+numbers, can be used to store these values. A \(p \times q\) matrix has \(p\)
+rows and \(q\) columns.
+
+A \textit{augmented matrix} for a linear system is the matrix formed from the
+coefficients in the equations and the constant terms, separated by a vertical
+line. For example
+
+\[
+    \begin{array}{r}
+        2x - y = 3 \Rightarrow 2x + -1y = 3 \\
+        x + y = 0 \Rightarrow 1x + 1y = 0
+    \end{array}
+    =
+    \begin{amatrix}{2}
+        2 & -1 & 3 \\ 1 & 1 & 0
+    \end{amatrix}
+\]
+
+With coefficients at left and constants at right. The number of rows should be
+equal to the number of equations. Each column corresponds to a given variable
+in the equations.
+
+We can perform some \textit{elementary row operations} to such a matrix without
+changing its solutions. These are
+\begin{itemize}
+    \item Interchanging two rows
+    \item Multiplying a row by a non-zero constant
+    \item Adding a multiple of a row to another row
+\end{itemize}
+
+\end{flushleft}
+\end{document}
