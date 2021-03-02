@@ -97,5 +97,186 @@ changing its solutions. These are
     \item Adding a multiple of a row to another row
 \end{itemize}
 
+\subsubsection*{Row-echelon Form}
+
+A leading entry is the leftmost non-zero entry in a row of the matrix. A matrix
+is in row-echelon form if and only if
+\begin{itemize}
+  \item For any row with a leading entry, all elements below that entry in the
+    same column as it are zero.
+  \item For any two rows, the leading entry of a lower row is further right than
+    the leading entry of the higher row.
+  \item Any row consisting solely of zeros is lower than any row with non-zero
+    entries.
+\end{itemize}
+For example, of the below the first and second are in row-echelon form, while
+the third
+
+\[
+  \left[\begin{array}{ccccc}
+    1 & -2 & 3 & 4 & 5
+  \end{array}\right]
+  \begin{amatrix}{3}
+      1 & 0 & 0 & 3 \\
+      0 & 4 & 1 & 2 \\
+      0 & 0 & 0 & 3 \\
+  \end{amatrix}
+  \begin{amatrix}{4}
+      0 & 0 & 0 & 2 & 4 \\
+      0 & 0 & 3 & 1 & 6 \\
+      0 & 0 & 0 & 0 & 0 \\
+      2 & -3 & 6 & -4 & 9 \\
+  \end{amatrix}
+\]
+
+is not in row-echelon form. The first condition fails, as while the first row
+has a leading entry, non-zero entries follow in the same column. In addition,
+the rows are not correctly ordered by earliest leading entry.
+
+\subsubsection*{Gaussian Elimination}
+
+Gaussian elimination is a recursive algorithm for putting matrices into
+row-echelon form. 
+
+\begin{itemize}
+    \item First switch rows around to bring a non-zero entry to the topmost
+        leftmost position possible.
+    \item After this, use suitable multiples of the first row to zero all
+        entries in the same column.
+    \item Repeat from step one, ignoring the first row.
+\end{itemize}
+
+\subsubsection*{Example}
+
+
+\[
+    \begin{array}{c}
+      x - 3y + 2z = 11 \\
+      2x - 3y - 2z = 13 \\
+      4x - 2y + 5z = 31 \\ 
+    \end{array}
+    \Rightarrow
+    \begin{amatrix}{3}
+      1 & -3 & 2 & 11 \\
+      2 & -3 & -2 & 13 \\
+      4 & -2 & -5 & 31 \\
+    \end{amatrix}
+    \begin{array}{c}
+      R_2 \rightarrow R_2 - 2R_1 \\
+      R_3 \rightarrow R_3 - 4R_1
+    \end{array}
+    \rightarrow
+    \begin{amatrix}{3}
+      1 & -3 & 2 & 11 \\
+      0 & 3 & -6 & -9 \\
+      0 & 10 & -13 & -13 \\
+    \end{amatrix}
+\]
+\[
+    R_3 \rightarrow R_3 - \frac{10}{3}R_2
+    \rightarrow
+    \begin{amatrix}{3}
+      1 & -3 & 2 & 11 \\
+      0 & 3 & -6 & -9 \\
+      0 & 0 & 17 & 17 \\
+    \end{amatrix}
+    \Rightarrow
+    \begin{array}{c}
+      x -3y + 2z = 11 \\
+      0x + 3y -6z = -9 \\
+      0x + 0y + 17z = 17            
+    \end{array}
+\]
+\[\Rightarrow z = 1 \Rightarrow 3y - 6 = -9 \Rightarrow y = -1\]
+\[y = -1 \:\&\: z = 1 \Rightarrow x = 6\]
+
+While here we converted the matrix back to equations before solving, we could
+instead perform back substitution while still in matrix form. In this case, we
+are converting the matrix to \textit{reduced row-echelon form}. A matrix in this
+form has the following properties
+\begin{itemize}
+  \item It is in row-echelon form
+  \item Each leading entry is equal to \(1\)
+  \item In each column containing a leading \(1\), all other entries are \(0\)
+\end{itemize}
+Note that for a matrix, the reduced row-echelon form is unique.
+
+\subsubsection*{Gauss-Jordan Elimination}
+
+Gauss-Jordan elimination is an algorithm to convert matrices to reduced
+row-echelon form. 
+\begin{itemize}
+  \item Use Gaussian elimination to reduce to row-echelon form.
+  \item Multiply each non-zeor row by an appropriate number to create a
+      leading \(1\).
+  \item Add row multiples to create zeros above leading entries.
+\end{itemize}
+
+\subsubsection*{Example}
+
+Continuing from the earlier example, where we found a row-echelon form for a
+linear sytem.
+\[
+    \begin{amatrix}{3}
+        1 & -3 & 2 & 11 \\
+        0 & 3 & -6 & -9 \\
+        0 & 0 & 17 & 17 \\
+    \end{amatrix}
+    \begin{array}{c}
+        R_2 \rightarrow \frac{1}{3} R_2 \\
+        R_3 \rightarrow \frac{1}{17} R_3
+    \end{array}
+    \begin{amatrix}{3}
+      1 & -3 & 2 & 11 \\
+      0 & 1 & -2 & -3 \\
+      0 & 0 & 1 & 1 \\
+    \end{amatrix}
+    \begin{array}{c}
+      R_2 \rightarrow R_2 + 2R_3 \\
+      R_1 \rightarrow R_1 - 2R_3
+    \end{array}
+\]
+\[
+    \begin{amatrix}{3}
+      1 & -3 & 0 & 9 \\
+      0 & 1 & 0 & -1 \\
+      0 & 0 & 1 & 1 \\
+    \end{amatrix}
+    R_1 \rightarrow R_1 + 3R_2
+    \begin{amatrix}{3}
+      1 & 0 & 0 & 6 \\
+      0 & 1 & 0 & -1 \\
+      0 & 0 & 1 & 1 \\
+    \end{amatrix}
+    \Rightarrow
+    \begin{array}{c}
+      x = 6 \\
+      y = -1 \\
+      z = 1 \\
+    \end{array}
+\]
+In this case, it is clear that the reduced row echelon form is unique.
+With this, we have our general process for solving linear systems.
+
+\begin{itemize}
+    \item First, create the augmented matrix from the equations.
+    \item Use Gaussian elimination to get to row-echelon form.
+    \item From here one can either directly back-substitute or use Gauss-Jordan
+        elimination to get to reduced row-echelon form.
+    \item At this stage, either the solutions will be evident, or it will be
+        clear either that there are no or infinitely many solutions.
+\end{itemize}
+
+\subsubsection*{Solutions}
+
+\begin{itemize}
+  \item If a system of linear equations has no solutions, the system is
+      inconsistent. In this case, row operations can be used to rearrange for a
+      clear logical failure.
+  \item If the system has exactly one or infinitely many solutions, it is
+      consistent.
+\end{itemize}
+
+
 \end{flushleft}
 \end{document}
