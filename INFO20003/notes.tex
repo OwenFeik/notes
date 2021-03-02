@@ -1,0 +1,53 @@
+\documentclass[12pt]{report}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\usepackage{listings}
+
+\setlength{\parskip}{.2cm}
+
+\lstset{
+    frame = tb,
+    language = SQL,
+    aboveskip = 3mm,
+    belowskip = 3mm,
+    showstringspaces = false,
+    columns = flexible,
+    basicstyle = {\small\ttfamily},
+    numbers = none,
+    numberstyle = \tiny\color{gray},
+    keywordstyle = \color{blue},
+    commentstyle = \color{darkgray},
+    stringstyle = \color{orange},
+    breaklines = true,
+    breakatwhitespace = true,
+    tabsize = 3
+}
+
+\newcommand{\code}[1]{\lstinline{#1}}
+
+\begin{document}
+\begin{flushleft}
+
+\section*{Databases}
+
+\subsubsection*{Data and Information}
+
+While data is known, discrete facts that have been stored and recorded,
+information is data placed in context and presented. It is much more useful to
+humans. SQL is a tool for extracting information from a database.
+
+\subsubsection*{Metadata}
+
+Metadata is \textit{data about data}. For example type, length or description.
+It helps us to keep data storage consistent, useful and meaningful.
+
+A database is a large, integrated, structured collection of data, used to model
+some real world enterprise as entities and relationships. A Database Management
+System or DBMS is used to interface with a database. Databases differ from
+simple programs interfacing with files by avoiding redundancy and ensuring
+consistency. They also allow better file sharing and can improve development
+speed and reduce maintenance. 
+
+
+\end{flushleft}
+\end{document}
