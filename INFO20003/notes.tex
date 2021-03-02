@@ -48,6 +48,46 @@ simple programs interfacing with files by avoiding redundancy and ensuring
 consistency. They also allow better file sharing and can improve development
 speed and reduce maintenance. 
 
+\subsection*{Database Development Process}
+
+\begin{itemize}
+    \item Database Planning
+    \item Systems Definition
+        \begin{itemize}
+            \item Enterprise data model, where the components and interactions
+                of a business is defined. 
+            \item Specification of scope and boundaries of the system. 
+        \end{itemize}
+    \item Requirements Definition and Analysis
+        \begin{itemize}
+            \item Take in requirements for the system and analyse them to define
+                a system that will satisfy them.
+        \end{itemize}
+    \item Design
+        \begin{itemize}
+            \item Conceptual Design - construction of model of the data to be
+                held in the database, independent of any technical
+                considerations. Generally using \textit{entity relationship}
+                (ER) diagrams.
+            \item Logical Design - technical decisions for the conceptual
+                design above. While in this subject this will always be a DBMS,
+                it could also be a JSON document or even a spreadsheet.
+            \item Physical Design - implementation details of a given logical
+                design; relations, data types, configurations, etc.
+                Specification of types can help to make a database smaller and
+                faster. It's important to consider all the factors that inform
+                a datatype.
+        \end{itemize}
+    \item Application Design
+        \begin{itemize}
+            \item In parallel with the design phase, design of the application
+                continues.
+        \end{itemize}
+    \item Implementation
+    \item Data Conversion and Loading
+    \item Testing
+    \item Operational Maintenance
+\end{itemize}
 
 \end{flushleft}
 \end{document}
