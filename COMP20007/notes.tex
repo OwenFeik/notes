@@ -1,0 +1,97 @@
+\documentclass[12pt]{report}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\usepackage{listings}
+
+\setlength{\parskip}{.2cm}
+
+\lstset{
+    frame = tb,
+    language = C,
+    aboveskip = 3mm,
+    belowskip = 3mm,
+    showstringspaces = false,
+    columns = flexible,
+    basicstyle = {\small\ttfamily},
+    numbers = none,
+    numberstyle = \tiny\color{gray},
+    keywordstyle = \color{blue},
+    commentstyle = \color{darkgray},
+    stringstyle = \color{orange},
+    breaklines = true,
+    breakatwhitespace = true,
+    tabsize = 3
+}
+
+\newcommand{\code}[1]{\lstinline{#1}}
+
+\begin{document}
+\begin{flushleft}
+
+\subsubsection*{Problems}
+
+In computer science, a \textit{problem} refers to a general class of problems
+where in mathematics it might refer to a specific example. Thus our solutions
+are algorithms which are more generally applicable to a class of problems. Some
+examples of problem classes include
+
+\begin{itemize}
+    \item Sorting problems, where an instance of a problem is a sequence of
+        items.
+    \item Graph colouring, where an instance is a graph.
+    \item Equation solving problems, where an instance is a system of equations.
+\end{itemize}
+
+An \textit{algorithm} is a finite sequence of instructions with
+
+\begin{itemize}
+    \item No ambiguity and each step precisely defined
+    \item 
+\end{itemize}
+
+\subsubsection*{Euclid's Algorithm}
+
+With the observation that \code{gcd(m, n) == gcd(max(m, n) -
+min(m, n), min(m, n))} we have a recursive
+relation to find the greatest common denominator of two values.
+
+\begin{lstlisting}
+    int gcd(int m, int n) {
+        if (m == n)
+            return m;
+        else
+            return gcd(max(m, n) - min(m, n), min(m, n));
+    }
+\end{lstlisting}
+
+However, for large numbers this algorithm requires a very large number of
+iterations. Luckily, we have an operator that allows for easy repeated
+subtractions. The modulo operator allows us to instead use the algorithm
+\code{gcd(m, n) = gcd(n, n mod m)}.
+
+\begin{lstlisting}
+    int gcd(int m, int n) {
+        if (n == 0)
+            return m;
+        else
+            return gcd(n, n % m);
+    }
+\end{lstlisting}
+
+Although these two algorithms accomplish the same task, one performs it
+with much greater efficiency. Rather than perform this algorithm recursively
+we can do it iteratively, saving us the overhead of a function call.
+
+\begin{lstlisting}
+    int gcd(int m, int n) {
+        while n != 0 {
+            int r = m mod n;
+            m = n;
+            n = r;
+        }
+        return m;
+    }
+\end{lstlisting}
+
+\end{flushleft}
+\end{document}
