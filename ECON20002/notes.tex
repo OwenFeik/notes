@@ -10,5 +10,113 @@ This subject deals with models; simplifications and idealisations of real world
 situations. While these might not be directly useful, they can help us gain an
 understanding as to how a more realistic situation might pan out.
 
+\subsection*{Supply and Demand}
+\subsubsection*{Obesity}
+An example application of supply and demand can be observed in the rise of
+obesity among people in Australia in the recent past. This is a social problem
+which has implications for the economy and for government policy. A possible
+policy to counteract this issue is taxation of junk food. \par
+The natural implication of taxation is that an increased price due to the tax
+will result in a lower equilibrium consumption quantity. We can consider the a
+model of supply in the junk food market to see the impacts. If we take a supply
+curve, which is upward sloping as a higher price implies a greater number of 
+suppliers with incentive to produce such as \(Q_S = P\) and a demand curve like
+\(Q_D = c - P\) (negative, as higher price disincentivises purchase), we can
+plot the two to find an equilibrium price and quantity level. 
+
+\begin{econplot}{\(Q\)}{\(P\)}
+    \addplot[ultra thick, red, ->, name path = qs] {x}
+        node[below right, pos=0.95] {\(Q_S\)};
+    \addplot[ultra thick, blue, ->, name path = qd] {5 - x}
+        node[above right, pos=0.95] {\(Q_D\)};
+    \addplot[ultra thick, red, ->, domain={0:4}] {x + 1.5}
+        node[above left, pos=0.95] {\(Q_{ST}\)};
+    \addplot[black, dashed] coordinates {(3.3, 3.3)(3.3, 4.8)}
+        node[left, pos=0.4] {\(T_D \uparrow\)};
+    \addplot[black, dashed] coordinates {(3.3, 4.8)(4.8, 4.8)}
+        node[above, pos=0.5] {\(\leftarrow T_S\)};
+    \addplot[black, dashed] coordinates {(2.5, 0)(2.5, 3)}
+        node[above] {\(Q_0\)};
+    \addplot[black, dashed] coordinates {(0, 2.5)(3, 2.5)}
+        node[right] {\(P_0\)};
+    \addplot[black, dashed] coordinates {(1.75, 0)(1.75, 3.75)}
+        node[above] {\(Q_1\)};
+    \addplot[black, dashed] coordinates {(0, 3.25)(1.75, 3.25)}
+        node[above, pos=0.2] {\(P_1\)};
+    \addplot[fill=gray, opacity=0.2] fill between [
+        of = qd and qs,
+        soft clip = {domain=1.75:2.5}
+    ];
+\end{econplot}
+
+If we want to desire the consumption level to some defined quantity \(Q_1\), we
+need to increase the price by a relevant amount. If we charge a flat tax of some
+amount \(T\), we will find that the price increases by exactly \(T\). If this
+tax is applied on the supplier side, we will observe a reduction in quantity
+from \(Q_S\) to \(Q_ST\), as shown by \(T_S\). If it is applied on the demand
+side, we will observe an increase in price presenting an effective supply curve
+of \(Q_ST\), as shown by \(T_D\). In either case, the gray shaded region
+represents a deadweight loss of welfare and the tax revenue is given by
+\(T \times Q\). \par
+While conceptually this makes sense to us, in reality studies have found that
+such taxes have a smaller effect than predicted on consumption of junk food.
+This suggests that junk food is actually highly price inelastic at current
+quantities; it is not strongly affected by the price.
+
+\subsubsection*{Price Elasticity of Demand}
+Price elasticity of demand is given by change in quantity per unit quantity
+divided by change in price per unit price. That is
+\[E_P = \DD{Q / Q}{P / P} = \DD{Q}{P} \times \frac{P}{Q}\]
+Which is simply the inverse of the slope of the demand curve multiplied by the
+ratio of price to quantity. This means that at low quantities, the ratio of
+price to quantity will be larger so the elasticity will be higher, as for a
+linear curve, the inverse of the slope is a constant. Generally elasticity is
+always negative, so we simply use the absolute value. Depending on the value of
+price elasticity we use certain terminology
+\begin{itemize}
+    \item If \(\abs{E_P} > 1\) we say that demand is price elastic, which means
+        that a given percentage change in price will lead to a greater
+        percentage change in quantity.
+    \item If \(\abs{E_P < 1}\) we say that demand is price inelastic, suggesting
+        that a percentage change to price will produce a smaller percentage
+        change in quantity.
+\end{itemize}
+
+\subsubsection*{Individual Choice}
+In reality, individuals might maximise welfare through different means,
+different quantities of junk food, etc. In microeconomics, agents need to make
+decisions between goods. Here, we will consider how agents will find an optimal
+basket of two goods. We can consider an example of how many hours one should
+study. If the benefit derived from \(h\) study hours is
+\[B = \omega h\]
+Where \(\omega\) is some constant. Then our marginal benefit of studying is
+\[\dd{B}{h} = \omega\]
+If this was the only information we had, then it would be optimal to spend all
+time studying. However, we must also consider the costs involved in studying
+some amount, which we can model as
+\[C = \frac{h^2}{4} \Rightarrow MC = \dd{C}{h} = \frac{1}{2}h\]
+The net benefit of one hour of study is then
+\(B - C = B_N = \omega h - \frac{h^2}{4}\).
+We can find the point to maximise benefit by setting the derivative of net
+benefit equal to zero.
+\[\dd{B_N}{h} = 0 \Rightarrow \omega - \frac{1}{2}h = 0
+\Rightarrow h = 2\omega\]
+This is equivalent to finding \(B^\prime = C^\prime\) or \(MB = MC\). \par
+This can be generally applied; if we want to incentivise an action, we should
+lower the marginal cost of this action and increase its marginal benefit.
+
+\subsubsection*{Short-Termism}
+In some settings, we find that people consistently fail to make decisions which
+maximise their welfare. For example, in Africa governments often heavily
+subsidise mosquito nets and yet adoption is still fairly lower, because people
+don't consider the future benefit sufficiently. \par
+We can model this as a \textit{discount factor}, \(V\) which influences our
+evaluation of future benefit from a present investment. For a future benefit of
+magnitude \(G\), at a present price of \(F\), an individual will only make the
+transaction if for them
+\[\frac{G}{V} \geq F\]
+Thus, individuals with higher discount factors are likely to be disincentivised
+from making decisions that may appear to lead to a large increase in welfare for
+them in the future.
 \end{flushleft}
 \end{document}
