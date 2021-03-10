@@ -274,8 +274,42 @@ With this, we have our general process for solving linear systems.
         inconsistent. In this case, row operations can be used to rearrange for a
         clear logical failure.
     \item If the system has exactly one or infinitely many solutions, it is
-        consistent.
+        consistent. Every homogenous system is consistent as their is the
+        solution of zeroing all variables.
 \end{itemize}
+
+An inconsistent system can be identified by reducing to row-echelon form. In
+this case, if there is a row with a leading entry of the solution (i.e. all
+coefficients are zero and the solution is non-zero). \par
+For a consistent system with one solution, there will be \(n\) non-zero rows for
+an \(n\) coefficient matrix. For a consistent system with an infinite number of
+solutions, there will be one or more rows of all zeros upon conversion to
+reduced row-echelon form. \par
+In the case of an infinite number of solutions, the columns lacking a leading
+entry in will appear in some other equations. The values for these
+variables can then be chosen abritrarily, implying the values of other
+variables. Some examples
+
+\[
+    \begin{amatrix}{4}
+        1 & 0 & 0 & 1 & 9 \\
+        0 & 1 & 0 & -1 & 1 \\
+        0 & 0 & 1 & 1 & 6 \\
+        0 & 0 & 0 & 0 & 0 \\
+    \end{amatrix}
+    \begin{amatrix}{5}
+        1 & 2 & 0 & 0 & 5 & 1 \\
+        0 & 0 & 1 & 0 & 6 & 2 \\
+        0 & 0 & 0 & 1 & 7 & 3 \\
+        0 & 0 & 0 & 0 & 0 & 0 \\
+    \end{amatrix}
+\]
+
+Here, in the left matrix the \(x_4\) variable can be chosen as any value, and
+will set the values of the other columns. Likewise in the right matrix, \(x_2\)
+and \(x_5\) lack singly defined values. \par
+In general, for a consistent system with \(n\) variables, there is one free
+variable for each variable without a leading entry.
 
 \end{flushleft}
 \end{document}
