@@ -89,5 +89,59 @@ speed and reduce maintenance.
     \item Operational Maintenance
 \end{itemize}
 
+\subsection*{Entity-Relationship Models}
+
+An entity-relationship model is a method for modelling data needed for an
+organisation. An entity is a real-world object, distinguishable from other
+objects. An entity set is a collection of similar entities. For example an
+entity might be ``John Smith'', of the entity set person. John might have
+attributes like name, date of birth, etc. Each entity has a \textit{key}. This
+is a unique piece of data describing the record. \par
+In a visual model, an entity is represented as a rectangle with attributes
+in ovals connected to it by lines. The name of the key is underlined. \par
+A relationship is an association between entities. For example, John might
+\textit{live in} Melbourne, a City. In this case, City is another entity set
+with its own attributes. The relationship might have an attribute like
+``since''. A relationship is depicted as a diamond, connecting to the relevant
+rectangles, with attributes as ovals. \par
+A relationship might connect to the same entity twice, such as in a ``reports
+to'' relationship between two employees.
+
+\subsubsection*{Constraints}
+
+Relationships have constraints on them, describing which entities can be
+related by them. On of these is key constraints, which are
+\begin{itemize}
+    \item Many-to-many. Any number of entities on one side are related to any
+        number of entities on the other side. For example a lecturer may teach
+        many lectures, which may be lectured by many lecturers.
+    \item One-to-many. A given entity may be related to a large number of
+        another entity.
+    \item One-to-one. A given entity is related to a single other entity. For
+        example a person is part of one department.
+\end{itemize}
+A key constraint indicating ``many'' is simply a plain straight line. In a
+``one'' relationship, known as a key relationship, an arrow is drawn from the
+side which has only one incidence to the relationship. If every entity in a set
+has a given relationship, we bold the line describing that relationship. \par
+A weak entity is one which can be uniquely identified only with knowledge of
+another owner identity. To indicate this, we use a identifying relationship. All
+weak entities must have this relatinoship to their owning identity. To show this
+on a diagram, we bold the weak entity, the line (which will always be arrowed,
+as each weak entity has one owner) and the relationship diamond and underline
+the key of the weak entity to indicate it doesn't uniquely identify the entity.
+\par
+Some special attribute types exist. These include
+\begin{itemize}
+    \item A multi-valued attribute, where multiple different pieces of
+        information of the same type are stored. For example, all of the phone
+        numbers associated with a person. This is depicted with two concentric
+        ovals rather than a single oval.
+    \item A composite attribute, which is just an attribute with sub-attributes.
+        Shown by given the attributes attributes in the same way one would
+        entities.
+\end{itemize}
+
+
 \end{flushleft}
 \end{document}
