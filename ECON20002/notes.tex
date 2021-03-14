@@ -118,5 +118,108 @@ transaction if for them
 Thus, individuals with higher discount factors are likely to be disincentivised
 from making decisions that may appear to lead to a large increase in welfare for
 them in the future.
+
+\subsection*{Consumer Preferences}
+In Australia, we have a flat 10\% GST across most goods and services, with some
+exemptions for food, health, education, etc. Some probolems exist with this
+system, with parties arguing that it can be complex and distortionary. A
+proposed reform is the removal of exemptions, with the suggestion for
+compensation of disproportionately affected poor person by transfer payment.
+\par
+To determine an appropriate magnitude for such a payment, we would need to
+realistically estimate the basket of goods consumed by such a recipient. The
+problem being solved here is a constrained maximisation exercise. \par
+We can consider a consumer trying to find an optimal composition of goods
+between food and other goods.
+
+\begin{center}    
+    \begin{tabular}{c|c|c}
+        Basket & Other & Food \\
+        \hline
+        \(A\) & \(4\) & \(8\) \\
+        \(B\) & \(8\) & \(2\) \\
+        \(C\) & \(6\) & \(5\) \\
+        \(D\) & \(4\) & \(5\) \\
+        \(E\) & \(7\) & \(6\) \\
+    \end{tabular}
+\end{center}
+
+In the above example, it is obvious that basket \(E\) is strictly than \(C\)
+which in turn is strictly greater than \(D\). We can say that there should be
+a \textit{strict preference} for \(E > C > D\). It is not obvious however how
+\(E\) should be compared to \(A\) or \(B\). \par
+For this problem, we introduce some special notation for comparison of various
+baskets.
+\begin{itemize}
+    \item The statement \(A \succ B\) indicates a preference for \(A\) over
+        \(B\). In the above case, this means that the agent would happily
+        sacrifice \(4\) units of other goods for \(6\) units of food.
+    \item The statement \(A \sim B\) means that there is no strong preference
+        between \(A\) and \(B\).
+    \item \(A \succsim B\) suggests that \(A\) is as good or better than \(B\).
+        In this case \(B \nsucc A\). The symbol behaves similarly to \(\geq\).
+\end{itemize}
+These assumptions have the following assumptions
+\begin{itemize}
+    \item Completeness; a consumer can always assign an operator to compare two
+        baskets. They can pick and choose between all available baskets.
+    \item Transitivity; \(A \succ B\) and \(B \succ C\) means \(A \succ C\).
+    \item More is better (ceteris paribus)
+    \item Convexity; consumers prefer a combination of goods over an equivalent
+        value of a single good.
+\end{itemize}
+
+\subsubsection*{Indifference Curves}
+
+An indifference curve is a curve drawn on a plot of two different goods that
+describes the set of good baskets that the consumer is indifferent between.
+
+\begin{econplot}{\(J\)}{\(F\)}
+    \labelledpoint{2.67, 2.64}{above right}{\(B\)};
+    \labelledpoint{1.5, 4}{above right}{\(A\)};
+    \labelledpoint{3.5, 3.2}{right}{\(\:C\)};
+    \addplot[black, dashed, name path = n] coordinates {(0, 4)(5, 4)};
+    \addplot[black, dashed, name path = m] coordinates {(1.5, 0)(1.5, 6)};
+    \path[name path = bot] (0, 0) -- (1.5, 0);
+    \addplot[fill=red, opacity=0.2] fill between [
+        of = n and bot,
+        soft clip = {domain=0:1.5}
+    ];
+    \path[name path = top] (1.5, 6) -- (5, 6);
+    \addplot[fill=blue, opacity=0.2] fill between [
+        of = n and top,
+        soft clip = {domain=1.5:5}
+    ];
+    \addplot[ultra thick, black, <->] {2.618^(-1*(x - 2.22)) + 2};
+\end{econplot}
+
+In the above plot, the black line indicates the possible baskets of the goods
+\(J\) and \(F\) that a hypothetical consumer is indifferent between. Because
+\(A\) and \(B\) lie on this line, we know \(A \sim B\). The blue shaded region
+indicates baskets of goods \(\succ A\), as they have more of both goods than
+\(A\) does. The red shaded region is the baskets \(\nsucc A\). If we considered
+the equivalent regions for \(B\), we see that \(C\) can never lie on the
+indifference curve as \(C \succ B\). \par
+For the same reason that \(C \succ B\), we
+know that two indifference curves can never intersect as all indifference curves
+must be at different value levels. Thus, we can view a set of indifference
+curves as a kind of welfare topographic map for the consumer, known as an
+\textit{indifference map}.
+
+\subsubsection*{Marginal Rate of Substitution}
+
+An indifference curve shows us that to gain more of one good at the same level
+of satisfaction, the consumer must give up some of the other good. To generalise
+this concept we use the marginal rate of substitution, \(MRS\). So for a curve
+of \(F\) and \(J\),
+\[MRS_{FJ} = -\dd{F}{J}\]
+Note that this is in terms of the amount of the vertical axis good \(F\) a
+consumer is willing to sacrifice for a unit of horizontal good \(J\). As we move
+to higher \(J\) values, the consumer is willing to give up less \(F\) for more
+\(J\). \par
+This system works well for most goods, however for some goods which are
+\textit{perfect complements} like left and right shoes, a consumer always wants
+an exactly equal quantity of the two goods.
+
 \end{flushleft}
 \end{document}
