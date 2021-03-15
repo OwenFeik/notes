@@ -166,7 +166,8 @@ These assumptions have the following assumptions
     \item Transitivity; \(A \succ B\) and \(B \succ C\) means \(A \succ C\).
     \item More is better (ceteris paribus)
     \item Convexity; consumers prefer a combination of goods over an equivalent
-        value of a single good.
+        value of a single good. This is enforced through a diminishing marginal
+        rate of substitution.
 \end{itemize}
 
 \subsubsection*{Indifference Curves}
@@ -219,7 +220,57 @@ to higher \(J\) values, the consumer is willing to give up less \(F\) for more
 \(J\). \par
 This system works well for most goods, however for some goods which are
 \textit{perfect complements} like left and right shoes, a consumer always wants
-an exactly equal quantity of the two goods.
+an exactly equal quantity of the two goods. \par
+Another variety of goods is ``bads''; goods which have negative value. If these
+goods are plotted against a positive good, the curves will increase as we move
+to the top left. We also have neutral goods, where quantity of the good is
+unrelated to welfare.
+
+\subsubsection*{Utility Functions}
+
+A convenient way to universally determine preferences between baskets of goods
+is through utility functions. An example might be
+\[u(J, F) = 2J + F\]
+For this function to accurately represent preferences it must have the
+properties
+\begin{itemize}
+    \item \(u(A) > u(B) \Leftrightarrow A \succ B\)
+    \item \(u(A) = u(B) \Leftrightarrow A \sim B\)
+\end{itemize}
+Any order preserving transformation can be applied to a utility function without
+changing the ranking it produces. \par
+Utility functions yield a concept of marginal utility, the utility obtained from
+consuming an additional unit of a good.
+\[MU_F = \dd{u}{F} = \ddel{u}{F}\]
+Our assumption of convexity means that we know that
+\[\ddelat{u}{F}{F = x} \downarrow \:\mathrm{as}\: x \uparrow\]
+An indifference curve is described by a line where \(\Delta u = 0\).
+\[-\frac{\Delta F}{\Delta J} = \frac{MU_J}{MU_F}\]
+As the magnitude of the derivative of \(F\) with respect to \(J\) is \(MRS\),
+we have found
+\[MRS_{FJ} = \frac{MU_J}{MU_F}\]
+The marginal rate of substitution is given by the ratio of marginal utilities.
+
+\subsubsection*{Budgets}
+
+In reality, a consumer has some budget to spend. If that amount is a budget
+\(I\) to be spent on two goods \(F\) and \(J\) then we find
+\[P_JJ + P_FF = I\]
+Where \(P\) is price. Rearranging, this looks like
+\[F = \frac{I}{P_F} - \left(\frac{P_J}{P_F}\right)J\]
+If plotted, this yields a graph of \(F\) against \(J\) with slope
+\[-\frac{P_J}{P_F}\]
+The area under this graph is the set of all baskets the consumer can afford.
+\par
+An increase in income \(I\) will cause a shift up and out of the budget line.
+The slope will remain constant. \par
+A change in price of one of the goods will cause the intercept of that good to
+change. The other intercept will remain constant. For instance if \(J\)
+becomes cheaper, the horinzontal \(J\) intercept will move inward to a lower
+value, while the vertical \(F\) intercept remains constant, resulting in a
+steeper curve, incentivising higher consumption of \(J\). \par
+If both goods are increased in price by some factor \(k\), the effect is to
+reduce income by factor \(\frac{1}{k}\) while maintaining the ratio of goods.
 
 \end{flushleft}
 \end{document}
