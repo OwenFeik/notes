@@ -311,5 +311,215 @@ and \(x_5\) lack singly defined values. \par
 In general, for a consistent system with \(n\) variables, there is one free
 variable for each variable without a leading entry.
 
+\section*{Matrices}
+
+A matrix is a rectangular array of numbers with \(m\) rows and \(n\) columns.
+
+\[  A = 0_{2,3} =
+    \left[\begin{array}{ccc}
+        0 & 0 & 0 \\
+        0 & 0 & 0 \\
+    \end{array}\right]
+    \hspace{2cm}
+    A_{1,2} = 3 \Rightarrow
+    A = \left[\begin{array}{ccc}
+        0 & 3 & 0 \\
+        0 & 0 & 0 \\
+    \end{array}\right]
+\]
+
+\subsubsection*{Special Matrices}
+
+Some special matrix arrangements exist.
+\begin{itemize}
+    \item A \textit{square matrix} has the same number of rows and columns.
+    \item A matrix with a single row is a \textit{row matrix} or \textit{row
+        vector}
+    \item A square matrix with \(A_{ij} = 0\) for \(i \neq j\) is called a
+        diagonal matrix.
+    \item A square matrix with \(A_{ij} = 0\) for \(i > j\) is called an
+        \textit{upper triangular matrix}.
+    \item A square matrix with \(A_{ij} = 0\) for \(i < j\) is a \textit{lower
+        triangular matrix}.
+    \item A matrix where all entries are \(0\) is a \textit{zero matrix}, for
+        a specific size denoted \(0_{m,n}\).
+    \item An identity matrix is a diagonal matrix with all non-zero fields equal
+        to \(1\), denoted \(I_{m,n}\).
+\end{itemize}
+
+\subsection*{Operations}
+
+\subsubsection*{Trace}
+
+The \textit{trace} of a \(n \times n\) matrix is given by
+\[\mathrm{Tr}(A) = A_{11} + A_{22} + \ldots + A_{nn}\]
+i.e. the sum of the diagonal elements. \par
+
+\subsubsection*{Scalar Multiplication}
+
+Scalar multiplication of a matrix is performed by multiplying every entry by
+the relevant scalar.
+\[
+    2 \cdot
+    \left[\begin{array}{cc}
+        1 & 2 \\
+        1 & -3 \\
+    \end{array}\right]
+    =
+    \left[\begin{array}{cc}
+        2 & 4 \\
+        2 & -6 \\
+    \end{array}\right]
+\]
+Naturally \(1 \cdot A = A\) and \(0 \cdot A = 0_{m,n}\).
+
+\subsubsection*{Matrix Addition}
+
+For two matrices of the same size, we add entrywise to find the sum. To subtract
+we simply add \(-1 \cdot B\).
+
+\[
+    A = 
+    \left[\begin{array}{ccc}
+        2 & 0 & -3 \\
+        1 & -1 & 3 \\
+    \end{array}\right]
+    , B =
+    \left[\begin{array}{ccc}
+        -1 & -1 & 1 \\
+        0 & 1 & 2 \\
+    \end{array}\right]
+\]
+\[
+    A + 3B =
+    \left[\begin{array}{ccc}
+        2 & 0 & -3 \\
+        1 & -1 & 3 \\
+    \end{array}\right]
+    +
+    \left[\begin{array}{ccc}
+        -3 & -3 & 3 \\
+        0 & 3 & 6 \\
+    \end{array}\right]
+    =
+    \left[\begin{array}{ccc}
+        -1 & -3 & 0 \\
+        1 & 2 & 9 \\
+    \end{array}\right]
+\]
+
+Matrix addition has the same properties as addition of scalar addition including
+commutativity and associativity.
+
+\subsubsection*{Matrix Multiplication}
+
+For two matrixes \(A\) of size \(m \times n\) and \(B\) of size \(n \times q\),
+we can perform multiplication as \(B\) has the same number of rows as \(A\) does
+columns. Unlike addition it is not performed elementwise. It is performed
+according to
+\[(AB)_{ij} = \sum_{k = 1}^n A_{ik}B_{kj}\]
+This can be thought of as a dot product between the relevant row of \(A\) with
+the relevant column of \(B\).
+\[(AB)_{ij} = (\mathrm{row}\:i\:\mathrm{of}\:A) \cdot
+(\mathrm{column}\:j\:\mathrm{of}\:B)\]
+The output size will be the number of rows from the first matrix \(m\) and the
+number of columns in the second, \(q\).
+
+\[
+    \left[\begin{array}{cc}
+        1 & -1 \\
+        3 & 0 \\
+        0 & 1 \\
+    \end{array}\right]
+    \cdot
+    \left[\begin{array}{cc}
+        4 & 0 \\
+        -7 & 1 \\
+    \end{array}\right]
+    =
+    \left[\begin{array}{cc}
+        1 \cdot 4 + -1 \cdot -7 & 1 \cdot 0 + -1 \cdot 1 \\
+        3 \cdot 4 + 0 \cdot -7 & 3 \cdot 0 + 0 \cdot 1 \\
+        0 \cdot 4 + 1 \cdot -7 & 0 \cdot 0 + 1 \cdot 1 \\
+    \end{array}\right]
+    =
+    \left[\begin{array}{cc}
+        11 & -1 \\
+        12 & 0 \\
+        -7 & 1 \\
+    \end{array}\right]
+\]
+
+Note that this process is not commutative. \(AB \neq BA\). For example
+\[
+    A =
+    \left[\begin{array}{cc}
+        1 & 0 \\
+        2 & 3 \\
+    \end{array}\right]
+    , B =
+    \left[\begin{array}{cc}
+        4 & 3 \\
+        2 & 1 \\
+    \end{array}\right]
+\]
+\[
+    AB =
+    \left[\begin{array}{cc}
+        1 \cdot 4 + 0 \cdot 2 & 1 \cdot 3 + 0 \cdot 1 \\
+        2 \cdot 4 + 3 \cdot 2 & 2 \cdot 3 + 3 \cdot 1 \\
+    \end{array}\right]
+    =
+    \left[\begin{array}{cc}
+        4 & 3 \\
+        14 & 9 \\
+    \end{array}\right]
+\]
+\[
+    BA =
+    \left[\begin{array}{cc}
+        4 \cdot 1 + 3 \cdot 2 & 4 \cdot 0 + 3 \cdot 3 \\
+        2 \cdot 1 + 1 \cdot 2 & 2 \cdot 0 + 1 \cdot 3 \\
+    \end{array}\right]
+    =
+    \left[\begin{array}{cc}
+        10 & 9 \\
+        4 & 3 \\
+    \end{array}\right]
+\]
+
+Matrix multiplication has the properties of
+\begin{itemize}
+    \item Left distributivity, that \(A(B + C) = AB + AC\).
+    \item Right distributivity, that \((A + B)C = AC + BC\).
+    \item Associative, that \(A(BC) = ((AB)C)\).
+    \item \(A(\alpha B) = \alpha(AB)\)
+    \item \(AI_n = I_mA = A\) where \(A\) has size \(m \times n\).
+\end{itemize}
+A square matrix can be multiplied by itself to effect exponentiation.
+
+\subsection*{Adjacency Matrices}
+
+An application of matrices is as a representation of a graph. We can use an
+\(n \times n\) matrix to show the edges in a graph of \(n\) vertices.
+
+\[
+    \left[\begin{array}{c|ccccc}
+        & v_1 & v_2 & v_3 & v_4 & v_5 \\
+        \hline
+        v_1 & 0 & 1 & 0 & 0 & 1 \\
+        v_2 & 1 & 0 & 1 & 1 & 1 \\
+        v_3 & 0 & 1 & 0 & 1 & 0 \\
+        v_4 & 0 & 1 & 1 & 0 & 1 \\
+        v_5 & 1 & 1 & 0 & 1 & 0 \\
+    \end{array}\right]
+\]
+
+Here we have a \(5\) vertex graph, and we can tell from the matrix that for
+instance \(v_1\) has edges to \(v_2\) and \(v_5\). A disconnected graph will
+simply be \(0_n\). The adjacency matrix is always symmetrical across the
+diagonal. If there are no edges looping back to their start, the diagonal will
+be zeroes.
+
 \end{flushleft}
 \end{document}
