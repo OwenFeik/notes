@@ -84,14 +84,54 @@ we can do it iteratively, saving us the overhead of a function call.
 
 \begin{lstlisting}
     int gcd(int m, int n) {
-        while n != 0 {
-            int r = m mod n;
+        while (n) {
+            int r = m % n;
             m = n;
             n = r;
         }
         return m;
     }
 \end{lstlisting}
+
+\subsubsection*{Data Structures}
+
+A linear data structure is a data structure where elements are ordered in some
+conceptual line. These include arrays, lists and variants like stacks and
+queues.
+\begin{itemize}
+    \item Arrays have the benefits of being very fast to read from and write to
+        individual cells. The downsides are that they are contiguous and of
+        fixed size.
+    \item Linked lists have the benefits of rapid extension and reduction in
+        size. Selection of a specific element however requires traversal of the
+        list and is quite slow.
+\end{itemize}
+Stacks and queues are abstract data types as opposed to the more concrete
+examples of arrays and lists. These are abstract as they tend to have more basic
+structures at a low level, with their special operations implemented as useful
+abstractions on top. Where a stack is last in first out, a queue is last in
+first out. A stack could be implented efficiently as an array by keeping an
+index for the top element, incrementing for insertion and decrementing to pop.
+This wouldn't be as efficient for a queue due to the need to remove the first
+rather than the last element.
+
+\subsubsection*{Growth Rates}
+
+When considering the performance of an algorithm, we look at how the time and
+space used by the algorithm grow as the input size increases. We generally look
+at the worst case scenario, though we can also look at the worst case scenario.
+When doing this, we ignore the details of the hardware and compilation and focus
+on the mathematical performance of the algorithm. \par
+We assume that data is represented in fixed length words. Additionally we assume
+that fundamental operations take constant time. These include arithmetic, memory
+access, comparison and more. If an operation costs some amount \(c\) and it is
+called \(g(n)\) times, then generally the cost of an algorithm is roughly
+\(c\cdot g(n)\) for sufficiently large \(n\). Identifying the basic operation
+and the number of times called is the fundamental part of the procedure. \par
+\textit{Amortised} takes into account the context an algorithm is run in and
+calculates the cost over a large number of runs. This is useful for algorithms
+that have a very expensive operation that might be called only once each time
+they are run.
 
 \end{flushleft}
 \end{document}
