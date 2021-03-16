@@ -126,7 +126,7 @@ side which has only one incidence to the relationship. If every entity in a set
 has a given relationship, we bold the line describing that relationship. \par
 A weak entity is one which can be uniquely identified only with knowledge of
 another owner identity. To indicate this, we use a identifying relationship. All
-weak entities must have this relatinoship to their owning identity. To show this
+weak entities must have this relationship to their owning identity. To show this
 on a diagram, we bold the weak entity, the line (which will always be arrowed,
 as each weak entity has one owner) and the relationship diamond and underline
 the key of the weak entity to indicate it doesn't uniquely identify the entity.
@@ -142,6 +142,68 @@ Some special attribute types exist. These include
         entities.
 \end{itemize}
 
+\subsubsection*{Data Modelling}
+
+A data model allows the translation of real world concepts into computational
+structures. One form of this is relational modelling, as in a relational data
+base. A relationship between tables in a relational database takes the form of
+a foreign or primary key. \par
+A relational database is defined by a schema, which is a specification of
+relations between tables and name and type of each column in a table. \par
+The \textit{cardinality} of a table refers to its number of records. The degree
+or \textit{arity} of a table refers to its number of rows.
+
+\subsubsection*{ER to Relational Models}
+
+An entity in an entity-relationship model becomes a table in a relational
+database. This is the transition from conceptual design to logical design. To
+progress from this stage to physical design, we choose datatypes for the
+columns. The implementation stage is then undertaken by creating the related
+SQL for this physical design. \par
+To implement our relationships and constraints we need to use keys. A key is a
+form of integrity restraint. A primary key enforces uniqueness in a table. A
+foreign key ensures that only existing records can be referenced from other
+tables. Some important definitions exist for keys.
+\begin{itemize}
+    \item A set of fields is a \textit{superkey} if no two distinct tuples can
+        have the same values in all key fields.
+    \item A set of fields is a \textit{key} if it is a superkey and no subset of
+        the set is a superkey.
+    \item Of all keys, one is chosen as the \textit{primary key}.
+    \item Non-chosen possible primary keys are \textit{candidate keys}.
+\end{itemize}
+A foreign key must always point to another table's primary key. A database has
+referential integrity if all foreign keys are enforced. \par
+An integrity constraint is a condition that is applied to a column, such as a
+domain constraint for a column. A legal instance of a relation (table) satisfies
+all such constraints. \par
+For multi-valued attributes, we often need to split them
+up into multiple attributes such as a home and work phone for phone numbers.
+Likewise, for composite attributes, we simply flatten them and include all
+columns in the relevant table. \par
+To create relationships we often create new tables where we take a primary key
+from each of the involved tables and add any relevant data about the
+relationship as additional columns. In instances where we have a ``one''
+relation it is generally preferred to include this key in the table with the
+singleton relationship; succinctly ``the primary key from the many side becomes
+a foreign key on the one side''. If the key is mandatory, we simply mark it as
+\code{NOT NULL} in our SQL. \par
+For a weak entity which exists only in its relation to another entity, we
+implement cascading deletion.
+
+\begin{lstlisting}
+    CREATE TABLE dependent (
+        name CHAR(20) NOT NULL,
+        age INTEGER NULL,
+        cost DECIMAL(7,2) NOT NULL,
+        employee_id CHAR(11) NOT NULL,
+        PRIMARY KEY (employee_id, name),
+        FOREIGN KEY (employee_id) REFERENCES employees ON DELETE CASCADE
+    );
+\end{lstlisting}
+
+In the above example we have a table storing employee insurance dependents,
+which are meaningless without their related employees.
 
 \end{flushleft}
 \end{document}
